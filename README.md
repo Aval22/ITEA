@@ -1,7 +1,7 @@
 # ITEA Framework — Índice de Triple Exposición a la Automatización
 
 [![DOI](https://img.shields.io/badge/DOI-Pending-blue)]()
-[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-2024%20v29.1-green)]()
 [![Version](https://img.shields.io/badge/Version-1.45-orange)]()
 
@@ -35,7 +35,7 @@ The ITEA Framework provides 8 complementary indicators covering 1,016 occupation
 ```
 ITEA-Framework/
 ├── README.md                          # This file
-├── LICENSE                            # CC BY-NC 4.0
+├── LICENSE                            # MIT License
 ├── .gitignore
 │
 ├── data/
@@ -160,7 +160,7 @@ df = pd.read_excel("data/processed/Research_Data_Workbook_ITEA_v1.35.xlsx",
 
 ## License
 
-This work is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE).
+This work is licensed under [MIT](LICENSE).
 
 - **Academic use**: Free with citation
 - **Commercial use**: Contact the author
