@@ -63,7 +63,7 @@ SOC_SECTORS = {
 # ==================== LOAD DATA ====================
 @st.cache_data
 def load_data():
-    df = pd.read_csv("itea_data.csv")
+    df = pd.read_csv("streamlit_app/itea_data.csv")
     df['Sector'] = df['SOC Major'].map(SOC_SECTORS).fillna('Other')
     df['JZ_Label'] = df['Job Zone'].map(JZ_LABELS).fillna('Unknown')
     df['Risk'] = pd.cut(df['ITEA Global'],
