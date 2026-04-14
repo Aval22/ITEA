@@ -1,3 +1,4 @@
+import os
 """
 ITEA Framework v1.45 — Interactive Dashboard
 Triple Exposure to Automation Index
@@ -63,7 +64,7 @@ SOC_SECTORS = {
 # ==================== LOAD DATA ====================
 @st.cache_data
 def load_data():
-    df = pd.read_csv("streamlit_app/itea_data.csv")
+    df = pd.read_csv(os.path.join(os.path.dirname(__file__), "itea_data.csv"))
     df['Sector'] = df['SOC Major'].map(SOC_SECTORS).fillna('Other')
     df['JZ_Label'] = df['Job Zone'].map(JZ_LABELS).fillna('Unknown')
     df['Risk'] = pd.cut(df['ITEA Global'],
