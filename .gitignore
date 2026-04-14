@@ -1,0 +1,37 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# R
+.Rhistory
+.Rdata
+.Rproj.user/
+*.Rproj
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+*.tmp
+*.bak
+~$*
+
+# Large files (use Git LFS if needed)
+*.zip
+*.tar.gz
+
+# Sensitive
+*.env
+credentials.*
