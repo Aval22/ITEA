@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+title: "ITEA: Triple Exposure to Automation Index"
+message: "If you use this software or framework in your research, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: Alberto
+    family-names: García-Lluis Valencia
+    orcid: "https://orcid.org/0009-0003-1438-1633"
+    affiliation: "Universidad Rey Juan Carlos, Madrid, Spain"
+repository-code: "https://github.com/Aval22/ITEA"
+url: "https://itea-framework.streamlit.app"
+keywords:
+  - automation
+  - labor economics
+  - occupational analysis
+  - artificial intelligence
+  - O*NET
+  - R
+  - Python
+license: MIT
+version: "1.45"
+date-released: "2026-04-14"
+doi: "10.5281/zenodo.19578916"
+abstract: >-
+  ITEA is a multidimensional framework providing 8 validated indicators
+  for measuring occupational exposure to automation and artificial
+  intelligence across 1,016 occupations using O*NET 2024 (v29.1) data.
+  Includes dual R/Python implementation with cross-language validation
+  and an interactive Streamlit dashboard.
+preferred-citation:
+  type: report
+  authors:
+    - given-names: Alberto
+      family-names: García-Lluis Valencia
+      orcid: "https://orcid.org/0009-0003-1438-1633"
+  title: "ITEA: A Multidimensional Framework for Measuring Occupational Exposure to Automation"
+  year: 2026
+  institution:
+    name: "Universidad Rey Juan Carlos"
+  url: "https://github.com/Aval22/ITEA"
+  doi: "10.5281/zenodo.19578916"
