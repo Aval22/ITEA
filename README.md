@@ -1,6 +1,8 @@
-# ITEA Framework — Índice de Triple Exposición a la Automatización
+# ITEA Framework — Triple Exposure to Automation Index
 
-[![DOI](https://img.shields.io/badge/DOI-Pending-blue)]()
+🌐 **English** · [Español](README_ES.md) · [Português](README_PT.md) · [中文](README_ZH.md)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578916.svg)](https://doi.org/10.5281/zenodo.19578916)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-2024%20v29.1-green)]()
 [![Version](https://img.shields.io/badge/Version-1.45-orange)]()
