@@ -1,0 +1,92 @@
+{
+  "framework": "ITEA Framework",
+  "version": "3.0",
+  "release_date": "2026-04-30",
+  "author": {
+    "name": "Alberto Garc\u00eda-Lluis Valencia",
+    "orcid": "0009-0003-1438-1633",
+    "email": "alb.valencia@gmail.com",
+    "affiliation": "Universidad Rey Juan Carlos"
+  },
+  "doi_concept": "10.5281/zenodo.19578916",
+  "repository": "https://github.com/AVAL22/ITEA-Framework",
+  "license": "MIT",
+  "supersedes": [
+    "ITEA Methodology v2.0",
+    "ITEA Memorandum v2.1",
+    "ITEA Methodology v3.0 (original)"
+  ],
+  "legacy_tag": "v1.45-legacy",
+  "files": [
+    {
+      "path": "data/processed/ITEA_v3_0_Workbook.xlsx",
+      "sha256": "2ded73eeb8c1833745ac76fd6db69fac9951f60f7a63520fa07f1e5e1c08b45c",
+      "size_bytes": 260449
+    },
+    {
+      "path": "code/v3/itea_functions_v3.R",
+      "sha256": "17f28109d8abbe08751e5f32480ccd037512c71bcecef778deb084785131c39f",
+      "size_bytes": 9273
+    },
+    {
+      "path": "code/v3/itea_functions_v3.py",
+      "sha256": "da3d0b2c5fd5f4ec84f68257ce7be8da2a061e1630166eaafa9f3967df433e71",
+      "size_bytes": 9642
+    },
+    {
+      "path": "code/v3/tests/test_itea_v3.py",
+      "sha256": "8a6ac5f583070f5eeb633c3fdecbbb3c03c1f5af963a000ff44e31d48f7c7eef",
+      "size_bytes": 6587
+    },
+    {
+      "path": "README.md",
+      "sha256": "e063a3078e5c3674ba468384fba5089694a55d96a156f5dac4825a58fb771b68",
+      "size_bytes": 15074
+    },
+    {
+      "path": "README_ES.md",
+      "sha256": "8fc76f6e8f3b8cf0f583ad7a2fc14aa1d3818404fdb0081f00d956ea5837b33c",
+      "size_bytes": 8482
+    },
+    {
+      "path": "README_PT.md",
+      "sha256": "be6a0a08cf81151778932f3ee2bcee8e04558b77969ab60fa10db43d31897be3",
+      "size_bytes": 6340
+    },
+    {
+      "path": "README_ZH.md",
+      "sha256": "6c5cfc5d929d105c8e659b28597bc2cac208bb7908e48ee8cb5fb4d42939a3fa",
+      "size_bytes": 5757
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "4dbb716b8bcf79f1fe2237764f0a8fd60edb3abddfff35e9696349c0206b07e7",
+      "size_bytes": 6564
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7e1c5d7ef4ee27bd3a5882c0a8f866a5a8b2c44d22636fd29df803e99480cc22",
+      "size_bytes": 1759
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "2d4e3e3b56b24a98c7b7f0cb9814ef2b6432d5f886b0303081e329eb1e8d6f2c",
+      "size_bytes": 2814
+    },
+    {
+      "path": "docs/MIGRATION.md",
+      "sha256": "2d78671a9e4538df5b6419ed28d305d4e0a25d2e0ae0873b4124cca72888fd36",
+      "size_bytes": 5284
+    },
+    {
+      "path": "paper/paper.md",
+      "sha256": "68b51a1e163bdac7984fdc8e9140d36ef5367e5e600037167d8682487bc53cbc",
+      "size_bytes": 7012
+    },
+    {
+      "path": "paper/paper.bib",
+      "sha256": "82e21681abc9f481c6991ccfebe64ff8b4333d3b1f2022bcc3aca2ff39c19404",
+      "size_bytes": 3550
+    }
+  ]
+}

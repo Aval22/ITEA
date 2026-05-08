@@ -1,41 +1,73 @@
 cff-version: 1.2.0
-title: "ITEA: Triple Exposure to Automation Index"
-message: "If you use this software or framework in your research, please cite it using the metadata from this file."
+message: "If you use this software, please cite it as below."
 type: software
+title: "ITEA Framework: A Multidimensional System for Measuring Occupational Exposure to Algorithmic Expropriation under the Agentic AI Regime"
+version: "3.0"
+date-released: "2026-04-30"
 authors:
-  - given-names: Alberto
-    family-names: García-Lluis Valencia
+  - family-names: "García-Lluis Valencia"
+    given-names: "Alberto"
     orcid: "https://orcid.org/0009-0003-1438-1633"
-    affiliation: "Universidad Rey Juan Carlos, Madrid, Spain"
-repository-code: "https://github.com/Aval22/ITEA"
-url: "https://itea-framework.streamlit.app"
-keywords:
-  - automation
-  - labor economics
-  - occupational analysis
-  - artificial intelligence
-  - O*NET
-  - R
-  - Python
+    affiliation: "Universidad Rey Juan Carlos"
+    email: "alb.valencia@gmail.com"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19578916
+    description: "Concept DOI for all versions of the ITEA Framework"
+repository-code: "https://github.com/AVAL22/ITEA-Framework"
+url: "https://github.com/AVAL22/ITEA-Framework"
 license: MIT
-version: "1.45"
-date-released: "2026-04-14"
-doi: "10.5281/zenodo.19578916"
+keywords:
+  - "labor economics"
+  - "automation"
+  - "Agentic AI"
+  - "occupational exposure"
+  - "algorithmic expropriation"
+  - "psychometric validation"
+  - "O*NET"
+  - "Felten Raj Seamans AIOE"
 abstract: >-
-  ITEA is a multidimensional framework providing 8 validated indicators
-  for measuring occupational exposure to automation and artificial
-  intelligence across 1,016 occupations using O*NET 2024 (v29.1) data.
-  Includes dual R/Python implementation with cross-language validation
-  and an interactive Streamlit dashboard.
-preferred-citation:
-  type: report
-  authors:
-    - given-names: Alberto
-      family-names: García-Lluis Valencia
-      orcid: "https://orcid.org/0009-0003-1438-1633"
-  title: "ITEA: A Multidimensional Framework for Measuring Occupational Exposure to Automation"
-  year: 2026
-  institution:
-    name: "Universidad Rey Juan Carlos"
-  url: "https://github.com/Aval22/ITEA"
-  doi: "10.5281/zenodo.19578916"
+  The ITEA Framework provides ten complementary indicators covering 1,016 SOC 6-digit
+  occupations from O*NET 30.2, designed to measure occupational exposure to algorithmic
+  expropriation in the Agentic AI regime. Version 3.0 introduces three major methodological
+  revisions motivated by a documented case study of three research papers (the trilogy
+  8A/8B/8C): z-score ITEA aggregation, triple-residualised IRA, and a dual-variant OAEI
+  architecture. External convergent validation against the AIOE benchmark of Felten,
+  Raj and Seamans (2021): r(OAEI v3.0+, AIOE) = 0.797 over 738 common SOC 6-digit
+  occupations.
+references:
+  - type: article
+    title: "The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI"
+    authors:
+      - family-names: "García-Lluis Valencia"
+        given-names: "Alberto"
+    year: 2026
+    doi: 10.5281/zenodo.19592542
+  - type: article
+    title: "Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality"
+    authors:
+      - family-names: "García-Lluis Valencia"
+        given-names: "Alberto"
+    year: 2026
+  - type: article
+    title: "QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel"
+    authors:
+      - family-names: "García-Lluis Valencia"
+        given-names: "Alberto"
+    year: 2026
+    doi: 10.5281/zenodo.19592184
+  - type: article
+    title: "Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses"
+    authors:
+      - family-names: "Felten"
+        given-names: "Edward W."
+      - family-names: "Raj"
+        given-names: "Manav"
+      - family-names: "Seamans"
+        given-names: "Robert"
+    journal: "Strategic Management Journal"
+    year: 2021
+    volume: 42
+    issue: 12
+    start: 2195
+    end: 2217

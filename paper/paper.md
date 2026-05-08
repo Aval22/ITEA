@@ -1,78 +1,140 @@
 ---
-title: 'ITEA: A Multidimensional Framework for Measuring Occupational Exposure to Automation'
+title: "ITEA Framework: A multidimensional system for measuring occupational exposure to algorithmic expropriation under the Agentic AI regime"
 tags:
   - R
   - Python
-  - automation
   - labor economics
-  - occupational analysis
+  - automation
   - artificial intelligence
   - O*NET
+  - psychometric validation
 authors:
   - name: Alberto García-Lluis Valencia
     orcid: 0009-0003-1438-1633
     affiliation: 1
+    corresponding: true
 affiliations:
   - name: Universidad Rey Juan Carlos, Madrid, Spain
     index: 1
-date: 14 April 2026
+    ror: 01v5cv687
+date: 30 April 2026
 bibliography: paper.bib
 ---
 
 # Summary
 
-The Triple Exposure to Automation Index (ITEA) is an open-source framework, implemented in both R and Python, that provides eight complementary indicators for measuring occupational exposure to automation and artificial intelligence. Unlike binary classification approaches that label occupations as simply "automatable" or "not automatable" [@frey2017future], ITEA offers a multidimensional, continuous, and granular assessment across 1,016 occupations using data from O\*NET 2024 (v29.1).
+The ITEA Framework is an open multidimensional system for measuring occupational
+exposure to algorithmic expropriation under the Agentic AI regime, distinct from
+but complementary to task-level automation indices in the Frey-Osborne tradition
+[@frey2017future] or ability-based exposure measures such as the AI Occupational
+Exposure index of @felten2021occupational. Version 3.0 covers all 1,016 SOC 6-digit
+occupations of O\*NET 30.2, providing ten complementary indicators (eight original
+plus two introduced in v3.0), four reference R/Python implementations, a
+twelve-sheet validated dataset, and a Streamlit dashboard. External convergent
+validation against the AIOE benchmark over 738 common SOC 6-digit occupations
+yields *r* = 0.797.
 
-The eight indicators capture distinct dimensions of the automation landscape: exposure to cognitive, general, and AI-specific automation (ITEA); occupational resilience through adaptability and institutional protection (IRO); technical complexity requiring non-routine judgment (ICT); social friction from human interaction demands (IFS); physical presence requirements (IPI); functional specificity of knowledge (IEF); education and experience requirements (GEE); and occupational mutation tracking task evolution over time (IMO). Each indicator is validated through appropriate statistical methods: Cronbach's alpha for reflective constructs (IRO α=0.842, IFS α=0.749, IEF α=0.919), variance inflation factors for formative indices (ITEA VIF=1.21, ICT VIF=1.15), OLS calibration against Job Zone benchmarks (GEE ρ=0.927), and Hurdle models for zero-inflated distributions (IMO, 76.9% zeros).
+# Statement of need
 
-The software includes functions for computing all indicators, validation utilities following the `performance` package standards [@ludecke2021performance], cross-language consistency tests, and an interactive Streamlit dashboard for exploration of results (https://itea-framework.streamlit.app).
+Existing occupational automation indices fall into two methodological families.
+The first, exemplified by @frey2017future and @webb2020impact, scores tasks for
+their direct technical automatability. The second, exemplified by
+@felten2021occupational and @eloundou2024gpts, scores occupations for their
+exposure to AI capabilities at the ability level. Both families measure exposure
+under the *generative* AI regime — whether tasks or abilities are automatable
+using current or near-term AI tools. Neither captures the distinct mechanism that
+defines the *Agentic* AI regime: the rate at which a worker's intellectual capital
+can be externalised, combined and internalised by autonomous AI systems into firm-
+level proprietary assets that persist beyond individual worker tenure
+[@nonaka1995knowledge].
 
-# Statement of Need
+The ITEA Framework was developed to fill this measurement gap. Its primary use
+case is research on labour-contract redesign and monetary-policy transmission
+under sustained AI exposure: the framework is the empirical instrument for a
+trilogy of research papers (the "trilogy" referenced throughout the
+documentation) that motivate v3.0's design choices and demonstrate the
+framework's active use in research [@gll2026structural; @gll2026tokenised;
+@gll2026qe].
 
-The accelerating deployment of artificial intelligence in workplaces demands tools that can assess automation risk at the occupational level with sufficient granularity for policy analysis, workforce planning, and academic research. Existing approaches present three fundamental limitations.
+The framework is intended for three audiences. First, labour and monetary
+economists requiring an occupation-level exposure measure orthogonal to
+qualification and complexity. Second, policy analysts at national statistical
+agencies and labour ministries requiring a granular ranking of populations
+likely to face IC-crystallisation pressure. Third, replication researchers
+building on the trilogy or independent papers that cite ITEA as input variable.
 
-First, the influential Frey and Osborne framework [@frey2017future] provides only a binary classification of occupations, losing information about the degree, type, and trajectory of automation exposure. Second, most indices are unidimensional, reducing a complex, multifaceted phenomenon to a single score and thereby conflating distinct mechanisms such as cognitive automation, physical robotization, and AI-driven task substitution. Third, existing tools are predominantly static, offering a snapshot of current automation probability without capturing occupational evolution.
+# Indicators and methodology
 
-ITEA addresses these gaps by providing researchers and policymakers with a validated, multidimensional toolkit. The target users include labor economists studying automation impacts, human resource professionals assessing workforce vulnerability, policymakers designing reskilling programs, and doctoral researchers requiring granular occupational data for panel econometrics. The framework has been applied in ongoing doctoral research at Universidad Rey Juan Carlos to study the interaction between quantitative easing policies and senior workforce displacement [@garcia2026qe], and to analyze the Spanish labor market using Infoempleo-Adecco survey data.
+ITEA v3.0 produces ten indicators per occupation. The four central composites
+are:
 
-# State of the Field
+- **ITEA** (Triple Index of Exposure to Automation) — z-score-normalised equal-
+  weight aggregation of EAC, EIG and EIA components.
+- **IRA** (Adaptive Resilience Index) — 0.6·CA + 0.4·IRO_residual where
+  IRO_residual is the residual of OLS(IRO ~ GEE + ITEA + ICT), implementing
+  triple residualisation against all structural moderators.
+- **OAEI v3.0 multiplicative** — ITEA × GEE × ICT × (1 − IPI) min-max-projected
+  to [1, 100], the canonical composite preserving compatibility with cited
+  research.
+- **OAEI v3.0+ additive** — 0.5·GEE + 0.3·ITEA + 0.2·ICT·(1 − IPI), an
+  alternative for criterion-validity-priority applications.
 
-Several tools exist for measuring automation exposure. The seminal work by @frey2017future estimated automation probabilities for 702 occupations using expert elicitation, producing a widely cited but binary and static index. @autor2015why provided a task-based framework distinguishing routine from non-routine tasks, but without a computational implementation. @acemoglu2018race formalized the race between automation and new task creation, offering theoretical insights but no occupational-level software tool.
+The framework anchors in O\*NET 30.2 (1,016 SOC 6-digit occupations, 47,810 task
+statements) and integrates BLS OEWS wage data. External convergent validation
+against the AIOE benchmark of @felten2021occupational confirms that ITEA
+captures a related-but-distinct construct: r(OAEI v3.0+, AIOE) = 0.797 over the
+738 common occupations.
 
-The O\*NET database itself [@onet2024] provides the underlying task and skill data but requires substantial processing to derive automation indicators. @ludecke2021performance established validation standards for psychological and social science instruments that ITEA follows.
+# State of the field and ITEA's contribution
 
-ITEA differentiates itself in four ways: (1) it provides eight distinct indicators rather than a single score, enabling researchers to decompose automation risk into its constituent dimensions; (2) it covers 1,016 occupations with continuous scores rather than binary classifications; (3) it includes an occupational mutation index (IMO) that tracks how occupations evolve over time; and (4) it offers dual R/Python implementations with automated cross-language validation, ensuring reproducibility across research environments.
+The literature provides binary task-level indices [@frey2017future],
+continuous ability-level indices [@felten2021occupational; @brynjolfsson2025generative],
+sectoral panels [@acemoglu2018race], and aggregate macroeconomic models
+[@acemoglu2025simple]. ITEA fills the granularity-and-mechanism gap by providing
+occupation-level measurement under the Agentic regime, with explicit psychometric
+validation including discriminant validity against qualification and technical
+complexity.
 
-# Software Design
+The four-criterion validation matrix shows ITEA v3.0 improving on v2.1 across
+six of eight psychometric criteria, with the dual OAEI architecture supporting
+both internal-coherence-priority and external-convergence-priority applications.
+The full validation table, eight criteria including convergent, discriminant,
+criterion and stability validity, is reported in the Consolidated Methodology
+[@itea_methodology_v3].
 
-The ITEA framework is organized around three design principles: transparency (all formulas are explicit and documented), reproducibility (dual-language implementation with cross-validation), and multidimensionality (eight indicators capturing distinct constructs).
+# Software design
 
-**Indicator taxonomy.** The framework distinguishes between formative indicators (ITEA, ICT, IPI), where components cause the construct and validation relies on VIF analysis; reflective indicators (IRO, IFS, IEF), where the construct causes the observed items and validation uses Cronbach's alpha; and hybrid indicators (GEE via OLS calibration, IMO via Hurdle model).
+The repository follows a layered structure: a primary Excel workbook
+(`data/processed/ITEA_v3_0_Workbook.xlsx`, twelve sheets, 1,016 rows × 27
+columns) is the canonical data artefact; reference R and Python implementations
+(`code/v3/`) reproduce the workbook values to machine precision (`Δ < 10⁻¹⁴`);
+a 14-test pytest suite verifies indicator properties, NaN handling, weight
+preservation and end-to-end reconciliation; a SHA-256 manifest supports Zenodo
+deposit verification.
 
-**Architecture.** Each indicator is implemented as a standalone function accepting O\*NET-derived inputs and returning a normalized [0,1] score. The R implementation (`code/R/itea_functions_v1.45.R`) and Python implementation (`code/Python/itea_functions_v1_45.py`) are structurally parallel, with automated tests verifying cross-language consistency to six decimal places.
+The `v1.45-legacy` git tag preserves the previous release for replication of
+v1.x results. The `docs/MIGRATION.md` provides step-by-step guidance for
+researchers updating pipelines from v1.45.
 
-**Data pipeline.** The processed dataset (`data/processed/Research_Data_Workbook_ITEA_v1.35.xlsx`) contains 1,016 occupations with all indicator values, component scores, and metadata. An interactive Streamlit dashboard provides five exploration views: sortable table with progress bars, configurable scatter plot, individual occupation radar profile, sector-level analysis with box plots, and multi-occupation comparison.
+# Project history and the v3.0 case study
 
-**Versioning.** The framework follows semantic versioning with documented changes from v1.0 through v1.45. Key improvements include the OLS calibration of GEE (v1.2, raising ρ from 0.259 to 0.927), the extraction of physical presence into a dedicated IPI indicator (v1.3), and the reduction of cognitive complexity items in IRO to decrease construct overlap (v1.45).
-
-# Research Impact Statement
-
-The ITEA framework is currently deployed in three active research streams within a doctoral program at Universidad Rey Juan Carlos:
-
-1. **Quantitative easing and senior employment restructuring** [@garcia2026qe]: ITEA indicators (particularly the wage-weighted ITEA and IEF) are used to quantify heterogeneous automation incentives across 923 occupations in a panel of 82 publicly listed firms from the Euro Stoxx 50, FTSE 100, S&P 500, and Nikkei 225.
-
-2. **Spanish labor market validation**: ITEA indicators are cross-referenced with Infoempleo-Adecco 2023-2024 survey data (n>3,000 firms) to validate automation adoption patterns, training gaps, and sectoral wage structures against framework predictions.
-
-3. **Algorithmic expropriation and contractual models**: The AEI (Algorithmic Expropriation Index), derived from ITEA, serves as the dependent variable in a three-pillar contractual model targeting publication in *Industrial and Corporate Change*.
-
-The interactive dashboard (https://itea-framework.streamlit.app) provides public access to all indicator values, enabling independent researchers to explore and build upon the framework.
-
-# AI Usage Disclosure
-
-Generative AI tools (Claude, Anthropic) were used to assist with code generation, documentation drafting, and data visualization during the development of this software. All AI-generated content was reviewed, validated, and modified by the author. The core methodological decisions, indicator design, validation strategy, and research applications were conceived and directed by the author. The statistical formulas, weight calibrations, and empirical validations were executed on real O\*NET data with results independently verified.
+The framework has evolved across nine documented versions since March 2024. The
+v3.0 release unifies two parallel numbering lines — operational v1.x (data and
+code) and methodological v2.x (academic papers) — onto a single version, with
+deprecation declarations and trilogy case studies that document the principled
+reasoning behind each major revision. The full evolution narrative, including
+how each of the three central v3.0 changes was motivated by a specific empirical
+finding from one of the trilogy papers, is documented in §2 and §4.4–§5.4–§6.5
+of the Consolidated Methodology [@itea_methodology_v3].
 
 # Acknowledgements
 
-The author acknowledges the U.S. Department of Labor and the National Center for O\*NET Development for making occupational data publicly available. This work is part of a doctoral research program at Universidad Rey Juan Carlos, Madrid.
+Parts of the v1.x operational releases were developed in the Universidad Rey
+Juan Carlos doctoral research environment. The author thanks the participants
+of related URJC research seminars for feedback on earlier versions, and
+acknowledges the use of generative AI tools (Claude, Anthropic) for data
+management, table organisation, and quantitative consistency checks during the
+v3.0 revision; all theoretical frameworks, analytical decisions, and
+interpretations remain the sole responsibility of the author.
 
 # References

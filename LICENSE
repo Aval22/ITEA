@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Alberto García-Lluis Valencia
+Copyright (c) 2024-2026 Alberto García-Lluis Valencia
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -11,6 +11,18 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+ACADEMIC USE: Free with citation. The recommended citation form is in
+CITATION.cff. For peer-reviewed publication using ITEA Framework data,
+please cite the Zenodo deposit (DOI: 10.5281/zenodo.19578916) and the
+relevant trilogy papers (García-Lluis Valencia 2026a/b/c) as applicable.
+
+DATA NOTICE: The processed data workbook (ITEA_v3_0_Workbook.xlsx) is
+licensed under MIT for the derived indicators. Source data follows the
+licenses of the upstream providers:
+  - O*NET 30.2: U.S. Department of Labor — public domain
+  - BLS OEWS:   U.S. Bureau of Labor Statistics — public domain
+  - AIOE:       Felten, Raj & Seamans (2021), used under their academic terms
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

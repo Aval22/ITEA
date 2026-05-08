@@ -1,37 +1,57 @@
-# OS files
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+*.Rproj.user/
+
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# R
-.Rhistory
-.Rdata
-.Rproj.user/
-*.Rproj
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-.env
-venv/
-.venv/
-
-# IDE
-.vscode/
+# Editors
 .idea/
+.vscode/
 *.swp
-*.swo
-
-# Temporary
-*.tmp
+*~
 *.bak
-~$*
 
-# Large files (use Git LFS if needed)
-*.zip
-*.tar.gz
+# Build artefacts
+build/
+dist/
+*.egg-info/
 
 # Sensitive
 *.env
-credentials.*
+.env.local
+*credentials*
+*.key
+
+# LaTeX (for JOSS paper drafts)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+# Local notes
+NOTES_LOCAL.md
+todo.txt
