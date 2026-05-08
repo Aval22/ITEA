@@ -2,7 +2,7 @@
 
 🌐 **English** · [Español](README_ES.md) · [Português](README_PT.md) · [中文](README_ZH.md)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578916.svg)](https://doi.org/10.5281/zenodo.19578916)
+[![DOI](https://zenodo.org/badge/1210690701.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
 [![Version](https://img.shields.io/badge/Version-3.0-blue)]()

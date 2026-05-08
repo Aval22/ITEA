@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "ITEA Framework: A Multidimensional System for Measuring Occupational Exposure to Algorithmic Expropriation under the Agentic AI Regime"
 version: "3.0"
-date-released: "2026-04-30"
+date-released: "2026-05-08"
 authors:
   - family-names: "García-Lluis Valencia"
     given-names: "Alberto"
@@ -12,10 +12,16 @@ authors:
     email: "alb.valencia@gmail.com"
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.19578915
+    description: "Concept DOI (resolves to latest version of the ITEA Framework)"
+  - type: doi
+    value: 10.5281/zenodo.20083102
+    description: "Version DOI for ITEA Framework v3.0"
+  - type: doi
     value: 10.5281/zenodo.19578916
-    description: "Concept DOI for all versions of the ITEA Framework"
-repository-code: "https://github.com/AVAL22/ITEA-Framework"
-url: "https://github.com/AVAL22/ITEA-Framework"
+    description: "Version DOI for ITEA Framework v1.45 (legacy)"
+repository-code: "https://github.com/Aval22/ITEA"
+url: "https://github.com/Aval22/ITEA"
 license: MIT
 keywords:
   - "labor economics"
@@ -37,25 +43,29 @@ abstract: >-
   occupations.
 references:
   - type: article
-    title: "The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI"
+    title: "Mapping algorithmic expropriation: occupational exposure to Agentic AI under the multidimensional ITEA"
     authors:
       - family-names: "García-Lluis Valencia"
         given-names: "Alberto"
     year: 2026
-    doi: 10.5281/zenodo.19592542
+    doi: 10.5281/zenodo.20081628
+    notes: "Paper 8A — empirical application that motivated the v3.0 methodological revision."
   - type: article
-    title: "Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality"
+    title: "Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality — Restoring the Lindbeck–Snower Insider Protection through Heterogeneous Residual Rights"
     authors:
       - family-names: "García-Lluis Valencia"
         given-names: "Alberto"
     year: 2026
+    doi: 10.5281/zenodo.20081795
+    notes: "Paper 8B — theoretical extension addressing the algorithmic-expropriation externality via tokenised residual rights."
   - type: article
-    title: "QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel"
+    title: "The MBB Triad as Limit Case of Algorithmic Expropriation: Proprietary Agentic AI, Knowledge Capture, and the Failure of the Up-or-Out Contract"
     authors:
       - family-names: "García-Lluis Valencia"
         given-names: "Alberto"
     year: 2026
-    doi: 10.5281/zenodo.19592184
+    doi: 10.5281/zenodo.20082588
+    notes: "Paper 8C — limit-case analysis of consulting up-or-out contracts under proprietary Agentic AI."
   - type: article
     title: "Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses"
     authors:

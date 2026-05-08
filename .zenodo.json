@@ -78,6 +78,6 @@
       "García-Lluis Valencia, A. (2026). Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality — Restoring the Lindbeck–Snower Insider Protection through Heterogeneous Residual Rights. Zenodo. https://doi.org/10.5281/zenodo.20081795",
       "García-Lluis Valencia, A. (2026). The MBB Triad as Limit Case of Algorithmic Expropriation: Proprietary Agentic AI, Knowledge Capture, and the Failure of the Up-or-Out Contract. Zenodo. https://doi.org/10.5281/zenodo.20082588"
     ],
-    "notes": "Concept DOI: <fill after first publish>. Version DOI: <fill after first publish>. The v1.45 release is preserved under the git tag v1.45-legacy and is also documented in CHANGELOG.md and docs/MIGRATION.md. SHA-256 digests for every file in this deposit are listed in MANIFEST.json so that integrity can be verified after download."
+    "notes": "Concept DOI: 10.5281/zenodo.19578915 (resolves to latest version). Version DOI for v3.0: 10.5281/zenodo.20083102. v1.45 preserved at https://doi.org/10.5281/zenodo.19578916 under the git tag v1.45 (also documented in CHANGELOG.md and docs/MIGRATION.md). SHA-256 digests for every file in this deposit are listed in MANIFEST.json so that integrity can be verified after download."
   }
 }
