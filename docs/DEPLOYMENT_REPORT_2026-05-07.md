@@ -1,3 +1,17 @@
+> **ERRATUM (2026-05-10).** This log records the deployment decisions taken on
+> 2026-05-07 in good faith but with an incorrect premise. The repository URL
+> designated as "correct" in §1, decision #3 and §5, action #1
+> (`https://github.com/AVAL22/ITEA-Framework`) does not exist on GitHub —
+> requesting it returns HTTP 404. The real public repository is
+> **`https://github.com/Aval22/ITEA`**, where v3.0 was published as a release on
+> 2026-05-08. The cross-repository correction (URL replaced in 14 files) was
+> applied on 2026-05-10 in commit
+> [`928d2ca`](https://github.com/Aval22/ITEA/commit/928d2ca). The original log
+> entries below are preserved unchanged for historical record; they should be
+> read with this erratum in mind.
+
+---
+
 # Deployment Report — ITEA Framework Repository
 
 **Date:** 2026-05-07
