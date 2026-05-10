@@ -25,9 +25,14 @@ Zenodo emite dos DOIs relacionados para cualquier depósito que tenga más de un
 | **Concept DOI** | Una página que *siempre apunta a la última versión*. Estable entre versiones. | `CITATION.cff`, `README*.md`, entrada bibliográfica "cite el software", badges genéricos del tipo "use este DOI". |
 | **Version DOI** | La instantánea de una versión específica (p. ej. v3.0, v3.1, …). Se emite uno nuevo en cada release. | El formulario de envío de JOSS, `MANIFEST.json` para v3.0, cualquier referencia a un *estado reproducible específico*. |
 
-El `CITATION.cff` actual declara `10.5281/zenodo.19578916` como concept DOI.
-**Verifícalo** visitando <https://doi.org/10.5281/zenodo.19578916>. Si responde
-404, trátalo como placeholder y sigue el escenario A o B para emitir los DOIs reales.
+El `CITATION.cff` actual declara los siguientes registros de Zenodo, todos
+resueltos a fecha de 2026-05-10:
+
+- Concept DOI: `10.5281/zenodo.19578915` (resuelve a todas las versiones del depósito).
+- Version DOI v3.0: `10.5281/zenodo.20083102` (publicada 2026-04-30).
+- Version DOI v1.45: `10.5281/zenodo.19578916` (publicada 2025-10, archivada bajo el tag git `v1.45`).
+
+Si vas a emitir una nueva release (p. ej. v3.1), sigue el escenario A o B abajo.
 
 ---
 

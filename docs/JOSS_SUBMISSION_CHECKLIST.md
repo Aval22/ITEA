@@ -73,8 +73,8 @@ References:
 
 | # | Requirement | Status | Notes |
 |---|-------------|:------:|-------|
-| 6.1 | Repository has a Zenodo DOI | ⚠️ | `CITATION.cff` declares `10.5281/zenodo.19578916` as concept DOI. **Verify** whether this is a real minted record or a placeholder before submitting (see `ZENODO_DEPOSIT_GUIDE.md`). |
-| 6.2 | The DOI in CITATION.cff is the *concept* DOI (resolves to "all versions") | ⚠️ | Treat as concept DOI; once minted, also record the *version* DOI for v3.0 in `MANIFEST.json` and the JOSS submission form. |
+| 6.1 | Repository has a Zenodo DOI | ✅ | `CITATION.cff` declares concept DOI `10.5281/zenodo.19578915` (resolves to all versions), version DOI v3.0 `10.5281/zenodo.20083102`, and version DOI v1.45 `10.5281/zenodo.19578916`. All three resolve in Zenodo. |
+| 6.2 | The DOI in CITATION.cff is the *concept* DOI (resolves to "all versions") | ✅ | Concept DOI `10.5281/zenodo.19578915` recorded in `CITATION.cff` and badges; version DOI for v3.0 (`10.5281/zenodo.20083102`) recorded in `MANIFEST.json` and BibTeX entries. Both will be supplied to the JOSS submission form. |
 | 6.3 | Dataset has a DOI (if separate from software) | n/a | Dataset is bundled in `data/processed/ITEA_v3_0_Workbook.xlsx` and covered by the software DOI |
 
 ## 7. Pre-submission action list

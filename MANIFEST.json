@@ -8,7 +8,8 @@
     "email": "alb.valencia@gmail.com",
     "affiliation": "Universidad Rey Juan Carlos"
   },
-  "doi_concept": "10.5281/zenodo.19578916",
+  "doi_concept": "10.5281/zenodo.19578915",
+  "doi_version_v3.0": "10.5281/zenodo.20083102",
   "repository": "https://github.com/Aval22/ITEA",
   "license": "MIT",
   "supersedes": [

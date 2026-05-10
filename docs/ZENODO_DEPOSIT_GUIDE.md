@@ -25,10 +25,14 @@ Zenodo issues two related DOIs for any deposit that has more than one version:
 | **Concept DOI** | A landing page that *always points at the latest version*. Stable across versions. | `CITATION.cff`, `README*.md`, paper bibliography "cite the software" entry, generic "use this DOI" badges. |
 | **Version DOI** | The specific version snapshot (e.g. v3.0, v3.1, …). New DOI minted on every release. | The JOSS submission form, `MANIFEST.json` for v3.0, any reference to a *specific* reproducible state. |
 
-The current `CITATION.cff` declares `10.5281/zenodo.19578916` as the concept
-DOI. **Verify** by visiting <https://doi.org/10.5281/zenodo.19578916>. If it
-404s, treat it as a placeholder and follow Scenario A or B below to mint the
-real DOIs.
+The current `CITATION.cff` declares the following Zenodo records, all of which
+resolve as of 2026-05-10:
+
+- Concept DOI: `10.5281/zenodo.19578915` (resolves to all versions of the deposit).
+- v3.0 version DOI: `10.5281/zenodo.20083102` (released 2026-04-30).
+- v1.45 version DOI: `10.5281/zenodo.19578916` (released 2025-10, archived under git tag `v1.45`).
+
+If you are minting a new release (e.g. v3.1) follow Scenario A or B below.
 
 ---
 

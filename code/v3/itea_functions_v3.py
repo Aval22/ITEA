@@ -6,7 +6,7 @@ Author:   Alberto García-Lluis Valencia
 License:  MIT
 Version:  3.0 (April 2026)
 Repo:     https://github.com/Aval22/ITEA
-DOI:      10.5281/zenodo.19578916
+DOI:      10.5281/zenodo.20083102 (v3.0 version DOI; concept DOI: 10.5281/zenodo.19578915)
 
 This implementation reproduces the values stored in
 data/processed/ITEA_v3_0_Workbook.xlsx within numerical

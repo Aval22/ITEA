@@ -214,7 +214,7 @@ The trilogy that motivated v3.0 (citable by name in any work using ITEA):
   author    = {García-Lluis Valencia, Alberto},
   year      = {2026},
   version   = {3.0},
-  doi       = {10.5281/zenodo.19578916},
+  doi       = {10.5281/zenodo.20083102},
   url       = {https://github.com/Aval22/ITEA},
   note      = {Consolidated Methodological Edition. Supersedes v2.0 and v2.1.}
 }

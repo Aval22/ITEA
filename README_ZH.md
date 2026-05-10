@@ -2,7 +2,7 @@
 
 🌐 [English](README.md) · [Español](README_ES.md) · [Português](README_PT.md) · **中文**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578916.svg)](https://doi.org/10.5281/zenodo.19578916)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578915.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-3.0-blue)]()
 
@@ -93,7 +93,7 @@ df['ITEA_v30'] = itea_v3(df['EAC'], df['EIG'], df['EIA'])
   author  = {García-Lluis Valencia, Alberto},
   year    = {2026},
   version = {3.0},
-  doi     = {10.5281/zenodo.19578916},
+  doi     = {10.5281/zenodo.20083102},
   url     = {https://github.com/Aval22/ITEA}
 }
 ```
