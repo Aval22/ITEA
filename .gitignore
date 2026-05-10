@@ -55,3 +55,14 @@ dist/
 # Local notes
 NOTES_LOCAL.md
 todo.txt
+
+# Local staging — outreach letters, working duplicates, EU concept notes
+# Kept locally for the author, never pushed to the public repo
+Otros/
+
+# One-shot sync helper (kept locally, not part of the public repo)
+sync_with_github.sh
+
+# Cowork session backups
+itea_backup_*/
+.cowork_backup/
