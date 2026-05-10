@@ -60,8 +60,11 @@ todo.txt
 # Kept locally for the author, never pushed to the public repo
 Otros/
 
-# One-shot sync helper (kept locally, not part of the public repo)
+# One-shot helper scripts and session notes (kept locally, not part of the public repo)
 sync_with_github.sh
+make_backup.sh
+restore_from_backup.md
+Aqui_lo_dejamos.md
 
 # Cowork session backups
 itea_backup_*/
