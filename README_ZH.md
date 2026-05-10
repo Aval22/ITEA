@@ -33,7 +33,7 @@ ITEA 框架提供十个互补指标，涵盖来自 O\*NET 30.2 的 1,016 个 SOC
 
 ## 为什么是 3.0 版本？一个活跃研究项目的证据
 
-本仓库从 **v1.45（2025 年 10 月）** 推进至 **v3.0（2026 年 4 月）**，将之前版本归档为 [`v1.45-legacy`](https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.45-legacy) 标签。这一过渡并非表面修改，而是反映了由一个有据可查的案例研究所推动的重大方法论修订——三篇研究论文（三部曲 8A/8B/8C）将该框架投入到积极的实证使用中，并在此过程中暴露了 v2.1 的三个具体局限。明确记录这一演变是该框架准备提交给 [Journal of Open Source Software](https://joss.theoj.org/) 的一部分（目标窗口：2026 年中），该期刊重视社区使用证据和有原则的方法论演变。
+本仓库从 **v1.45（2025 年 10 月）** 推进至 **v3.0（2026 年 4 月）**，将之前版本归档为 [`v1.45-legacy`](https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy) 标签。这一过渡并非表面修改，而是反映了由一个有据可查的案例研究所推动的重大方法论修订——三篇研究论文（三部曲 8A/8B/8C）将该框架投入到积极的实证使用中，并在此过程中暴露了 v2.1 的三个具体局限。明确记录这一演变是该框架准备提交给 [Journal of Open Source Software](https://joss.theoj.org/) 的一部分（目标窗口：2026 年中），该期刊重视社区使用证据和有原则的方法论演变。
 
 ### 三部曲作为案例研究
 
@@ -94,7 +94,7 @@ df['ITEA_v30'] = itea_v3(df['EAC'], df['EIG'], df['EIA'])
   year    = {2026},
   version = {3.0},
   doi     = {10.5281/zenodo.19578916},
-  url     = {https://github.com/AVAL22/ITEA-Framework}
+  url     = {https://github.com/Aval22/ITEA}
 }
 ```
 

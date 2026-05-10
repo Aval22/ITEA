@@ -34,7 +34,7 @@ Validación convergente externa frente al benchmark AIOE sobre 738 ocupaciones S
 
 ## ¿Por qué la versión 3.0? Evidencia de un proyecto de investigación vivo
 
-Este repositorio avanza de **v1.45 (octubre 2025)** a **v3.0 (abril 2026)**, archivando la versión previa como tag [`v1.45-legacy`](https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.45-legacy). La transición no es cosmética. Refleja una revisión metodológica mayor motivada por un caso práctico documentado — tres papers de investigación (la trilogía 8A/8B/8C) que pusieron el framework en uso empírico activo y, al hacerlo, expusieron tres limitaciones específicas de v2.1 (la línea metodológica que corría paralela a v1.45). Documentar esta evolución explícitamente forma parte de la preparación para someter el framework al [Journal of Open Source Software](https://joss.theoj.org/) (ventana objetivo: mediados de 2026), que valora la evidencia de uso en la comunidad y la evolución metodológica fundamentada.
+Este repositorio avanza de **v1.45 (octubre 2025)** a **v3.0 (abril 2026)**, archivando la versión previa como tag [`v1.45-legacy`](https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy). La transición no es cosmética. Refleja una revisión metodológica mayor motivada por un caso práctico documentado — tres papers de investigación (la trilogía 8A/8B/8C) que pusieron el framework en uso empírico activo y, al hacerlo, expusieron tres limitaciones específicas de v2.1 (la línea metodológica que corría paralela a v1.45). Documentar esta evolución explícitamente forma parte de la preparación para someter el framework al [Journal of Open Source Software](https://joss.theoj.org/) (ventana objetivo: mediados de 2026), que valora la evidencia de uso en la comunidad y la evolución metodológica fundamentada.
 
 ### La trilogía como caso práctico
 
@@ -110,7 +110,7 @@ df['ITEA_v30_check'] = itea_v3(df['EAC'], df['EIG'], df['EIA'])
   year      = {2026},
   version   = {3.0},
   doi       = {10.5281/zenodo.19578916},
-  url       = {https://github.com/AVAL22/ITEA-Framework}
+  url       = {https://github.com/Aval22/ITEA}
 }
 ```
 

@@ -193,11 +193,11 @@ This release marked the transition from "experimental" to "calibrated" framework
 
 ---
 
-[3.0]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v3.0
-[2.1]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v2.1
-[2.0]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v2.0
-[1.45]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.45-legacy
-[1.3]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.3
-[1.2]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.2
-[1.1]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.1
-[1.0]: https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.0
+[3.0]: https://github.com/Aval22/ITEA/releases/tag/v3.0
+[2.1]: https://github.com/Aval22/ITEA/releases/tag/v2.1
+[2.0]: https://github.com/Aval22/ITEA/releases/tag/v2.0
+[1.45]: https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy
+[1.3]: https://github.com/Aval22/ITEA/releases/tag/v1.3
+[1.2]: https://github.com/Aval22/ITEA/releases/tag/v1.2
+[1.1]: https://github.com/Aval22/ITEA/releases/tag/v1.1
+[1.0]: https://github.com/Aval22/ITEA/releases/tag/v1.0

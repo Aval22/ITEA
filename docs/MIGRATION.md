@@ -160,5 +160,5 @@ April 2026, use v3.0.
 
 ## Questions?
 
-Open an issue at https://github.com/AVAL22/ITEA-Framework/issues or contact
+Open an issue at https://github.com/Aval22/ITEA/issues or contact
 Alberto García-Lluis Valencia at alb.valencia@gmail.com.

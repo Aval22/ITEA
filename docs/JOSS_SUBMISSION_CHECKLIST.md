@@ -18,7 +18,7 @@ References:
 | # | Requirement | Status | Evidence in this repo |
 |---|-------------|:------:|------------------------|
 | 1.1 | Software is open source under an OSI-approved license | ✅ | `LICENSE` (MIT) |
-| 1.2 | Public, version-controlled repository | ⚠️ | URL declared in metadata: `https://github.com/AVAL22/ITEA-Framework`. **Confirm the GitHub repo is public and the contents match this folder before submitting.** |
+| 1.2 | Public, version-controlled repository | ⚠️ | URL declared in metadata: `https://github.com/Aval22/ITEA`. **Confirm the GitHub repo is public and the contents match this folder before submitting.** |
 | 1.3 | The submitting author is a substantial contributor | ✅ | Sole-author project (CITATION.cff, paper.md, ORCID 0009-0003-1438-1633) |
 | 1.4 | The software has an obvious research application | ✅ | `paper.md` §"Statement of need"; trilogy 8A/8B/8C cited as active use |
 | 1.5 | Substantial scholarly effort (≥ 3 person-months equivalent or non-trivial contribution) | ✅ | `CHANGELOG.md` documents 9 versions across March 2024 → April 2026 with three major methodological revisions in v3.0 |
@@ -94,7 +94,7 @@ In priority order — *only items 1–3 are blockers, the rest are reviewer-frie
 ## 8. Submission step (when items 1–3 are done)
 
 1. Visit <https://joss.theoj.org/papers/new>.
-2. Provide the GitHub URL (`https://github.com/AVAL22/ITEA-Framework`), the version tag (`v3.0`), and the path to the paper (`paper/paper.md`).
+2. Provide the GitHub URL (`https://github.com/Aval22/ITEA`), the version tag (`v3.0`), and the path to the paper (`paper/paper.md`).
 3. Editor-bot ("editorialbot") will validate the YAML, build `paper.pdf` from `paper.md`, run a citation check, and verify the license. Fix anything it flags before a human editor is assigned.
 4. After acceptance, JOSS asks for the **Zenodo archive DOI of the exact reviewed commit** — this is why minting the Zenodo deposit is a prerequisite, not an afterthought.
 

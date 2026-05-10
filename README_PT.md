@@ -33,7 +33,7 @@ Validação convergente externa contra o benchmark AIOE sobre 738 ocupações SO
 
 ## Por que a versão 3.0? Evidência de um projeto de pesquisa vivo
 
-Este repositório avança de **v1.45 (outubro 2025)** para **v3.0 (abril 2026)**, arquivando a versão anterior como tag [`v1.45-legacy`](https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.45-legacy). A transição não é cosmética. Reflete uma revisão metodológica maior motivada por um caso prático documentado — três artigos de pesquisa (a trilogia 8A/8B/8C) que colocaram o framework em uso empírico ativo e, ao fazê-lo, expuseram três limitações específicas da v2.1. Documentar essa evolução explicitamente faz parte da preparação para submissão ao [Journal of Open Source Software](https://joss.theoj.org/) (janela alvo: meados de 2026), que valoriza evidências de uso na comunidade e evolução metodológica fundamentada.
+Este repositório avança de **v1.45 (outubro 2025)** para **v3.0 (abril 2026)**, arquivando a versão anterior como tag [`v1.45-legacy`](https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy). A transição não é cosmética. Reflete uma revisão metodológica maior motivada por um caso prático documentado — três artigos de pesquisa (a trilogia 8A/8B/8C) que colocaram o framework em uso empírico ativo e, ao fazê-lo, expuseram três limitações específicas da v2.1. Documentar essa evolução explicitamente faz parte da preparação para submissão ao [Journal of Open Source Software](https://joss.theoj.org/) (janela alvo: meados de 2026), que valoriza evidências de uso na comunidade e evolução metodológica fundamentada.
 
 ### A trilogia como caso prático
 
@@ -94,7 +94,7 @@ df['ITEA_v30'] = itea_v3(df['EAC'], df['EIG'], df['EIA'])
   year    = {2026},
   version = {3.0},
   doi     = {10.5281/zenodo.19578916},
-  url     = {https://github.com/AVAL22/ITEA-Framework}
+  url     = {https://github.com/Aval22/ITEA}
 }
 ```
 

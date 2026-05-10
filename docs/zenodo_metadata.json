@@ -45,7 +45,7 @@
     "communities": [],
     "related_identifiers": [
       {
-        "identifier": "https://github.com/AVAL22/ITEA-Framework",
+        "identifier": "https://github.com/Aval22/ITEA",
         "relation": "isSupplementTo",
         "resource_type": "software",
         "scheme": "url"

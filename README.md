@@ -35,7 +35,7 @@ External convergent validation against the AIOE benchmark over 738 common SOC 6-
 
 ## Why version 3.0? Evidence of a living research project
 
-This repository advances from **v1.45 (October 2025)** to **v3.0 (April 2026)**, archiving the previous release as the [`v1.45-legacy`](https://github.com/AVAL22/ITEA-Framework/releases/tag/v1.45-legacy) tag. The transition is not cosmetic. It reflects a major methodological revision motivated by a documented case study — three research papers (the trilogy 8A/8B/8C) that put the framework into active empirical use and, in doing so, exposed three specific limitations of v2.1 (the methodological line that paralleled v1.45). Documenting this evolution explicitly is part of the framework's preparation for submission to the [Journal of Open Source Software](https://joss.theoj.org/) (target window: mid-2026), which values evidence of community use and principled software evolution.
+This repository advances from **v1.45 (October 2025)** to **v3.0 (April 2026)**, archiving the previous release as the [`v1.45-legacy`](https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy) tag. The transition is not cosmetic. It reflects a major methodological revision motivated by a documented case study — three research papers (the trilogy 8A/8B/8C) that put the framework into active empirical use and, in doing so, exposed three specific limitations of v2.1 (the methodological line that paralleled v1.45). Documenting this evolution explicitly is part of the framework's preparation for submission to the [Journal of Open Source Software](https://joss.theoj.org/) (target window: mid-2026), which values evidence of community use and principled software evolution.
 
 ### The trilogy as case study
 
@@ -215,7 +215,7 @@ The trilogy that motivated v3.0 (citable by name in any work using ITEA):
   year      = {2026},
   version   = {3.0},
   doi       = {10.5281/zenodo.19578916},
-  url       = {https://github.com/AVAL22/ITEA-Framework},
+  url       = {https://github.com/Aval22/ITEA},
   note      = {Consolidated Methodological Edition. Supersedes v2.0 and v2.1.}
 }
 ```

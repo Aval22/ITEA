@@ -37,13 +37,13 @@ Es la ruta que esperan los revisores de JOSS. Tiempo total: ~10 minutos.
 
 ### A.1 — Configuración única de la cuenta
 
-1. Inicia sesión en <https://zenodo.org/> usando tu cuenta de **GitHub** (la misma que es propietaria de `AVAL22/ITEA-Framework`). Esto crea automáticamente el enlace Zenodo↔GitHub.
+1. Inicia sesión en <https://zenodo.org/> usando tu cuenta de **GitHub** (la misma que es propietaria de `Aval22/ITEA`). Esto crea automáticamente el enlace Zenodo↔GitHub.
 2. Confirma tu ORCID en <https://zenodo.org/account/settings/profile/> — fíjalo a `0009-0003-1438-1633`. Hacerlo *ahora* significa que el ORCID quedará incrustado en la metadata de cada depósito futuro.
 
 ### A.2 — Activar el repositorio para archivado
 
 1. Visita <https://zenodo.org/account/settings/github/>.
-2. Localiza `AVAL22/ITEA-Framework` en la lista. (Si no aparece, pulsa "Sync" y recarga.)
+2. Localiza `Aval22/ITEA` en la lista. (Si no aparece, pulsa "Sync" y recarga.)
 3. Activa el interruptor a **ON**. Desde ese momento, cada nuevo *release* de GitHub (no un tag, un *release*) se replicará a Zenodo y recibirá un DOI.
 
 ### A.3 — Añadir el fichero de metadata Zenodo
@@ -66,7 +66,7 @@ git push
 2. Ve a **Releases → Draft a new release** en GitHub.
 3. Selecciona el tag `v3.0`, el título "ITEA Framework v3.0", y pega la entrada v3.0 del `CHANGELOG.md` como descripción.
 4. Pulsa **Publish release**.
-5. En ~60 segundos Zenodo crea el depósito. Recarga <https://zenodo.org/account/settings/github/> hasta que veas un badge verde con el nuevo DOI en la fila de `AVAL22/ITEA-Framework`. Pulsa el badge — enlaza al version DOI; el concept DOI está a un click en la barra lateral derecha del depósito ("Cite all versions").
+5. En ~60 segundos Zenodo crea el depósito. Recarga <https://zenodo.org/account/settings/github/> hasta que veas un badge verde con el nuevo DOI en la fila de `Aval22/ITEA`. Pulsa el badge — enlaza al version DOI; el concept DOI está a un click en la barra lateral derecha del depósito ("Cite all versions").
 
 ### A.5 — Retroalimentar los DOIs al repositorio
 
@@ -212,7 +212,7 @@ PY
 1. Actualiza `paper/paper.md` y `CITATION.cff` con el **concept DOI** y el **version DOI** de v3.0.
 2. Abre el formulario de envío de JOSS: <https://joss.theoj.org/papers/new>.
 3. Aporta:
-   - **Repository URL**: `https://github.com/AVAL22/ITEA-Framework`
+   - **Repository URL**: `https://github.com/Aval22/ITEA`
    - **Version**: `v3.0`
    - **Software DOI (concept)**: `<CONCEPT_DOI>`
    - **Software archive DOI (version)**: `<V3_DOI>`

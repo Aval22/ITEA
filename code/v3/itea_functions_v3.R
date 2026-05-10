@@ -4,7 +4,7 @@
 # Author: Alberto García-Lluis Valencia
 # License: MIT
 # Version: 3.0 (April 2026)
-# Repository: https://github.com/AVAL22/ITEA-Framework
+# Repository: https://github.com/Aval22/ITEA
 # DOI: 10.5281/zenodo.19578916
 #
 # This implementation reproduces the values stored in

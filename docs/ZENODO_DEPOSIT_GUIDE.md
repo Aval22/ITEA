@@ -38,13 +38,13 @@ This is the path JOSS reviewers expect. Total time: ~10 minutes.
 
 ### A.1 — One-time account setup
 
-1. Sign in to <https://zenodo.org/> using your **GitHub** account (the same account that owns `AVAL22/ITEA-Framework`). This creates the Zenodo↔GitHub link automatically.
+1. Sign in to <https://zenodo.org/> using your **GitHub** account (the same account that owns `Aval22/ITEA`). This creates the Zenodo↔GitHub link automatically.
 2. Confirm your ORCID at <https://zenodo.org/account/settings/profile/> — set it to `0009-0003-1438-1633`. Doing this *now* means the ORCID will be embedded in every future deposit metadata block.
 
 ### A.2 — Enable the repository for archiving
 
 1. Visit <https://zenodo.org/account/settings/github/>.
-2. Find `AVAL22/ITEA-Framework` in the list. (If absent, click "Sync" and reload.)
+2. Find `Aval22/ITEA` in the list. (If absent, click "Sync" and reload.)
 3. Flip the toggle to **ON**. From this moment, every new GitHub *release* (not just a tag — a *release*) will be mirrored to Zenodo and assigned a DOI.
 
 ### A.3 — Add the Zenodo metadata file
@@ -67,7 +67,7 @@ git push
 2. Go to **Releases → Draft a new release** in GitHub.
 3. Choose the tag `v3.0`, title "ITEA Framework v3.0", and paste the v3.0 entry from `CHANGELOG.md` as the description.
 4. Click **Publish release**.
-5. Within ~60 seconds Zenodo creates the deposit. Refresh <https://zenodo.org/account/settings/github/> until you see a green badge with the new DOI on the row for `AVAL22/ITEA-Framework`. Click the badge — it links to the version DOI; the concept DOI is one click away on the deposit's right-hand sidebar ("Cite all versions").
+5. Within ~60 seconds Zenodo creates the deposit. Refresh <https://zenodo.org/account/settings/github/> until you see a green badge with the new DOI on the row for `Aval22/ITEA`. Click the badge — it links to the version DOI; the concept DOI is one click away on the deposit's right-hand sidebar ("Cite all versions").
 
 ### A.5 — Backfill the DOIs into the repo
 
@@ -213,7 +213,7 @@ PY
 1. Update `paper/paper.md` and `CITATION.cff` with the **concept DOI** and the **v3.0 version DOI**.
 2. Open the JOSS submission form: <https://joss.theoj.org/papers/new>.
 3. Provide:
-   - **Repository URL**: `https://github.com/AVAL22/ITEA-Framework`
+   - **Repository URL**: `https://github.com/Aval22/ITEA`
    - **Version**: `v3.0`
    - **Software DOI (concept)**: `<CONCEPT_DOI>`
    - **Software archive DOI (version)**: `<V3_DOI>`

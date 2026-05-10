@@ -5,7 +5,7 @@ ITEA Framework v3.0 — Python reference implementation
 Author:   Alberto García-Lluis Valencia
 License:  MIT
 Version:  3.0 (April 2026)
-Repo:     https://github.com/AVAL22/ITEA-Framework
+Repo:     https://github.com/Aval22/ITEA
 DOI:      10.5281/zenodo.19578916
 
 This implementation reproduces the values stored in
