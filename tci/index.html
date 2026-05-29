@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCI · Cuadro de mando ITEA</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="itea_data.js"></script>
+<style>
+  :root{
+    --ink:#16202e; --muted:#5d6b7d; --line:#dfe4ec; --bg:#f4f6f9;
+    --panel:#ffffff; --accent:#1f3a5c; --accent-soft:#e9eef5; --dark:#1b2a3e;
+    --good:#2e7d6b; --warn:#b5703a; --bad:#9c3a4e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px;}
+  header.site{background:var(--dark);color:#eef2f8;}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;}
+  .brand b{font-size:18px;letter-spacing:.02em;}
+  .brand span{display:block;font-size:12px;color:#9fb1c7;}
+  .lang button{background:none;border:1px solid #3a526e;color:#cdd9e6;padding:4px 10px;
+    cursor:pointer;border-radius:4px;font-size:13px;margin-left:4px;}
+  .lang button.active{background:#fff;color:var(--accent);border-color:#fff;}
+  section{padding:26px 0;border-bottom:1px solid var(--line);}
+  h2{font-size:20px;margin:0 0 4px;color:var(--accent);}
+  .hint{font-size:13px;color:var(--muted);margin:0 0 16px;}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;}
+  .kpi .n{font-size:26px;font-weight:700;color:var(--accent);line-height:1.1;}
+  .kpi .l{font-size:12px;color:var(--muted);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;}
+  .card h3{margin:0 0 10px;font-size:15px;}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}
+  select,input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);
+    border-radius:6px;background:#fff;color:var(--ink);}
+  input[type=range]{width:100%;accent-color:var(--accent);}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;user-select:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .sim{display:grid;grid-template-columns:340px 1fr;gap:20px;}
+  .sliders label{display:block;font-size:13px;margin:12px 0 2px;color:var(--ink);}
+  .sliders .val{float:right;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;}
+  .pillrow{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:8px;}
+  .out{background:var(--accent-soft);border-radius:8px;padding:12px 14px;}
+  .out .big{font-size:24px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;}
+  .out .lbl{font-size:12px;color:var(--muted);}
+  .didactic{background:#fbfcfe;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:6px;padding:14px 16px;margin-top:16px;font-size:14px;line-height:1.6;}
+  .didactic b{color:var(--accent);}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .note{font-size:12px;color:var(--muted);margin-top:8px;}
+  .wip{background:#fff5e8;border:1px solid #e9c08a;border-left:4px solid var(--warn);
+    color:#7a4d1d;border-radius:6px;padding:10px 14px;margin:18px 0 4px;font-size:13px;}
+  footer{padding:24px 0 50px;color:var(--muted);font-size:12px;}
+  @media(max-width:860px){.grid2,.sim,.twocol{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap topbar">
+    <div class="brand"><b>TCI Sandbox</b><span data-i18n="subtitle">Simulador del valor de la transferencia de conocimiento · base ITEA v3.0</span></div>
+    <div class="lang">
+      <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="wip" data-i18n="wip">⚠️ Prototipo en desarrollo (work in progress). Modelo TCI en fase de experimentación: los valores por ocupación son ilustrativos y aún no son cifras finales.</div>
+
+  <!-- KPIs -->
+  <section>
+    <h2 data-i18n="overviewT">Panorama de la base ITEA</h2>
+    <p class="hint" data-i18n="overviewH">Cada ocupación SOC trae sus indicadores ITEA reales: exposición (ITEA/OAEI), expropiación algorítmica (AEI), salario y nivel de cualificación (Job Zone).</p>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <!-- Exploration -->
+  <section>
+    <h2 data-i18n="exploreT">Exploración visual</h2>
+    <p class="hint" data-i18n="exploreH">Filtra por grupo ocupacional y observa cómo se relacionan exposición y expropiación. Cada punto es una ocupación; el tamaño refleja el salario mediano.</p>
+    <div class="controls">
+      <select id="majorFilter"></select>
+      <select id="zoneFilter"></select>
+      <input type="search" id="searchBox" placeholder="Buscar ocupación…" data-i18n-ph="searchPh">
+    </div>
+    <div class="grid2">
+      <div class="card"><h3 data-i18n="scatterT">Exposición ITEA v3.0 vs. expropiación AEI</h3><canvas id="scatter" height="240"></canvas></div>
+      <div class="card"><h3 data-i18n="barT">15 ocupaciones con mayor OAEI</h3><canvas id="bar" height="240"></canvas></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3 data-i18n="tableT">Ocupaciones (ordena pulsando una columna)</h3>
+      <div style="max-height:340px;overflow:auto;">
+        <table id="tbl"><thead></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulation -->
+  <section>
+    <h2 data-i18n="simT">Simulador TCI · valor y Zona de Captura</h2>
+    <p class="hint" data-i18n="simH">Elige una ocupación (fija salario, K y AEI reales) y mueve los parámetros del modelo. El resultado se recalcula y se interpreta al instante.</p>
+    <div class="sim">
+      <div class="card sliders">
+        <label data-i18n="occL">Ocupación</label>
+        <select id="occSelect" style="width:100%"></select>
+
+        <label><span data-i18n="dL">Densidad de capital tácito D</span><span class="val" id="vD"></span></label>
+        <input type="range" id="sD" min="0.06" max="1" step="0.01">
+
+        <label><span data-i18n="famL">λ familia (codificabilidad)</span><span class="val" id="vFam"></span></label>
+        <input type="range" id="sFam" min="0.04" max="0.5" step="0.01">
+        <label><span data-i18n="techL">λ tecnológico</span><span class="val" id="vTech"></span></label>
+        <input type="range" id="sTech" min="0.04" max="0.65" step="0.01">
+        <label><span data-i18n="regL">λ regulatorio</span><span class="val" id="vReg"></span></label>
+        <input type="range" id="sReg" min="0" max="0.95" step="0.01">
+
+        <label><span data-i18n="rL">Replicabilidad R (GenAI + agéntico)</span><span class="val" id="vR"></span></label>
+        <input type="range" id="sR" min="1" max="2.2" step="0.05">
+        <label><span data-i18n="mfL">Moderador de firma M_F</span><span class="val" id="vMF"></span></label>
+        <input type="range" id="sMF" min="0.8" max="1.6" step="0.01">
+        <label><span data-i18n="rateL">Tasa de descuento r</span><span class="val" id="vRate"></span></label>
+        <input type="range" id="sRate" min="0.03" max="0.15" step="0.005">
+        <p class="note" id="lamEffNote"></p>
+      </div>
+
+      <div>
+        <div class="pillrow">
+          <div class="out"><div class="big" id="oFlux"></div><div class="lbl" data-i18n="oFluxL">TCI flujo anual (ilustrativo)</div></div>
+          <div class="out"><div class="big" id="oHL"></div><div class="lbl" data-i18n="oHLL">Vida media del conocimiento</div></div>
+          <div class="out"><div class="big" id="oReal"></div><div class="lbl" data-i18n="oRealL">NPV real (depreciación efectiva)</div></div>
+          <div class="out"><div class="big" id="oIas"></div><div class="lbl" data-i18n="oIasL">NPV contable IAS 38</div></div>
+          <div class="out"><div class="big" id="oZC"></div><div class="lbl" data-i18n="oZCL">Zona de Captura</div></div>
+          <div class="out"><div class="big" id="oExp"></div><div class="lbl" data-i18n="oExpL">Fracción expropiada (AEI/200·ZC)</div></div>
+        </div>
+        <div class="card"><h3 data-i18n="curveT">Valor presente del conocimiento a lo largo del tiempo</h3><canvas id="decay" height="200"></canvas></div>
+        <div class="didactic" id="didactic"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span data-i18n="foot">TCI Sandbox · modelo de A. García-Lluis Valencia (URJC) sobre base ITEA v3.0. El TCI por ocupación es un proxy ilustrativo con configuración por defecto; los anclajes reales son salario, K(Job Zone) y AEI.</span>
+    <p style="margin-top:12px;font-size:11px;line-height:1.5;color:#7d8794;">
+      This dashboard includes information from the
+      <a href="https://www.onetcenter.org/database.html" style="color:#52708f;">O*NET 30.2 Database</a>
+      by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).
+      Used under the <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#52708f;">CC BY 4.0</a> license.
+      O*NET&reg; is a trademark of USDOL/ETA. Alberto García-Lluis Valencia has modified all or some of
+      this information (ITEA indicators and the illustrative TCI proxy).
+      USDOL/ETA has not approved, endorsed, or tested these modifications.
+    </p>
+  </footer>
+</div>
+
+<script>
+// ---------- i18n ----------
+const T = {
+  es:{subtitle:"Simulador del valor de la transferencia de conocimiento · base ITEA v3.0",
+    wip:"⚠️ Prototipo en desarrollo (work in progress). Modelo TCI en fase de experimentación: los valores por ocupación son ilustrativos y aún no son cifras finales.",
+    overviewT:"Panorama de la base ITEA",
+    overviewH:"Cada ocupación SOC trae sus indicadores ITEA reales: exposición (ITEA/OAEI), expropiación algorítmica (AEI), salario y nivel de cualificación (Job Zone).",
+    exploreT:"Exploración visual",
+    exploreH:"Filtra por grupo ocupacional y observa cómo se relacionan exposición y expropiación. Cada punto es una ocupación; el tamaño refleja el salario mediano.",
+    scatterT:"Exposición ITEA v3.0 vs. expropiación AEI", barT:"15 ocupaciones con mayor OAEI",
+    tableT:"Ocupaciones (ordena pulsando una columna)", searchPh:"Buscar ocupación…",
+    simT:"Simulador TCI · valor y Zona de Captura",
+    simH:"Elige una ocupación (fija salario, K y AEI reales) y mueve los parámetros del modelo. El resultado se recalcula y se interpreta al instante.",
+    occL:"Ocupación", dL:"Densidad de capital tácito D", famL:"λ familia (codificabilidad)",
+    techL:"λ tecnológico", regL:"λ regulatorio", rL:"Replicabilidad R (GenAI + agéntico)",
+    mfL:"Moderador de firma M_F", rateL:"Tasa de descuento r",
+    oFluxL:"TCI flujo anual (ilustrativo)", oHLL:"Vida media del conocimiento",
+    oRealL:"NPV real (depreciación efectiva)", oIasL:"NPV contable IAS 38",
+    oZCL:"Zona de Captura", oExpL:"Fracción expropiada (AEI/200·ZC)",
+    curveT:"Valor presente del conocimiento a lo largo del tiempo",
+    foot:"TCI Sandbox · modelo de A. García-Lluis Valencia (URJC) sobre base ITEA v3.0. El TCI por ocupación es un proxy ilustrativo con configuración por defecto; los anclajes reales son salario, K(Job Zone) y AEI. Datos: O*NET 30.2.",
+    allMajors:"Todos los grupos", allZones:"Todas las Job Zones", zone:"Job Zone",
+    cols:{title:"Ocupación",majorLabel:"Grupo",jobZone:"JZ",aei:"AEI",itea:"ITEA",oaei:"OAEI",wage:"Salario",zonaCaptura:"Zona Captura"},
+    lamEff:n=>`λ efectivo = max(familia, tech, regulatorio) = <b>${n.toFixed(2)}</b> · canal que manda: `,
+    chFam:"familia", chTech:"tecnológico", chReg:"regulatorio",
+    decayReal:"Depreciación real", decayIas:"Regla contable IAS 38"},
+  en:{subtitle:"Knowledge-transfer value simulator · ITEA v3.0 base",
+    wip:"⚠️ Work in progress. The TCI model is in an experimentation phase: per-occupation values are illustrative and not final figures yet.",
+    overviewT:"ITEA base at a glance",
+    overviewH:"Each SOC occupation carries its real ITEA indicators: exposure (ITEA/OAEI), algorithmic expropriation (AEI), wage and qualification level (Job Zone).",
+    exploreT:"Visual exploration",
+    exploreH:"Filter by occupational group and see how exposure and expropriation relate. Each dot is an occupation; size reflects median wage.",
+    scatterT:"ITEA v3.0 exposure vs. AEI expropriation", barT:"Top 15 occupations by OAEI",
+    tableT:"Occupations (click a column to sort)", searchPh:"Search occupation…",
+    simT:"TCI simulator · value and Capture Zone",
+    simH:"Pick an occupation (fixes its real wage, K and AEI) and move the model parameters. Results recompute and are interpreted instantly.",
+    occL:"Occupation", dL:"Tacit-capital density D", famL:"λ family (codifiability)",
+    techL:"λ technology", regL:"λ regulatory", rL:"Replicability R (GenAI + agentic)",
+    mfL:"Firm moderator M_F", rateL:"Discount rate r",
+    oFluxL:"Annual TCI flux (illustrative)", oHLL:"Knowledge half-life",
+    oRealL:"NPV real (effective depreciation)", oIasL:"NPV accounting IAS 38",
+    oZCL:"Capture Zone", oExpL:"Expropriated fraction (AEI/200·ZC)",
+    curveT:"Present value of knowledge over time",
+    foot:"TCI Sandbox · model by A. García-Lluis Valencia (URJC) on the ITEA v3.0 base. The per-occupation TCI is an illustrative default-config proxy; the real anchors are wage, K(Job Zone) and AEI. Data: O*NET 30.2.",
+    allMajors:"All groups", allZones:"All Job Zones", zone:"Job Zone",
+    cols:{title:"Occupation",majorLabel:"Group",jobZone:"JZ",aei:"AEI",itea:"ITEA",oaei:"OAEI",wage:"Wage",zonaCaptura:"Capture Zone"},
+    lamEff:n=>`Effective λ = max(family, tech, regulatory) = <b>${n.toFixed(2)}</b> · binding channel: `,
+    chFam:"family", chTech:"technology", chReg:"regulatory",
+    decayReal:"Real depreciation", decayIas:"IAS 38 accounting rule"}
+};
+let lang="es";
+
+// ---------- model (mirror of tci/model.py) ----------
+const IAS38_LAM=0.10, IAS38_T=10, HL_MULT=2.5;
+const phi=(r,l,T)=>(1-Math.exp(-(r+l)*T))/(r+l);
+const halfLife=l=>Math.log(2)/l;
+const horizon=l=>HL_MULT*halfLife(l);
+const npv=(flux,mf,r,l,T)=>flux*mf*phi(r,l,T);
+function captureZone(flux,mf,r,lReal,Treal,aei){
+  const nr=npv(flux,mf,r,lReal,Treal), ni=npv(flux,mf,r,IAS38_LAM,IAS38_T);
+  const zc=ni-nr; return {nr,ni,zc,frac:(aei/200)*zc};
+}
+
+// ---------- data ----------
+const DATA = window.ITEA_DATA || [];
+const fmt0=n=>n==null?"–":n.toLocaleString(lang==="es"?"es-ES":"en-US",{maximumFractionDigits:0});
+const money=n=>n==null?"–":"$"+fmt0(n);
+const PALETTE=["#1f3a5c","#2e7d6b","#b5703a","#9c3a4e","#52708f","#6a8d3a","#8a5a8f","#c08a2e","#3a6b7d","#7d5a3a"];
+function majorColor(m){const keys=[...new Set(DATA.map(d=>d.major))].sort();return PALETTE[keys.indexOf(m)%PALETTE.length];}
+
+let scatterChart, barChart, decayChart;
+
+// ---------- KPIs ----------
+function renderKpis(){
+  const n=DATA.length;
+  const medWage=DATA.map(d=>d.wage).sort((a,b)=>a-b)[Math.floor(n/2)];
+  const meanOAEI=DATA.reduce((s,d)=>s+d.oaei,0)/n;
+  const meanAEI=DATA.reduce((s,d)=>s+(d.aei||0),0)/n;
+  const totalZC=DATA.reduce((s,d)=>s+d.zonaCaptura,0);
+  const k=[[fmt0(n),lang==="es"?"ocupaciones SOC":"SOC occupations"],
+    [money(medWage),lang==="es"?"salario mediano":"median wage"],
+    [meanOAEI.toFixed(1),lang==="es"?"OAEI medio":"mean OAEI"],
+    [meanAEI.toFixed(0),lang==="es"?"AEI medio":"mean AEI"],
+    [money(Math.round(totalZC/n)),lang==="es"?"Zona Captura media*":"mean Capture Zone*"]];
+  document.getElementById("kpis").innerHTML=k.map(x=>`<div class="kpi"><div class="n">${x[0]}</div><div class="l">${x[1]}</div></div>`).join("");
+}
+
+// ---------- filters ----------
+function filtered(){
+  const mf=document.getElementById("majorFilter").value;
+  const zf=document.getElementById("zoneFilter").value;
+  const q=document.getElementById("searchBox").value.toLowerCase();
+  return DATA.filter(d=>(mf==="*"||d.major===mf)&&(zf==="*"||d.jobZone==+zf)
+    &&(!q||d.title.toLowerCase().includes(q)||d.soc.includes(q)));
+}
+
+// ---------- charts ----------
+function drawScatter(rows){
+  const byMajor={};
+  rows.forEach(d=>{(byMajor[d.major]=byMajor[d.major]||[]).push(d);});
+  const ds=Object.keys(byMajor).sort().map(m=>({
+    label:byMajor[m][0].majorLabel,
+    data:byMajor[m].map(d=>({x:d.itea,y:d.aei,r:Math.max(3,Math.sqrt(d.wage)/45),t:d.title})),
+    backgroundColor:majorColor(m)+"cc"}));
+  const cfg={type:"bubble",data:{datasets:ds},options:{plugins:{legend:{display:false},
+    tooltip:{callbacks:{label:c=>`${c.raw.t}: ITEA ${c.raw.x}, AEI ${c.raw.y}`}}},
+    scales:{x:{title:{display:true,text:"ITEA v3.0"}},y:{title:{display:true,text:"AEI"}}}}};
+  if(scatterChart)scatterChart.destroy(); scatterChart=new Chart(document.getElementById("scatter"),cfg);
+}
+function drawBar(rows){
+  const top=[...rows].sort((a,b)=>b.oaei-a.oaei).slice(0,15).reverse();
+  const cfg={type:"bar",data:{labels:top.map(d=>d.title.slice(0,28)),
+    datasets:[{data:top.map(d=>d.oaei),backgroundColor:top.map(d=>majorColor(d.major)+"cc")}]},
+    options:{indexAxis:"y",plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:"OAEI v3.0"}}}}};
+  if(barChart)barChart.destroy(); barChart=new Chart(document.getElementById("bar"),cfg);
+}
+
+// ---------- table ----------
+let sortKey="oaei", sortDir=-1;
+const TCOLS=["title","majorLabel","jobZone","aei","itea","oaei","wage","zonaCaptura"];
+function drawTable(rows){
+  const c=T[lang].cols;
+  document.querySelector("#tbl thead").innerHTML="<tr>"+TCOLS.map(k=>
+    `<th class="${["jobZone","aei","itea","oaei","wage","zonaCaptura"].includes(k)?"num":""}" onclick="sortBy('${k}')">${c[k]}${sortKey===k?(sortDir<0?" ▾":" ▴"):""}</th>`).join("")+"</tr>";
+  const sorted=[...rows].sort((a,b)=>{const x=a[sortKey],y=b[sortKey];
+    return (typeof x==="number"?x-y:String(x).localeCompare(String(y)))*sortDir;}).slice(0,120);
+  document.querySelector("#tbl tbody").innerHTML=sorted.map(d=>`<tr>
+    <td>${d.title}</td><td>${d.majorLabel}</td><td class="num">${d.jobZone}</td>
+    <td class="num">${d.aei??"–"}</td><td class="num">${d.itea}</td><td class="num">${d.oaei}</td>
+    <td class="num">${money(d.wage)}</td><td class="num">${money(d.zonaCaptura)}</td></tr>`).join("");
+}
+function sortBy(k){if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=-1;}refresh();}
+
+function refresh(){const rows=filtered();drawScatter(rows);drawBar(rows);drawTable(rows);}
+
+// ---------- simulation ----------
+function curOcc(){return DATA.find(d=>d.soc===document.getElementById("occSelect").value)||DATA[0];}
+function syncVals(){
+  document.getElementById("vD").textContent=(+sD.value).toFixed(2);
+  document.getElementById("vFam").textContent=(+sFam.value).toFixed(2);
+  document.getElementById("vTech").textContent=(+sTech.value).toFixed(2);
+  document.getElementById("vReg").textContent=(+sReg.value).toFixed(2);
+  document.getElementById("vR").textContent=(+sR.value).toFixed(2);
+  document.getElementById("vMF").textContent=(+sMF.value).toFixed(2);
+  document.getElementById("vRate").textContent=((+sRate.value)*100).toFixed(1)+"%";
+}
+function simulate(){
+  syncVals();
+  const o=curOcc();
+  const D=+sD.value, R=+sR.value, mf=+sMF.value, r=+sRate.value;
+  const lamEff=Math.max(+sFam.value,+sTech.value,+sReg.value);
+  const which=lamEff===+sReg.value?T[lang].chReg:(lamEff===+sTech.value?T[lang].chTech:T[lang].chFam);
+  const flux=o.wage*D*lamEff*R*o.K;
+  const T2=horizon(lamEff);
+  const cz=captureZone(flux,mf,r,lamEff,T2,o.aei||0);
+  oFlux.textContent=money(Math.round(flux));
+  oHL.textContent=halfLife(lamEff).toFixed(1)+(lang==="es"?" años":" yrs");
+  oReal.textContent=money(Math.round(cz.nr));
+  oIas.textContent=money(Math.round(cz.ni));
+  oZC.textContent=money(Math.round(cz.zc));
+  oExp.textContent=money(Math.round(cz.frac));
+  document.getElementById("lamEffNote").innerHTML=T[lang].lamEff(lamEff)+"<b>"+which+"</b>";
+  drawDecay(flux,mf,r,lamEff,T2);
+  didactic(o,lamEff,cz,T2);
+}
+function drawDecay(flux,mf,r,lamEff,T2){
+  const yrs=[...Array(16).keys()];
+  const real=yrs.map(t=>flux*mf*Math.exp(-(r+lamEff)*t));
+  const ias=yrs.map(t=>t<=IAS38_T?flux*mf*Math.exp(-(r+IAS38_LAM)*t):null);
+  const cfg={type:"line",data:{labels:yrs,datasets:[
+    {label:T[lang].decayReal,data:real,borderColor:"#9c3a4e",backgroundColor:"#9c3a4e22",fill:true,tension:.25},
+    {label:T[lang].decayIas,data:ias,borderColor:"#1f3a5c",borderDash:[5,4],fill:false,tension:.25}]},
+    options:{plugins:{legend:{position:"bottom"}},scales:{x:{title:{display:true,text:lang==="es"?"años":"years"}},
+      y:{title:{display:true,text:lang==="es"?"valor anual descontado":"discounted annual value"}}}}};
+  if(decayChart)decayChart.destroy(); decayChart=new Chart(document.getElementById("decay"),cfg);
+}
+function didactic(o,lamEff,cz,T2){
+  const hl=halfLife(lamEff).toFixed(1);
+  const pct=cz.ni>0?Math.round(cz.zc/cz.ni*100):0;
+  let txt;
+  if(lang==="es"){
+    txt=`<b>${o.title}</b> (salario mediano ${money(o.wage)}, Job Zone ${o.jobZone}, AEI ${o.aei}). `+
+    `Con un λ efectivo de <b>${lamEff.toFixed(2)}</b>, el conocimiento de esta ocupación pierde la mitad de su valor cada <b>${hl} años</b>. `+
+    `La contabilidad (IAS 38) lo amortiza como si durase 10 años, reconociendo <b>${money(Math.round(cz.ni))}</b>; pero la depreciación real solo sostiene <b>${money(Math.round(cz.nr))}</b>. `+
+    `Esa diferencia —la <b>Zona de Captura, ${money(Math.round(cz.zc))}</b> (${pct}% del valor contable)— es capital de conocimiento que la empresa retiene sin reflejarlo ni en sus cuentas ni en la compensación del trabajador. `+
+    `Ponderada por la expropiación algorítmica de la ocupación (AEI ${o.aei}), unos <b>${money(Math.round(cz.frac))}</b> serían monetariamente expropiables y susceptibles de compensación residual (escala ArbEG / Bayh-Dole).`;
+    if(lamEff>=0.4)txt+=` <i>Nota: con λ tan alto (frontera tecnológica o regulatoria), la vida útil real es muy corta y la brecha contable se dispara.</i>`;
+  }else{
+    txt=`<b>${o.title}</b> (median wage ${money(o.wage)}, Job Zone ${o.jobZone}, AEI ${o.aei}). `+
+    `With an effective λ of <b>${lamEff.toFixed(2)}</b>, this occupation's knowledge loses half its value every <b>${hl} years</b>. `+
+    `Accounting (IAS 38) amortises it as if it lasted 10 years, recognising <b>${money(Math.round(cz.ni))}</b>; but real depreciation only sustains <b>${money(Math.round(cz.nr))}</b>. `+
+    `That gap —the <b>Capture Zone, ${money(Math.round(cz.zc))}</b> (${pct}% of book value)— is knowledge capital the firm retains without reflecting it in its accounts or in worker compensation. `+
+    `Weighted by the occupation's algorithmic expropriation (AEI ${o.aei}), about <b>${money(Math.round(cz.frac))}</b> would be monetarily expropriable and eligible for residual compensation (ArbEG / Bayh-Dole scale).`;
+    if(lamEff>=0.4)txt+=` <i>Note: at such a high λ (technological or regulatory frontier), real useful life is very short and the accounting gap balloons.</i>`;
+  }
+  document.getElementById("didactic").innerHTML=txt;
+}
+
+// ---------- init ----------
+function applyI18n(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(T[lang][k])el.innerHTML=T[lang][k];});
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=T[lang][el.getAttribute("data-i18n-ph")];});
+}
+function setLang(l){lang=l;
+  document.getElementById("btn-es").classList.toggle("active",l==="es");
+  document.getElementById("btn-en").classList.toggle("active",l==="en");
+  applyI18n();renderKpis();buildFilters();refresh();simulate();}
+function buildFilters(){
+  const majors=[...new Set(DATA.map(d=>d.major))].sort();
+  const mfSel=document.getElementById("majorFilter");
+  const curM=mfSel.value||"*";
+  mfSel.innerHTML=`<option value="*">${T[lang].allMajors}</option>`+majors.map(m=>{
+    const lbl=DATA.find(d=>d.major===m).majorLabel;return `<option value="${m}">${m} · ${lbl}</option>`;}).join("");
+  mfSel.value=curM;
+  const zSel=document.getElementById("zoneFilter");const curZ=zSel.value||"*";
+  zSel.innerHTML=`<option value="*">${T[lang].allZones}</option>`+[1,2,3,4,5].map(z=>`<option value="${z}">${T[lang].zone} ${z}</option>`).join("");
+  zSel.value=curZ;
+}
+function init(){
+  if(!DATA.length){document.body.insertAdjacentHTML("beforeend","<p style='padding:20px;color:#9c3a4e'>No data — run scripts/compute_soc.py first.</p>");return;}
+  // occupation select sorted by title
+  const oSel=document.getElementById("occSelect");
+  oSel.innerHTML=[...DATA].sort((a,b)=>a.title.localeCompare(b.title))
+    .map(d=>`<option value="${d.soc}">${d.title} (${d.soc})</option>`).join("");
+  const dft=DATA.find(d=>d.soc==="15-2051.00")||DATA[0]; oSel.value=dft.soc;
+  // slider defaults from data file
+  const D=window.ITEA_DEFAULTS||{D:.5,lam:.2,R:1.6,m_firm:1.2,r:.08};
+  sD.value=D.D; sFam.value=0.17; sTech.value=0.15; sReg.value=0.30; sR.value=D.R; sMF.value=D.m_firm; sRate.value=D.r;
+  ["majorFilter","zoneFilter"].forEach(id=>document.getElementById(id).addEventListener("change",refresh));
+  document.getElementById("searchBox").addEventListener("input",refresh);
+  ["occSelect","sD","sFam","sTech","sReg","sR","sMF","sRate"].forEach(id=>{
+    document.getElementById(id).addEventListener("input",simulate);});
+  applyI18n();renderKpis();buildFilters();refresh();simulate();
+}
+init();
+</script>
+</body>
+</html>

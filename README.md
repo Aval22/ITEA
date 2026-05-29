@@ -197,7 +197,7 @@ The trilogy that motivated v3.0 (citable by name in any work using ITEA):
 
 ## Data sources
 
-- **O\*NET 30.2** (February 2026): 1,016 occupations, 47,810 task statements. U.S. Department of Labor. Public domain.
+- **O\*NET 30.2** (February 2026): 1,016 occupations, 47,810 task statements. U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license; O\*NET® is a trademark of USDOL/ETA. See full attribution below.
 - **BLS OEWS** (May 2024): Occupational wage data by percentile, used for the criterion validity test r(OAEI, Wage).
 - **AIOE** (Felten, Raj & Seamans, 2021): External convergent benchmark over 769 common SOC 6-digit occupations.
 - **Eurostat ESJS2** (referenced for future European replication, §11 of methodology).
@@ -230,7 +230,11 @@ Released under the [MIT License](LICENSE).
 
 - **Academic use**: Free with citation.
 - **Commercial use**: Contact the author.
-- **Data**: O\*NET data follows U.S. DOL public domain terms; BLS OES public domain; AIOE used under Felten et al. 2021 terms.
+- **Data**: O\*NET data is used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license (attribution below, **not** public domain); BLS OEWS public domain; AIOE used under Felten et al. 2021 terms.
+
+### O\*NET attribution
+
+This product includes information from the [O\*NET 30.2 Database](https://www.onetcenter.org/database.html) by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. O\*NET® is a trademark of USDOL/ETA. Alberto García-Lluis Valencia has modified all or some of this information (the ITEA indicators are derived, not original O\*NET fields). USDOL/ETA has not approved, endorsed, or tested these modifications.
 
 ---
 

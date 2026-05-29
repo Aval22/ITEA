@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEA Framework — Occupational Exposure to Algorithmic Expropriation</title>
+<meta name="description" content="ITEA Framework v3.0 — a multidimensional system for measuring occupational exposure to algorithmic expropriation under the Agentic AI regime. 10 indicators, 1,016 occupations, O*NET 30.2.">
+<meta name="author" content="Alberto García-Lluis Valencia">
+<!-- Open Graph / social -->
+<meta property="og:title" content="ITEA Framework — Occupational Exposure to Algorithmic Expropriation">
+<meta property="og:description" content="A multidimensional framework measuring occupational exposure to algorithmic expropriation under the Agentic AI regime. 10 indicators · 1,016 occupations · O*NET 30.2.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aval22.github.io/ITEA/">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --muted:#5c5c5c;
+    --line:#e2e0db;
+    --bg:#fbfaf7;
+    --panel:#ffffff;
+    --accent:#1f3a5c;
+    --accent-soft:#e9eef5;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.6;
+    font-size:18px;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  header.site{border-bottom:1px solid var(--line);background:var(--panel);}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+  .brand{font-weight:bold;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .lang{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:13px;}
+  .lang button{
+    background:none;border:1px solid var(--line);color:var(--muted);
+    padding:4px 10px;cursor:pointer;border-radius:3px;font-size:13px;margin-left:4px;
+  }
+  .lang button.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .hero{padding:56px 0 40px;border-bottom:1px solid var(--line);background:var(--panel);}
+  h1{font-size:34px;line-height:1.2;margin:0 0 6px;}
+  .sub{font-size:15px;color:var(--muted);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:.02em;margin-bottom:18px;}
+  .lede{font-size:20px;color:var(--ink);margin:0 0 26px;}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .badge{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:20px;letter-spacing:.02em;}
+  .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .cta a{
+    text-decoration:none;font-size:15px;padding:10px 18px;border-radius:4px;
+  }
+  .cta a.primary{background:var(--accent);color:#fff;}
+  .cta a.ghost{border:1px solid var(--line);color:var(--ink);}
+  section{padding:38px 0;border-bottom:1px solid var(--line);}
+  h2{font-size:24px;margin:0 0 14px;}
+  h3{font-size:18px;margin:22px 0 6px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  p{margin:0 0 14px;}
+  a{color:var(--accent);}
+  .stats{display:flex;flex-wrap:wrap;gap:28px;margin:8px 0 4px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .stat .num{font-size:30px;font-weight:bold;color:var(--accent);display:block;line-height:1.1;}
+  .stat .lbl{font-size:13px;color:var(--muted);}
+  table{width:100%;border-collapse:collapse;font-size:14px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:8px 0 4px;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+  td code{background:var(--accent-soft);padding:1px 5px;border-radius:3px;font-size:13px;}
+  .papers li{margin-bottom:12px;}
+  pre{background:#1b2a3e;color:#eef2f8;padding:16px;border-radius:6px;overflow-x:auto;font-size:13px;line-height:1.5;}
+  pre code{font-family:"SF Mono",Menlo,Consolas,monospace;}
+  .meta{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:13px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .hidden{display:none;}
+  @media(max-width:600px){
+    body{font-size:17px;} h1{font-size:27px;} .lede{font-size:18px;}
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap topbar">
+    <span class="brand">ITEA Framework</span>
+    <span class="lang">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </span>
+  </div>
+</header>
+
+<!-- ================= ENGLISH ================= -->
+<div id="content-en">
+  <div class="hero">
+    <div class="wrap">
+      <h1>ITEA Framework</h1>
+      <div class="sub">Triple Index of Exposure to Automation · Version 3.0</div>
+      <p class="lede">A multidimensional framework for measuring occupational exposure to <strong>algorithmic expropriation</strong> under the Agentic AI regime.</p>
+      <div class="badges">
+        <span class="badge">10 indicators</span>
+        <span class="badge">1,016 occupations</span>
+        <span class="badge">O*NET 30.2</span>
+        <span class="badge">MIT License</span>
+        <span class="badge">JOSS submission · mid-2026</span>
+      </div>
+      <div class="cta">
+        <a class="primary" href="https://github.com/Aval22/ITEA">View on GitHub</a>
+        <a class="ghost" href="https://doi.org/10.5281/zenodo.19578915">Zenodo (DOI)</a>
+        <a class="ghost" href="tci/">Interactive dashboard</a>
+        <a class="ghost" href="#cite">How to cite</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <h2>What is ITEA?</h2>
+      <p>The ITEA Framework provides ten complementary indicators covering 1,016 SOC 6-digit occupations from O*NET 30.2, designed to measure occupational exposure to algorithmic expropriation in the Agentic AI regime — distinct from but complementary to task-level automation indices in the Frey–Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021).</p>
+      <div class="stats">
+        <div class="stat"><span class="num">0.797</span><span class="lbl">convergent validation r(OAEI v3.0+, AIOE)</span></div>
+        <div class="stat"><span class="num">738</span><span class="lbl">common occupations validated</span></div>
+        <div class="stat"><span class="num">10</span><span class="lbl">complementary indicators</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The ten indicators</h2>
+      <table>
+        <thead><tr><th>Code</th><th>Indicator</th><th>Dimension</th></tr></thead>
+        <tbody>
+          <tr><td><code>ITEA</code></td><td>Triple Index of Exposure to Automation</td><td>Exposure</td></tr>
+          <tr><td><code>IRA</code></td><td>Adaptive Resilience Index</td><td>Resilience</td></tr>
+          <tr><td><code>ICT</code></td><td>Technical Complexity Index</td><td>Complexity</td></tr>
+          <tr><td><code>IFS</code></td><td>Social Friction Index</td><td>Social interaction</td></tr>
+          <tr><td><code>IPI</code></td><td>Interpersonal Presence Index</td><td>Presentiality</td></tr>
+          <tr><td><code>IEF</code></td><td>Functional Specificity Index</td><td>Specificity</td></tr>
+          <tr><td><code>GEE</code></td><td>Education-Experience Gradient</td><td>Qualification</td></tr>
+          <tr><td><code>IMO</code></td><td>Occupational Mutation Index</td><td>Mutation</td></tr>
+          <tr><td><code>OAEI</code></td><td>Occupational Algorithmic Expropriation Index</td><td>Composite operational</td></tr>
+          <tr><td><code>AEI</code></td><td>Algorithmic Expropriation Index</td><td>Internal benchmark</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Related research</h2>
+      <p>A trilogy of research papers (8A/8B/8C) put the framework into active empirical use and motivated each of the three central revisions in v3.0:</p>
+      <ol class="papers">
+        <li>García-Lluis Valencia, A. (2026a). <em>The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592542">10.5281/zenodo.19592542</a>.</li>
+        <li>García-Lluis Valencia, A. (2026b). <em>Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality.</em> Universidad Rey Juan Carlos.</li>
+        <li>García-Lluis Valencia, A. (2026c). <em>QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592184">10.5281/zenodo.19592184</a>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Documentation &amp; data</h2>
+      <p>Everything needed to read, reproduce or extend the framework is in the public repository:</p>
+      <table>
+        <tbody>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Consolidated Methodology</a></td><td>The authoritative methodology document (v3.0).</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/MIGRATION.md">Migration guide</a></td><td>Step-by-step v1.45 → v3.0 migration.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/CHANGELOG.md">Changelog</a></td><td>Full v1.0 → v3.0 change history.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/data/processed/ITEA_v3_0_Workbook.xlsx">Data workbook (.xlsx)</a></td><td>Primary v3.0 dataset — 1,016 occupations × indicators.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/tree/main/code">Reference code (R · Python)</a></td><td>Implementations reproducing the workbook values.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA">Browse the full repository</a></td><td>Source, releases and all documentation.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="cite">
+      <h2>How to cite</h2>
+      <pre><code>@software{garcia-lluis2026itea,
+  title   = {ITEA Framework: A Multidimensional System for Measuring
+             Occupational Exposure to Algorithmic Expropriation
+             under the Agentic AI Regime},
+  author  = {García-Lluis Valencia, Alberto},
+  year    = {2026},
+  version = {3.0},
+  doi     = {10.5281/zenodo.20083102},
+  url     = {https://github.com/Aval22/ITEA}
+}</code></pre>
+      <p class="meta">Concept DOI (always latest): <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a> · v3.0 DOI: <a href="https://doi.org/10.5281/zenodo.20083102">10.5281/zenodo.20083102</a></p>
+    </section>
+
+    <section style="border-bottom:none;">
+      <h2>Author</h2>
+      <p class="meta">
+        <strong>Alberto García-Lluis Valencia</strong><br>
+        Universidad Rey Juan Carlos, Madrid · Doctoral Programme in Economics and Business<br>
+        ORCID: <a href="https://orcid.org/0009-0003-1438-1633">0009-0003-1438-1633</a>
+      </p>
+    </section>
+  </div>
+</div>
+
+<!-- ================= ESPAÑOL ================= -->
+<div id="content-es" class="hidden">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Marco ITEA</h1>
+      <div class="sub">Índice Triple de Exposición a la Automatización · Versión 3.0</div>
+      <p class="lede">Un marco multidimensional para medir la exposición ocupacional a la <strong>expropiación algorítmica</strong> bajo el régimen de la IA agéntica.</p>
+      <div class="badges">
+        <span class="badge">10 indicadores</span>
+        <span class="badge">1.016 ocupaciones</span>
+        <span class="badge">O*NET 30.2</span>
+        <span class="badge">Licencia MIT</span>
+        <span class="badge">Envío a JOSS · mediados de 2026</span>
+      </div>
+      <div class="cta">
+        <a class="primary" href="https://github.com/Aval22/ITEA">Ver en GitHub</a>
+        <a class="ghost" href="https://doi.org/10.5281/zenodo.19578915">Zenodo (DOI)</a>
+        <a class="ghost" href="tci/">Cuadro de mando</a>
+        <a class="ghost" href="#cite-es">Cómo citar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <h2>¿Qué es ITEA?</h2>
+      <p>El marco ITEA ofrece diez indicadores complementarios que cubren 1.016 ocupaciones SOC de seis dígitos de O*NET 30.2, diseñados para medir la exposición ocupacional a la expropiación algorítmica en el régimen de la IA agéntica — distinto pero complementario a los índices de automatización a nivel de tarea de la tradición Frey–Osborne (2017) o a las medidas de exposición basadas en capacidades como el benchmark AIOE de Felten, Raj y Seamans (2021).</p>
+      <div class="stats">
+        <div class="stat"><span class="num">0,797</span><span class="lbl">validación convergente r(OAEI v3.0+, AIOE)</span></div>
+        <div class="stat"><span class="num">738</span><span class="lbl">ocupaciones comunes validadas</span></div>
+        <div class="stat"><span class="num">10</span><span class="lbl">indicadores complementarios</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Los diez indicadores</h2>
+      <table>
+        <thead><tr><th>Código</th><th>Indicador</th><th>Dimensión</th></tr></thead>
+        <tbody>
+          <tr><td><code>ITEA</code></td><td>Índice Triple de Exposición a la Automatización</td><td>Exposición</td></tr>
+          <tr><td><code>IRA</code></td><td>Índice de Resiliencia Adaptativa</td><td>Resiliencia</td></tr>
+          <tr><td><code>ICT</code></td><td>Índice de Complejidad Técnica</td><td>Complejidad</td></tr>
+          <tr><td><code>IFS</code></td><td>Índice de Fricción Social</td><td>Interacción social</td></tr>
+          <tr><td><code>IPI</code></td><td>Índice de Presencia Interpersonal</td><td>Presencialidad</td></tr>
+          <tr><td><code>IEF</code></td><td>Índice de Especificidad Funcional</td><td>Especificidad</td></tr>
+          <tr><td><code>GEE</code></td><td>Gradiente Educación-Experiencia</td><td>Cualificación</td></tr>
+          <tr><td><code>IMO</code></td><td>Índice de Mutación Ocupacional</td><td>Mutación</td></tr>
+          <tr><td><code>OAEI</code></td><td>Índice de Expropiación Algorítmica Ocupacional</td><td>Compuesto operativo</td></tr>
+          <tr><td><code>AEI</code></td><td>Índice de Expropiación Algorítmica</td><td>Referencia interna</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Investigación relacionada</h2>
+      <p>Una trilogía de artículos (8A/8B/8C) puso el marco en uso empírico activo y motivó cada una de las tres revisiones centrales de la v3.0:</p>
+      <ol class="papers">
+        <li>García-Lluis Valencia, A. (2026a). <em>The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592542">10.5281/zenodo.19592542</a>.</li>
+        <li>García-Lluis Valencia, A. (2026b). <em>Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality.</em> Universidad Rey Juan Carlos.</li>
+        <li>García-Lluis Valencia, A. (2026c). <em>QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592184">10.5281/zenodo.19592184</a>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Documentación y datos</h2>
+      <p>Todo lo necesario para leer, reproducir o ampliar el marco está en el repositorio público:</p>
+      <table>
+        <tbody>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Metodología consolidada</a></td><td>Documento metodológico de referencia (v3.0).</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/MIGRATION.md">Guía de migración</a></td><td>Migración paso a paso v1.45 → v3.0.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/CHANGELOG.md">Registro de cambios</a></td><td>Historial completo v1.0 → v3.0.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/data/processed/ITEA_v3_0_Workbook.xlsx">Workbook de datos (.xlsx)</a></td><td>Conjunto de datos v3.0 — 1.016 ocupaciones × indicadores.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA/tree/main/code">Código de referencia (R · Python)</a></td><td>Implementaciones que reproducen los valores del workbook.</td></tr>
+          <tr><td><a href="https://github.com/Aval22/ITEA">Explorar el repositorio completo</a></td><td>Código fuente, releases y toda la documentación.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="cite-es">
+      <h2>Cómo citar</h2>
+      <pre><code>@software{garcia-lluis2026itea,
+  title   = {ITEA Framework: A Multidimensional System for Measuring
+             Occupational Exposure to Algorithmic Expropriation
+             under the Agentic AI Regime},
+  author  = {García-Lluis Valencia, Alberto},
+  year    = {2026},
+  version = {3.0},
+  doi     = {10.5281/zenodo.20083102},
+  url     = {https://github.com/Aval22/ITEA}
+}</code></pre>
+      <p class="meta">DOI concepto (siempre la última versión): <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a> · DOI v3.0: <a href="https://doi.org/10.5281/zenodo.20083102">10.5281/zenodo.20083102</a></p>
+    </section>
+
+    <section style="border-bottom:none;">
+      <h2>Autor</h2>
+      <p class="meta">
+        <strong>Alberto García-Lluis Valencia</strong><br>
+        Universidad Rey Juan Carlos, Madrid · Programa de Doctorado en Economía y Empresa<br>
+        ORCID: <a href="https://orcid.org/0009-0003-1438-1633">0009-0003-1438-1633</a>
+      </p>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span id="foot-en">ITEA Framework v3.0 · MIT License · © 2026 Alberto García-Lluis Valencia</span>
+    <span id="foot-es" class="hidden">Marco ITEA v3.0 · Licencia MIT · © 2026 Alberto García-Lluis Valencia</span>
+    <p style="margin-top:12px;font-size:11px;line-height:1.5;color:#8a93a0;">
+      This site includes information from the
+      <a href="https://www.onetcenter.org/database.html">O*NET 30.2 Database</a>
+      by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).
+      Used under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.
+      O*NET&reg; is a trademark of USDOL/ETA. Alberto García-Lluis Valencia has modified all or some of
+      this information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+      BLS OEWS wage data and the AIOE benchmark (Felten, Raj &amp; Seamans, 2021) are used under their respective terms.
+    </p>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    var en = lang === 'en';
+    document.documentElement.lang = lang;
+    document.getElementById('content-en').classList.toggle('hidden', !en);
+    document.getElementById('content-es').classList.toggle('hidden', en);
+    document.getElementById('foot-en').classList.toggle('hidden', !en);
+    document.getElementById('foot-es').classList.toggle('hidden', en);
+    document.getElementById('btn-en').classList.toggle('active', en);
+    document.getElementById('btn-es').classList.toggle('active', !en);
+    try{ localStorage.setItem('itea-lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved;
+    try{ saved = localStorage.getItem('itea-lang'); }catch(e){}
+    if(!saved){
+      saved = (navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es' : 'en';
+    }
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>
