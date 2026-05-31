@@ -1,0 +1,12 @@
+indicador,mide,onet,onet_n,esco,esco_n,hib,hib_n
+AXI / AEI,"Exposición a expropiación algorítmica (task-based, núcleo)",nativo,47.810 tareas O*NET graduadas (Auto/CI_Grade) → AEI por SOC,no aplica,ESCO no modela tareas,nativo,mapa tarea→skill con grados → mean_exposure por ISCO (hibrido_isco_profile)
+ITEA (índice triple),"z(EAC)+z(EIG)+z(EIA)/3 → min-max [0,1]",nativo,ITEA v3.0 ya en onet_occupations,proxy parcial,solo recuperable la parte de conocimiento vía competencias,parcial,recupera EAC/EIA vía mapa; pendiente recomponer el triple en ISCO
+EAC,Componente: automatización de actividades/tareas,"nativo (degenerado, L1)",Work Activities + Tasks + Tools; 60% =0,no aplica,sin tareas,proxy,vía task→skill + Auto_Grade (HIGH/TRANS/LOW)
+EIG,"Componente: intensidad de conocimiento (satura, L2)",nativo,"O*NET Knowledge; 42,5% ≥0,95",proxy,competencias rama K (Knowledge) por ocupación,proxy,skills tipo Knowledge mapeadas desde tareas
+EIA,Componente: exposición a IA / codificación de conocimiento tácito,nativo,base del CI_Grade (HIGH_ALGO),no aplica,sin tareas,nativo,CI_Grade HIGH_ALGO arrastrado por tarea en el mapa
+GEE,Grado de estructuración del empleo (cualificación/autonomía),nativo,"anclado en Job Zone O*NET (ρ=0,92)",proxy PENDIENTE,anclar en EQF (autonomía-responsabilidad) — sustituye Job Zone,proxy PENDIENTE,EQF sobre ISCO; requiere descargar/mapear EQF
+K / codificabilidad,Cristalización de la competencia (reuseLevel),proxy,CI_Grade es el análogo (codificación de conocimiento),nativo,"reuseLevel; pesos K 0,25/0,5/0,75/1,0 A CALIBRAR",nativo,hereda ambos: K de ESCO + grados del AXI (esco_mean_k / hib_mean_k)
+IRA,"Resiliencia adaptativa = 0,6·CA + 0,4·IRO_residual",nativo,IRA v3.0 en onet_occupations,pendiente,depende de definir CA/IRO en eje ESCO — fijar en spec,pendiente,ídem; recomponer tras EAC/EIA/GEE
+ICT · IFS · IPI · IEF (auxiliares),Componentes del OAEI y de resiliencia,nativo,presentes en workbook v3.0,por confirmar,definiciones a revisar en el spec antes de portar,por confirmar,ídem
+OAXI / OAEI,Índice ocupacional compuesto = ITEA×GEE×ICT×(1−IPI),nativo,OAEI v3.0 (1-100) en onet_occupations,no aplica,"requiere ITEA+GEE, no nativos en ESCO",pendiente,computable tras recuperar componentes + anclar GEE-EU = OAXI-EU
+Validación externa,Benchmark convergente del índice,nativo (AIOE),"Felten, Raj, Seamans 2021 (769 SOC)",JRC 2026 PENDIENTE,índice JRC145832 (127 ISCO-3) — descargar,JRC 2026 PENDIENTE,paso 9: validar OAXI-EU vs JRC sobre ISCO

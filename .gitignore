@@ -60,6 +60,13 @@ todo.txt
 # Kept locally for the author, never pushed to the public repo
 Otros/
 
+# ITEA-EU Fase 2 — ESCO research material (dump, parquets, scripts); not part of the public v3.0 release
+# Wildcard avoids the accented "ó" so it matches both NFC and NFD Unicode forms of the folder name
+Iteraci*n Con ESCO/
+
+# ITEA-EU — repositorio de ficheros críticos (~208 MB: ESCO, O*NET, AXI, censo…); material de investigación, no público
+ITEA-EU_Datos/
+
 # One-shot helper scripts and session notes (kept locally, not part of the public repo)
 sync_with_github.sh
 make_backup.sh

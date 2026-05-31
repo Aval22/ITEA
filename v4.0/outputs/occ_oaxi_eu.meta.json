@@ -1,0 +1,22 @@
+{
+  "indice": "OAXI-EU (preliminar)",
+  "version": "v0-carryover",
+  "generated_utc": "2026-05-31T10:49:54Z",
+  "formula": "OAXI-EU = 1 + 99·minmax( [norm(exp_BRIDGE)·norm(K_ESCO)] · GEE · ICT · (1−IPI) )",
+  "decisiones": {
+    "portabilidad": "hibrida (D2)",
+    "GEE": "carry-over O*NET (D3 fase 1)",
+    "nucleo": "AXI/K/GEE/OAXI (D4)"
+  },
+  "n_isco": 238,
+  "corr_vs_OAEI_onet_pearson": 0.6702,
+  "corr_vs_OAEI_onet_spearman": 0.7484,
+  "pendiente": [
+    "GEE-EU nativo (EQF)",
+    "calibrar pesos K",
+    "mapa v2.0-embeddings",
+    "invarianza (paso 8)",
+    "validación JRC (paso 9)"
+  ],
+  "output_sha256": "6d75d0d7bc1d35dc031e4119ec9c77c71aafbe784698bd9eea05e9a76092e6d1"
+}
