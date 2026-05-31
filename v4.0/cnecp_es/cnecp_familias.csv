@@ -1,0 +1,29 @@
+familia_code,familia,n1,n2,n3,total_ecp
+AFD,Actividades Físicas y Deportivas,3,123,29,155
+ACT,Actividades y Competencias Transversales,1,3,2,6
+ADG,Administración y Gestión,5,11,35,51
+AGA,Agraria,22,94,79,195
+ARG,Artes Gráficas,9,45,52,106
+ART,Artes y Artesanías,2,42,49,93
+COM,Comercio y Marketing,7,9,55,71
+EOC,Edificación y Obra Civil,15,71,27,113
+ELE,Electricidad y Electrónica,7,52,79,138
+ENA,Energía y Agua,2,29,52,83
+FME,Fabricación Mecánica,2,38,66,106
+HOT,Hostelería y Turismo,15,37,45,97
+IMP,Imagen Personal,9,16,38,63
+IMS,Imagen y Sonido,1,11,58,70
+INA,Industrias Alimentarias,5,55,27,87
+IEX,Industrias Extractivas,11,40,9,60
+IFC,Informática y Comunicaciones,5,25,59,89
+IMA,Instalación y Mantenimiento,3,33,44,80
+IAD,Inteligencia Artificial y Data,0,0,5,5
+MAM,"Madera, Mueble y Corcho",14,29,16,59
+MAP,Marítimo-Pesquera,25,59,33,117
+QUI,Química,3,38,57,98
+SAN,Sanidad,4,21,85,110
+SEA,Seguridad y Medio Ambiente,4,45,54,103
+SSC,Servicios Socioculturales y a la Comunidad,9,22,92,123
+TCP,"Textil, Confección y Piel",17,56,81,154
+TMV,Transporte y Mantenimiento de Vehículos,18,68,64,150
+VIC,Vidrio y Cerámica,14,19,15,48

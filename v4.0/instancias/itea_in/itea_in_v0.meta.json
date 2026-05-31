@@ -1,0 +1,8 @@
+{
+  "fuente": "PLFS 2023-24 Tabla 25 (NCO-2015=ISCO-08, person rural+urban)",
+  "IEA_EU_ponderado": 30.4,
+  "OAXI_EU_ponderado": 7.3,
+  "nivel": "ISCO-1 (9 grandes grupos)",
+  "clase": "Nivel 3 imputado (transferibilidad O*NET)",
+  "nota": "v0 preliminar; índices EU aplicados a la estructura de empleo de India"
+}

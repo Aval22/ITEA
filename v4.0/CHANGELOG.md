@@ -13,6 +13,25 @@ en *Keep a Changelog*; fechas en ISO (AAAA-MM-DD).
 
 ---
 
+## [v4.0-beta.3] — 2026-05-31 — instancias país + ITEA-IN v0 + CNECP
+
+**Added**
+- `instancias/` — arranque de la familia global: dossiers ITEA-JP / ITEA-KR /
+  ITEA-IN, `README.md` (versionado por instancia + cola de prioridad) y
+  `GUIA_DATOS.md` (dónde descargar los datos de cada país).
+- `instancias/itea_in/` — **ITEA-IN v0** (primera instancia país, imputada): empleo
+  de India por ISCO-1 (PLFS 2023-24, NCO-2015) ponderando los índices EU →
+  **IEA-EU=30,4 / OAXI-EU=7,3**. Catálogo QP-NOS/NSQF por sector.
+- `cnecp_es/` — sustrato España (INCUAL/CNECP): 28 familias × nivel (2.630 ECP) +
+  descriptores de nivel (ancla EQF para GEE-EU).
+
+**Notas**
+- ITEA-IN v0 es **imputada (Nivel 3)** y a ISCO-1: preliminar, no producción.
+- Datos de terceros (NCO/PLFS PDFs) y la pregunta de investigación rectora **no
+  se redistribuyen**. Hallazgo: ILOSTAT no publica empleo por ocupación de India.
+
+---
+
 ## [v4.0-beta.2] — 2026-05-31 — validación (pasos 8 y 9) + dos índices
 
 **Added**
