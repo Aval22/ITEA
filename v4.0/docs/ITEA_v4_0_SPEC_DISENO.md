@@ -137,14 +137,24 @@ Mapeado a los pasos del pipeline:
 
 v4.0 se podrá declarar cerrada cuando:
 
-- [ ] OAXI-EU calculado en ISCO y con peso K calibrado (no propuesto).
+- [~] **Índices EU calculados en ISCO.** HECHO v1 (`occ_indices_EU_v1.parquet`):
+      dos índices — **IEA-EU** (exposición) y **OAXI-EU** (expropiación, con
+      codificabilidad del CI_Grade; reuseLevel jubilado). Falta: calibrar pesos.
 - [ ] GEE-EU anclado en EQF, con correlación documentada frente al GEE-O*NET.
-- [ ] Prueba de invarianza de medición superada (umbral a fijar; p.ej. ΔCFI<0,01
-      en invarianza métrica entre estructura task-based y de competencias).
-- [ ] Validación convergente OAXI-EU ↔ JRC 2026 con r ≥ 0,70.
+      (Hoy carry-over; sustrato EQF disponible en `10_ITEA_ES_CNECP/`.)
+- [~] **Paso 8 — invarianza.** Evidencia HECHA (concordancia BRIDGE↔ESCO, lift
+      ~17×, `INVARIANZA_paso8.md`). Falta: CFA multigrupo formal (ΔCFI<0,01).
+- [~] **Paso 9 — validación vs JRC 2026.** HECHO cuantitativo (Appendix M, 102
+      ISCO-3): **IEA-EU r=0,76/0,78 ≥0,70 ✓**; OAXI-EU 0,63/0,71 (diverge por
+      diseño). Ver `VALIDACION_paso9.md` / `DECISION_dos_indices.md`.
 - [ ] Mapa en versión embeddings y estabilidad top-k documentada vs TF-IDF.
-- [ ] Tabla unificada por ISCO completa y los 3 entornos reproducibles por script.
+- [x] Tabla unificada por ISCO y 3 entornos reproducibles por script (`01`–`08`).
 - [ ] Workbook ITEA v4.0 + documento de metodología + depósito Zenodo.
+
+> Leyenda: [x] hecho · [~] primera pasada hecha, falta refinar · [ ] pendiente.
+> **Cierre 8/9 (2026-05-31):** ambos pasos tienen base sólida y reproducible
+> (`09_code/07`, `08`); restan para v4.0 estable la CFA formal (8), el umbral en
+> OAXI (vía embeddings/calibración), GEE-EU(EQF) y la pasada de embeddings.
 
 ---
 

@@ -13,6 +13,28 @@ en *Keep a Changelog*; fechas en ISO (AAAA-MM-DD).
 
 ---
 
+## [v4.0-beta.2] — 2026-05-31 — validación (pasos 8 y 9) + dos índices
+
+**Added**
+- `code/07_bridge_concordance.py` y `code/08_validate_vs_jrc.py` (pasos 8 y 9).
+- `docs/INVARIANZA_paso8.md`, `docs/VALIDACION_paso9.md`, `docs/DECISION_dos_indices.md`.
+- `outputs/occ_indices_EU_v1.parquet` (los dos índices), `bridge_concordance_by_isco.parquet`.
+
+**Changed / Decided**
+- **Dos índices** (decisión del autor): **IEA-EU** (exposición) y **OAXI-EU**
+  (expropiación). IEA-EU **valida vs JRC145832** (Pearson 0,76 / Spearman 0,78 ≥ 0,70);
+  OAXI-EU diverge por diseño (mide expropiación, no exposición pura).
+- **`reuseLevel` jubilado como peso de codificabilidad** (correlación negativa con
+  la exposición a IA); la codificabilidad pasa a derivarse del `CI_Grade` del AXI.
+- Paso 8: evidencia de invarianza (concordancia BRIDGE↔ESCO, lift ~17× sobre azar).
+
+**Notas**
+- Datos del JRC (scores por ocupación) y del AXI **no se redistribuyen**; se usan
+  solo como contraste, citados (JRC145832). Sigue pendiente, para v4.0 estable:
+  CFA formal, embeddings, GEE-EU (EQF) y calibración de pesos.
+
+---
+
 ## [v4.0-beta] — 2026-05-31 — PUBLICADA (commit `c06836d`)
 
 Primera publicación pública (beta/WIP) de la línea europea.
