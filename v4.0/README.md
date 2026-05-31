@@ -15,6 +15,7 @@ comparativo y unificado:
   ESCO, vía crosswalk SOC↔ISCO), donde nace el índice europeo **OAXI-EU**.
 
 Nomenclatura completa de la familia en [`docs/ITEA_FAMILIA.md`](docs/ITEA_FAMILIA.md).
+Trazabilidad de versiones (marco y componentes) en [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Estado de los resultados (beta)
 
@@ -53,4 +54,21 @@ regenera su salida (ver cabecera de cada `code/0*.py`). El orden es 01→06.
 
 Marco ITEA — Alberto García-Lluis Valencia (URJC). Repositorio:
 <https://github.com/Aval22/ITEA>. La v4.0 es **beta**; para citación estable usar
-la v3.0 y su DOI de Zenodo. Atribución requerida a O*NET y ESCO (CC BY 4.0).
+la v3.0 y su DOI de Zenodo. El **código y la documentación** de esta carpeta se
+publican bajo la licencia del repositorio.
+
+### Atribución de las fuentes de datos (obligatoria)
+
+Los indicadores de v4.0 son **obras derivadas** (modificadas) de las siguientes
+fuentes; se reutilizan citando la fuente e indicando que han sido modificadas:
+
+- **ESCO v1.2.1** — © European Union, 2025. *European Skills, Competences,
+  Qualifications and Occupations (ESCO)*, Comisión Europea (DG EMPL). Bajo
+  **CC BY 4.0** (<https://creativecommons.org/licenses/by/4.0/>). Fuente:
+  <https://esco.ec.europa.eu>. Datos **modificados** para ITEA.
+- **O*NET 30.2** — proporcionado por el U.S. Department of Labor, Employment and
+  Training Administration (**USDOL/ETA**). Usado bajo **CC BY 4.0**. Datos
+  **modificados** para ITEA. **O*NET® es marca registrada de USDOL/ETA.**
+- La jerarquía de competencias de ESCO incorpora además contenidos de O*NET y del
+  *Skills & Knowledge Checklist* del Gobierno de Canadá (parte de las skills
+  transversales de ESCO están bajo CC BY-SA 4.0).

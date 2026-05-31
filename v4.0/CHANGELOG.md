@@ -1,0 +1,73 @@
+# ITEA v4.0 — Changelog y trazabilidad de versiones
+
+Registro de versiones de la línea v4.0 (ITEA-EU / BRIDGE US–UE). Formato basado
+en *Keep a Changelog*; fechas en ISO (AAAA-MM-DD).
+
+**Convención de versionado**
+- **Marco:** `vMAJOR.MINOR[-estado]`. `v4.0` = integración ESCO + arquitectura de
+  3 entornos (ITEA-US / ITEA-UE / ITEA BRIDGE US–UE) sobre ISCO-08.
+- **Estado:** `beta`/WIP hasta cumplir la *Definition of Done* del spec
+  (`docs/ITEA_v4_0_SPEC_DISENO.md` §7).
+- **Componentes:** cada artefacto lleva su propia versión semántica y su
+  **procedencia** (sha256 de entradas/salida, fecha) en un `.meta.json` adjunto.
+
+---
+
+## [v4.0-beta] — 2026-05-31 — PUBLICADA (commit `c06836d`)
+
+Primera publicación pública (beta/WIP) de la línea europea.
+
+**Added**
+- Arquitectura de 3 entornos sobre eje ISCO-08 y tabla unificada `itea_by_isco`
+  (434 grupos ISCO; 238 en los tres entornos).
+- Pipeline reproducible `code/01`–`06` (carga ESCO → mapeo tarea→skill →
+  agregación a ISCO → entornos → dashboard → OAXI-EU).
+- **OAXI-EU** preliminar (primer índice europeo de expropiación, 238 ISCO).
+- Documentos de diseño: taxonomía de la familia, spec v4.0, matriz
+  indicador×entorno, versionado del mapeo.
+- Dashboard interactivo de 3 entornos.
+
+**Decided** — 10 decisiones de diseño cerradas (ver spec §9 y concepto):
+v4.0 = solo BRIDGE US–UE · portabilidad híbrida · GEE-EU en 2 tiempos · núcleo
+AXI/K/GEE/OAXI · umbrales ΔCFI<0,01 y JRC r≥0,70 · salida skill↔microcredencial ·
+demanda solo OVATE · certificación recomendada+proxy futuro · Global diseño vivo ·
+IDA por fases.
+
+**Licensing** — Licencia de fuentes verificada en origen: **ESCO v1.2.1 = CC BY
+4.0**; O*NET (USDOL/ETA) = CC BY 4.0 (marca registrada). Atribución reforzada en
+el README; datos derivados marcados como "modificados".
+
+---
+
+## Versiones por componente
+
+| Componente | Versión actual | Fecha | Método / estado | Próxima versión |
+|------------|----------------|-------|------------------|-----------------|
+| `task_skill_map` | **1.0-tfidf** | 2026-05-31 | TF-IDF+coseno (EN↔EN), 1ª pasada | `2.0-embeddings` (multilingüe, GPU) + corpus ES |
+| `OAXI-EU` | **v0-carryover** | 2026-05-31 | GEE por carry-over O*NET; K sin calibrar | `v1` con GEE-EU (EQF) + K calibrado |
+| GEE-EU | **fase 1 (carry-over)** | 2026-05-31 | crosswalk SOC→ISCO del GEE-O*NET | fase 2: anclaje nativo en EQF |
+| entornos / tabla unificada | **1.0** | 2026-05-31 | 434 ISCO | — |
+
+---
+
+## Roadmap de versiones (planificado, no fechado)
+
+- **v4.0 (estable):** al cumplir la *Definition of Done* — invarianza ΔCFI<0,01,
+  validación OAXI-EU↔JRC r≥0,70, OAXI-EU con GEE-EU (EQF) y K calibrado, mapa en
+  embeddings. Se acompañará de DOI de Zenodo.
+- **v4.1+:** nuevas instancias país sobre la misma arquitectura (ITEA-JP, …) y sus
+  ITEA BRIDGE bilaterales.
+- **ITEA Global (horizonte):** plano de demanda + eje de certificación +
+  brújula de microcredenciales (ver `docs/ITEA_FAMILIA.md`).
+
+---
+
+## Trazabilidad y procedencia
+
+- **Versión↔commit:** cada versión del marco apunta a su commit en
+  `github.com/Aval22/ITEA`. v4.0-beta = `c06836d`.
+- **Artefacto↔procedencia:** `outputs/*.meta.json` registran versión, método,
+  fecha y sha256 de entradas y salida de cada índice.
+- **Inventario completo (privado):** `ITEA-EU_Datos/00_DOCS/MANIFEST.csv` (sha256
+  de las 119 piezas de datos; no se publica por incluir fuentes de terceros y
+  datos sin publicar).

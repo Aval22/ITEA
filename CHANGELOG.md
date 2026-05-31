@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v4.0-beta] — 2026-05-31 (Work In Progress, línea europea)
+
+Línea de desarrollo **ITEA-EU** (integración ESCO/ISCO) publicada como **beta**
+en la carpeta [`v4.0/`](v4.0/). Resultados preliminares, no revisados por pares;
+la release estable del marco sigue siendo v3.0. Trazabilidad detallada de
+versiones del marco y de cada componente en [`v4.0/CHANGELOG.md`](v4.0/CHANGELOG.md).
+
+### Added
+
+- Arquitectura de 3 entornos (ITEA-US / ITEA-UE / ITEA BRIDGE US–UE) sobre eje ISCO-08.
+- Índice europeo **OAXI-EU** preliminar (v0-carryover) y mapeo tarea→competencia (v1.0-tfidf).
+- Pipeline reproducible, documentos de diseño y dashboard interactivo (en `v4.0/`).
+- Atribución de fuentes (ESCO v1.2.1 y O*NET, ambas CC BY 4.0) verificada en origen.
+
+---
+
 ## [Unreleased] — 2026-05-07 (repository housekeeping, no methodological change)
 
 ### Added
