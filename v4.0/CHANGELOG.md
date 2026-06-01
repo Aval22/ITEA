@@ -13,6 +13,22 @@ en *Keep a Changelog*; fechas en ISO (AAAA-MM-DD).
 
 ---
 
+## [v4.0-beta.4] — 2026-05-31 — robustez de la validación (ablación)
+
+**Changed**
+- `docs/VALIDACION_paso9.md`: añadida la **ablación** del IEA-EU. Hallazgo honesto:
+  la validación contra el JRC la sostiene casi toda el **GEE (cualificación)** —
+  solo GEE da 0,71/0,77; el término de exposición del AXI no aporta. Lo que tiene
+  validación propia es la codificabilidad (CI_Grade) y la concordancia con ESCO,
+  que es el aporte distintivo y diverge por diseño.
+
+**Interno (no publicado, pendiente del paper)**
+- Modelo de expropiación de 3 niveles (robot/Gen-IA/agéntica) + coste de
+  oportunidad capital-salario por país; validación de lo distintivo; y la
+  conjetura tarea-vs-título. Se mantienen fuera del repo por scooping.
+
+---
+
 ## [v4.0-beta.3] — 2026-05-31 — instancias país + ITEA-IN v0 + CNECP
 
 **Added**

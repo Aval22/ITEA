@@ -54,6 +54,30 @@ y las ocupaciones-diana del JRC. Es coherente con la evidencia del paso 8
 (concordancia BRIDGE↔ESCO, lift ~17×). **No sustituye** la validación cuantitativa
 formal (r≥0,70 sobre las 127 ISCO-3), que queda pendiente del Appendix M.
 
+## Robustez — ablación del IEA-EU (2026-05-31): qué componente valida
+
+Quitando cada componente y recorrelacionando con el JRC (102 ISCO-3):
+
+| Variante | Pearson | Spearman |
+|----------|--------:|---------:|
+| Completo (GEE+exp+ICT) | 0,762 | 0,783 |
+| Sin GEE | **0,482** | **0,491** |
+| Sin exp (Auto_Grade) | 0,761 | 0,796 |
+| Sin ICT/IPI | 0,715 | 0,758 |
+| Solo GEE | **0,706** | **0,774** |
+| Solo exp (Auto_Grade) | 0,089 | 0,102 |
+
+**Conclusión (importante, honesta): la validación del IEA-EU la sostiene casi
+toda el GEE** (cualificación). Solo GEE ya da 0,71/0,77; el término de exposición
+del AXI (Auto_Grade) **no aporta** a la convergencia con el JRC. Es decir, lo que
+valida es el hecho ya conocido de que **las ocupaciones de alta cualificación
+están más expuestas** (GEE ≈ nivel de cualificación), no la maquinaria novedosa
+del puente. Implicaciones: (1) no se debe presentar el IEA-EU como validación
+independiente del puente tarea→competencia; (2) lo con validación propia es la
+**codificabilidad (CI_Grade, 0,70)** y la **concordancia con ESCO (17×)**, que es
+el aporte distintivo y diverge del JRC por diseño; (3) refuerza "beta, no
+producción". Script: `09_code/08_validate_vs_jrc.py` (+ ablación inline).
+
 ## Para cerrar el paso 9 (subir de 0,48/0,62 a ≥0,70)
 
 1. ✅ HECHO: Appendix M extraído (127 ISCO-3) y correlación corrida (0,476 / 0,622).
