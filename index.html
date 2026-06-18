@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYTRSRHY81"></script>
@@ -11,352 +11,418 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ITEA Framework — Occupational Exposure to Algorithmic Expropriation</title>
-<meta name="description" content="ITEA Framework v3.0 — a multidimensional system for measuring occupational exposure to algorithmic expropriation under the Agentic AI regime. 10 indicators, 1,016 occupations, O*NET 30.2.">
+<title>ITEA 4.0 — Índice de Triple Exposición a la Automatización</title>
+<meta name="description" content="ITEA 4.0 — marco para medir la expropiación algorítmica del trabajo a nivel de tarea. Tres entornos: Estados Unidos (O*NET), Europa (ESCO) y puente US–UE (Bridge), sobre ISCO-08.">
 <meta name="author" content="Alberto García-Lluis Valencia">
-<!-- Open Graph / social -->
-<meta property="og:title" content="ITEA Framework — Occupational Exposure to Algorithmic Expropriation">
-<meta property="og:description" content="A multidimensional framework measuring occupational exposure to algorithmic expropriation under the Agentic AI regime. 10 indicators · 1,016 occupations · O*NET 30.2.">
+<meta property="og:title" content="ITEA 4.0 — Índice de Triple Exposición a la Automatización">
+<meta property="og:description" content="Nueva versión 4.0: tres entornos (EE.UU.–O*NET, Europa–ESCO, Bridge US–UE) para medir y compensar la expropiación algorítmica del trabajo a nivel de tarea.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aval22.github.io/ITEA/">
 <meta name="twitter:card" content="summary">
 <style>
   :root{
-    --ink:#1a1a1a;
-    --muted:#5c5c5c;
-    --line:#e2e0db;
-    --bg:#fbfaf7;
-    --panel:#ffffff;
-    --accent:#1f3a5c;
-    --accent-soft:#e9eef5;
-    --maxw:820px;
+    --navy:#0e2748;--navy-2:#143257;--ink:#16202e;--muted:#5a6473;--line:#e4e7ec;
+    --bg:#f6f8fb;--panel:#ffffff;--accent:#1f5fb0;--accent-dk:#16467f;--maxw:1060px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:Georgia,"Times New Roman",serif;
-    line-height:1.6;
-    font-size:18px;
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-  header.site{border-bottom:1px solid var(--line);background:var(--panel);}
-  .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
-  .brand{font-weight:bold;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  .lang{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:13px;}
-  .lang button{
-    background:none;border:1px solid var(--line);color:var(--muted);
-    padding:4px 10px;cursor:pointer;border-radius:3px;font-size:13px;margin-left:4px;
-  }
-  .lang button.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-  .hero{padding:56px 0 40px;border-bottom:1px solid var(--line);background:var(--panel);}
-  h1{font-size:34px;line-height:1.2;margin:0 0 6px;}
-  .sub{font-size:15px;color:var(--muted);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;letter-spacing:.02em;margin-bottom:18px;}
-  .lede{font-size:20px;color:var(--ink);margin:0 0 26px;}
-  .badges{display:flex;flex-wrap:wrap;gap:8px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  .badge{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:20px;letter-spacing:.02em;}
-  .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  .cta a{
-    text-decoration:none;font-size:15px;padding:10px 18px;border-radius:4px;
-  }
-  .cta a.primary{background:var(--accent);color:#fff;}
-  .cta a.ghost{border:1px solid var(--line);color:var(--ink);}
-  .dash-cta{margin-top:24px;}
-  .dash-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;
-    text-decoration:none;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    font-size:16px;font-weight:600;padding:13px 24px;border-radius:6px;transition:background .15s;}
-  .dash-btn:hover{background:#16314e;}
-  .dash-btn svg{flex:none;}
-  section{padding:38px 0;border-bottom:1px solid var(--line);}
-  h2{font-size:24px;margin:0 0 14px;}
-  h3{font-size:18px;margin:22px 0 6px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  p{margin:0 0 14px;}
-  a{color:var(--accent);}
-  .stats{display:flex;flex-wrap:wrap;gap:28px;margin:8px 0 4px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  .stat .num{font-size:30px;font-weight:bold;color:var(--accent);display:block;line-height:1.1;}
-  .stat .lbl{font-size:13px;color:var(--muted);}
-  table{width:100%;border-collapse:collapse;font-size:14px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:8px 0 4px;}
-  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
-  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
-  td code{background:var(--accent-soft);padding:1px 5px;border-radius:3px;font-size:13px;}
-  .papers li{margin-bottom:12px;}
-  pre{background:#1b2a3e;color:#eef2f8;padding:16px;border-radius:6px;overflow-x:auto;font-size:13px;line-height:1.5;}
-  pre code{font-family:"SF Mono",Menlo,Consolas,monospace;}
-  .meta{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;}
-  footer{padding:30px 0 50px;color:var(--muted);font-size:13px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-  .hidden{display:none;}
-  @media(max-width:600px){
-    body{font-size:17px;} h1{font-size:27px;} .lede{font-size:18px;}
-  }
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(14,39,72,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;}
+  .topbar .brand{color:#fff;font-weight:700;letter-spacing:.3px;font-size:15px;}
+  .topbar nav a{color:#cdd9ea;font-size:13.5px;margin-left:15px;} .topbar nav a:hover{color:#fff;text-decoration:none;}
+  @media(max-width:860px){.topbar nav{display:none;}}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:62px 0 56px;border-bottom:3px solid var(--accent);}
+  .hero .badge-new{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:13px;letter-spacing:.6px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{margin:0 0 6px;font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.5px;}
+  .hero .sub{font-size:19px;color:#bcd0ea;margin:0 0 18px;font-weight:500;}
+  .hero .lede{font-size:18px;color:#e7eefb;max-width:760px;margin:0 0 26px;}
+  .hero .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px;}
+  .hero .chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#eaf1fb;font-size:13.5px;padding:6px 12px;border-radius:7px;}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{display:inline-block;font-weight:600;font-size:15px;padding:11px 20px;border-radius:8px;border:1px solid transparent;}
+  .btn.primary{background:#fff;color:var(--navy);} .btn.primary:hover{background:#eaf1fb;text-decoration:none;}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);} .btn.ghost:hover{background:rgba(255,255,255,.1);text-decoration:none;}
+  .langstrip{margin-top:22px;font-size:13px;color:#9fb4d2;} .langstrip a{color:#cdd9ea;}
+
+  section{padding:50px 0;border-bottom:1px solid var(--line);}
+  section h2{font-size:27px;font-weight:750;letter-spacing:-.3px;margin:0 0 6px;color:var(--navy);}
+  .kicker{text-transform:uppercase;letter-spacing:1.2px;font-size:12.5px;font-weight:700;color:var(--accent);margin:0 0 14px;}
+  p{margin:0 0 15px;} .lead{font-size:18.5px;} .muted{color:var(--muted);} strong{color:var(--navy);}
+
+  .triple{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0 4px;}
+  .triple .t{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:9px;padding:16px 18px;}
+  .triple .t h4{margin:0 0 4px;font-size:16px;color:var(--navy);} .triple .t p{margin:0;font-size:15.5px;color:var(--muted);}
+  .hinge{background:#eef4fb;border:1px solid #d4e2f3;border-radius:10px;padding:18px 20px;margin-top:20px;font-size:16px;}
+  .global{background:var(--panel);border:1px dashed #c7d3e3;border-radius:10px;padding:18px 20px;margin-top:22px;}
+  .global h4{margin:0 0 6px;color:var(--navy);font-size:16px;} .global p{margin:0;color:var(--muted);font-size:15px;}
+  .flags{color:var(--navy);font-weight:600;}
+
+  .alt-bg{background:#eef3f9;}
+  .find{display:grid;grid-template-columns:1fr;gap:16px;margin-top:10px;}
+  .fcard{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:20px 22px;}
+  .fcard h3{margin:0 0 8px;font-size:18.5px;color:var(--navy);}
+  .fcard .chartbox{position:relative;height:200px;margin:8px 0 6px;}
+  .fcard .src{font-size:12px;color:var(--muted);margin:0 0 12px;}
+  .fcard .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px;}
+  @media(max-width:720px){.fcard .two{grid-template-columns:1fr;}}
+  .fcard .lab{font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--accent);margin:0 0 3px;}
+  .fcard .two p{font-size:14.5px;color:#3a4453;margin:0;}
+
+  .envs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+  @media(max-width:860px){.envs{grid-template-columns:1fr;}}
+  .env{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;}
+  .env .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:10px;width:max-content;}
+  .env.us .tag{background:#e7f0fb;color:#16467f;} .env.eu .tag{background:#eaf3ec;color:#1f6b3a;} .env.br .tag{background:#f3edfa;color:#6b3aa0;}
+  .env h3{margin:0 0 8px;font-size:20px;color:var(--navy);} .env p{font-size:15px;color:var(--muted);margin:0 0 14px;}
+  .env .docs{list-style:none;padding:0;margin:0 0 16px;border-top:1px solid var(--line);}
+  .env .docs li{border-bottom:1px solid var(--line);padding:9px 0;font-size:14.5px;}
+  .env .docs a{font-weight:600;} .env .docs span{display:block;color:var(--muted);font-size:13px;}
+  .env .foot{margin-top:auto;}
+  .env .dashbtn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;font-size:14.5px;padding:10px 16px;border-radius:8px;}
+  .env .dashbtn:hover{background:var(--accent-dk);text-decoration:none;} .env .dashbtn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);}
+
+  .access{background:var(--navy);color:#fff;border-radius:12px;padding:26px 28px;}
+  .access h2{color:#fff;} .access p{color:#d6e2f2;}
+  .access a.mail{display:inline-block;margin-top:8px;background:#fff;color:var(--navy);font-weight:700;padding:11px 20px;border-radius:8px;font-size:16px;}
+  .access a.mail:hover{background:#eaf1fb;text-decoration:none;}
+
+  .bib{font-size:14.5px;color:#39434f;} .bib li{margin-bottom:9px;}
+
+  /* contacto + suscripción */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;margin-top:8px;}
+  @media(max-width:780px){.contact-grid{grid-template-columns:1fr;}}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;}
+  .ccard h3{margin:0 0 10px;font-size:18px;color:var(--navy);}
+  .ccard .row{display:flex;align-items:center;gap:10px;font-size:15px;margin:8px 0;}
+  .ccard .row .k{color:var(--muted);min-width:84px;}
+  .subform{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .subform .full{grid-column:1 / -1;}
+  .subform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+  .subform input{width:100%;font-size:15px;padding:10px 12px;border:1px solid #c9d3e0;border-radius:8px;background:#fff;font-family:inherit;}
+  .subform input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(31,95,176,.15);}
+  .subform button{grid-column:1 / -1;background:var(--accent);color:#fff;font-weight:700;font-size:15px;border:none;border-radius:8px;padding:12px 18px;cursor:pointer;}
+  .subform button:hover{background:var(--accent-dk);}
+  .subnote{font-size:12.5px;color:var(--muted);margin:8px 0 0;}
+
+  footer{padding:38px 0;color:var(--muted);font-size:14px;}
+  footer .cite{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px;overflow:auto;}
+  footer pre{margin:0;white-space:pre-wrap;font-size:12.5px;color:#33405a;font-family:ui-monospace,Menlo,Consolas,monospace;}
 </style>
 </head>
 <body>
-<header class="site">
-  <div class="wrap topbar">
-    <span class="brand">ITEA Framework</span>
-    <span class="lang">
-      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-      <button id="btn-es" onclick="setLang('es')">ES</button>
-    </span>
-  </div>
-</header>
 
-<!-- ================= ENGLISH ================= -->
-<div id="content-en">
-  <div class="hero">
-    <div class="wrap">
-      <h1>ITEA Framework</h1>
-      <div class="sub">Triple Index of Exposure to Automation · Version 3.0</div>
-      <p class="lede">A multidimensional framework for measuring occupational exposure to <strong>algorithmic expropriation</strong> under the Agentic AI regime.</p>
-      <div class="badges">
-        <span class="badge">10 indicators</span>
-        <span class="badge">1,016 occupations</span>
-        <span class="badge">O*NET 30.2</span>
-        <span class="badge">MIT License</span>
-        <span class="badge">JOSS submission · mid-2026</span>
-      </div>
-      <div class="cta">
-        <a class="primary" href="https://github.com/Aval22/ITEA">View on GitHub</a>
-        <a class="ghost" href="https://doi.org/10.5281/zenodo.19578915">Zenodo (DOI)</a>
-        <a class="ghost" href="#cite">How to cite</a>
+<div class="topbar"><div class="wrap">
+  <span class="brand">ITEA 4.0</span>
+  <nav>
+    <a href="#valor">Valor</a>
+    <a href="#hallazgos">Hallazgos</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#entornos">Entornos</a>
+    <a href="#bibliografia">Bibliografía</a>
+    <a href="#acceso">Acceso</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://github.com/Aval22/ITEA">GitHub</a>
+    <a href="index_en.html" style="border:1px solid rgba(255,255,255,.35);padding:2px 9px;border-radius:5px;">EN</a>
+  </nav>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <p style="margin:0 0 14px;font-size:13px;color:#9fb4d2;">🌐 <strong style="color:#fff">Español</strong> · <a href="index_en.html" style="color:#cdd9ea;">English</a></p>
+  <span class="badge-new">Nueva versión · ITEA 4.0</span>
+  <h1>Índice de Triple Exposición a la Automatización</h1>
+  <p class="sub">Medir —y compensar— la <strong style="color:#fff">expropiación algorítmica</strong> del trabajo, a nivel de tarea.</p>
+  <p class="lede">ITEA 4.0 amplía el marco de un entorno a tres —Estados Unidos (O*NET), Europa (ESCO) y un puente US–UE (Bridge)— sobre un eje común ISCO-08, con instancias nacionales en curso para Asia.</p>
+  <div class="chips">
+    <span class="chip">3 entornos · ISCO-08</span>
+    <span class="chip">O*NET 30.2 · ESCO v1.2.1</span>
+    <span class="chip">Exposición a nivel de tarea</span>
+    <span class="chip">Primer índice europeo de expropiación</span>
+  </div>
+  <div class="cta">
+    <a class="btn primary" href="#entornos">Explorar los tres entornos</a>
+    <a class="btn ghost" href="tci/">Dashboard interactivo (EE.UU.)</a>
+    <a class="btn ghost" href="https://github.com/Aval22/ITEA">Repositorio</a>
+  </div>
+  <p class="langstrip">Notas de la versión v4.0:
+    <a href="v4.0/RELEASE_v4.0.md">EN</a> · <a href="v4.0/RELEASE_v4.0_ES.md">ES</a> ·
+    <a href="v4.0/RELEASE_v4.0_PT.md">PT</a> · <a href="v4.0/RELEASE_v4.0_ZH.md">中文</a></p>
+</div></header>
+
+<!-- VALOR ESTRATÉGICO -->
+<section id="valor"><div class="wrap">
+  <p class="kicker">Valor estratégico</p>
+  <h2>Qué aporta ITEA 4.0 al estado de la técnica</h2>
+  <p class="lead">La economía del impacto laboral de la IA se ha articulado en torno a dos tradiciones que, hasta ahora, han discurrido en paralelo.</p>
+  <p>La primera, de raíz <strong>tarea-céntrica</strong> (Acemoglu y Restrepo, 2020; Acemoglu, Autor, Hazell y Restrepo, 2022; Autor et al., 2020), mide la exposición ocupacional a la automatización y la trata como un shock exógeno de productividad cuyo efecto se lee en términos de desplazamiento, salarios y participación del trabajo. La segunda, más reciente —<em>labor as capital</em>—, reconoce que los sistemas de IA no solo sustituyen tareas: <strong>absorben la pericia del trabajador y la incorporan como activo de la firma</strong>, ya documentándolo empíricamente —los modelos generativos codifican el conocimiento de los trabajadores más productivos (Brynjolfsson, Li y Raymond, 2025)— ya modelizando la propiedad de esa pericia (Cullen, Li y Li, 2025). Esta segunda corriente, sin embargo, carecía de un instrumento de medición a escala ocupacional.</p>
+  <p><strong>ITEA 4.0 se sitúa en la intersección de ambas tradiciones y cubre ese hueco.</strong> Su aportación es triple:</p>
+  <div class="triple">
+    <div class="t"><h4>Conceptual</h4><p>Reformula el fenómeno como <strong>expropiación algorítmica</strong> —la transferencia no compensada de capital intelectual del trabajador hacia los activos algorítmicos de la firma—, desplazando el marco normativo del desplazamiento del empleo hacia la apropiación del valor.</p></div>
+    <div class="t"><h4>Medición</h4><p>Operacionaliza esa transferencia como un <strong>índice de exposición a nivel de tarea</strong>, construido sobre O*NET y armonizado con ESCO mediante <strong>embeddings semánticos densos</strong>: la captura de conocimiento deja de ser intuición teórica y pasa a ser magnitud comparable entre ocupaciones, sectores y países.</p></div>
+    <div class="t"><h4>Política</h4><p>Vincula la medición a un mecanismo de compensación explícito —<strong>derechos residuales tokenizados (θ·V)</strong> frente a la tributación pigouviana del capital algorítmico—, tendiendo un puente entre el diagnóstico empírico y el diseño institucional.</p></div>
+  </div>
+  <div class="hinge">
+    <strong>La bisagra del argumento.</strong> ITEA hereda de la tradición Acemoglu–Autor el aparato de medición tarea-céntrico, pero lo redirige de la dimensión de <em>sustitución</em> a la de <em>captura y transferencia</em> —justo lo que la corriente de Brynjolfsson–Li y Cullen–Li–Li identifica pero no instrumenta—. No inventa el fenómeno: inventa la forma de <strong>medirlo</strong> y de <strong>compensarlo</strong>.
+  </div>
+  <div class="global">
+    <h4>De un marco nacional a una familia global</h4>
+    <p>La v4.0 lleva ese aparato más allá de Estados Unidos: el entorno <strong>europeo (ESCO)</strong> y el <strong>puente US–UE (Bridge)</strong> demuestran que la medición es portable y comparable entre sistemas. Sobre esa misma arquitectura se está trabajando en instancias nacionales para <span class="flags">Japón, Corea e India</span> (en desarrollo).</p>
+  </div>
+</div></section>
+
+<!-- HALLAZGOS IMPORTANTES -->
+<section id="hallazgos" class="alt-bg"><div class="wrap">
+  <p class="kicker">Hallazgos importantes</p>
+  <h2>Qué hemos encontrado —y por qué importa</h2>
+  <p class="muted" style="max-width:780px;">Cada hallazgo se sitúa en la literatura académica y se traduce en una aplicación concreta para gobiernos, empresas e investigadores. Los gráficos son esquemas cualitativos o cifras de literatura pública; no representan valores del índice ITEA.</p>
+  <div class="find">
+
+    <div class="fcard">
+      <h3>1 · La IA actúa sobre la actividad, no sobre la ocupación</h3>
+      <p class="muted">La integración de la IA es selectiva: penetra en tareas concretas dentro de los puestos, no en puestos enteros. La unidad de análisis correcta es la actividad.</p>
+      <div class="chartbox"><canvas id="c1" aria-label="Cuota de ocupaciones con uso de IA en una parte de sus tareas"></canvas></div>
+      <p class="src">Cuota de ocupaciones con uso de IA por umbral de tareas cubiertas (Handa et al., 2025, dato público).</p>
+      <div class="two">
+        <div><p class="lab">Relevancia (literatura)</p><p>Refina el aparato tarea-céntrico (Autor, Levy y Murnane, 2003; Acemoglu y Restrepo, 2020): la exposición ocupacional es un agregado que oculta dónde golpea realmente la IA.</p></div>
+        <div><p class="lab">Aplicación estratégica</p><p>Permite priorizar formación, rediseño de puestos y políticas <strong>por actividad</strong>, con una resolución que el enfoque por ocupación no ofrece.</p></div>
       </div>
     </div>
-  </div>
 
-  <div class="wrap">
-    <section>
-      <h2>What is ITEA?</h2>
-      <p>The ITEA Framework provides ten complementary indicators covering 1,016 SOC 6-digit occupations from O*NET 30.2, designed to measure occupational exposure to algorithmic expropriation in the Agentic AI regime — distinct from but complementary to task-level automation indices in the Frey–Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021).</p>
-      <div class="stats">
-        <div class="stat"><span class="num">0.797</span><span class="lbl">convergent validation r(OAEI v3.0+, AIOE)</span></div>
-        <div class="stat"><span class="num">738</span><span class="lbl">common occupations validated</span></div>
-        <div class="stat"><span class="num">10</span><span class="lbl">complementary indicators</span></div>
-      </div>
-      <div class="dash-cta">
-        <a class="dash-btn" href="tci/">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-          Open the interactive dashboard
-        </a>
-      </div>
-    </section>
-
-    <section>
-      <h2>The ten indicators</h2>
-      <table>
-        <thead><tr><th>Code</th><th>Indicator</th><th>Dimension</th></tr></thead>
-        <tbody>
-          <tr><td><code>ITEA</code></td><td>Triple Index of Exposure to Automation</td><td>Exposure</td></tr>
-          <tr><td><code>IRA</code></td><td>Adaptive Resilience Index</td><td>Resilience</td></tr>
-          <tr><td><code>ICT</code></td><td>Technical Complexity Index</td><td>Complexity</td></tr>
-          <tr><td><code>IFS</code></td><td>Social Friction Index</td><td>Social interaction</td></tr>
-          <tr><td><code>IPI</code></td><td>Interpersonal Presence Index</td><td>Presentiality</td></tr>
-          <tr><td><code>IEF</code></td><td>Functional Specificity Index</td><td>Specificity</td></tr>
-          <tr><td><code>GEE</code></td><td>Education-Experience Gradient</td><td>Qualification</td></tr>
-          <tr><td><code>IMO</code></td><td>Occupational Mutation Index</td><td>Mutation</td></tr>
-          <tr><td><code>OAEI</code></td><td>Occupational Algorithmic Expropriation Index</td><td>Composite operational</td></tr>
-          <tr><td><code>AEI</code></td><td>Algorithmic Expropriation Index</td><td>Internal benchmark</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Related research</h2>
-      <p>A trilogy of research papers (8A/8B/8C) put the framework into active empirical use and motivated each of the three central revisions in v3.0:</p>
-      <ol class="papers">
-        <li>García-Lluis Valencia, A. (2026a). <em>The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592542">10.5281/zenodo.19592542</a>.</li>
-        <li>García-Lluis Valencia, A. (2026b). <em>Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality.</em> Universidad Rey Juan Carlos.</li>
-        <li>García-Lluis Valencia, A. (2026c). <em>QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592184">10.5281/zenodo.19592184</a>.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Documentation &amp; data</h2>
-      <p>Everything needed to read, reproduce or extend the framework is in the public repository:</p>
-      <table>
-        <tbody>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Consolidated Methodology</a></td><td>The authoritative methodology document (v3.0).</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/MIGRATION.md">Migration guide</a></td><td>Step-by-step v1.45 → v3.0 migration.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/CHANGELOG.md">Changelog</a></td><td>Full v1.0 → v3.0 change history.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/data/processed/ITEA_v3_0_Workbook.xlsx">Data workbook (.xlsx)</a></td><td>Primary v3.0 dataset — 1,016 occupations × indicators.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/tree/main/code">Reference code (R · Python)</a></td><td>Implementations reproducing the workbook values.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA">Browse the full repository</a></td><td>Source, releases and all documentation.</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="cite">
-      <h2>How to cite</h2>
-      <pre><code>@software{garcia-lluis2026itea,
-  title   = {ITEA Framework: A Multidimensional System for Measuring
-             Occupational Exposure to Algorithmic Expropriation
-             under the Agentic AI Regime},
-  author  = {García-Lluis Valencia, Alberto},
-  year    = {2026},
-  version = {3.0},
-  doi     = {10.5281/zenodo.20083102},
-  url     = {https://github.com/Aval22/ITEA}
-}</code></pre>
-      <p class="meta">Concept DOI (always latest): <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a> · v3.0 DOI: <a href="https://doi.org/10.5281/zenodo.20083102">10.5281/zenodo.20083102</a></p>
-    </section>
-
-    <section style="border-bottom:none;">
-      <h2>Author</h2>
-      <p class="meta">
-        <strong>Alberto García-Lluis Valencia</strong><br>
-        Universidad Rey Juan Carlos, Madrid · Doctoral Programme in Economics and Business<br>
-        ORCID: <a href="https://orcid.org/0009-0003-1438-1633">0009-0003-1438-1633</a>
-      </p>
-    </section>
-  </div>
-</div>
-
-<!-- ================= ESPAÑOL ================= -->
-<div id="content-es" class="hidden">
-  <div class="hero">
-    <div class="wrap">
-      <h1>Marco ITEA</h1>
-      <div class="sub">Índice Triple de Exposición a la Automatización · Versión 3.0</div>
-      <p class="lede">Un marco multidimensional para medir la exposición ocupacional a la <strong>expropiación algorítmica</strong> bajo el régimen de la IA agéntica.</p>
-      <div class="badges">
-        <span class="badge">10 indicadores</span>
-        <span class="badge">1.016 ocupaciones</span>
-        <span class="badge">O*NET 30.2</span>
-        <span class="badge">Licencia MIT</span>
-        <span class="badge">Envío a JOSS · mediados de 2026</span>
-      </div>
-      <div class="cta">
-        <a class="primary" href="https://github.com/Aval22/ITEA">Ver en GitHub</a>
-        <a class="ghost" href="https://doi.org/10.5281/zenodo.19578915">Zenodo (DOI)</a>
-        <a class="ghost" href="#cite-es">Cómo citar</a>
+    <div class="fcard">
+      <h3>2 · La IA generativa recae sobre el conocimiento, no sobre la rutina clásica</h3>
+      <p class="muted">El uso real de IA sigue al trabajo cognitivo y codificable y es ciego a la automatización rutinaria tradicional. La GenAI no es la vieja automatización.</p>
+      <div class="chartbox"><canvas id="c2" aria-label="Esquema: automatización clásica frente a IA generativa según la complejidad cognitiva de la tarea"></canvas></div>
+      <p class="src">El «giro del gradiente»: esquema cualitativo (Frey y Osborne, 2017; Eloundou et al., 2024; Handa et al., 2025).</p>
+      <div class="two">
+        <div><p class="lab">Relevancia (literatura)</p><p>Distingue empíricamente la exposición generativa de los índices clásicos de automatizabilidad (Frey y Osborne, 2017; Eloundou et al., 2024), validando el constructo en su propia unidad.</p></div>
+        <div><p class="lab">Aplicación estratégica</p><p>Reorienta el foco de riesgo hacia el <strong>trabajo de conocimiento</strong> —el más expuesto y, a la vez, el más valioso de proteger y compensar.</p></div>
       </div>
     </div>
+
+    <div class="fcard">
+      <h3>3 · Existe un eje de responsabilidad: augmentar vs. delegar</h3>
+      <p class="muted">El uso se ordena entre augmentación (el profesional retiene el juicio) y automatización (la actividad se delega y se codifica). Es el lado de la automatización el que se asocia a la pérdida de empleo, según evidencia independiente de mercado.</p>
+      <div class="chartbox"><canvas id="c3" aria-label="Reparto entre augmentación y automatización en el uso de IA"></canvas></div>
+      <p class="src">Reparto augmentación / automatización del uso de IA (Anthropic Economic Index, dato público).</p>
+      <div class="two">
+        <div><p class="lab">Relevancia (literatura)</p><p>Operacionaliza el fenómeno que <em>labor as capital</em> nombra (Brynjolfsson, Li y Raymond, 2025; Cullen, Li y Li, 2025): no toda IA es igual; la delegación es la que transfiere valor.</p></div>
+        <div><p class="lab">Aplicación estratégica</p><p>Identifica dónde aplicar mecanismos de <strong>compensación (θ·V)</strong> y dónde la colaboración humano-IA crea valor sin expropiarlo.</p></div>
+      </div>
+    </div>
+
+    <div class="fcard">
+      <h3>4 · «Expropiado pero retenido»: desplazamiento sin despido</h3>
+      <p class="muted">El valor del profesional puede transferirse a los activos algorítmicos de la empresa sin que medie un despido; el contrato laboral vigente no registra esa transferencia.</p>
+      <div class="chartbox"><canvas id="c4" aria-label="Esquema: brecha entre valor capturado por la firma y compensación registrada en el contrato"></canvas></div>
+      <p class="src">Esquema de la brecha de apropiación: valor capturado frente a valor compensado (ilustrativo).</p>
+      <div class="two">
+        <div><p class="lab">Relevancia (literatura)</p><p>Desplaza el marco normativo del desplazamiento (paro, salarios) a la <strong>apropiación del valor</strong>, un ángulo que la tradición tarea-céntrica no captura.</p></div>
+        <div><p class="lab">Aplicación estratégica</p><p>Sustenta el rediseño contractual y de la política de rentas: medir la captura es el primer paso para compensarla.</p></div>
+      </div>
+    </div>
+
+    <div class="fcard">
+      <h3>5 · El marco es portable y comparable entre sistemas</h3>
+      <p class="muted">El ordenamiento de exposición sobrevive al puente O*NET↔ESCO a toda resolución (invarianza de traducción), y la estructura europea de ITEA llega a predecir el uso real de IA en Europa.</p>
+      <div class="chartbox"><canvas id="c5" aria-label="Esquema: el ordenamiento de exposición se conserva al cruzar O*NET y ESCO"></canvas></div>
+      <p class="src">Esquema de portabilidad: la exposición de EE.UU. (O*NET) y Europa (ESCO) conservan el mismo orden (ilustrativo).</p>
+      <div class="two">
+        <div><p class="lab">Relevancia (literatura)</p><p>Aporta validación externa de comportamiento sobre el eje europeo —algo inexistente en la literatura previa, anclada en datos estadounidenses.</p></div>
+        <div><p class="lab">Aplicación estratégica</p><p>Habilita el despliegue <strong>multi-país comparable</strong> (UE, y en curso Japón, Corea e India) sobre una misma arquitectura.</p></div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia"><div class="wrap">
+  <p class="kicker">Metodología</p>
+  <h2>Cómo se mide la expropiación</h2>
+  <p>ITEA descompone cada ocupación en sus <strong>tareas y actividades</strong> (la unidad donde la IA actúa de hecho) y gradúa cada una en tres dimensiones —exposición generativa, codificabilidad del conocimiento y nivel de responsabilidad— que se agregan a indicadores ocupacionales y a un índice compuesto de expropiación. El marco distingue con cuidado <strong>exposición</strong> (qué parte del trabajo es alcanzable por la IA) de <strong>expropiación</strong> (la transferencia del capital intelectual), y valida el constructo contra criterios externos independientes (de exposición potencial, de empleo realizado y de uso real de IA).</p>
+  <p>La armonización entre la taxonomía estadounidense (O*NET) y la europea (ESCO) se realiza mediante <strong>embeddings semánticos densos</strong> sobre el enunciado de cada tarea, lo que permite leer el mismo constructo en ambos sistemas y construir el puente US–UE. La documentación metodológica pública detalla el aparato, los indicadores por entorno y la validación.</p>
+  <ul class="docs" style="list-style:none;padding:0;margin:14px 0 0;">
+    <li style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0;"><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Metodología consolidada (v3.0)</a> <span class="muted">— documento metodológico de referencia del marco.</span></li>
+    <li style="border-bottom:1px solid var(--line);padding:11px 0;"><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/ITEA_v4_0_SPEC_DISENO.md">Especificación de diseño v4.0</a> <span class="muted">— arquitectura de los tres entornos y decisiones de diseño.</span></li>
+    <li style="border-bottom:1px solid var(--line);padding:11px 0;"><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/INDICADORES_x_ENTORNO.md">Indicadores por entorno</a> <span class="muted">— qué indicadores componen cada entorno y cómo se relacionan.</span></li>
+    <li style="border-bottom:1px solid var(--line);padding:11px 0;"><a href="https://github.com/Aval22/ITEA/blob/main/paper/paper.md">Artículo (borrador JOSS)</a> <span class="muted">— resumen del marco y su software para revisión por pares.</span></li>
+  </ul>
+</div></section>
+
+<!-- ENTORNOS -->
+<section id="entornos" class="alt-bg"><div class="wrap">
+  <p class="kicker">ITEA 4.0 · Tres entornos</p>
+  <h2>Estados Unidos · Europa · Bridge</h2>
+  <p class="muted" style="max-width:760px;">Un mismo constructo, tres lecturas sobre el eje común ISCO-08. Cada entorno da acceso a su documentación; el entorno estadounidense incluye además un cuadro de mando interactivo.</p>
+  <div class="envs">
+
+    <div class="env us">
+      <span class="tag">EE.UU. · O*NET</span>
+      <h3>ITEA 4.0 — Estados Unidos</h3>
+      <p>La base del marco (línea v3.0, con mejoras puntuales): diez indicadores complementarios sobre las ocupaciones de O*NET 30.2 y un índice compuesto de expropiación, con validación convergente externa. La novedad de v4.0 es la validación del constructo <strong>a nivel de tarea</strong> contra el uso real de IA observado en el mercado.</p>
+      <ul class="docs">
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Metodología consolidada</a><span>Documento de referencia del entorno estadounidense.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/README.md">README del proyecto</a><span>Visión general, indicadores y validación.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA">Repositorio y releases</a><span>Código, datos públicos v3.0 y documentación.</span></li>
+      </ul>
+      <div class="foot"><a class="dashbtn" href="tci/">▸ Abrir dashboard interactivo</a></div>
+    </div>
+
+    <div class="env eu">
+      <span class="tag">Europa · ESCO</span>
+      <h3>ITEA 4.0 — Europa (ESCO)</h3>
+      <p>El <strong>primer índice europeo de exposición a la expropiación</strong>, sobre ESCO v1.2.1 / ISCO-08. La cualificación se ancla al Marco Europeo de Cualificaciones (EQF) y el índice se valida de forma convergente contra un criterio europeo independiente. Incorpora un criterio de comportamiento por competencia ESCO.</p>
+      <ul class="docs">
+        <li><a href="v4.0/RELEASE_v4.0_ES.md">Notas de la versión v4.0 (ES)</a><span>Novedades y hallazgos del entorno europeo.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/DECISION_dos_indices.md">Dos índices: exposición y expropiación</a><span>Por qué Europa separa ambas magnitudes.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/VALIDACION_paso9.md">Validación europea</a><span>Convergencia con el criterio europeo independiente.</span></li>
+      </ul>
+      <div class="foot"><a class="dashbtn alt" href="v4.0/outputs/dashboard.html">▸ Dashboard de 3 entornos</a></div>
+    </div>
+
+    <div class="env br">
+      <span class="tag">Bridge · US–UE</span>
+      <h3>ITEA 4.0 — Bridge (US–UE)</h3>
+      <p>El entorno de <strong>portabilidad híbrida</strong> entre O*NET y ESCO sobre ISCO-08. Demuestra la <strong>invarianza de traducción</strong> —el ordenamiento de exposición sobrevive al puente a toda resolución— y habilita comparaciones entre sistemas: la estructura europea de ITEA llega a predecir el uso real de IA en Europa.</p>
+      <ul class="docs">
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/INVARIANZA_paso8.md">Invarianza y concordancia</a><span>Cómo se mide la portabilidad del marco.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/MAPPING_VERSIONS.md">Mapeo entre taxonomías</a><span>Versionado del puente tarea↔competencia.</span></li>
+        <li><a href="https://github.com/Aval22/ITEA/blob/main/v4.0/docs/ITEA_FAMILIA.md">La familia ITEA</a><span>Arquitectura global y entornos nacionales.</span></li>
+      </ul>
+      <div class="foot"><a class="dashbtn alt" href="v4.0/outputs/dashboard.html">▸ Dashboard de 3 entornos</a></div>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- BIBLIOGRAFÍA -->
+<section id="bibliografia"><div class="wrap">
+  <p class="kicker">Bibliografía</p>
+  <h2>Marco académico de referencia</h2>
+  <p class="muted" style="max-width:780px;">Las dos tradiciones que ITEA conecta —medición tarea-céntrica y <em>labor as capital</em>— y los fundamentos institucionales de la tesis de expropiación.</p>
+  <ol class="bib">
+    <li>Acemoglu, D. y Restrepo, P. (2020). Robots and Jobs: Evidence from US Labor Markets. <em>Journal of Political Economy</em>, 128(6).</li>
+    <li>Acemoglu, D., Autor, D., Hazell, J. y Restrepo, P. (2022). Artificial Intelligence and Jobs: Evidence from Online Vacancies. <em>Journal of Labor Economics</em>, 40(S1).</li>
+    <li>Autor, D., Mindell, D. y Reynolds, E. (2020). <em>The Work of the Future</em>. MIT Task Force.</li>
+    <li>Autor, D. H., Levy, F. y Murnane, R. J. (2003). The Skill Content of Recent Technological Change. <em>Quarterly Journal of Economics</em>, 118(4).</li>
+    <li>Brynjolfsson, E., Li, D. y Raymond, L. (2025). Generative AI at Work. <em>Quarterly Journal of Economics</em>, 140.</li>
+    <li>Cullen, Li y Li (2025). <em>Labor as Capital</em>: ownership of expertise and alternative compensation regimes.</li>
+    <li>Eloundou, T., Manning, S., Mishkin, P. y Rock, D. (2024). GPTs are GPTs: Labor Market Impact Potential of LLMs. <em>Science</em>, 384(6702).</li>
+    <li>Felten, E., Raj, M. y Seamans, R. (2021). Occupational, Industry, and Geographic Exposure to AI (AIOE). <em>Strategic Management Journal</em>, 42(12).</li>
+    <li>Frey, C. B. y Osborne, M. A. (2017). The Future of Employment. <em>Technological Forecasting and Social Change</em>, 114.</li>
+    <li>Handa, K. et al. (2025). Which Economic Tasks are Performed with AI? Evidence from Millions of Claude Conversations. <em>arXiv:2503.04761</em>.</li>
+    <li>Tomlinson, K., Jaffe, S., Wang, W., Counts, S. y Suri, S. (2025). Working with AI: Measuring the Applicability of Generative AI to Occupations. <em>arXiv:2507.07935</em>.</li>
+    <li>Lindbeck, A. y Snower, D. J. (2001). Insiders versus Outsiders. <em>Journal of Economic Perspectives</em>, 15(1).</li>
+    <li>Ostrom, E. (1990). <em>Governing the Commons</em>. Cambridge University Press.</li>
+    <li>Williamson, O. E. (1985). <em>The Economic Institutions of Capitalism</em>. Free Press.</li>
+    <li>García-Lluis Valencia, A. (2026). The Algorithmic Expropriation of Labor: Toward a Modernization of the Employment Contract. <em>Zenodo</em>. DOI: <a href="https://doi.org/10.5281/zenodo.20424900">10.5281/zenodo.20424900</a>.</li>
+  </ol>
+  <p class="muted" style="font-size:13.5px;">Bibliografía completa (BibTeX) y notas de procedencia disponibles bajo solicitud — ver «Acceso a datos».</p>
+</div></section>
+
+<!-- ACCESO -->
+<section id="acceso"><div class="wrap">
+  <div class="access">
+    <p class="kicker" style="color:#9fc0ec;">Acceso</p>
+    <h2>Datos e información operativa</h2>
+    <p>Este sitio es <strong style="color:#fff">teórico y conceptual</strong>. Por integridad investigadora (evitar el <em>scooping</em> antes de la publicación académica) y protección de fuentes de terceros, los índices a nivel de tarea/ocupación, los conjuntos de datos operativos y los resultados numéricos detallados de la v4.0 no se publican aquí: están disponibles <strong style="color:#fff">bajo solicitud</strong> y para colaboración investigadora, en los planos académico y comercial.</p>
+    <a class="mail" href="#solicitud">Solicitar acceso · ir al formulario</a>
+  </div>
+</div></section>
+
+<!-- CONTACTO + SUSCRIPCIÓN -->
+<section id="contacto"><div class="wrap">
+  <p class="kicker">Contacto</p>
+  <h2>Contactar y mantenerse informado</h2>
+  <div class="ccard" style="margin-bottom:20px;">
+    <h3>Contactar</h3>
+    <p class="muted" style="font-size:14.5px;">Para consultas académicas, acceso a datos o colaboración (académica y comercial).</p>
+    <div class="row"><span class="k">Autor</span><span>Alberto García-Lluis Valencia</span></div>
+    <div class="row"><span class="k">Email</span><a href="mailto:alb.valencia@gmail.com">alb.valencia@gmail.com</a></div>
+    <div class="row"><span class="k">ORCID</span><a href="https://orcid.org/0009-0003-1438-1633">0009-0003-1438-1633</a></div>
+    <div class="row"><span class="k">Afiliación</span><span>Universidad Rey Juan Carlos</span></div>
+    <div class="row"><span class="k">GitHub</span><a href="https://github.com/Aval22/ITEA">github.com/Aval22/ITEA</a></div>
   </div>
 
-  <div class="wrap">
-    <section>
-      <h2>¿Qué es ITEA?</h2>
-      <p>El marco ITEA ofrece diez indicadores complementarios que cubren 1.016 ocupaciones SOC de seis dígitos de O*NET 30.2, diseñados para medir la exposición ocupacional a la expropiación algorítmica en el régimen de la IA agéntica — distinto pero complementario a los índices de automatización a nivel de tarea de la tradición Frey–Osborne (2017) o a las medidas de exposición basadas en capacidades como el benchmark AIOE de Felten, Raj y Seamans (2021).</p>
-      <div class="stats">
-        <div class="stat"><span class="num">0,797</span><span class="lbl">validación convergente r(OAEI v3.0+, AIOE)</span></div>
-        <div class="stat"><span class="num">738</span><span class="lbl">ocupaciones comunes validadas</span></div>
-        <div class="stat"><span class="num">10</span><span class="lbl">indicadores complementarios</span></div>
-      </div>
-      <div class="dash-cta">
-        <a class="dash-btn" href="tci/">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-          Abrir el cuadro de mando interactivo
-        </a>
-      </div>
-    </section>
+  <div id="solicitud" class="ccard">
+    <h3>Solicitud de acceso a datos · suscripción a novedades</h3>
+    <p class="muted" style="font-size:14.5px;">Rellena el formulario (nombre, apellido, email, país, empresa y motivo). Tus datos llegan de forma privada al autor y se usan solo para responder a tu solicitud o enviarte novedades de ITEA.</p>
+    <div style="margin-top:8px;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdd1IZlWLkZhHUnHosHE-7KTHvN2KWQ2af5nfVMiPRsfKXDeQ/viewform?embedded=true" title="Formulario ITEA — acceso a datos y novedades" loading="lazy" style="width:100%;max-width:680px;height:1320px;border:0;" marginheight="0" marginwidth="0">Cargando…</iframe>
+    </div>
+  </div>
+</div></section>
 
-    <section>
-      <h2>Los diez indicadores</h2>
-      <table>
-        <thead><tr><th>Código</th><th>Indicador</th><th>Dimensión</th></tr></thead>
-        <tbody>
-          <tr><td><code>ITEA</code></td><td>Índice Triple de Exposición a la Automatización</td><td>Exposición</td></tr>
-          <tr><td><code>IRA</code></td><td>Índice de Resiliencia Adaptativa</td><td>Resiliencia</td></tr>
-          <tr><td><code>ICT</code></td><td>Índice de Complejidad Técnica</td><td>Complejidad</td></tr>
-          <tr><td><code>IFS</code></td><td>Índice de Fricción Social</td><td>Interacción social</td></tr>
-          <tr><td><code>IPI</code></td><td>Índice de Presencia Interpersonal</td><td>Presencialidad</td></tr>
-          <tr><td><code>IEF</code></td><td>Índice de Especificidad Funcional</td><td>Especificidad</td></tr>
-          <tr><td><code>GEE</code></td><td>Gradiente Educación-Experiencia</td><td>Cualificación</td></tr>
-          <tr><td><code>IMO</code></td><td>Índice de Mutación Ocupacional</td><td>Mutación</td></tr>
-          <tr><td><code>OAEI</code></td><td>Índice de Expropiación Algorítmica Ocupacional</td><td>Compuesto operativo</td></tr>
-          <tr><td><code>AEI</code></td><td>Índice de Expropiación Algorítmica</td><td>Referencia interna</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Investigación relacionada</h2>
-      <p>Una trilogía de artículos (8A/8B/8C) puso el marco en uso empírico activo y motivó cada una de las tres revisiones centrales de la v3.0:</p>
-      <ol class="papers">
-        <li>García-Lluis Valencia, A. (2026a). <em>The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592542">10.5281/zenodo.19592542</a>.</li>
-        <li>García-Lluis Valencia, A. (2026b). <em>Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality.</em> Universidad Rey Juan Carlos.</li>
-        <li>García-Lluis Valencia, A. (2026c). <em>QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel.</em> Universidad Rey Juan Carlos. DOI: <a href="https://doi.org/10.5281/zenodo.19592184">10.5281/zenodo.19592184</a>.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Documentación y datos</h2>
-      <p>Todo lo necesario para leer, reproducir o ampliar el marco está en el repositorio público:</p>
-      <table>
-        <tbody>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Metodología consolidada</a></td><td>Documento metodológico de referencia (v3.0).</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/docs/MIGRATION.md">Guía de migración</a></td><td>Migración paso a paso v1.45 → v3.0.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/CHANGELOG.md">Registro de cambios</a></td><td>Historial completo v1.0 → v3.0.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/blob/main/data/processed/ITEA_v3_0_Workbook.xlsx">Workbook de datos (.xlsx)</a></td><td>Conjunto de datos v3.0 — 1.016 ocupaciones × indicadores.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA/tree/main/code">Código de referencia (R · Python)</a></td><td>Implementaciones que reproducen los valores del workbook.</td></tr>
-          <tr><td><a href="https://github.com/Aval22/ITEA">Explorar el repositorio completo</a></td><td>Código fuente, releases y toda la documentación.</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="cite-es">
-      <h2>Cómo citar</h2>
-      <pre><code>@software{garcia-lluis2026itea,
-  title   = {ITEA Framework: A Multidimensional System for Measuring
-             Occupational Exposure to Algorithmic Expropriation
-             under the Agentic AI Regime},
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <h2 style="color:var(--navy);font-size:20px;margin:0 0 10px;">Cómo citar</h2>
+  <div class="cite"><pre>@software{garcia-lluis2026itea,
   author  = {García-Lluis Valencia, Alberto},
+  title   = {ITEA Framework — Triple Index of Exposure to Automation},
   year    = {2026},
-  version = {3.0},
-  doi     = {10.5281/zenodo.20083102},
+  version = {4.0},
+  doi     = {10.5281/zenodo.19578915},
   url     = {https://github.com/Aval22/ITEA}
-}</code></pre>
-      <p class="meta">DOI concepto (siempre la última versión): <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a> · DOI v3.0: <a href="https://doi.org/10.5281/zenodo.20083102">10.5281/zenodo.20083102</a></p>
-    </section>
+}</pre></div>
+  <p style="margin-top:10px;">DOI concepto (siempre la última versión): <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a></p>
+  <p class="muted" style="font-size:13px;margin-top:18px;">Fuentes externas con licencia verificada en origen: ESCO v1.2.1 (CC BY 4.0) y O*NET 30.2 (USDOL/ETA, CC BY 4.0). Datos derivados marcados como «modificados».</p>
+</div></footer>
 
-    <section style="border-bottom:none;">
-      <h2>Autor</h2>
-      <p class="meta">
-        <strong>Alberto García-Lluis Valencia</strong><br>
-        Universidad Rey Juan Carlos, Madrid · Programa de Doctorado en Economía y Empresa<br>
-        ORCID: <a href="https://orcid.org/0009-0003-1438-1633">0009-0003-1438-1633</a>
-      </p>
-    </section>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">
-    <span id="foot-en">ITEA Framework v3.0 · MIT License · © 2026 Alberto García-Lluis Valencia</span>
-    <span id="foot-es" class="hidden">Marco ITEA v3.0 · Licencia MIT · © 2026 Alberto García-Lluis Valencia</span>
-    <p style="margin-top:12px;font-size:11px;line-height:1.5;color:#8a93a0;">
-      This site includes information from the
-      <a href="https://www.onetcenter.org/database.html">O*NET 30.2 Database</a>
-      by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).
-      Used under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.
-      O*NET&reg; is a trademark of USDOL/ETA. Alberto García-Lluis Valencia has modified all or some of
-      this information. USDOL/ETA has not approved, endorsed, or tested these modifications.
-      BLS OEWS wage data and the AIOE benchmark (Felten, Raj &amp; Seamans, 2021) are used under their respective terms.
-    </p>
-  </div>
-</footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
-  function setLang(lang){
-    var en = lang === 'en';
-    document.documentElement.lang = lang;
-    document.getElementById('content-en').classList.toggle('hidden', !en);
-    document.getElementById('content-es').classList.toggle('hidden', en);
-    document.getElementById('foot-en').classList.toggle('hidden', !en);
-    document.getElementById('foot-es').classList.toggle('hidden', en);
-    document.getElementById('btn-en').classList.toggle('active', en);
-    document.getElementById('btn-es').classList.toggle('active', !en);
-    try{ localStorage.setItem('itea-lang', lang); }catch(e){}
-  }
-  (function(){
-    var saved;
-    try{ saved = localStorage.getItem('itea-lang'); }catch(e){}
-    if(!saved){
-      saved = (navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es' : 'en';
-    }
-    setLang(saved);
-  })();
+(function(){
+  if(!window.Chart) return;
+  var ink="#16202e",muted="#5a6473",accent="#1f5fb0",navy="#0e2748",grid="#eef1f5",gray="#9aa3b2";
+  Chart.defaults.font.family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif";
+  Chart.defaults.color=muted;
+  var noNum={ticks:{display:false},grid:{color:grid}};
+  function mk(id,cfg){var el=document.getElementById(id); if(el) new Chart(el,cfg);}
+
+  mk("c1",{type:"bar",
+    data:{labels:["≥25% de tareas","≥50% de tareas","≥75% de tareas"],
+      datasets:[{data:[36,11,4],backgroundColor:accent,borderRadius:4,maxBarThickness:64}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{grid:{display:false},ticks:{color:muted,font:{size:12}}},
+        y:{title:{display:true,text:"% de ocupaciones",color:muted,font:{size:12}},min:0,max:40,grid:{color:grid},ticks:{color:muted}}}}});
+
+  mk("c2",{type:"line",
+    data:{labels:["Muy baja","Baja","Media","Alta","Muy alta"],
+      datasets:[
+        {label:"Automatización clásica (Frey–Osborne)",data:[92,74,50,24,9],borderColor:gray,backgroundColor:gray,tension:.35,borderWidth:2,pointRadius:2},
+        {label:"IA generativa (foco de ITEA)",data:[9,27,53,80,93],borderColor:accent,backgroundColor:accent,tension:.35,borderWidth:3,pointRadius:2}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:"top",labels:{boxWidth:12,font:{size:12},color:ink}}},
+      scales:{x:{title:{display:true,text:"Complejidad cognitiva de la tarea",color:muted,font:{size:12}},grid:{display:false},ticks:{color:muted}},
+        y:{title:{display:true,text:"Exposición relativa (esquema)",color:muted,font:{size:12}},min:0,max:100,grid:{color:grid},ticks:{display:false}}}}});
+
+  mk("c3",{type:"doughnut",
+    data:{labels:["Augmentación (juicio retenido)","Automatización (delegación)"],
+      datasets:[{data:[57,43],backgroundColor:[accent,gray],borderColor:"#fff",borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:"58%",
+      plugins:{legend:{position:"bottom",labels:{boxWidth:12,font:{size:12.5},color:ink}}}}});
+
+  mk("c4",{type:"bar",
+    data:{labels:["Valor capturado por la firma","Compensación en el contrato"],
+      datasets:[{data:[88,14],backgroundColor:[navy,"#c2cad6"],borderRadius:4,maxBarThickness:70}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{grid:{display:false},ticks:{color:muted,font:{size:12}}},
+        y:{title:{display:true,text:"valor relativo (esquema)",color:muted,font:{size:12}},min:0,max:100,grid:{color:grid},ticks:{display:false}}}}});
+
+  mk("c5",{type:"scatter",
+    data:{datasets:[
+      {type:"line",label:"orden conservado",data:[{x:0,y:0},{x:100,y:100}],borderColor:"#c2cad6",borderWidth:1.5,borderDash:[5,5],pointRadius:0,fill:false},
+      {label:"ocupaciones",data:[{x:12,y:15},{x:28,y:24},{x:41,y:46},{x:55,y:51},{x:67,y:72},{x:80,y:76},{x:92,y:90}],backgroundColor:accent,pointRadius:5}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{title:{display:true,text:"Exposición — EE.UU. (O*NET)",color:muted,font:{size:12}},min:0,max:100,grid:{color:grid},ticks:{display:false}},
+        y:{title:{display:true,text:"Exposición — Europa (ESCO)",color:muted,font:{size:12}},min:0,max:100,grid:{color:grid},ticks:{display:false}}}}});
+})();
 </script>
 </body>
 </html>
