@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v4.0] — 2026-06-18 (documentación pública teórica de la actualización v4.0)
+
+Documentación **teórica y conceptual** de la actualización v4.0, en
+[`v4.0/`](v4.0/) ([EN](v4.0/RELEASE_v4.0.md) · [ES](v4.0/RELEASE_v4.0_ES.md) · [PT](v4.0/RELEASE_v4.0_PT.md) · [中文](v4.0/RELEASE_v4.0_ZH.md)):
+novedades y principales hallazgos de los tres entornos —**ITEA US** (≈ v3.0, mejoras
+puntuales), **ITEA ESCO (Europa) v1.2** y **ITEA Bridge (US–UE) v1.2**— sin tablas ni
+datos operativos. Acceso a datos, índices a nivel tarea/ocupación e información operativa
+**bajo solicitud** (anti-scooping): **alb.valencia@gmail.com**. La GitHub Page se actualizará
+por separado.
+
+---
+
 ## [v4.0-beta] — 2026-05-31 (Work In Progress, línea europea)
 
 Línea de desarrollo **ITEA-EU** (integración ESCO/ISCO) publicada como **beta**

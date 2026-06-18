@@ -13,6 +13,54 @@ en *Keep a Changelog*; fechas en ISO (AAAA-MM-DD).
 
 ---
 
+## [v4.0 — documentación pública] — 2026-06-18 — novedades y hallazgos (teórico, sin tablas)
+
+**Added**
+- `RELEASE_v4.0.md` (EN) · `RELEASE_v4.0_ES.md` · `RELEASE_v4.0_PT.md` · `RELEASE_v4.0_ZH.md`
+  — documentación **teórica y conceptual** (sin tablas, sin datos operativos ni resultados
+  numéricos) de la actualización v4.0:
+  arquitectura de **tres entornos** y principales hallazgos.
+  - **ITEA US** (≈ v3.0, mejoras puntuales): validación del constructo **a nivel tarea** contra un
+    criterio de **comportamiento** (uso real de IA); triangulación entre proveedores; vínculo
+    **automatización→empleo** documentado por fuente independiente.
+  - **ITEA ESCO (Europa) v1.2**: **primer índice europeo** de exposición a la expropiación;
+    cualificación anclada al **EQF**; criterio europeo de comportamiento por competencia ESCO
+    (el uso real de IA se concentra en competencias transversales y de conocimiento).
+  - **ITEA Bridge (US–UE) v1.2**: portabilidad híbrida O\*NET↔ESCO; **invarianza de traducción**;
+    la estructura de exposición europea **predice el uso real de IA en Europa**.
+
+**Policy (anti-scooping)**
+- Índices a nivel tarea/ocupación, datasets operativos, material de reproducción y resultados
+  numéricos **no se publican**: disponibles **bajo solicitud** y para colaboración investigadora
+  vía **alb.valencia@gmail.com**. El repositorio conserva solo teoría, concepto y narrativa de método.
+
+**Notes**
+- Sin cambios en `index.html`: la **GitHub Page** se actualizará por separado.
+
+---
+
+## [v4.0] — 2026-06-03 — sello de producción (OAXI-EU con K calibrado)
+
+**Added**
+- `code/06b_build_oaxi_eu_calibrated.py` — OAXI-EU v4.0 con **peso K calibrado**.
+- `outputs/occ_oaxi_eu_calibrated.{parquet,csv,meta.json}` — índice por ISCO-08 (agregados, sin datos crudos).
+- `docs/CALIBRACION_K_OAXI_EU.md` — método, rejilla y validación de la calibración.
+- `docs/PLAN_SELLADO_v4.0.md` — Definition of Done actualizada; qué entra en v4.0 vs v4.x.
+
+**Changed**
+- **OAXI-EU pasa de preliminar a production-ready.** Núcleo `norm(E_GenAI)^0,6 · norm(K)^0,4`
+  (exposición GenAI en vez de automatización clásica; modificadores estructurales retirados).
+  Validación convergente vs **JRC145832** (independiente): Pearson **0,70** / Spearman **0,78**
+  (antes 0,63/0,71) → **cumple el umbral ≥0,70 en ambos**. El peso K conserva su señal propia
+  sobre el empleo realizado (ΔR²=+0,035): el óptimo es interior, no se diluye en exposición pura.
+  Cierra el bloqueante "pesos K sin calibrar" del spec §7.
+
+**Deferred → v4.x** (frontera conocida, documentada)
+- Invarianza transnacional **fina** ISCO-3 (requiere embeddings multilingües / crosswalk nativo).
+- CFA multigrupo formal (ΔCFI<0,01); mapa v2.0-embeddings; coste en moneda.
+
+---
+
 ## [v4.0-beta.4] — 2026-05-31 — robustez de la validación (ablación)
 
 **Changed**
