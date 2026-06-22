@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYTRSRHY81"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RYTRSRHY81');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEA Podcast — Expropiación algorítmica del trabajo</title>
+<meta name="description" content="El podcast del marco ITEA: divulgación sobre la expropiación algorítmica del trabajo, la IA agéntica, las universidades frente a la IA y los mecanismos de compensación. Episodios en varios idiomas.">
+<meta name="author" content="Alberto García-Lluis Valencia">
+<meta property="og:title" content="ITEA Podcast">
+<meta property="og:description" content="Conversaciones de divulgación sobre la expropiación algorítmica del trabajo a nivel de tarea. Episodios en varios idiomas.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aval22.github.io/ITEA/podcast/itea-podcast-logo.svg">
+<meta property="og:url" content="https://aval22.github.io/ITEA/podcast.html">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --navy:#0e2748;--navy-2:#143257;--ink:#16202e;--muted:#5a6473;--line:#e4e7ec;
+    --bg:#f6f8fb;--panel:#ffffff;--accent:#1f5fb0;--accent-dk:#16467f;--maxw:1060px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(14,39,72,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;}
+  .topbar .brand{color:#fff;font-weight:700;letter-spacing:.3px;font-size:15px;}
+  .topbar nav a{color:#cdd9ea;font-size:13.5px;margin-left:15px;} .topbar nav a:hover{color:#fff;text-decoration:none;}
+  @media(max-width:860px){.topbar nav a:not(.lang):not(.gh){display:none;}}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:54px 0 48px;border-bottom:3px solid var(--accent);}
+  .hero .wrap{display:flex;gap:34px;align-items:center;flex-wrap:wrap;}
+  .hero .cover{width:180px;height:180px;border-radius:22px;box-shadow:0 18px 40px rgba(0,0,0,.35);flex:0 0 auto;}
+  .hero .htext{flex:1 1 360px;}
+  .hero .badge-new{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;padding:5px 13px;border-radius:999px;margin-bottom:14px;}
+  .hero h1{margin:0 0 8px;font-size:38px;line-height:1.12;font-weight:800;letter-spacing:-.5px;}
+  .hero .lede{font-size:17.5px;color:#e7eefb;max-width:620px;margin:0 0 18px;}
+  .hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .hero .chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#eaf1fb;font-size:13px;padding:5px 11px;border-radius:7px;}
+  .langline{margin:0 0 16px;font-size:13px;color:#9fb4d2;} .langline a{color:#cdd9ea;}
+  .lang.active{border:1px solid rgba(255,255,255,.45);padding:2px 9px;border-radius:5px;color:#fff;}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  .serie-h{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;color:var(--accent);margin:0 0 4px;}
+  .serie-d{color:var(--muted);margin:0 0 22px;font-size:15px;}
+  h2{font-size:25px;font-weight:750;letter-spacing:-.3px;margin:0 0 6px;color:var(--navy);}
+
+  .ep{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:11px;padding:20px 22px;margin:0 0 16px;}
+  .ep .top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .ep .num{font-weight:800;color:var(--accent);font-size:14px;letter-spacing:.5px;}
+  .ep h3{margin:0;font-size:20px;font-weight:700;color:var(--navy);line-height:1.25;flex:1 1 auto;}
+  .ep .meta{color:var(--muted);font-size:13px;margin:6px 0 12px;}
+  .ep .meta b{color:var(--ink);font-weight:600;}
+  .ep .sum{margin:0 0 14px;color:#27313f;}
+  audio{width:100%;height:40px;margin:4px 0 12px;}
+  .langs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .langs .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-right:2px;}
+  .lbtn{font-size:13px;font-weight:600;padding:5px 12px;border-radius:7px;border:1px solid var(--line);background:#fff;color:var(--accent);cursor:pointer;}
+  .lbtn.on{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .lbtn.soon{color:#9aa4b2;cursor:not-allowed;background:#f3f5f8;border-style:dashed;}
+  .note{font-size:12.5px;color:var(--muted);margin-top:8px;}
+
+  footer{padding:40px 0;background:#fff;}
+  footer .cite{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px;overflow:auto;}
+  footer pre{margin:0;white-space:pre-wrap;font-size:12.5px;color:#33405a;font-family:ui-monospace,Menlo,Consolas,monospace;}
+  .muted{color:var(--muted);}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">ITEA 4.0 · Podcast</span>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="#universidades">Universidades</a>
+    <a href="#expropiacion">Expropiación</a>
+    <a href="#politica">Política</a>
+    <a class="gh" href="https://github.com/Aval22/ITEA">GitHub</a>
+    <a class="lang" href="podcast_en.html" style="border:1px solid rgba(255,255,255,.35);padding:2px 9px;border-radius:5px;">EN</a>
+  </nav>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <img class="cover" src="podcast/itea-podcast-logo.svg" alt="Logo del ITEA Podcast" width="180" height="180">
+  <div class="htext">
+    <p class="langline">🌐 <span class="lang active">Español</span> · <a href="podcast_en.html">English</a>
+      <span class="muted"> · más idiomas próximamente</span></p>
+    <span class="badge-new">ITEA · Podcast</span>
+    <h1>El podcast del marco ITEA</h1>
+    <p class="lede">Conversaciones de divulgación —en formato inmersión profunda— sobre la <strong style="color:#fff">expropiación algorítmica del trabajo</strong>: cómo la IA agéntica captura la pericia humana a nivel de tarea, qué les ocurre a las profesiones y a las universidades, y qué mecanismos podrían compensarla. A partir de los informes y papers de Alberto García-Lluis Valencia.</p>
+    <div class="chips">
+      <span class="chip">8 episodios</span>
+      <span class="chip">Español · multi-idioma</span>
+      <span class="chip">Universidades · Trabajo · Política</span>
+    </div>
+  </div>
+</div></header>
+
+<main id="eps"></main>
+
+<footer><div class="wrap">
+  <h2 style="font-size:20px;margin:0 0 10px;">Cómo citar el marco</h2>
+  <div class="cite"><pre>@software{garcia-lluis2026itea,
+  author  = {García-Lluis Valencia, Alberto},
+  title   = {ITEA Framework — Triple Index of Exposure to Automation},
+  year    = {2026},
+  version = {4.0},
+  doi     = {10.5281/zenodo.19578915},
+  url     = {https://github.com/Aval22/ITEA}
+}</pre></div>
+  <p class="muted" style="font-size:13px;margin-top:16px;">Los episodios son piezas de divulgación basadas en los informes y borradores del proyecto ITEA. Audio en español; se irán añadiendo versiones en otros idiomas. © 2026 Alberto García-Lluis Valencia.</p>
+</div></footer>
+
+<script>
+// ---- Datos de los episodios -----------------------------------------------
+// Para añadir un idioma a un episodio: coloca el MP3 en podcast/audio/<idioma>/<archivo>.mp3
+// y cambia el valor de ese idioma de null al nombre de archivo. La interfaz lo activará sola.
+const SERIES = [
+  {id:"universidades", kicker:"Serie · Universidades y formación",
+   desc:"Qué carreras y qué pedagogías resisten a la IA agéntica en finanzas y consultoría."},
+  {id:"expropiacion", kicker:"Serie · Expropiación del trabajo",
+   desc:"Cómo la IA captura la pericia humana y por qué la experiencia deja de ser un escudo."},
+  {id:"politica", kicker:"Serie · Política y compensación",
+   desc:"Tokenización, regalías y la economía de los despidos: cómo se compensa la expropiación."},
+];
+
+const EP = [
+ {serie:"universidades", n:1, file:"ep1-grados-prueba-ia-agentica",
+  title:"Grados universitarios a prueba de la IA agéntica", dur:"28:13", date:"Jun 2026",
+  sum:"Un graduado en economía descubre que un software por suscripción hace en segundos el análisis financiero para el que se preparó cuatro años. Con los datos de contratación de 2026, el episodio analiza cómo la IA generativa y, sobre todo, la IA agéntica —sistemas que deciden y ejecutan por su cuenta— devoran las tareas de entrada en finanzas y consultoría. Desarrolla la «paradoja del aprendiz»: si desaparece el trabajo mecánico junior, ¿de dónde saldrán los directivos con experiencia? Conclusión: una vuelta al modelo gremial, porque el conocimiento tácito es el único activo que ningún algoritmo puede firmar.",
+  audio:{es:"ep1-grados-prueba-ia-agentica", en:null, pt:null, zh:null}},
+
+ {serie:"universidades", n:2, file:"ep2-grados-espanoles-sobrevivir",
+  title:"Grados españoles para sobrevivir a la IA", dur:"15:34", date:"Jun 2026",
+  sum:"Inmersión en el informe ITEA 26-043 (junio de 2026), un escrutinio de casi 700 grados universitarios en 16 países europeos: qué carreras preparan de verdad frente a la IA en finanzas y consultoría. Explica la fórmula de resiliencia (conocimiento tácito vs. explícito = 40% de la nota) y por qué la economía teórica pura es la gran perdedora mientras los grados híbridos resisten. Hallazgo rompedor: las universidades españolas dominan el top 12 europeo —ESIC, ICADE-Comillas, CEU San Pablo, Deusto, Navarra— y el grado nº1 de Europa (Computer Science & AI de IE, 67/100).",
+  audio:{es:"ep2-grados-espanoles-sobrevivir", en:null, pt:null, zh:null}},
+
+ {serie:"universidades", n:7, file:"ep7-grados-frente-ia-agentica",
+  title:"Grados universitarios frente a la IA agéntica", dur:"27:04", date:"Jun 2026",
+  sum:"En formato debate, una segunda lectura del informe ITEA (junio de 2026) y sus 690 grados europeos. Con la metáfora del piloto y el manual de vuelo —cuando el avión lee y ejecuta el manual solo, el valor del piloto deja de ser memorizarlo y pasa a saber qué hacer en la tormenta— se discute por qué saberse la teoría dejó de ser barrera de entrada en finanzas y consultoría, y qué universidades preparan mejor para ese nuevo terreno.",
+  audio:{es:"ep7-grados-frente-ia-agentica", en:null, pt:null, zh:null}},
+
+ {serie:"expropiacion", n:4, file:"ep4-expropiacion-talento-senior",
+  title:"La expropiación algorítmica del talento senior", dur:"21:24", date:"2026",
+  sum:"Un recorrido por la historia del contrato laboral —del artesano gremial dueño de su saber, al obrero industrial que vende fuerza y tiempo, al «trabajador del conocimiento» que Drucker definió en 1959— para mostrar una inversión histórica. El capital humano tácito siempre aumentaba con la experiencia: un analista con 20 años no es más lento, es más agudo. La IA agéntica rompe esa lógica y convierte la experiencia acumulada en la primera víctima, configurando una «trampa» para el talento senior.",
+  audio:{es:"ep4-expropiacion-talento-senior", en:null, pt:null, zh:null}},
+
+ {serie:"expropiacion", n:5, file:"ep5-ia-agentica-expropia-razonamiento",
+  title:"La IA agéntica expropia tu razonamiento", dur:"17:51", date:"2026",
+  sum:"Olvida el brazo robótico soldando o el cajero automático: lo que ahora se automatiza es invisible. Sobre la investigación doctoral de Alberto García-Lluis Valencia («El impacto de la IA agéntica en el mercado laboral»), el episodio explica las tres oleadas de la tecnología y cómo la última automatiza el propio razonamiento del profesional, dejando sin efecto el escudo tradicional contra el despido. No es la IA que redacta un correo: es la que decide y ejecuta.",
+  audio:{es:"ep5-ia-agentica-expropia-razonamiento", en:null, pt:null, zh:null}},
+
+ {serie:"politica", n:3, file:"ep3-tokenizacion-activos-reales",
+  title:"La gran tokenización de los activos reales", dur:"24:41", date:"2026",
+  sum:"En diciembre de 2025 una emisora privada de criptomonedas pasa a ser uno de los mayores tenedores de deuda de EE. UU., con más de 120.000 millones en bonos del Tesoro —más que naciones enteras. A partir de un informe del Boston Consulting Group (mayo de 2026), el episodio disecciona la tokenización de activos del mundo real (RWA): cómo los activos digitales dejan de ser un experimento paralelo para integrarse en el núcleo de las finanzas globales, y qué implica para la infraestructura sobre la que ITEA propone compensar la expropiación.",
+  audio:{es:"ep3-tokenizacion-activos-reales", en:null, pt:null, zh:null}},
+
+ {serie:"politica", n:6, file:"ep6-regalias-entrenar-ia",
+  title:"Cobrar regalías por entrenar a la IA", dur:"22:54", date:"2026",
+  sum:"Análisis del Paper 8B (v1.5) de Alberto García-Lluis Valencia, que propone una solución radical a la pérdida de empleo por IA. Punto de partida: en diciembre de 2025 McKinsey anuncia el mayor despido de su historia (5.000 personas; ~35.000 y un 25% de plantilla desde 2022) justo mientras despliega su IA propia, «Lilli». La propuesta: regalías (royalties) para el trabajador cuya pericia entrena los sistemas que luego lo sustituyen —compensar la transferencia de conocimiento, no solo gravarla.",
+  audio:{es:"ep6-regalias-entrenar-ia", en:null, pt:null, zh:null}},
+
+ {serie:"politica", n:8, file:"ep8-trampa-despidos-ia",
+  title:"La trampa de los despidos por IA", dur:"24:48", date:"2026",
+  sum:"Un análisis estrictamente económico —sin juicio moral— de por qué incluso empresas racionales y con visión de largo plazo caen en una dinámica destructiva de despidos. Mediante un modelo basado en tareas y el concepto de «externalidad de la demanda», el episodio muestra los incentivos matemáticos que empujan a sustituir departamentos enteros por algoritmos y por qué el sistema no puede corregirse solo: la base analítica del argumento pigouviano de ITEA.",
+  audio:{es:"ep8-trampa-despidos-ia", en:null, pt:null, zh:null}},
+];
+
+const LANGS = [["es","ES"],["en","EN"],["pt","PT"],["zh","中文"]];
+// Audios alojados como assets de un GitHub Release (no engordan el repo).
+// Nombre de cada asset: <idioma>-<file>.mp3  ej.: es-ep1-grados-prueba-ia-agentica.mp3
+const REL = "https://github.com/Aval22/ITEA/releases/download/podcast-v1";
+const url = (lang,file) => `${REL}/${lang}-${file}.mp3`;
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+function render(){
+  const root = document.getElementById("eps");
+  SERIES.forEach(S=>{
+    const sec=document.createElement("section"); sec.id=S.id;
+    const w=document.createElement("div"); w.className="wrap";
+    w.innerHTML=`<p class="serie-h">${S.kicker}</p><p class="serie-d">${S.desc}</p>`;
+    EP.filter(e=>e.serie===S.id).sort((a,b)=>a.n-b.n).forEach(e=>{
+      const card=document.createElement("div"); card.className="ep";
+      const langBtns=LANGS.map(([code,lbl])=>{
+        const f=e.audio[code];
+        if(f) return `<button class="lbtn" data-code="${code}" data-file="${f}">${lbl}</button>`;
+        return `<button class="lbtn soon" disabled title="Próximamente">${lbl}</button>`;
+      }).join("");
+      card.innerHTML=`
+        <div class="top"><span class="num">EP ${e.n}</span><h3>${esc(e.title)}</h3></div>
+        <div class="meta">⏱ <b>${e.dur}</b> · 📅 ${e.date} · 🌐 disponible en español</div>
+        <p class="sum">${esc(e.sum)}</p>
+        <audio controls preload="none" src="${url('es',e.audio.es)}"></audio>
+        <div class="langs"><span class="lbl">Idioma:</span>${langBtns}</div>
+        <p class="note">Versiones en otros idiomas: próximamente.</p>`;
+      // activar idioma por defecto y manejar cambios
+      const audio=card.querySelector("audio");
+      const btns=card.querySelectorAll(".lbtn:not(.soon)");
+      btns.forEach(b=>{ if(b.dataset.code==="es") b.classList.add("on");
+        b.addEventListener("click",()=>{
+          btns.forEach(x=>x.classList.remove("on")); b.classList.add("on");
+          const wasPlaying=!audio.paused; audio.src=url(b.dataset.code,b.dataset.file);
+          audio.load(); if(wasPlaying) audio.play();
+        });
+      });
+      w.appendChild(card);
+    });
+    sec.appendChild(w); root.appendChild(sec);
+  });
+}
+render();
+</script>
+</body>
+</html>

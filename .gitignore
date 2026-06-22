@@ -76,3 +76,10 @@ Aqui_lo_dejamos.md
 # Cowork session backups
 itea_backup_*/
 .cowork_backup/
+
+# Anexo paper ICADE — panel ITEA×GenAI (investigacion nueva, local hasta el paper; anti-scooping)
+ICADE_GenAI_Panel/
+
+# Podcast audio: subir como assets de GitHub Release, no versionar
+podcast/release-assets/
+*.mp3
