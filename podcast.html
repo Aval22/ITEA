@@ -71,6 +71,29 @@
   .lbtn.soon{color:#9aa4b2;cursor:not-allowed;background:#f3f5f8;border-style:dashed;}
   .note{font-size:12.5px;color:var(--muted);margin-top:8px;}
 
+  /* valoración */
+  .rate{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:14px 0 2px;}
+  .starbar{position:relative;display:inline-block;font-size:19px;line-height:1;color:#d8dde6;letter-spacing:2px;}
+  .starbar::before{content:"★★★★★";}
+  .starbar .fill{position:absolute;top:0;left:0;width:0;overflow:hidden;white-space:nowrap;color:#f5a623;}
+  .starbar .fill::before{content:"★★★★★";}
+  .rscore{font-weight:700;color:var(--navy);} .rcount{color:var(--muted);font-size:13px;}
+  .vote{display:inline-flex;align-items:center;gap:2px;margin-left:6px;}
+  .vote .st{font-size:20px;line-height:1;background:none;border:none;cursor:pointer;color:#cbd5e1;padding:0 1px;}
+  .vote .st:hover,.vote .st.hot{color:#f5a623;}
+  .vote.done .st{cursor:default;}
+  .vlabel{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;}
+  .thanks{font-size:12.5px;color:#1f9254;margin-left:4px;}
+  /* compartir */
+  .share{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .share .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;}
+  .sbtn{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 7px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--accent);cursor:pointer;font-size:14px;font-weight:700;text-decoration:none;}
+  .sbtn:hover{background:var(--accent);color:#fff;border-color:var(--accent);text-decoration:none;}
+  .copied{font-size:12px;color:#1f9254;}
+  /* contacto */
+  .contact{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;font-size:14px;}
+  .contact a{font-weight:600;}
+
   footer{padding:40px 0;background:#fff;}
   footer .cite{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px;overflow:auto;}
   footer pre{margin:0;white-space:pre-wrap;font-size:12.5px;color:#33405a;font-family:ui-monospace,Menlo,Consolas,monospace;}
@@ -120,10 +143,33 @@
   doi     = {10.5281/zenodo.19578915},
   url     = {https://github.com/Aval22/ITEA}
 }</pre></div>
+  <p class="contact">✉ <span class="muted">Contacto:</span> <a href="mailto:alb.valencia@gmail.com?subject=ITEA%20Podcast">alb.valencia@gmail.com</a></p>
   <p class="muted" style="font-size:13px;margin-top:16px;">Los episodios son piezas de divulgación basadas en los informes y borradores del proyecto ITEA. Audio en español; se irán añadiendo versiones en otros idiomas. © 2026 Alberto García-Lluis Valencia.</p>
 </div></footer>
 
 <script>
+// ====== CONFIG FIREBASE ======
+// Pega aquí la config de tu proyecto (Firebase console → Configuración del proyecto →
+// Tus apps → SDK setup). Mientras esté vacío, las votaciones funcionan en modo LOCAL
+// (por navegador). Ver podcast/FIREBASE.md. Reglas Firestore: ver esa misma guía.
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+let _db=null, _fb=null;
+async function initFirebase(){
+  if(!firebaseConfig.projectId) return;          // sin config → modo local
+  try{
+    const app = await import("https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js");
+    _fb       = await import("https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js");
+    _db = _fb.getFirestore(app.initializeApp(firebaseConfig));
+  }catch(err){ console.warn("Firebase no disponible (modo local):", err); _db=null; }
+}
+
 // ---- Datos de los episodios -----------------------------------------------
 // Para añadir un idioma a un episodio: coloca el MP3 en podcast/audio/<idioma>/<archivo>.mp3
 // y cambia el valor de ese idioma de null al nombre de archivo. La interfaz lo activará sola.
@@ -192,7 +238,7 @@ function render(){
     const w=document.createElement("div"); w.className="wrap";
     w.innerHTML=`<p class="serie-h">${S.kicker}</p><p class="serie-d">${S.desc}</p>`;
     EP.filter(e=>e.serie===S.id).sort((a,b)=>a.n-b.n).forEach(e=>{
-      const card=document.createElement("div"); card.className="ep";
+      const card=document.createElement("div"); card.className="ep"; card.id="ep"+e.n;
       const langBtns=LANGS.map(([code,lbl])=>{
         const f=e.audio[code];
         if(f) return `<button class="lbtn" data-code="${code}" data-file="${f}">${lbl}</button>`;
@@ -204,7 +250,26 @@ function render(){
         <p class="sum">${esc(e.sum)}</p>
         <audio controls preload="none" src="${url('es',e.audio.es)}"></audio>
         <div class="langs"><span class="lbl">Idioma:</span>${langBtns}</div>
-        <p class="note">Versiones en otros idiomas: próximamente.</p>`;
+        <p class="note">Versiones en otros idiomas: próximamente.</p>
+        <div class="rate" data-ep="ep${e.n}">
+          <span class="vlabel">Valoración:</span>
+          <span class="starbar"><span class="fill"></span></span>
+          <span class="rscore">—</span><span class="rcount">(0 votos)</span>
+          <span class="vote" data-ep="ep${e.n}">
+            <span class="vlabel">Tu voto:</span>
+            <button class="st" data-v="1">★</button><button class="st" data-v="2">★</button><button class="st" data-v="3">★</button><button class="st" data-v="4">★</button><button class="st" data-v="5">★</button>
+            <span class="thanks" hidden>¡Gracias por tu voto!</span>
+          </span>
+        </div>
+        <div class="share" data-ep="ep${e.n}" data-title="${esc(e.title).replace(/"/g,'&quot;')}">
+          <span class="lbl">Compartir:</span>
+          <a class="sbtn x" target="_blank" rel="noopener" title="Compartir en X (Twitter)">𝕏</a>
+          <a class="sbtn li" target="_blank" rel="noopener" title="Compartir en LinkedIn">in</a>
+          <a class="sbtn wa" target="_blank" rel="noopener" title="Compartir en WhatsApp">✆</a>
+          <a class="sbtn ml" title="Compartir por email">✉</a>
+          <button class="sbtn cp" title="Copiar enlace">🔗</button>
+          <span class="copied" hidden>¡Copiado!</span>
+        </div>`;
       // activar idioma por defecto y manejar cambios
       const audio=card.querySelector("audio");
       const btns=card.querySelectorAll(".lbtn:not(.soon)");
@@ -221,6 +286,79 @@ function render(){
   });
 }
 render();
+setupShare();
+setupRatings();
+
+// ---------- VALORACIONES (★, máx 5) ----------
+async function setupRatings(){
+  const cards=[...document.querySelectorAll(".rate")];
+  cards.forEach(wireVote);
+  await initFirebase();
+  if(!_db){ cards.forEach(paintLocal); return; }
+  try{
+    const snap=await _fb.getDocs(_fb.collection(_db,"ratings"));
+    const map={}; snap.forEach(d=> map[d.id]=d.data());
+    cards.forEach(c=>{ const r=map[c.dataset.ep]||{}; paint(c, r.sum||0, r.count||0); });
+  }catch(err){ console.warn("No se pudieron leer las valoraciones:", err); cards.forEach(paintLocal); }
+}
+function paint(card, sum, count){
+  const avg = count ? sum/count : 0;
+  card.querySelector(".fill").style.width=(avg/5*100)+"%";
+  card.querySelector(".rscore").textContent = count ? avg.toFixed(1) : "—";
+  card.querySelector(".rcount").textContent = "("+count+(count===1?" voto":" votos")+")";
+}
+function paintLocal(card){
+  const v=+localStorage.getItem("itea_vote_"+card.dataset.ep)||0;
+  paint(card, v, v?1:0);
+}
+function wireVote(card){
+  const ep=card.dataset.ep, vote=card.querySelector(".vote");
+  const stars=[...vote.querySelectorAll(".st")];
+  const my=+localStorage.getItem("itea_vote_"+ep)||0;
+  const show=n=> stars.forEach((s,i)=> s.classList.toggle("hot", i<n));
+  if(my){ vote.classList.add("done"); show(my); vote.querySelector(".thanks").hidden=false; return; }
+  stars.forEach((s,i)=>{
+    s.addEventListener("mouseenter",()=>show(i+1));
+    s.addEventListener("mouseleave",()=>show(0));
+    s.addEventListener("click",()=>castVote(card, ep, i+1, stars, vote));
+  });
+}
+async function castVote(card, ep, val, stars, vote){
+  if(vote.classList.contains("done")) return;
+  vote.classList.add("done");
+  localStorage.setItem("itea_vote_"+ep, val);
+  stars.forEach((s,i)=> s.classList.toggle("hot", i<val));
+  vote.querySelector(".thanks").hidden=false;
+  if(!_db){ paint(card, val, 1); return; }
+  try{
+    const ref=_fb.doc(_db,"ratings",ep);
+    const res=await _fb.runTransaction(_db, async tx=>{
+      const s=await tx.get(ref);
+      const sum=(s.exists()?s.data().sum||0:0)+val;
+      const count=(s.exists()?s.data().count||0:0)+1;
+      if(s.exists()) tx.update(ref,{sum,count}); else tx.set(ref,{sum,count});
+      return {sum,count};
+    });
+    paint(card, res.sum, res.count);
+  }catch(err){ console.warn("No se pudo registrar el voto:", err); paint(card, val, 1); }
+}
+
+// ---------- COMPARTIR ----------
+function setupShare(){
+  document.querySelectorAll(".share").forEach(box=>{
+    const link=location.origin+location.pathname+"#"+box.dataset.ep;
+    const t=encodeURIComponent(box.dataset.title+" — ITEA Podcast");
+    const u=encodeURIComponent(link);
+    box.querySelector(".x").href=`https://twitter.com/intent/tweet?text=${t}&url=${u}`;
+    box.querySelector(".li").href=`https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
+    box.querySelector(".wa").href=`https://wa.me/?text=${t}%20${u}`;
+    box.querySelector(".ml").href=`mailto:?subject=${t}&body=${u}`;
+    box.querySelector(".cp").addEventListener("click",async()=>{
+      try{ await navigator.clipboard.writeText(link); }catch(e){}
+      const c=box.querySelector(".copied"); c.hidden=false; setTimeout(()=>c.hidden=true,1600);
+    });
+  });
+}
 </script>
 </body>
 </html>
