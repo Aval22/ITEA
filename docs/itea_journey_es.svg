@@ -1,0 +1,50 @@
+<svg viewBox="0 0 1040 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arco de decisiones de la investigación">
+<rect width="1040" height="250" fill="#FFFFFF"/>
+<text x="520.0" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#2B2B33" text-anchor="middle">El recorrido de la investigación, decisión a decisión</text>
+<rect x="20.0" y="70" width="150" height="118" rx="12" fill="#FBEFD8" stroke="#C98A2E" stroke-width="1.6"/>
+<rect x="20.0" y="70" width="150" height="6" rx="0" fill="#C98A2E"/>
+<circle cx="95.0" cy="104" r="15" fill="#FFFFFF" stroke="#C98A2E" stroke-width="1.6"/>
+<text x="95.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#8A5A18" text-anchor="middle">1</text>
+<text x="95.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">El punto de partida</text>
+<text x="95.0" y="160" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">exposición</text>
+<text x="95.0" y="175" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">por ocupación</text>
+<line x1="174.0" y1="129.0" x2="186.0" y2="129.0" stroke="#6B6B72" stroke-width="2.4"/><polygon points="178.0,124.0 186.0,129.0 178.0,134.0" fill="#6B6B72"/>
+<rect x="190.0" y="70" width="150" height="118" rx="12" fill="#FBEFD8" stroke="#C98A2E" stroke-width="1.6"/>
+<rect x="190.0" y="70" width="150" height="6" rx="0" fill="#C98A2E"/>
+<circle cx="265.0" cy="104" r="15" fill="#FFFFFF" stroke="#C98A2E" stroke-width="1.6"/>
+<text x="265.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#8A5A18" text-anchor="middle">2</text>
+<text x="265.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">El giro de unidad</text>
+<text x="265.0" y="160" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">la actividad,</text>
+<text x="265.0" y="175" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">no la ocupación</text>
+<line x1="344.0" y1="129.0" x2="356.0" y2="129.0" stroke="#6B6B72" stroke-width="2.4"/><polygon points="348.0,124.0 356.0,129.0 348.0,134.0" fill="#6B6B72"/>
+<rect x="360.0" y="70" width="150" height="118" rx="12" fill="#E2EEF2" stroke="#2E7D8A" stroke-width="1.6"/>
+<rect x="360.0" y="70" width="150" height="6" rx="0" fill="#2E7D8A"/>
+<circle cx="435.0" cy="104" r="15" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.6"/>
+<text x="435.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1C5B66" text-anchor="middle">3</text>
+<text x="435.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">La objeción</text>
+<text x="435.0" y="166" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">el saber es no rival</text>
+<line x1="514.0" y1="129.0" x2="526.0" y2="129.0" stroke="#6B6B72" stroke-width="2.4"/><polygon points="518.0,124.0 526.0,129.0 518.0,134.0" fill="#6B6B72"/>
+<rect x="530.0" y="70" width="150" height="118" rx="12" fill="#E2EEF2" stroke="#2E7D8A" stroke-width="1.6"/>
+<rect x="530.0" y="70" width="150" height="6" rx="0" fill="#2E7D8A"/>
+<circle cx="605.0" cy="104" r="15" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.6"/>
+<text x="605.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1C5B66" text-anchor="middle">4</text>
+<text x="605.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">La distinción</text>
+<text x="605.0" y="160" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">posesión</text>
+<text x="605.0" y="175" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">vs soberanía</text>
+<line x1="684.0" y1="129.0" x2="696.0" y2="129.0" stroke="#6B6B72" stroke-width="2.4"/><polygon points="688.0,124.0 696.0,129.0 688.0,134.0" fill="#6B6B72"/>
+<rect x="700.0" y="70" width="150" height="118" rx="12" fill="#E2EEF2" stroke="#2E7D8A" stroke-width="1.6"/>
+<rect x="700.0" y="70" width="150" height="6" rx="0" fill="#2E7D8A"/>
+<circle cx="775.0" cy="104" r="15" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.6"/>
+<text x="775.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1C5B66" text-anchor="middle">5</text>
+<text x="775.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">El rediseño</text>
+<text x="775.0" y="160" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">tres índices: IES</text>
+<text x="775.0" y="175" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">· IAV · IDE</text>
+<line x1="854.0" y1="129.0" x2="866.0" y2="129.0" stroke="#6B6B72" stroke-width="2.4"/><polygon points="858.0,124.0 866.0,129.0 858.0,134.0" fill="#6B6B72"/>
+<rect x="870.0" y="70" width="150" height="118" rx="12" fill="#EDEBE6" stroke="#2B2B33" stroke-width="1.6"/>
+<rect x="870.0" y="70" width="150" height="6" rx="0" fill="#2B2B33"/>
+<circle cx="945.0" cy="104" r="15" fill="#FFFFFF" stroke="#2B2B33" stroke-width="1.6"/>
+<text x="945.0" y="109" font-family="system-ui, Arial, sans-serif" font-size="15" font-weight="bold" fill="#333333" text-anchor="middle">6</text>
+<text x="945.0" y="138" font-family="system-ui, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#2B2B33" text-anchor="middle">El flanco</text>
+<text x="945.0" y="160" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">¿quién era</text>
+<text x="945.0" y="175" font-family="system-ui, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">soberano antes?</text>
+</svg>

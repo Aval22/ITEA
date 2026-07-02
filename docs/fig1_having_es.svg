@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img"><rect width="1000" height="440" fill="#FFFFFF"/>
+<text x="500" y="44" font-family="'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="bold" fill="#2B2B33" text-anchor="middle">Las dos formas de «tener» un conocimiento</text>
+<rect x="50" y="80" width="430" height="300" rx="14" fill="#E2EEF2" stroke="#2E7D8A" stroke-width="2"/>
+<rect x="50" y="80" width="430" height="8" rx="0" fill="#2E7D8A"/>
+<text x="265" y="128" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1C5B66" text-anchor="middle">POSESIÓN EPISTÉMICA</text>
+<text x="265" y="156" font-family="'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">saberlo</text>
+<g><rect x="223.2" y="200" width="83.6" height="26" rx="13" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.2"/><text x="236.2" y="217" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1C5B66" text-anchor="start">no rival</text></g>
+<g><rect x="212.4" y="246" width="105.2" height="26" rx="13" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.2"/><text x="225.4" y="263" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1C5B66" text-anchor="start">inalienable</text></g>
+<g><rect x="201.6" y="292" width="126.8" height="26" rx="13" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="1.2"/><text x="214.6" y="309" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1C5B66" text-anchor="start">NO se expropia</text></g>
+<rect x="520" y="80" width="430" height="300" rx="14" fill="#FBEFD8" stroke="#C98A2E" stroke-width="2"/>
+<rect x="520" y="80" width="430" height="8" rx="0" fill="#C98A2E"/>
+<text x="735" y="128" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#8A5A18" text-anchor="middle">SOBERANÍA DEÓNTICA</text>
+<text x="735" y="156" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#6B6B72" text-anchor="middle" font-style="italic">el derecho a decidir su explotación</text>
+<g><rect x="704.0" y="200" width="62.0" height="26" rx="13" fill="#FFFFFF" stroke="#C98A2E" stroke-width="1.2"/><text x="717.0" y="217" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#8A5A18" text-anchor="start">rival</text></g>
+<g><rect x="689.6" y="246" width="90.8" height="26" rx="13" fill="#FFFFFF" stroke="#C98A2E" stroke-width="1.2"/><text x="702.6" y="263" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#8A5A18" text-anchor="start">alienable</text></g>
+<g><rect x="650.0" y="292" width="170.0" height="26" rx="13" fill="#FFFFFF" stroke="#C98A2E" stroke-width="1.2"/><text x="663.0" y="309" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#8A5A18" text-anchor="start">SE TOMA Y SE RETIENE</text></g>
+<line x1="500" y1="95" x2="500" y2="365" stroke="#CCCCCC" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="500" y="415" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#2B2B33" text-anchor="middle" font-style="italic">El verbo «tener» encubre dos cosas opuestas.</text>
+</svg>

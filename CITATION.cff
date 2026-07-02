@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "ITEA Framework: A Multidimensional System for Measuring Occupational Exposure to Algorithmic Expropriation under the Agentic AI Regime"
+title: "ITEA Framework: A Multidimensional System for Measuring Occupational Algorithmic Expropriability under the Agentic AI Regime"
 version: "3.0"
 date-released: "2026-05-08"
 authors:
@@ -34,12 +34,12 @@ keywords:
   - "Felten Raj Seamans AIOE"
 abstract: >-
   The ITEA Framework provides ten complementary indicators covering 1,016 SOC 6-digit
-  occupations from O*NET 30.2, designed to measure occupational exposure to algorithmic
-  expropriation in the Agentic AI regime. Version 3.0 introduces three major methodological
+  occupations from O*NET 30.2, designed to measure occupational algorithmic
+  expropriability in the Agentic AI regime. Version 3.0 introduces three major methodological
   revisions motivated by a documented case study of three research papers (the trilogy
   8A/8B/8C): z-score ITEA aggregation, triple-residualised IRA, and a dual-variant OAEI
   architecture. External convergent validation against the AIOE benchmark of Felten,
-  Raj and Seamans (2021): r(OAEI v3.0+, AIOE) = 0.797 over 738 common SOC 6-digit
+  Raj and Seamans (2021): r(OAEI v3.0+, AIOE) = 0.797 over 769 common SOC 6-digit
   occupations.
 references:
   - type: article

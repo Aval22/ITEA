@@ -142,5 +142,4 @@ Fuentes externas con licencia verificada en origen: **ESCO v1.2.1** (CC BY 4.0) 
 marcan como «modificados». Criterios externos de exposición y de empleo se utilizan únicamente
 como contraste, debidamente citados, y no se redistribuyen.
 
-Cita sugerida: García-Lluis Valencia, A. (2026). *ITEA Framework — Triple Index of Exposure to
-Automation*. Zenodo. https://doi.org/10.5281/zenodo.19578915
+Cita sugerida: García-Lluis Valencia, A. (2026). *ITEA Framework — Índice de Transformación y Expropiabilidad Algorítmica*. Zenodo. https://doi.org/10.5281/zenodo.19578915

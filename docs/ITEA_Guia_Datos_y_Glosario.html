@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEA — Guía de datos y glosario</title>
+<style>
+:root{--brown:#6B4E2E;--amber:#8C6A3F;--amber-bg:#FBF3E4;--amber-bd:#C98A2E;
+ --teal:#1C5B66;--teal-bg:#E7F0F2;--teal-bd:#2E7D8A;--ink:#26262b;--grey:#5c5c63;--line:#e4ddd0;--slate:#2B2B33;}
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);line-height:1.62;margin:0;background:#faf8f4;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:56px 30px 80px}
+header.mast{border-bottom:3px solid var(--brown);padding-bottom:22px;margin-bottom:30px}
+.kicker{font-family:system-ui,Arial,sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin:0 0 10px}
+h1{font-size:32px;line-height:1.2;margin:0 0 10px;color:var(--slate)}
+.sub{font-size:18px;color:var(--grey);font-style:italic;margin:0 0 16px}
+.meta{font-family:system-ui,Arial,sans-serif;font-size:13.5px;color:var(--grey)}
+h2{font-size:22px;color:var(--brown);margin:40px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+p{margin:0 0 15px}
+.lead{font-size:17.5px;color:#3a3a40}
+.note{background:var(--amber-bg);border:1px solid #e8d9bd;border-radius:9px;padding:12px 20px;font-size:15.5px;margin:16px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;font-family:system-ui,Arial,sans-serif}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#efe7d8;color:var(--brown);font-weight:700}
+td:first-child{font-weight:700;color:var(--slate)}
+figure{margin:24px 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;padding:8px}
+figcaption{font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--grey);font-style:italic;margin-top:8px}
+dl{margin:8px 0}
+dt{font-family:system-ui,Arial,sans-serif;font-weight:700;color:var(--brown);margin-top:14px;font-size:15.5px}
+dd{margin:3px 0 0;font-size:16px}
+a{color:var(--teal-bd)}
+.links{font-family:system-ui,Arial,sans-serif;font-size:14.5px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 22px}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--grey)}
+@media print{body{background:#fff;font-size:12pt}.wrap{max-width:none;padding:0}figure,table,.note,.links{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+  <p class="kicker">Programa ITEA · 2026 · Documentación</p>
+  <h1>Guía de datos y glosario</h1>
+  <p class="sub">Qué significan los datos de ITEA, en qué se fundamentan y para qué sirven — con un diccionario de términos.</p>
+  <p class="meta">Alberto García-Lluis Valencia · Universidad Rey Juan Carlos · Documento vivo (work in progress)</p>
+</header>
+
+<p class="lead">Esta guía permite leer los datos de ITEA con sentido. No es el paper —el tratamiento formal está en los artículos citados al final—; es la documentación que explica <strong>qué mide cada dato, sobre qué se construye y con qué propósito</strong>.</p>
+
+<div class="note"><strong>Alcance.</strong> Se documentan los indicadores ya publicados (marco v3.0 y línea europea) a nivel de significado y propósito. La operacionalización detallada de los índices en diseño (ITEA 4.0) se resume por su propósito; el detalle metodológico está <strong>bajo solicitud</strong> hasta su publicación.</div>
+
+<h2>1 · Qué mide ITEA, y para qué</h2>
+<p>ITEA mide <strong>qué le ocurre al trabajo —y al conocimiento que lo sustenta— cuando entra la IA</strong>. No solo dice "qué puestos están en riesgo": distingue si la actividad se <em>automatiza</em> (la hace la máquina), se <em>aumenta</em> (el humano rinde más y la conserva) o se <em>expropia</em> (permanece, pero el capital humano que la sustentaba queda capturado).</p>
+<p>La unidad de análisis es la <strong>actividad</strong> (detailed work activity), no la ocupación: la mayor parte de la variación relevante vive <em>dentro</em> de la ocupación. Fuentes, todas públicas: O*NET (EE. UU.), ESCO/ISCO-08 y EQF (Europa).</p>
+
+<figure>
+  <img src="itea_datos_es.svg" alt="Cómo se organizan los datos de ITEA: fuentes, unidad, indicadores y destinos del valor.">
+  <figcaption>De las fuentes públicas a los indicadores: la actividad es la unidad; los tres destinos del valor son la capa en diseño (ITEA 4.0).</figcaption>
+</figure>
+
+<h2>2 · Los indicadores del marco (v3.0)</h2>
+<p>Cada ocupación recibe una puntuación en estos indicadores, todos públicos y reproducibles (código en R y Python).</p>
+<table>
+<tr><th>Sigla</th><th>Nombre</th><th>Qué significa</th><th>Fundamento</th></tr>
+<tr><td>ITEA</td><td>Índice de Exposición a la Automatización</td><td>Exposición global del trabajo a la IA</td><td>Agregación por z-score (formativo)</td></tr>
+<tr><td>OAEI</td><td>Índice Ocupacional de Expropiabilidad Algorítmica</td><td>Exposición a la <em>captura</em> del saber, no solo a la sustitución</td><td>Multiplicativo (canónico) + aditivo (alternativo)</td></tr>
+<tr><td>AEI</td><td>Índice de Expropiabilidad Algorítmica</td><td>Referencia interna de expropiabilidad</td><td>Auxiliar</td></tr>
+<tr><td>IRA</td><td>Índice de Resiliencia Adaptativa</td><td>Capacidad de resistir/adaptarse</td><td>0,6·CA + 0,4·IRO_residual (triple residualización)</td></tr>
+<tr><td>ICT</td><td>Índice de Complejidad Técnica</td><td>Complejidad técnica de la actividad</td><td>Formativo</td></tr>
+<tr><td>IFS</td><td>Índice de Fricción Social</td><td>Peso de la interacción social</td><td>Reflectivo</td></tr>
+<tr><td>IPI</td><td>Índice de Presencia Interpersonal</td><td>Grado de presencialidad</td><td>Formativo</td></tr>
+<tr><td>IEF</td><td>Índice de Especificidad Funcional</td><td>Especificidad de la función</td><td>Reflectivo</td></tr>
+<tr><td>GEE</td><td>Gradiente Educación-Experiencia</td><td>Nivel de cualificación</td><td>Calibrado (OLS + ordinal)</td></tr>
+<tr><td>IMO</td><td>Índice de Mutación Ocupacional</td><td>Ritmo de cambio de la ocupación</td><td>Modelo <em>hurdle</em></td></tr>
+</table>
+<p><strong>Validación externa:</strong> OAEI correlaciona con el benchmark independiente <strong>AIOE</strong> (Felten, Raj y Seamans, 2021) a <em>r</em> = 0,797 sobre 769 ocupaciones comunes — ancla el índice en una medida ajena y desactiva la sospecha de circularidad.</p>
+
+<h2>3 · La línea europea (ITEA 4.0-beta)</h2>
+<table>
+<tr><th>Sigla</th><th>Nombre</th><th>Qué significa</th><th>Propósito</th></tr>
+<tr><td>OAXI-EU</td><td>Expropiabilidad europea</td><td>Superficie codificable expuesta a captura</td><td>Parte distintiva: exposición × codificabilidad</td></tr>
+<tr><td>IEA-EU</td><td>Índice de Exposición (UE)</td><td>Exposición a la IA en taxonomía europea</td><td>Validado contra el criterio JRC</td></tr>
+<tr><td>GEE-EU</td><td>Gradiente de cualificación (EQF)</td><td>Cualificación anclada en el Marco Europeo</td><td>Ancla europea, sin depender del dato de EE. UU.</td></tr>
+<tr><td>CDX</td><td>Dimensión de codificabilidad</td><td>En qué medida el saber se reduce a reglas/datos</td><td>Eje propio, separado de la exposición</td></tr>
+</table>
+<p class="note"><strong>Beta.</strong> Resultados preliminares, no revisados por pares; la release estable del marco sigue siendo v3.0.</p>
+
+<h2>4 · La capa conceptual de ITEA 4.0 (en diseño)</h2>
+<p>La revisión descompone el índice único en tres, porque fusionaba un <em>evento</em> con sus dos <em>consecuencias</em>. Se documenta el propósito; la operacionalización está en preparación.</p>
+<table>
+<tr><th>Sigla</th><th>Nombre</th><th>Qué medirá</th></tr>
+<tr><td>Expropiabilidad</td><td>Potencial observable</td><td>La superficie codificable expuesta (ya medible vía OAXI)</td></tr>
+<tr><td>IES</td><td>Expropiación de Soberanía</td><td>El evento: la toma del derecho a decidir la explotación</td></tr>
+<tr><td>IAV</td><td>Apropiación de Valor</td><td>La renta del juicio codificado capturada por la firma</td></tr>
+<tr><td>IDE</td><td>Dilución de Exclusividad</td><td>La escasez que se dispersa al mercado</td></tr>
+<tr><td>CI</td><td>Codificabilidad</td><td>externalización × internalización, condicionada a incumbencia</td></tr>
+</table>
+
+<h2>5 · Glosario de términos</h2>
+<figure>
+  <img src="fig1_having_es.svg" alt="Las dos formas de tener un conocimiento.">
+  <figcaption>El eje del glosario: poseer un saber (epistémico) frente a ser soberano de su uso (deóntico).</figcaption>
+</figure>
+<dl>
+<dt>No rivalidad</dt><dd>El uso de un saber por una parte no merma el de otra: copiarlo no se lo quita a su origen. Base de que el saber "no se desposee".</dd>
+<dt>Posesión epistémica</dt><dd><em>Saber</em> algo. Hecho, no derecho: no rival, inalienable — no se expropia.</dd>
+<dt>Soberanía deóntica</dt><dd>El <em>derecho a decidir</em> quién explota un saber y cómo. Potestad jurídica: rival y alienable — sí se toma y se retiene.</dd>
+<dt>Expropiación (algorítmica)</dt><dd>La captura no compensada de la soberanía sobre la explotación del saber codificado. El <strong>evento</strong>.</dd>
+<dt>Apropiación</dt><dd>Consecuencia: la firma captura la renta del juicio codificado (Teece). Remedio: canon θ·V.</dd>
+<dt>Dilución</dt><dd>Consecuencia: la exclusividad se dispersa al mercado. Remedio: instrumento tipo Pigou.</dd>
+<dt>Expropiabilidad</dt><dd>El <em>potencial</em> observable = exposición × codificabilidad. Lo que mide el índice empírico (no el evento).</dd>
+<dt>Codificabilidad (CI)</dt><dd>Grado en que un saber se reduce a reglas/datos y se reproduce en un modelo. CI = externalización × internalización.</dd>
+<dt>Almacenado ≠ codificado</dt><dd><em>Almacenado</em>: explícito humano latente (archivos inertes). <em>Codificado</em>: ha cruzado a un sistema que sabe leerlo. La GenAI activa un depósito que las olas anteriores llenaron sin saber leer.</dd>
+<dt>Incumbencia</dt><dd>Criterio del daño: hay expropiación cuando el saber se extrae de un poseedor previo (tácito→explícito), no cuando se crea ex novo.</dd>
+<dt>Los dos sujetos</dt><dd>Trabajador (juicio experto que poseía → expropiación) y consumidor (conducta agregada que nunca poseyó → extracción).</dd>
+<dt>Los tres modos de transferencia</dt><dd>Trasplante exógeno (paquete talla única, Siebel → fricción); préstamo modular/benchmarking (Xerox → dilución); cultivo endógeno (corpus propio → apropiación).</dd>
+<dt>θ·V</dt><dd>Compensación propuesta: canon de licencia bajo regla de responsabilidad, ni restitución ni impuesto pigouviano.</dd>
+<dt>Actividad / tarea / ocupación</dt><dd><em>Tarea</em>: acción concreta. <em>Actividad</em> (DWA): unidad libre de ocupación. <em>Ocupación</em>: agregado (SOC/ISCO). ITEA mide en la actividad.</dd>
+<dt>Siglas de fuentes</dt><dd>O*NET (base ocupacional EE. UU.), ESCO/ISCO-08 (clasificación UE e internacional), EQF (cualificaciones UE), DWA (actividad), AIOE (benchmark externo), JRC (criterio de validación europeo).</dd>
+</dl>
+
+<h2>6 · Enlaces</h2>
+<p class="links">
+  Artículo conceptual — DOI (todas las versiones): <a href="https://doi.org/10.5281/zenodo.20424899">10.5281/zenodo.20424899</a><br>
+  Manuscrito empírico — DOI: <a href="https://doi.org/10.5281/zenodo.20834742">10.5281/zenodo.20834742</a><br>
+  Framework (código y datos) — DOI: <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a><br>
+  El relato y el porqué de cada decisión — <a href="ITEA_Relato_y_Decisiones.html">ITEA_Relato_y_Decisiones.html</a><br>
+  Acceso a datos (índices a nivel tarea/ocupación): bajo solicitud — alb.valencia@gmail.com
+</p>
+
+<footer>Programa ITEA · 2026 · Documentación de repositorio (no es un artículo citable). Se actualiza con la investigación.</footer>
+</div>
+</body>
+</html>

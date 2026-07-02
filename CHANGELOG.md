@@ -125,7 +125,7 @@ lines onto a single version, archiving v1.45 as the `v1.45-legacy` tag for repli
 
 ### Validation summary
 
-External convergent validation: **r(OAEI v3.0+, AIOE) = 0.797** over 738 common
+External convergent validation: **r(OAEI v3.0+, AIOE) = 0.797** over 769 common
 SOC 6-digit occupations. Six of eight psychometric criteria show net improvement
 under v3.0; two are stable; two show small decreases under the multiplicative
 variant only (recovered by the additive variant). Full validation table in §7 of

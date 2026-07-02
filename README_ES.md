@@ -1,4 +1,4 @@
-# ITEA Framework — Índice de Triple Exposición a la Automatización
+# ITEA Framework — Índice de Transformación y Expropiabilidad Algorítmica
 
 🌐 [English](README.md) · **Español** · [Português](README_PT.md) · [中文](README_ZH.md)
 
@@ -7,19 +7,25 @@
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
 [![Version](https://img.shields.io/badge/Version-3.0-blue)]()
 
-> **Un framework multidimensional para medir la exposición ocupacional a la expropiación algorítmica bajo el régimen de IA Agentic.**
+> **Un framework multidimensional para medir la expropiabilidad algorítmica ocupacional bajo el régimen de IA Agentic.**
 
 ---
 
-## ¿Qué es ITEA v3.0?
+## ¿Qué es ITEA?
 
-El Framework ITEA proporciona diez indicadores complementarios que cubren 1.016 ocupaciones SOC 6-dígitos de O\*NET 30.2, diseñados para medir la exposición ocupacional a la expropiación algorítmica en el régimen de IA Agentic — distinto pero complementario a los índices de automatización a nivel de tarea de la tradición Frey-Osborne (2017) o medidas de exposición basadas en habilidades como el benchmark AIOE de Felten, Raj y Seamans (2021).
+ITEA mide la **expropiabilidad algorítmica**: la superficie del conocimiento humano que la IA puede codificar y capturar del trabajo. Su aportación distintiva es separar lo que se puede *medir* (un potencial: **expropiabilidad** = exposición × codificabilidad) del *evento normativo* que habilita —la transferencia de la **soberanía** del trabajador sobre la explotación de ese saber— y de sus dos consecuencias: la **apropiación** del valor por la firma y la **dilución** de la exclusividad de mercado. Esta mirada por capas —el trabajador sigue *poseyendo* lo que sabe (no rival), pero puede perder el *derecho a decidir* cómo se explota— es lo que distingue a ITEA de una simple cifra de exposición.
 
-Validación convergente externa frente al benchmark AIOE sobre 738 ocupaciones SOC 6-dígitos comunes: **r(OAEI v3.0+, AIOE) = 0,797**.
+> **Entender el porqué:** [El relato de la investigación y la justificación de cada decisión](docs/ITEA_Relato_y_Decisiones.html) · [Guía de datos y glosario](docs/ITEA_Guia_Datos_y_Glosario.html)
+
+El Framework ITEA (v3.0) lo implementa con diez indicadores complementarios que cubren 1.016 ocupaciones SOC 6-dígitos de O\*NET 30.2, diseñados para medir la expropiabilidad algorítmica ocupacional en el régimen de IA Agentic — distinto pero complementario a los índices de automatización a nivel de tarea de la tradición Frey-Osborne (2017) o medidas de exposición basadas en habilidades como el benchmark AIOE de Felten, Raj y Seamans (2021).
+
+Validación convergente externa frente al benchmark AIOE sobre 769 ocupaciones SOC 6-dígitos comunes: **r(OAEI v3.0+, AIOE) = 0,797**.
+
+> **Nota de cobertura.** El OAEI está disponible para **878 de las 1.016** ocupaciones (86,5%). Las 138 sin OAEI carecen de los inputs GEE/salario que lo componen; entre ellas, las **19 ocupaciones militares (SOC 55)** son una exclusión estructural de O\*NET (sin Job Zone/salario). Detalle en la [revisión del data set](docs/ITEA_Revision_Dataset.md).
 
 | Indicador | Nombre completo | Dimensión | Tipo | Estado |
 |-----------|----------------|-----------|------|--------|
-| **ITEA** | Índice de Triple Exposición a la Automatización | Exposición | Formativo (agregación z-score) | **Revisado en v3.0** |
+| **ITEA** | Índice de Transformación y Expropiabilidad Algorítmica | Exposición | Formativo (agregación z-score) | **Revisado en v3.0** |
 | **IRA** | Índice de Resiliencia Adaptativa | Resiliencia | Reflexivo (residualización triple) | **Revisado en v3.0** |
 | **ICT** | Índice de Complejidad Técnica | Complejidad | Formativo | Estable desde v2.0 |
 | **IFS** | Índice de Fricción Social | Interacción social | Reflexivo | Estable desde v2.0 |
@@ -27,8 +33,8 @@ Validación convergente externa frente al benchmark AIOE sobre 738 ocupaciones S
 | **IEF** | Índice de Especificidad Funcional | Especificidad | Reflexivo | Estable desde v2.0 |
 | **GEE** | Gradiente Educación-Experiencia | Cualificación | Calibrado (OLS+ordinal) | Estable desde v1.45 |
 | **IMO** | Índice de Mutación Ocupacional | Mutación | Modelo Hurdle | Estable desde v1.2 |
-| **OAEI** | Índice Ocupacional de Expropiación Algorítmica | Compuesto operacional | Multiplicativo (canónico) + aditivo (alternativo) | **Revisado en v3.0 — variante dual** |
-| **AEI** | Índice de Expropiación Algorítmica | Benchmark interno | Auxiliar | Estable desde v2.0 |
+| **OAEI** | Índice Ocupacional de Expropiabilidad Algorítmica | Compuesto operacional | Multiplicativo (canónico) + aditivo (alternativo) | **Revisado en v3.0 — variante dual** |
+| **AEI** | Índice de Expropiabilidad Algorítmica | Benchmark interno | Auxiliar | Estable desde v2.0 |
 
 ---
 
@@ -120,4 +126,4 @@ df['ITEA_v30_check'] = itea_v3(df['EAC'], df['EIG'], df['EIA'])
 
 **Alberto García-Lluis Valencia** · Universidad Rey Juan Carlos · ORCID: [0009-0003-1438-1633](https://orcid.org/0009-0003-1438-1633) · alb.valencia@gmail.com
 
-*ITEA Framework v3.0 — Hacer la expropiación algorítmica medible, multidimensional y accionable.*
+*ITEA Framework v3.0 — Hacer la expropiabilidad algorítmica medible, multidimensional y accionable.*

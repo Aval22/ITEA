@@ -1,4 +1,4 @@
-# ITEA Framework — Triple Index of Exposure to Automation
+# ITEA Framework — Index of Transformation and Algorithmic Expropriability
 
 🌐 **English** · [Español](README_ES.md) · [Português](README_PT.md) · [中文](README_ZH.md)
 
@@ -8,19 +8,25 @@
 [![Version](https://img.shields.io/badge/Version-3.0-blue)]()
 [![JOSS](https://img.shields.io/badge/JOSS-submission%20mid--2026-orange)]()
 
-> **A multidimensional framework for measuring occupational exposure to algorithmic expropriation under the Agentic AI regime.**
+> **A multidimensional framework for measuring occupational algorithmic expropriability under the Agentic AI regime.**
 
 ---
 
-## What is ITEA v3.0?
+## What is ITEA?
 
-The ITEA Framework provides ten complementary indicators covering 1,016 SOC 6-digit occupations from O\*NET 30.2, designed to measure occupational exposure to algorithmic expropriation in the Agentic AI regime — distinct from but complementary to task-level automation indices in the Frey-Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021).
+ITEA measures **algorithmic expropriability** — the surface of human knowledge that AI can codify and capture from work. Its distinctive move is to separate what can be *measured* (a potential: **expropriability** = exposure × codifiability) from the *normative event* it enables — the transfer of the worker's **sovereignty** over the exploitation of that knowledge — and from its two consequences: the firm's **appropriation** of value and the **dilution** of market exclusivity. This layered view — a worker still *possesses* what she knows (non-rival), but may lose the *right to decide* how it is exploited — is what distinguishes ITEA from a single exposure score.
 
-External convergent validation against the AIOE benchmark over 738 common SOC 6-digit occupations: **r(OAEI v3.0+, AIOE) = 0.797**.
+> **Understand the reasoning:** [The research narrative and the *why* of each decision](docs/ITEA_Relato_y_Decisiones.html) · [Data guide and glossary](docs/ITEA_Guia_Datos_y_Glosario.html)
+
+The ITEA Framework (v3.0) implements this with ten complementary indicators covering 1,016 SOC 6-digit occupations from O\*NET 30.2, designed to measure occupational algorithmic expropriability in the Agentic AI regime — distinct from but complementary to task-level automation indices in the Frey-Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021).
+
+External convergent validation against the AIOE benchmark over 769 common SOC 6-digit occupations: **r(OAEI v3.0+, AIOE) = 0.797**.
+
+> **Coverage note.** OAEI is available for **878 of the 1,016** occupations (86.5%). The 138 without OAEI lack the GEE/wage inputs it composes; among them, the **19 military occupations (SOC 55)** are a structural O\*NET exclusion (no Job Zone/wage). Details in the [dataset review](docs/ITEA_Revision_Dataset.md).
 
 | Indicator | Full Name | Dimension | Type | Status |
 |-----------|-----------|-----------|------|--------|
-| **ITEA** | Triple Index of Exposure to Automation | Exposure | Formative (z-score aggregation) | **Revised in v3.0** |
+| **ITEA** | Index of Transformation and Algorithmic Expropriability | Exposure | Formative (z-score aggregation) | **Revised in v3.0** |
 | **IRA** | Adaptive Resilience Index | Resilience | Reflective (triple residualisation) | **Revised in v3.0** |
 | **ICT** | Technical Complexity Index | Complexity | Formative | Stable since v2.0 |
 | **IFS** | Social Friction Index | Social interaction | Reflective | Stable since v2.0 |
@@ -28,8 +34,8 @@ External convergent validation against the AIOE benchmark over 738 common SOC 6-
 | **IEF** | Functional Specificity Index | Specificity | Reflective | Stable since v2.0 |
 | **GEE** | Education-Experience Gradient | Qualification | Calibrated (OLS+ordinal) | Stable since v1.45 |
 | **IMO** | Occupational Mutation Index | Mutation | Hurdle model | Stable since v1.2 |
-| **OAEI** | Occupational Algorithmic Expropriation Index | Composite operational | Multiplicative (canonical) + additive (alternative) | **Revised in v3.0 — dual variant** |
-| **AEI** | Algorithmic Expropriation Index | Internal benchmark | Auxiliary | Stable since v2.0 |
+| **OAEI** | Occupational Algorithmic Expropriability Index | Composite operational | Multiplicative (canonical) + additive (alternative) | **Revised in v3.0 — dual variant** |
+| **AEI** | Algorithmic Expropriability Index | Internal benchmark | Auxiliary | Stable since v2.0 |
 
 ---
 
@@ -69,7 +75,7 @@ The v1.x line (March 2024 – October 2025) was the operational release cycle: d
 | Resilience indicator | IRO (with 4→2 item revision in v1.45) | **IRA = 0.6·CA + 0.4·IRO_residual_v3.0**, where IRO_residual is residualised against (GEE, ITEA, ICT) |
 | Composite metric | None — indicators reported separately | **OAEI multiplicative (canonical) and OAEI v3.0+ additive (alternative)** |
 | External convergent validation against AIOE | Not reported | r(OAEI v3.0+, AIOE) = 0.797 |
-| Effective N for full validation | — | 738 occupations |
+| Effective N for full validation | — | 769 occupations |
 | Trilogy backward compatibility | n/a | OAEI multiplicative preserves trilogy citation |
 
 **Migration from v1.45 is documented step-by-step in [`docs/MIGRATION.md`](docs/MIGRATION.md).** Researchers who wish to reproduce results using the v1.x specification can check out the `v1.45-legacy` tag and follow the version-specific README preserved in that snapshot.
@@ -249,4 +255,4 @@ Institutional: a.garciaval.2025@alumnos.urjc.es
 
 ---
 
-*ITEA Framework v3.0 — Making algorithmic expropriation measurable, multidimensional, and actionable.*
+*ITEA Framework v3.0 — Making algorithmic expropriability measurable, multidimensional, and actionable.*

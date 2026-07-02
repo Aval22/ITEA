@@ -109,5 +109,4 @@ v1.2 引入了**首个欧洲征用暴露度指数**，以及从活动到欧洲**
 CC BY 4.0；USDOL 注册商标）。衍生数据标注为「已修改」。外部的暴露度与就业标准仅用于对照，
 并经适当引用，不予再分发。
 
-建议引用：García-Lluis Valencia, A. (2026). *ITEA Framework — Triple Index of Exposure to
-Automation*. Zenodo. https://doi.org/10.5281/zenodo.19578915
+建议引用：García-Lluis Valencia, A. (2026). *ITEA Framework — 转型与算法可剥夺性指数*. Zenodo. https://doi.org/10.5281/zenodo.19578915

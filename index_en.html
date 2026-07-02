@@ -11,10 +11,10 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ITEA 4.0 — Triple Index of Exposure to Automation</title>
+<title>ITEA 4.0 — Index of Transformation and Algorithmic Expropriability</title>
 <meta name="description" content="ITEA 4.0 — a framework to measure the algorithmic expropriation of labour at the task level. Three environments: United States (O*NET), Europe (ESCO) and a US–EU bridge, on ISCO-08.">
 <meta name="author" content="Alberto García-Lluis Valencia">
-<meta property="og:title" content="ITEA 4.0 — Triple Index of Exposure to Automation">
+<meta property="og:title" content="ITEA 4.0 — Index of Transformation and Algorithmic Expropriability">
 <meta property="og:description" content="New version 4.0: three environments (US–O*NET, Europe–ESCO, US–EU Bridge) to measure and compensate the algorithmic expropriation of labour at the task level.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aval22.github.io/ITEA/index_en.html">
@@ -126,7 +126,7 @@
 <header class="hero"><div class="wrap">
   <p style="margin:0 0 14px;font-size:13px;color:#9fb4d2;">🌐 <a href="index.html" style="color:#cdd9ea;">Español</a> · <strong style="color:#fff">English</strong></p>
   <span class="badge-new">New release · ITEA 4.0</span>
-  <h1>Triple Index of Exposure to Automation</h1>
+  <h1>Index of Transformation and Algorithmic Expropriability</h1>
   <p class="sub">Measuring —and compensating— the <strong style="color:#fff">algorithmic expropriation</strong> of labour, at the task level.</p>
   <p class="lede">ITEA 4.0 expands the framework from one environment to three —United States (O*NET), Europe (ESCO) and a US–EU bridge— on a common ISCO-08 axis, with national instances underway in Asia.</p>
   <div class="chips">
@@ -154,7 +154,7 @@
   <p>The first, <strong>task-centric</strong> (Acemoglu and Restrepo, 2020; Acemoglu, Autor, Hazell and Restrepo, 2022; Autor et al., 2020), measures occupational exposure to automation and treats it as an exogenous productivity shock read in terms of displacement, wages and the labour share. The second, more recent —<em>labor as capital</em>— recognises that AI systems do not only substitute tasks: they <strong>absorb the worker's expertise and incorporate it as a firm asset</strong>, whether documenting empirically that generative models encode the knowledge of the most productive workers (Brynjolfsson, Li and Raymond, 2025) or modelling the ownership of that expertise (Cullen, Li and Li, 2025). This second strand, however, lacked an occupation-scale measurement instrument.</p>
   <p><strong>ITEA 4.0 sits at the intersection of both traditions and fills that gap.</strong> Its contribution is threefold:</p>
   <div class="triple">
-    <div class="t"><h4>Conceptual</h4><p>It reframes the phenomenon as <strong>algorithmic expropriation</strong> —the uncompensated transfer of the worker's intellectual capital to the firm's algorithmic assets— shifting the normative frame from job displacement to value appropriation.</p></div>
+    <div class="t"><h4>Conceptual</h4><p>It reframes the phenomenon as <strong>algorithmic expropriation</strong> —not the loss of the knowledge (non-rival), which the worker keeps, but the uncompensated capture of her <strong>sovereignty</strong> over its exploitation— shifting the normative frame from job displacement to value appropriation and the dilution of exclusivity.</p></div>
     <div class="t"><h4>Measurement</h4><p>It operationalises that transfer as a <strong>task-level exposure index</strong>, built on O*NET and harmonised with ESCO via <strong>dense semantic embeddings</strong>: knowledge capture stops being a theoretical intuition and becomes a magnitude comparable across occupations, sectors and countries.</p></div>
     <div class="t"><h4>Policy</h4><p>It links the measurement to an explicit compensation mechanism —<strong>tokenised residual rights (θ·V)</strong> versus a Pigouvian tax on algorithmic capital— bridging the empirical diagnosis and institutional design.</p></div>
   </div>
@@ -236,7 +236,7 @@
 <section id="methodology"><div class="wrap">
   <p class="kicker">Methodology</p>
   <h2>How expropriation is measured</h2>
-  <p>ITEA decomposes each occupation into its <strong>tasks and activities</strong> (the unit where AI actually operates) and grades each one along three dimensions —generative exposure, knowledge codifiability and level of responsibility— which are aggregated into occupational indicators and a composite expropriation index. The framework carefully distinguishes <strong>exposure</strong> (how much of the work is reachable by AI) from <strong>expropriation</strong> (the transfer of intellectual capital), and validates the construct against independent external criteria (of potential exposure, realised employment and real AI use).</p>
+  <p>ITEA decomposes each occupation into its <strong>tasks and activities</strong> (the unit where AI actually operates) and grades each one along three dimensions —generative exposure, knowledge codifiability and level of responsibility— which are aggregated into occupational indicators and a composite <strong>expropriability</strong> index. The framework carefully distinguishes <strong>exposure</strong> (how much of the work is reachable by AI), <strong>expropriability</strong> (the potential for capture: exposure × codifiability) and <strong>expropriation</strong> (the normative event: the taking of sovereignty over the knowledge), and validates the construct against independent external criteria (of potential exposure, realised employment and real AI use).</p>
   <p>The harmonisation between the US taxonomy (O*NET) and the European one (ESCO) is done via <strong>dense semantic embeddings</strong> over each task statement, which lets the same construct be read in both systems and the US–EU bridge be built. The public methodological documentation details the apparatus, the indicators per environment and the validation.</p>
   <ul class="docs" style="list-style:none;padding:0;margin:14px 0 0;">
     <li style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0;"><a href="https://github.com/Aval22/ITEA/blob/main/docs/ITEA_v3_0_Consolidated_Methodology.docx">Consolidated methodology (v3.0)</a> <span class="muted">— the framework's reference methodology document.</span></li>
@@ -303,7 +303,7 @@
     <li>Autor, D., Mindell, D. and Reynolds, E. (2020). <em>The Work of the Future</em>. MIT Task Force.</li>
     <li>Autor, D. H., Levy, F. and Murnane, R. J. (2003). The Skill Content of Recent Technological Change. <em>Quarterly Journal of Economics</em>, 118(4).</li>
     <li>Brynjolfsson, E., Li, D. and Raymond, L. (2025). Generative AI at Work. <em>Quarterly Journal of Economics</em>, 140.</li>
-    <li>Cullen, Li and Li (2025). <em>Labor as Capital</em>: ownership of expertise and alternative compensation regimes.</li>
+    <li>Cullen, Z., Li, S. and Li, D. (2025). <em>Labor as Capital: AI and the Ownership of Expertise</em>. Working paper (Harvard Business School · Harvard · MIT Sloan).</li>
     <li>Eloundou, T., Manning, S., Mishkin, P. and Rock, D. (2024). GPTs are GPTs: Labor Market Impact Potential of LLMs. <em>Science</em>, 384(6702).</li>
     <li>Felten, E., Raj, M. and Seamans, R. (2021). Occupational, Industry, and Geographic Exposure to AI (AIOE). <em>Strategic Management Journal</em>, 42(12).</li>
     <li>Frey, C. B. and Osborne, M. A. (2017). The Future of Employment. <em>Technological Forecasting and Social Change</em>, 114.</li>
@@ -312,7 +312,7 @@
     <li>Lindbeck, A. and Snower, D. J. (2001). Insiders versus Outsiders. <em>Journal of Economic Perspectives</em>, 15(1).</li>
     <li>Ostrom, E. (1990). <em>Governing the Commons</em>. Cambridge University Press.</li>
     <li>Williamson, O. E. (1985). <em>The Economic Institutions of Capitalism</em>. Free Press.</li>
-    <li>García-Lluis Valencia, A. (2026). The Algorithmic Expropriation of Labor: Toward a Modernization of the Employment Contract. <em>Zenodo</em>. DOI: <a href="https://doi.org/10.5281/zenodo.20424900">10.5281/zenodo.20424900</a>.</li>
+    <li>García-Lluis Valencia, A. (2026). The Algorithmic Expropriation of Knowledge Sovereignty: Toward a Modernization of the Employment Contract. <em>Zenodo</em>. DOI: <a href="https://doi.org/10.5281/zenodo.20424899">10.5281/zenodo.20424899</a>.</li>
   </ol>
   <p class="muted" style="font-size:13.5px;">Full bibliography (BibTeX) and provenance notes available on request — see "Access".</p>
 </div></section>
@@ -323,6 +323,7 @@
     <p class="kicker" style="color:#9fc0ec;">Access</p>
     <h2>Data and operational information</h2>
     <p>This site is <strong style="color:#fff">theoretical and conceptual</strong>. As a matter of research integrity (avoiding scooping ahead of academic publication) and protection of third-party sources, the task- and occupation-level indices, the operational datasets and the detailed numerical results of v4.0 are not published here: they are available <strong style="color:#fff">on request</strong> and for research collaboration, on both academic and commercial terms.</p>
+    <p>The clean data set (US · EU · Bridge · Wages 2025) is published as <strong style="color:#fff">restricted-access</strong> Google Sheets; the <a href="https://docs.google.com/document/d/1DrBbfwwF0waX3TMd7mWtFdF0iLWI_kQ0bj95j7E6NDI/edit" style="color:#9fc0ec;">data index (README)</a> gathers the links, and access is requested with one click from each sheet.</p>
     <a class="mail" href="#solicitud">Request access · go to the form</a>
   </div>
 </div></section>
@@ -355,7 +356,7 @@
   <h2 style="color:var(--navy);font-size:20px;margin:0 0 10px;">How to cite</h2>
   <div class="cite"><pre>@software{garcia-lluis2026itea,
   author  = {García-Lluis Valencia, Alberto},
-  title   = {ITEA Framework — Triple Index of Exposure to Automation},
+  title   = {ITEA Framework — Index of Transformation and Algorithmic Expropriability},
   year    = {2026},
   version = {4.0},
   doi     = {10.5281/zenodo.19578915},

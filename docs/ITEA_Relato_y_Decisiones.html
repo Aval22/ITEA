@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEA — El relato y el porqué de cada decisión</title>
+<style>
+:root{
+  --brown:#6B4E2E; --amber:#8C6A3F; --amber-bg:#FBF3E4; --amber-bd:#C98A2E;
+  --teal:#1C5B66; --teal-bg:#E7F0F2; --teal-bd:#2E7D8A;
+  --ink:#26262b; --grey:#5c5c63; --line:#e4ddd0; --slate:#2B2B33;
+}
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);line-height:1.62;
+  margin:0;background:#faf8f4;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:56px 30px 80px}
+header.mast{border-bottom:3px solid var(--brown);padding-bottom:22px;margin-bottom:34px}
+.kicker{font-family:system-ui,Arial,sans-serif;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--amber);font-weight:700;margin:0 0 10px}
+h1{font-size:33px;line-height:1.2;margin:0 0 10px;color:var(--slate);font-weight:700}
+.sub{font-size:18.5px;color:var(--grey);font-style:italic;margin:0 0 16px}
+.meta{font-family:system-ui,Arial,sans-serif;font-size:13.5px;color:var(--grey)}
+h2{font-size:23px;color:var(--brown);margin:44px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.lead{font-size:17.5px;color:#3a3a40}
+p{margin:0 0 15px}
+.decision{background:#fff;border:1px solid var(--line);border-left:5px solid var(--amber-bd);
+  border-radius:9px;padding:18px 22px 6px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.decision .dnum{font-family:system-ui,Arial,sans-serif;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--amber-bd);font-weight:700;margin-bottom:4px}
+.decision h3{font-size:19px;margin:0 0 12px;color:var(--slate)}
+.decision p{font-size:16px;margin:0 0 12px}
+.lbl{font-family:system-ui,Arial,sans-serif;font-size:12.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.04em;color:var(--brown)}
+.alt{color:var(--grey);font-style:italic;font-size:15px!important;
+  border-top:1px dashed var(--line);padding-top:9px}
+.impact{background:var(--teal-bg);border:1px solid var(--teal-bd);border-radius:10px;
+  padding:6px 22px;margin:16px 0}
+.impact h3{color:var(--teal);font-size:18px}
+.callout{background:var(--amber-bg);border-radius:10px;padding:16px 22px;margin:22px 0;
+  border:1px solid #e8d9bd;font-size:16.5px}
+.callout strong{color:var(--brown)}
+a{color:var(--teal-bd)}
+figure{margin:26px 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;padding:8px}
+figcaption{font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--grey);font-style:italic;margin-top:8px}
+.links{font-family:system-ui,Arial,sans-serif;font-size:14.5px;background:#fff;
+  border:1px solid var(--line);border-radius:9px;padding:8px 22px}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;
+  font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--grey)}
+@media print{body{background:#fff;font-size:12pt}.wrap{max-width:none;padding:0}
+  .decision,.impact,.callout,.links{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+  <p class="kicker">Programa ITEA · 2026 · Guía para el examinador</p>
+  <h1>El relato de ITEA y el porqué de cada decisión</h1>
+  <p class="sub">Por qué cada elección de investigación es la correcta —y qué alternativa se descartó y por qué.</p>
+  <p class="meta">Alberto García-Lluis Valencia · Universidad Rey Juan Carlos · Documento vivo (work in progress)</p>
+</header>
+
+<p class="lead">Esta guía no resume resultados: <strong>justifica decisiones</strong>. Recorre las elecciones que estructuran el programa ITEA y, para cada una, expone el problema que resolvía, por qué se adoptó y qué alternativa se dejó atrás. Está pensada para que un revisor entienda la solidez metodológica y para que un evaluador vea la novedad y el alcance. El hilo conductor es una analista de riesgo de crédito, «Ana».</p>
+
+<figure>
+  <img src="itea_journey_es.svg" alt="Arco de la investigación: del punto de partida a la soberanía y su flanco.">
+  <figcaption>El arco de la investigación: cada parada desmontó una simplificación y reveló la decisión siguiente.</figcaption>
+</figure>
+
+<h2>Parte A · Las decisiones y su justificación</h2>
+
+<div class="decision">
+  <div class="dnum">Decisión 1 · Unidad de medición</div>
+  <h3>Medir la <em>actividad</em>, no la ocupación</h3>
+  <p><span class="lbl">El problema:</span> los índices al uso miden exposición a nivel de ocupación, pero la IA no afecta por igual a todo un puesto. Promediar por ocupación oculta el fenómeno.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> al descomponer 47.810 tareas, el <strong>82–94 % de la variación vive dentro de la ocupación</strong>, no entre ocupaciones. La unidad correcta es la actividad. Converge, además, con evidencia independiente (Gathmann et al., 2024; Lewandowski et al., 2025; Caselli et al., 2025).</p>
+  <p class="alt">Alternativa descartada: seguir en la ocupación (SOC/ISCO) — hereda la atenuación por agregación y no ve lo que de verdad cambia.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 2 · Estrategia de validación</div>
+  <h3>Validar en la unidad propia contra comportamiento observado</h3>
+  <p><span class="lbl">El problema:</span> la mayoría de índices se validan contra <em>juicios de exposición potencial</em>, que son circulares (opinión contra opinión).</p>
+  <p><span class="lbl">Por qué esta decisión:</span> ITEA se contrasta a nivel de tarea contra el <strong>uso real de IA</strong> (Anthropic Economic Index) y muestra una validez discriminante limpia: el constructo sigue a la GenAI y es ciego a la automatización clásica, y la separación se sostiene <em>dentro</em> de cada perfil. Es el activo más fuerte del programa.</p>
+  <p class="alt">Alternativa descartada: validar contra encuestas de exposición percibida — no distingue medición de opinión.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 3 · Terminología</div>
+  <h3>«Expropiabilidad» en el empírico; «expropiación de soberanía» en el conceptual</h3>
+  <p><span class="lbl">El problema:</span> «expropiación» se usaba en dos sentidos —potencial medido y evento normativo— y eso invita a que un revisor acuse de tautología.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> el conocimiento es <strong>no rival</strong>: no se desposee. El empírico mide un <em>potencial</em> (expropiabilidad = exposición × codificabilidad); el conceptual teoriza el <em>evento</em>. Así, el hallazgo estrella «expropiado pero retenido» deja de ser una paradoja.</p>
+  <p class="alt">Alternativa descartada: mantener «expropiación» a secas — cada revisor pondría la objeción de la no rivalidad.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 4 · Constructo central</div>
+  <h3>Distinguir posesión epistémica de soberanía deóntica</h3>
+  <p><span class="lbl">El problema:</span> la intuición «la IA le quita su saber a Ana» es falsa (ella lo conserva), lo que parecía vaciar el argumento.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> «tener» un saber encubre dos cosas: <strong>poseerlo</strong> (epistémico, no rival, inalienable — no se expropia) y <strong>el derecho a decidir su explotación</strong> (deóntico, rival, alienable — <em>eso</em> se toma y se retiene). Con Hohfeld, Honoré y Calabresi–Melamed, «expropiación» vuelve a ser literal.</p>
+  <p class="alt">Alternativa descartada: hablar de «pérdida de conocimiento» — insostenible ante la no rivalidad.</p>
+</div>
+
+<figure>
+  <img src="fig1_having_es.svg" alt="Las dos formas de tener un conocimiento: posesión epistémica vs soberanía deóntica.">
+  <figcaption>Figura · La distinción que sostiene la Decisión 4: se posee el saber (no rival), se toma la soberanía (rival).</figcaption>
+</figure>
+
+<div class="decision">
+  <div class="dnum">Decisión 5 · Arquitectura del índice (ITEA 4.0)</div>
+  <h3>Descomponer el índice único en tres</h3>
+  <p><span class="lbl">El problema:</span> un solo índice fusionaba el <em>evento</em> con sus dos <em>consecuencias</em>, y una cifra así no es falsable.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> tres constructos separados —soberanía (IES), apropiación (IAV) y dilución (IDE)— son operacionalizables, cada uno con su remedio, y producen una predicción contrastable (márgenes vs diferenciales en banca).</p>
+  <p class="alt">Alternativa descartada: conservar el índice compuesto único — elegante pero no operacionalizable.</p>
+</div>
+
+<figure>
+  <img src="fig2_event_es.svg" alt="Un evento, dos consecuencias: apropiación y dilución, con sus remedios.">
+  <figcaption>Figura · Por qué tres índices (Decisión 5): un evento —la toma de soberanía— y sus dos consecuencias, cada una con su remedio.</figcaption>
+</figure>
+
+<div class="decision">
+  <div class="dnum">Decisión 6 · Disciplina histórica</div>
+  <h3>Almacenado ≠ codificado, y no mezclar eras</h3>
+  <p><span class="lbl">El problema:</span> el «0 %» de expropiación de la automatización clásica parecía un artefacto de la rúbrica (circularidad).</p>
+  <p><span class="lbl">Por qué esta decisión:</span> se reinterpreta como <strong>hallazgo histórico</strong>: la codificación se detuvo antes del puente; la ola ERP llenó un depósito «almacenado» que la GenAI es la primera en leer. De ahí la regla de no mezclar la era ERP (1970–2000) y la GenAI (post-2022) en una regresión.</p>
+  <p class="alt">Alternativa descartada: defender el 0 % como propiedad de diseño — expone el flanco de la tautología.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 7 · Alcance</div>
+  <h3>Dos sujetos: el trabajador y el consumidor</h3>
+  <p><span class="lbl">El problema:</span> tratar un solo origen del conocimiento codificado deja fuera la mitad del fenómeno.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> hay dos orígenes con agravios distintos: el <strong>trabajador</strong> (juicio experto que poseía → expropiación) y el <strong>consumidor</strong> (conducta agregada que nunca poseyó → extracción). Cada uno pide un remedio distinto.</p>
+  <p class="alt">Alternativa descartada: limitar el marco al trabajador — más defendible, pero incompleto.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 8 · Estructura editorial</div>
+  <h3>Dos papers coordinados, no uno fusionado</h3>
+  <p><span class="lbl">El problema:</span> la tentación de contar toda la historia en un solo artículo.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> empírico y conceptual tienen distinta unidad, método, estándar de evidencia y revista. Un paper híbrido no satisface a ningún revisor y <em>amplía</em> la superficie de ataque. La trilogía (empírico = expropiabilidad · conceptual = evento · satélite = remedio θ·V) reparte el trabajo sin solaparse.</p>
+  <p class="alt">Alternativa descartada: fusionar los dos — reintroduce la confusión terminológica que se acaba de resolver.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 9 · Fundamento normativo</div>
+  <h3>Argumentar la titularidad previa, no asumirla</h3>
+  <p><span class="lbl">El problema:</span> toda la fuerza normativa depende de que el trabajador fuera soberano <em>antes</em> del cruce; la doctrina de obra por encargo lo discute.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> se responde en dos registros: la contingencia del reparto (Hettinger, Drahos; la historia legislativa de 1976) y, sobre todo, la acotación al <strong>corpus agregado fuera del empleo</strong>, donde la obra por encargo no aplica y la titularidad recupera su fuerza.</p>
+  <p class="alt">Alternativa descartada: dar por supuesta la soberanía previa — es el flanco exacto que un revisor ataca primero.</p>
+</div>
+
+<div class="decision">
+  <div class="dnum">Decisión 10 · Honestidad metodológica</div>
+  <h3>Declarar los flancos en vez de esconderlos</h3>
+  <p><span class="lbl">El problema:</span> un aparato coherente genera una falsa sensación de validez.</p>
+  <p><span class="lbl">Por qué esta decisión:</span> se documentan las hipótesis refutadas, la delgadez de la validez convergente y la cautela sobre qué «captura» un modelo (competencia formal vs funcional). Esa franqueza —la Sección 9 del empírico— es, paradójicamente, lo que más confianza genera en un referee.</p>
+  <p class="alt">Alternativa descartada: pulir el abstract hasta borrar las limitaciones — se pierde el activo de credibilidad.</p>
+</div>
+
+<h2>Parte B · Por qué importa (novedad, solidez, impacto)</h2>
+
+<div class="impact">
+  <h3>Qué es nuevo</h3>
+  <p>Redirige el aparato tarea-céntrico de Acemoglu–Autor <em>de la sustitución a la captura</em>: no pregunta si el puesto desaparece, sino quién se queda con la renta del juicio ya codificado. Y aporta una distinción propia —posesión epistémica vs soberanía deóntica— que da estatuto literal a la «expropiación» y un hogar teórico reconocido (soberanía de datos, Teece, Calabresi–Melamed).</p>
+</div>
+<div class="impact">
+  <h3>Por qué es sólido</h3>
+  <p>Validación en la unidad propia contra uso real, con validez discriminante limpia y anclaje externo independiente (AIOE, <em>r</em> = 0,797). Disciplina cronológica explícita y registro honesto de lo refutado. Predicción contrastable (banca: márgenes vs diferenciales).</p>
+</div>
+<div class="impact">
+  <h3>Por qué es relevante ahora</h3>
+  <p>Conecta con un debate vivo —IA, trabajo y gobernanza del conocimiento en la UE— y ofrece un marco medible y un menú de remedios (consentimiento, θ·V, instrumento pigouviano) para una pregunta de política que hoy no tiene métrica.</p>
+</div>
+
+<div class="callout">
+  <strong>La tesis en una frase.</strong> No se expropia el saber (posesión epistémica, no rival): se usa. Se expropia la <strong>soberanía</strong> (el derecho a decidir), y de esa toma se siguen la apropiación del valor y la dilución de la exclusividad. La pregunta deja de ser «¿se expropia o no?» y pasa a ser «¿quién era el soberano antes del cruce?».
+</div>
+
+<h2>Referencias del programa</h2>
+<p class="links">
+  Artículo conceptual — DOI (todas las versiones): <a href="https://doi.org/10.5281/zenodo.20424899">10.5281/zenodo.20424899</a><br>
+  Manuscrito empírico — DOI: <a href="https://doi.org/10.5281/zenodo.20834742">10.5281/zenodo.20834742</a><br>
+  Framework (código y datos) — DOI: <a href="https://doi.org/10.5281/zenodo.19578915">10.5281/zenodo.19578915</a><br>
+  Guía de datos y glosario — <a href="ITEA_Guia_Datos_y_Glosario.html">ITEA_Guia_Datos_y_Glosario.html</a>
+</p>
+
+<footer>
+  Programa ITEA · 2026 · Documento de acompañamiento (work in progress). El detalle operativo de los índices en diseño está disponible bajo solicitud.
+</footer>
+</div>
+</body>
+</html>

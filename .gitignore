@@ -80,6 +80,42 @@ itea_backup_*/
 # Anexo paper ICADE — panel ITEA×GenAI (investigacion nueva, local hasta el paper; anti-scooping)
 ICADE_GenAI_Panel/
 
+# Disciplina LE — índice CDX (codificabilidad) + cronología tecnológica + nota al revisor
+# (investigacion nueva, local hasta el paper; anti-scooping)
+v4.0/outputs/indices_disciplina_LE/
+v4.0/code/build_indices_disciplina_LE.py
+v4.0/docs/DECISION_disciplina_LE_cronologia.md
+v4.0/docs/Nota_Revisor_LE_disciplina_cronologia.docx
+
 # Podcast audio: subir como assets de GitHub Release, no versionar
 podcast/release-assets/
 *.mp3
+
+# --- Investigacion nueva + material personal (local hasta el paper; anti-scooping) 2026-07-02 ---
+ITEA_Fundamentacion_*
+ITEA_4.0_Spec_Diseno.docx
+ITEA_4.0_Presentacion.*
+ITEA_Codificar_Transferir_Expropiar.docx
+ITEA_Nota_Titularidad_Previa_H10.docx
+ITEA_mapa_teorias_aprendizaje.svg
+ITEA_Hoja_de_Ruta.docx
+ITEA_Concept_Note_Economic_Futures_EN.*
+VERSIONES.md
+HALLAZGOS.md
+Auditoria_Robustez_ITEA_4.0.docx
+Validacion_ITEA_4.0_puntos_1-5.docx
+Profundizacion_Hallazgos_IA_Competencias.docx
+*Anexo_Competencias_IA_Mundial.docx
+*Informe_Uso_IA_por_Paises_VISTA_PREVIA.docx
+*Informe_Revisado_IA_Competencias_ESCO.docx
+CV_investigador_*.docx
+Cover_Letter_*.docx
+Email_Economic_Futures_*.txt
+WIP_block_para_index.html
+/Pigouvian_TAX_vs_Royalties_token/
+v4.0/code/06b_build_oaxi_eu_calibrated.py
+v4.0/docs/CALIBRACION_K_OAXI_EU.md
+v4.0/docs/PLAN_SELLADO_v4.0.md
+v4.0/outputs/occ_oaxi_eu_calibrated.*
+docs/ITEA_Relato_y_Decisiones.pdf
+docs/ITEA_Guia_Datos_y_Glosario.pdf
