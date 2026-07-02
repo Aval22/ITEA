@@ -1,5 +1,5 @@
 ---
-title: "ITEA Framework: A multidimensional system for measuring occupational exposure to algorithmic expropriation under the Agentic AI regime"
+title: "ITEA Framework: A multidimensional system for measuring occupational exposure and algorithmic expropriability under the Agentic AI regime"
 tags:
   - R
   - Python
@@ -24,14 +24,14 @@ bibliography: paper.bib
 # Summary
 
 The ITEA Framework is an open multidimensional system for measuring occupational
-exposure to algorithmic expropriation under the Agentic AI regime, distinct from
+exposure and algorithmic expropriability under the Agentic AI regime, distinct from
 but complementary to task-level automation indices in the Frey-Osborne tradition
 [@frey2017future] or ability-based exposure measures such as the AI Occupational
 Exposure index of @felten2021occupational. Version 3.0 covers all 1,016 SOC 6-digit
 occupations of O\*NET 30.2, providing ten complementary indicators (eight original
 plus two introduced in v3.0), four reference R/Python implementations, a
 twelve-sheet validated dataset, and a Streamlit dashboard. External convergent
-validation against the AIOE benchmark over 738 common SOC 6-digit occupations
+validation against the AIOE benchmark over 769 common SOC 6-digit occupations
 yields *r* = 0.797.
 
 # Statement of need
@@ -83,7 +83,7 @@ The framework anchors in O\*NET 30.2 (1,016 SOC 6-digit occupations, 47,810 task
 statements) and integrates BLS OEWS wage data. External convergent validation
 against the AIOE benchmark of @felten2021occupational confirms that ITEA
 captures a related-but-distinct construct: r(OAEI v3.0+, AIOE) = 0.797 over the
-738 common occupations.
+769 common occupations.
 
 # State of the field and ITEA's contribution
 
