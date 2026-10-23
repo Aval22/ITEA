@@ -64,6 +64,15 @@ October 2026. During that period:
   (partial ρ = 0.40); K1 vs routine cognitive stays negative in non-manual
   occupations (ρ = −0.21), so that index is dropped as a reference for K
   (`docs/grading/RESULTADOS_discriminante_ES.md`).
+- Layer U by sector and country (issue #7): `itea.grading.eurostat.adoption_by_sector`,
+  `latest` and `utilisation` (Eurostat `isoc_eb_iipn2`, `isoc_eb_ain2`, `isoc_eb_icsn2`;
+  35 territories × 13 NACE sectors; U = adoption × depth at 0.10 / 0.27 / 0.35).
+  The financial sector (NACE K) is not covered by these tables.
+- English documentation of the grading pipeline (issue #9):
+  `docs/grading/METHODOLOGY_v0.2_EN.md` and `VALIDATION_RESULTS_EN.md`.
+- R reference implementation checked in CI (issue #11): `tests/test_v3_r_parity.py`
+  runs `code/v3/itea_functions_v3.R` and compares it with `itea.v3`.
+- Optional dependency group `semantic` for grading layers 2–3.
 - Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
   `reweight`); equal split remains the default.
 - `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).
@@ -74,6 +83,12 @@ October 2026. During that period:
 - `CONTRIBUTING.md`, `NOTICE.md`.
 
 ### Changed
+
+- **`itea.v3.itea_v3` now uses the sample standard deviation**, as `sd()` in the
+  R reference implementation. The previous population SD gave results that
+  differ by up to 7·10⁻⁵ when components have different missing values; with
+  complete data the two are identical (the min–max step cancels the factor).
+  Found by the new R ↔ Python parity test.
 
 - **SOC → ISCO-08 crosswalk.** The beta used a one-to-one mapping typed into a
   wage spreadsheet, which misassigned some occupations (e.g. Management

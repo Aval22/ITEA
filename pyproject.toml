@@ -28,6 +28,8 @@ classifiers = [
 
 [project.optional-dependencies]
 test = ["pytest>=7"]
+# grading layers 2–3 (issues #1, #2): sentence embeddings and NLI zero-shot, CPU
+semantic = ["sentence-transformers>=3.0", "transformers>=4.40", "torch>=2.2"]
 
 [project.scripts]
 itea = "itea.cli:main"

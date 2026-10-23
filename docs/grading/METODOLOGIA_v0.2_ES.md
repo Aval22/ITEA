@@ -1,6 +1,6 @@
 # Metodología de graduación de tareas de ITEA v4.1, versión 0.2
 
-**23-10-2026.** Documento consolidado. Sustituye como referencia a `LIBRO_CRITERIOS_v0.1_ES.md` (capas K y E) y a `DISENO_capa_tecnologica_y_certificacion_v0.1_ES.md` (capas T, U y S), que se conservan como historial. Las decisiones están en `DECISIONES_ES.md`, y los resultados en `RESULTADOS_capa1_ES.md`.
+**23-10-2026.** Documento consolidado. Sustituye como referencia a `LIBRO_CRITERIOS_v0.1_ES.md` (capas K y E) y a `DISENO_capa_tecnologica_y_certificacion_v0.1_ES.md` (capas T, U y S), que se conservan como historial. Las decisiones están en `DECISIONES_ES.md`, y los resultados en `RESULTADOS_capa1_ES.md`, `RESULTADOS_discriminante_ES.md` y `RESULTADOS_capaU_ES.md`. Hay versión en inglés: `METHODOLOGY_v0.2_EN.md` y `VALIDATION_RESULTS_EN.md`.
 
 ## 1. Qué se mide
 
@@ -53,7 +53,7 @@ ITEA mide la **expropiabilidad algorítmica**: el potencial de que el conocimien
 - **Emparejamiento tarea por tarea** dentro de cada ocupación.
 
 **U (utilización efectiva) = adopción × profundidad**
-- **Adopción:** Eurostat (`itea.grading.eurostat`; `isoc_eb_iip`, `isoc_eb_ics`, `isoc_eb_ai`). En 2025, en empresas de 10 o más empleados, España tiene ERP en el 60,4 % de las empresas (UE-27: 46,5 %) e IA en el 20,3 % (UE-27: 20,0 %). **Cautela:** ese agregado excluye el sector financiero (NACE K).
+- **Adopción:** Eurostat (`itea.grading.eurostat`; por tamaño, `isoc_eb_iip`, `isoc_eb_ics` e `isoc_eb_ai`; por sector NACE y país, `isoc_eb_iipn2`, `isoc_eb_ain2` e `isoc_eb_icsn2`, en `RESULTADOS_capaU_ES.md`). En 2025, en empresas de 10 o más empleados, España tiene ERP en el 60,4 % de las empresas (UE-27: 46,5 %) e IA en el 20,3 % (UE-27: 20,0 %). **Cautela:** ese agregado excluye el sector financiero (NACE K).
 - **Profundidad:** un supuesto de 0,10–0,35 (valor central 0,27), respaldado por McGrenere y Moore (2000), Aberdeen (2006–2007) y Pendo (2019). Se recorre entero en el Monte Carlo.
 - **Hipótesis central:** la IA eleva la profundidad de uso porque rebaja la barrera de pericia.
 
@@ -70,10 +70,12 @@ ITEA mide la **expropiabilidad algorítmica**: el potencial de que el conocimien
   - K1 va en sentido contrario a la rutina cognitiva (ρ = −0,21; la hipótesis no se cumple, y la diferencia de constructo es informativa);
   - el riesgo de confundir K con la cualificación está al límite (ρ = 0,70 con el Job Zone);
   - solo el 5,3 % de la varianza de K1 está dentro de cada actividad general, así que hacen falta las capas 2–4.
+- **Validación discriminante** (`RESULTADOS_discriminante_ES.md`, hipótesis H6–H8):
+  - K1 sigue asociado al trabajo analítico al comparar dentro de cada Job Zone (ρ parcial = 0,28);
+  - K1 predice la exposición humana de Eloundou descontando la cualificación (ρ parcial = 0,40);
+  - la rutina cognitiva sigue en sentido contrario en las ocupaciones no manuales (ρ = −0,21), y se abandona como referencia (D15).
 - **Siguientes pruebas obligatorias:**
-  - K dentro de cada Job Zone;
-  - la rutina cognitiva solo en ocupaciones no manuales;
-  - la mejora de las capas 2–3 sobre H1 y sobre la varianza dentro de cada actividad;
+  - la mejora de las capas 2–3 sobre H1, H6, H8 y la varianza dentro de cada actividad;
   - una matriz multirrasgo-multimétodo;
   - un Monte Carlo según el JRC-COIN.
 
