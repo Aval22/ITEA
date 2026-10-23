@@ -1,0 +1,29 @@
+{
+  "index": "OAXI-EU",
+  "grades": "layer1",
+  "itea_version": "4.0.0",
+  "built": "2026-10-23",
+  "kappa": 0.4,
+  "grade_columns": {
+    "K": "K1",
+    "E": "E1"
+  },
+  "n_tasks": 18796,
+  "n_onet_soc": 923,
+  "n_isco": 428,
+  "inputs_sha256": {
+    "grades": "f44b66874daca955874d89fedf395d6926ff574adf2e0056abafc7432589fa94"
+  },
+  "convergence_jrc145832": {
+    "n_isco3": 127,
+    "pearson": 0.8206546884502421,
+    "spearman": 0.8360109967752417
+  },
+  "agreement_with_v40_axi": {
+    "n_isco": 428,
+    "spearman": 0.7470423572552339,
+    "pearson": 0.6799532786474176,
+    "top20_overlap": 3
+  },
+  "note": "JRC145832 is ability-based, like the structural layer: its convergence is reported for information and is not an independent validation of K (decision D17)."
+}

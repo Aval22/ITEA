@@ -82,6 +82,12 @@ October 2026. During that period:
   layer U and vendor presence.
 - README (EN, ES, PT, ZH) and project web page updated for v4.0 and the v4.1
   work in progress.
+- `itea.grading.rebuild` and `scripts/grading/build_oaxi_eu_v41.py`: OAXI-EU
+  built from itea.grading task grades instead of AXI (same roll-up and
+  crosswalk, κ kept at 0.40, decision D17). Preview with the structural layer:
+  Spearman 0.75 with the v4.0 index, 3 of the top 20 shared
+  (`docs/grading/RESULTADOS_oaxi_eu_v41_ES.md`). The data workbook adds this
+  table as a separate sheet when it exists.
 - Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
   `reweight`); equal split remains the default.
 - `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).

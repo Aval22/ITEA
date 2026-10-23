@@ -58,7 +58,20 @@ def hypotheses() -> pd.DataFrame:
     return pd.concat([out.iloc[:4], h5, out.iloc[4:]], ignore_index=True)
 
 
-def readme(conv: dict, meta: dict) -> pd.DataFrame:
+def rebuilt_index(titles) -> tuple[str, pd.DataFrame, dict] | None:
+    """OAXI-EU rebuilt from itea.grading (scripts/grading/build_oaxi_eu_v41.py), v41 if present, else the layer-1 preview."""
+    for label in ("v41", "layer1"):
+        path = os.path.join(GR, f"oaxi_eu_{label}.csv")
+        if os.path.exists(path):
+            d = pd.read_csv(path, dtype={"isco": str, "isco3": str})
+            if titles is not None:
+                d = d.merge(titles, on="isco", how="left")
+                d = d[["isco", "isco_title"] + [c for c in d.columns if c not in ("isco", "isco_title")]]
+            return label, d, json.load(open(os.path.join(GR, f"oaxi_eu_{label}.meta.json")))
+    return None
+
+
+def readme(conv: dict, meta: dict, rebuilt=None) -> pd.DataFrame:
     today = datetime.date.today().isoformat()
     lines = [
         ("ITEA v4.0 — data workbook", ""),
@@ -67,6 +80,10 @@ def readme(conv: dict, meta: dict) -> pd.DataFrame:
         ("", ""),
         ("Sheet", "Content / Contenido"),
         ("OAXI_EU", f"European index by ISCO-08 unit group ({meta['n_isco']} groups, κ = {meta['kappa']}): E, K, OAXI_EU (1–100) / Índice europeo por grupo ISCO-08"),
+        *([(f"OAXI_EU_{rebuilt[0]}",
+             f"OAXI-EU rebuilt from itea.grading ({'v4.1' if rebuilt[0] == 'v41' else 'preview with the structural layer only'}): "
+             f"Spearman {rebuilt[2]['agreement_with_v40_axi']['spearman']:.2f} with the AXI-based index / "
+             "Reconstruido con la graduación nueva")] if rebuilt else []),
         ("Validation_JRC", f"OAXI-EU vs JRC145832 at ISCO-3: n = {conv['n_isco3']}, Pearson {conv['pearson']:.3f}, Spearman {conv['spearman']:.3f} / Convergencia con el JRC"),
         ("Crosswalk", "Official BLS chain SOC 2018 → SOC 2010 → ISCO-08, equal weights / Crosswalk oficial"),
         ("Occupation_shares", "Share of legacy AXI grades per O*NET occupation / Cuotas de grados AXI por ocupación"),
@@ -112,13 +129,15 @@ def main() -> None:
     if titles is not None:
         idx = idx.merge(titles, on="isco", how="left")
         idx = idx[["isco", "isco_title"] + [c for c in idx.columns if c not in ("isco", "isco_title")]]
+    rebuilt = rebuilt_index(titles)
     v3 = (idx.groupby("isco3")["OAXI_EU"].mean().rename("OAXI_EU_mean_isco3").reset_index()
           .merge(jrc.rename(columns={"score": "JRC145832_ai_exposure_2024"}), on="isco3", how="inner"))
     v3 = v3[["isco3", "occupation", "OAXI_EU_mean_isco3", "JRC145832_ai_exposure_2024"]].round(4)
 
     sheets = {
-        "README": readme(conv, meta),
+        "README": readme(conv, meta, rebuilt),
         "OAXI_EU": idx.sort_values("OAXI_EU", ascending=False),
+        **({f"OAXI_EU_{rebuilt[0]}": rebuilt[1]} if rebuilt else {}),
         "Validation_JRC": v3,
         "Crosswalk": pd.read_csv(os.path.join(OUT, "crosswalk_soc2018_isco08.csv"), dtype={"isco": str}).round(4),
         "Occupation_shares": pd.read_csv(os.path.join(OUT, "occupation_shares.csv")),
