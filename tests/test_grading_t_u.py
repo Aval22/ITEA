@@ -42,3 +42,19 @@ def test_real_inventory_size():
     inv = inventory(ONET)
     assert inv.loc[inv["kind"] == "software", "product"].nunique() == 8785
     assert vendor_presence(inv).set_index("vendor").loc["Microsoft", "occupations"] > 800
+
+
+def test_adoption_latest_and_utilisation():
+    from itea.grading.eurostat import adoption_by_sector, latest, utilisation
+
+    def stub(code, **filters):
+        rows = [(code, "ES", "G", ind, t, v, "2026-10-23")
+                for ind in filters["indic_is"] for t, v in (("2023", 40.0), ("2025", 50.0))]
+        return pd.DataFrame(rows, columns=["dataset", "geo", "nace_r2", "indic_is", "time", "value", "retrieved"])
+
+    raw = adoption_by_sector(fetch=stub)
+    assert set(raw["indic_is"]) == {"E_ERP1", "E_CRM1", "E_ITBI", "E_BSANY", "E_AI_TANY", "E_SISC"}
+    u = utilisation(latest(raw))
+    assert (u["time"] == 2025).all() and len(u) == 6
+    row = u.iloc[0]
+    assert abs(row["U_central"] - 0.50 * 0.27) < 1e-12 and row["U_low"] < row["U_central"] < row["U_high"]
