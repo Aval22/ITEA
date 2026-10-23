@@ -45,3 +45,29 @@ H6–H8 were written in response to H3 and H4. They are confirmatory only for th
 - **Source and coverage:** Eurostat ICT survey, enterprises with 10+ employees, latest year per cell (2023–2025); 35 territories and 13 NACE sectors. The financial sector (NACE K) is not covered.
 - **Outputs:** `v4.0/outputs/grading/utilisation_by_sector.csv`, with U = adoption × depth for depth 0.10, 0.27 and 0.35.
 - **Spain against the EU-27:** Spain is above the EU-27 average in ERP adoption in every sector covered, but not in AI adoption, except in real estate and transport.
+
+## Layers 2–3 and OAXI-EU v4.1 (23 October 2026)
+
+Full detail in Spanish: `RESULTADOS_capa2_ES.md` and `RESULTADOS_capa3_y_v41_ES.md`. Hypotheses H9–H20 were registered before each run.
+
+| # | Hypothesis | Result | Verdict |
+|---|---|---|---|
+| H9–H13 (layer 2, variant A) | Global p80 threshold | Passes H9, H11, H12 and H13, but 46 % of tasks are unlinked | Not used (D18) |
+| H9B | E2 (5 nearest ESCO concepts) vs Eloundou (+) | ρ = 0.28 [0.26, 0.30] | Supported |
+| H10B | E1+E2 vs Eloundou, ρ > 0.43 | 0.45 [0.43, 0.48] | Supported |
+| H11B | Within-GWA share of K2 variance > 0.20 | 0.68 (K1: 0.05) | Supported |
+| H12B | K2 vs non-routine analytical, net of Job Zone (+) | 0.20 [0.13, 0.27] | Supported |
+| H13B | K2 vs Eloundou, net of Job Zone, > 0.10 | 0.24 [0.22, 0.26] | Supported |
+| H14 | E3 (NLI anchors) vs Eloundou (+) | −0.07 [−0.09, −0.05] | **Not supported** |
+| H15 | E1+E2+E3, ρ > 0.476 | 0.36 | **Not supported** |
+| H16 | K3 vs non-routine analytical, net of Job Zone (+) | 0.05 [−0.02, 0.11] | **Not supported** |
+| H17 | K3 vs Eloundou, net of Job Zone, > 0.10 | 0.096 | **Not supported** |
+| H18 | Final E vs Eloundou, ρ > 0.40 | 0.454 [0.431, 0.476] | Supported |
+| H19 | Final K vs non-routine analytical, net of Job Zone (+) | 0.26 [0.19, 0.33] | Supported |
+| H20 | Median 5–95 % band of the ISCO rank < 100 places | 66 | Supported |
+
+**OAXI-EU v4.1:**
+- **Components and method:** K = K1 + K2 and E = E1 + E2, as equal-weight percentile ranks, with κ = 0.40 and a 1,000-draw Monte Carlo.
+- **Agreement with the v4.0 index:** Spearman 0.80, with 12 of the top 20 groups shared.
+- **Largest source of uncertainty:** which exposure components enter (η² = 0.57), because E1 and E2 agree weakly (ρ = 0.11).
+- **Layer 3:** reported as a negative result and not used (D20).
