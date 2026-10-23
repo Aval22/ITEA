@@ -1,0 +1,16 @@
+{
+  "layer": 3,
+  "built": "2026-10-23",
+  "model": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c",
+  "model_revision": "b2730f16019076bb0009481121efbe4705e0e378",
+  "device": "mps",
+  "anchors": {
+    "e1": "Using a large language model, this task could be done in half the time or less with the same quality.",
+    "e2": "This task could be done much faster with a large language model only if it is combined with other software, such as tools to search documents, read images or run code.",
+    "e0": "A large language model would not meaningfully reduce the time needed to do this task.",
+    "k1": "The knowledge needed to decide how to do this task can be written down as explicit rules, procedures or data.",
+    "k0": "Doing this task well depends on tacit experience, personal judgment or human interaction that cannot be written down as rules."
+  },
+  "n_tasks": 18796,
+  "seconds": 3074.6
+}

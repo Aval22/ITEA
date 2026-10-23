@@ -1,0 +1,69 @@
+{
+  "index": "OAXI-EU",
+  "version": "4.1 (built from itea.grading)",
+  "built": "2026-10-23",
+  "components": {
+    "K": [
+      "K1",
+      "K2"
+    ],
+    "E": [
+      "E1",
+      "E2"
+    ],
+    "entered_because": {
+      "K1": "H2,H6,H8",
+      "K2": "H11B,H12B,H13B",
+      "E1": "H1",
+      "E2": "H9B,H10B"
+    }
+  },
+  "kappa": 0.4,
+  "n_tasks": 18796,
+  "n_isco": 428,
+  "monte_carlo": {
+    "draws": 1000,
+    "seed": 20261023
+  },
+  "H18_E_vs_eloundou": {
+    "r": 0.45382034288556494,
+    "ci95": [
+      0.43116918545095984,
+      0.47589558292128287
+    ],
+    "n": 18739,
+    "clusters": 923
+  },
+  "H18_supported": true,
+  "H19_K_vs_nonroutine_analytical_net_of_job_zone": {
+    "r": 0.2583953269116418,
+    "ci95": [
+      0.191769178095415,
+      0.3285010165288304
+    ],
+    "n": 894,
+    "clusters": 894
+  },
+  "H19_supported": true,
+  "H20_median_rank_band_5_95": 65.525,
+  "H20_supported": true,
+  "sensitivity_eta2_rank": {
+    "how": 0.026488252315631254,
+    "kappa": 0.018325338906988686,
+    "k_set": 0.11758061018757605,
+    "e_set": 0.5716031040686397,
+    "k_w_first": 0.03181742138974688,
+    "e_w_first": 0.16311794745527716
+  },
+  "convergence_jrc145832_not_independent": {
+    "n_isco3": 127,
+    "pearson": 0.8139851099387838,
+    "spearman": 0.8162203569037192
+  },
+  "agreement_with_v40_axi": {
+    "n_isco": 428,
+    "spearman": 0.8027041261364319,
+    "pearson": 0.7612729202683278,
+    "top20_overlap": 12
+  }
+}

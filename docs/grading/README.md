@@ -11,6 +11,8 @@ Documentación del proceso que sustituirá en la v4.1 a los grados AXI heredados
 | [RESULTADOS_capa1_ES.md](RESULTADOS_capa1_ES.md) | Resultados de la capa estructural frente a esas hipótesis |
 | [RESULTADOS_discriminante_ES.md](RESULTADOS_discriminante_ES.md) | Validación discriminante de K (H6–H8) |
 | [RESULTADOS_capaU_ES.md](RESULTADOS_capaU_ES.md) | Capa U: adopción y utilización por sector y país |
+| [RESULTADOS_capa2_ES.md](RESULTADOS_capa2_ES.md) | Capa 2 (semántica ESCO): H9–H13, cobertura |
+| [RESULTADOS_capa3_y_v41_ES.md](RESULTADOS_capa3_y_v41_ES.md) | Capa 2B, capa 3 (resultado negativo) y OAXI-EU v4.1 con Monte Carlo (H9B–H20) |
 | [RESULTADOS_oaxi_eu_v41_ES.md](RESULTADOS_oaxi_eu_v41_ES.md) | OAXI-EU reconstruido con la graduación nueva (vista previa, capa 1) |
 | [ISSUES_ES.md](ISSUES_ES.md) | Textos de los issues públicos |
 | [LIBRO_CRITERIOS_v0.1_ES.md](LIBRO_CRITERIOS_v0.1_ES.md) | Historial: primera versión de los criterios de K y E |
