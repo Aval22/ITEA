@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "itea-framework"
+version = "4.0.0"
+description = "Occupational exposure and algorithmic-expropriability indices on O*NET and ISCO-08/ESCO"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Alberto García-Lluis Valencia", email = "aval@epistemica.eu" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.22",
+    "pandas>=1.5",
+    "openpyxl>=3.0",
+    "xlrd>=2.0",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+itea = "itea.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Aval22/ITEA"
+Issues = "https://github.com/Aval22/ITEA/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+itea = ["data/*.csv", "data/*.csv.gz", "data/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "code/v3/tests"]
