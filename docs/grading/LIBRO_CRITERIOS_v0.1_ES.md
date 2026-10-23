@@ -1,6 +1,6 @@
 # Libro de criterios para graduar tareas en ITEA: codificabilidad (K) y exposición a la IA generativa (E)
 
-**Versión 0.1 (borrador para revisión del autor), 23-10-2026.** Sustituye la asignación de grados AXI, que son grados heredados aplicados por patrón tecnológico, por un procedimiento explícito, reproducible y validado.
+**Versión 0.1 (borrador para revisión del autor), 23-10-2026.** Sustituye la asignación de grados AXI, cuya asignación a las tareas no quedó registrada (ver `PROCEDENCIA_AXI_ES.md`), por un procedimiento explícito, reproducible y validado.
 
 > **Cambio de enfoque v0.2 (23-10-2026, decisión del autor): graduación totalmente automática con criterios normalizados.**
 >
@@ -29,7 +29,7 @@
 
 1. **Los criterios salen de las taxonomías oficiales.** Cada grado se justifica con categorías públicas de O\*NET y ESCO, no con reglas propias sin documentar.
 2. **La unidad es la tarea oficial.** Se gradúan las **18.796 tareas de O\*NET 30.2** por su Task ID. Cada una está enlazada con al menos una actividad detallada (DWA) y, a través de ella, con una actividad intermedia (IWA) y una general (GWA). Se abandonan los 47.810 subenunciados de AXI, que partían las tareas (01a, 01b…) y solo encajaban en un 50 % con la versión vigente.
-3. **No se entrena con los grados AXI antiguos.** Hacerlo heredaría sus patrones fijos. La referencia es una codificación humana nueva (§6).
+3. **No se entrena con los grados AXI antiguos.** Hacerlo reproduciría un procedimiento no registrado. La referencia es una codificación humana nueva (§6).
 4. **Lo que se construye y lo que se valida van por separado.** E no se construye con capacidades cognitivas (es la base del índice del JRC), ni con datos de uso real de la IA (Anthropic Economic Index). Ambos se reservan para validar (§7) y así no hay circularidad.
 5. **Cada grado es interpretable.** Cada tarea lleva sus motivos: GWA, grupos de habilidades ESCO y anclas más cercanas.
 

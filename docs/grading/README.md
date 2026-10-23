@@ -8,6 +8,8 @@ Documentación del proceso que sustituirá en la v4.1 a los grados AXI heredados
 | [METHODOLOGY_v0.2_EN.md](METHODOLOGY_v0.2_EN.md) · [VALIDATION_RESULTS_EN.md](VALIDATION_RESULTS_EN.md) | English versions: methodology, and hypotheses with results |
 | [DECISIONES_ES.md](DECISIONES_ES.md) | Registro fechado de decisiones (D1–D14) |
 | [HIPOTESIS_PREREGISTRADAS_ES.md](HIPOTESIS_PREREGISTRADAS_ES.md) | Hipótesis de validación escritas antes de ver los resultados |
+| [PROCEDENCIA_AXI_ES.md](PROCEDENCIA_AXI_ES.md) · [AXI_PROVENANCE_EN.md](AXI_PROVENANCE_EN.md) | Cómo se obtuvieron los grados AXI, sus limitaciones y su validez medida |
+| [INFORME_investigacion_2026-10-23.md](INFORME_investigacion_2026-10-23.md) | Revisión de la literatura y de las metodologías institucionales, con referencias |
 | [RESULTADOS_capa1_ES.md](RESULTADOS_capa1_ES.md) | Resultados de la capa estructural frente a esas hipótesis |
 | [RESULTADOS_discriminante_ES.md](RESULTADOS_discriminante_ES.md) | Validación discriminante de K (H6–H8) |
 | [RESULTADOS_capaU_ES.md](RESULTADOS_capaU_ES.md) | Capa U: adopción y utilización por sector y país |

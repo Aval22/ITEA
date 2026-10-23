@@ -1,7 +1,7 @@
 """
 itea.grading — documented, automated grading of O*NET tasks (ITEA v4.1, in development).
 
-Replaces the legacy AXI grades (see src/itea/data/README_AXI.md) with
+Replaces the legacy AXI grades (see docs/grading/AXI_PROVENANCE_EN.md) with
 measures built from official taxonomies and validated against independent,
 public references. It is never trained on the legacy grades.
 

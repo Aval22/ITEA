@@ -115,6 +115,18 @@ October 2026. During that period:
   index (`docs/grading/RESULTADOS_capa3_y_v41_ES.md`).
 - The data workbook now carries OAXI-EU v4.1 with its uncertainty, the v4.1
   task grades and hypotheses H1–H20.
+- **Full provenance note for the legacy AXI grades**
+  (`docs/grading/AXI_PROVENANCE_EN.md`, `PROCEDENCIA_AXI_ES.md`): the step that
+  assigned technology patterns to tasks was not recorded and cannot be re-run;
+  forensic properties of the data; reliability against automated coders
+  (α 0.50 / 0.35); and a July 2026 human panel and documented AI agents that
+  agree with each other (ρ 0.39) but not with the AXI codifiability grade
+  (ρ 0.08), so AXI's task-level codifiability is not validated. The dataset
+  note (`src/itea/data/README_AXI.md`) states this in full, and earlier ITEA
+  descriptions of the grades are corrected.
+- The research report behind the grading design
+  (`docs/grading/INFORME_investigacion_2026-10-23.md`) and the English summary
+  of hypotheses H9–H20 (`VALIDATION_RESULTS_EN.md`).
 - Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
   `reweight`); equal split remains the default.
 - `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).

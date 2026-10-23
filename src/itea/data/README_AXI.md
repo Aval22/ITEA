@@ -41,6 +41,8 @@ fully automated grading pipeline (`itea.grading`; see `docs/grading/`).
 - The resulting judgements were applied to tasks **by technology pattern**.
   Each pattern carries fixed grades and fixed descriptive text, which is why
   the descriptive texts take only 5 distinct values.
+- **The procedure that applied the patterns to the 47,810 task statements was
+  not recorded.** It cannot be re-run.
 - The grades classify **potential** impact. They do not measure deployed
   automation or realised transfers of knowledge.
 
@@ -57,7 +59,10 @@ providers, used as independent coders, agree with these grades as follows:
 
 A deterministic codebook based on the leading verb reproduces them with
 weighted κ = 0.74 (CI) and 0.70 (Auto), out of sample in 5-fold
-cross-validation. Agreement with human raters will be reported with v4.1.
+cross-validation. A July 2026 human panel (20 raters, 295 tasks, 0–3 codifiability scale) and
+documented AI agents agree with each other (ρ = 0.39) but not with `CI_Grade`
+(ρ = 0.08 and −0.01 to 0.04): task-level codifiability is not validated. Full
+note: `docs/grading/AXI_PROVENANCE_EN.md`.
 Treat the grades as a coarse ordinal signal for aggregation, not as
 task-by-task truth.
 

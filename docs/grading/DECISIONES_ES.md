@@ -4,7 +4,7 @@ Cada entrada recoge la fecha, la decisión, el motivo y las alternativas descart
 
 | # | Fecha | Decisión | Motivo | Alternativas descartadas |
 |---|---|---|---|---|
-| D1 | 23-10-2026 | **Sustituir los grados AXI**, no recalibrarlos | Son grados heredados, aplicados por patrón tecnológico (ver `src/itea/data/README_AXI.md`), y su fiabilidad es baja en automatización (α = 0,35) | Entrenar modelos con AXI, porque heredarían un procedimiento no documentado |
+| D1 | 23-10-2026 | **Sustituir los grados AXI**, no recalibrarlos | Su asignación a las tareas no quedó registrada (ver `PROCEDENCIA_AXI_ES.md`), su fiabilidad es baja en automatización (α = 0,35) y su codificabilidad no converge con referencias independientes | Entrenar modelos con AXI, porque heredarían un procedimiento no documentado |
 | D2 | 23-10-2026 | La **unidad** es la tarea oficial de O\*NET 30.2 (18.796 Task ID) | Elimina el emparejamiento por texto con O\*NET 29.1, donde solo encajaba el 50 % | Los 47.810 subenunciados de AXI |
 | D3 | 23-10-2026 | Los **criterios salen de taxonomías oficiales**: las tablas de enlace de O\*NET (capacidades y habilidades por actividad), ESCO (tipo de habilidad, grupos, transversales), DigComp y e-CF | Validez de contenido y transparencia; respaldo en Acemoglu y Autor (2011) y en Fernández-Macías y Bisello (2022) | Reglas propias sin respaldo |
 | D4 | 23-10-2026 | **Primero se planteó una referencia humana de un solo codificador** (400 tareas) | Validar sin un segundo codificador disponible | Sustituida por D5 |

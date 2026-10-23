@@ -1,6 +1,6 @@
 # Metodología de graduación de tareas de ITEA v4.1, versión 0.2
 
-**23-10-2026.** Documento consolidado. Sustituye como referencia a `LIBRO_CRITERIOS_v0.1_ES.md` (capas K y E) y a `DISENO_capa_tecnologica_y_certificacion_v0.1_ES.md` (capas T, U y S), que se conservan como historial. Las decisiones están en `DECISIONES_ES.md`, y los resultados en `RESULTADOS_capa1_ES.md`, `RESULTADOS_discriminante_ES.md` y `RESULTADOS_capaU_ES.md`. Hay versión en inglés: `METHODOLOGY_v0.2_EN.md` y `VALIDATION_RESULTS_EN.md`.
+**23-10-2026.** Documento consolidado. Sustituye como referencia a `LIBRO_CRITERIOS_v0.1_ES.md` (capas K y E) y a `DISENO_capa_tecnologica_y_certificacion_v0.1_ES.md` (capas T, U y S), que se conservan como historial. Las decisiones están en `DECISIONES_ES.md`, la justificación bibliográfica en `INFORME_investigacion_2026-10-23.md`, la procedencia de AXI en `PROCEDENCIA_AXI_ES.md`, y los resultados en `RESULTADOS_capa1_ES.md`, `RESULTADOS_discriminante_ES.md` y `RESULTADOS_capaU_ES.md`. Hay versión en inglés: `METHODOLOGY_v0.2_EN.md` y `VALIDATION_RESULTS_EN.md`.
 
 ## 1. Qué se mide
 
