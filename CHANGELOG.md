@@ -88,6 +88,33 @@ October 2026. During that period:
   Spearman 0.75 with the v4.0 index, 3 of the top 20 shared
   (`docs/grading/RESULTADOS_oaxi_eu_v41_ES.md`). The data workbook adds this
   table as a separate sheet when it exists.
+- Grading layer 2 (issue #1): `itea.grading.semantic` and
+  `scripts/grading/build_semantic.py` / `validate_semantic.py` link each O*NET
+  task to ESCO v1.2.1 concepts with sentence embeddings (all-mpnet-base-v2,
+  pinned revision, run locally) and derive K2 and E2 from official ESCO
+  groups. Against hypotheses registered beforehand: K2 discriminates within
+  activities (within-GWA variance 0.75 vs 0.07) and is less tied to skill level
+  (ρ 0.41 vs 0.70 with Job Zone); E2 adds little to E1 (H10 failed). The
+  registered global threshold leaves 46 % of tasks unlinked, so the layer is
+  not yet used in the index (decisions D18, D19;
+  `docs/grading/RESULTADOS_capa2_ES.md`).
+- Layer 2, variant B (registered after variant A's coverage problem): the 5
+  nearest ESCO concepts per task, full coverage; passes H9B–H13B, and E1+E2
+  improves convergence with the Eloundou labels (ρ 0.454).
+- Grading layer 3 (issue #2): `itea.grading.anchors` and
+  `scripts/grading/build_anchors.py` / `validate_anchors.py`, anchored
+  zero-shot NLI (deberta-v3-large-zeroshot-v2.0-c, MIT, run locally). It fails
+  its registered hypotheses H14–H17 and is reported as a negative result; it
+  does not enter the index (decision D20).
+- Composite and **OAXI-EU v4.1** (issue #4): `itea.grading.combine` and
+  `scripts/grading/build_v41.py`. K = K1+K2, E = E1+E2 (percentile ranks, equal
+  weights), κ 0.40, with a 1,000-draw Monte Carlo over method choices that
+  reports a 5–95 % band for every ISCO index value and rank. H18–H20 hold:
+  final E vs Eloundou ρ 0.454, final K vs non-routine analytical net of Job
+  Zone 0.26, median rank band 66 of 428 places. Spearman 0.80 with the v4.0
+  index (`docs/grading/RESULTADOS_capa3_y_v41_ES.md`).
+- The data workbook now carries OAXI-EU v4.1 with its uncertainty, the v4.1
+  task grades and hypotheses H1–H20.
 - Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
   `reweight`); equal split remains the default.
 - `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).
@@ -98,6 +125,12 @@ October 2026. During that period:
 - `CONTRIBUTING.md`, `NOTICE.md`.
 
 ### Changed
+
+- CI actions moved to versions that run on Node 24 (checkout v5, setup-python v6).
+- Corrected four Eurostat figures that had been misrounded (e.g. EU-27 ERP
+  adoption 46.45 % is 46.5 %, not 46.4 %).
+- The embedding cache is keyed by model name, so a different model never
+  reuses another model's vectors.
 
 - `scipy` is now a declared dependency (pandas needs it for Spearman
   correlations in `itea.oaxi_eu` and `itea.grading.validation`); its absence

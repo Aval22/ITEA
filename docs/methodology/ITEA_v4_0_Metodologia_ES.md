@@ -112,11 +112,14 @@ Los grados AXI no tienen un procedimiento reproducible tarea a tarea, tienen poc
   - Hipótesis que fallaron: la rutina cognitiva va en sentido contrario, también en ocupaciones no manuales, y se abandona como referencia; la correlación con el Job Zone (0,70) quedó al límite.
 - **Capa U, hecha:** adopción de ERP, CRM, inteligencia de negocio e IA por país y sector NACE (Eurostat, 35 territorios × 13 sectores). La profundidad de uso es un supuesto declarado: 0,10, 0,27 o 0,35. Estas tablas no cubren el sector financiero.
 - **Capa T, inventario hecho:** 8.785 productos de software por ocupación (O\*NET *Technology Skills*). El piloto será en finanzas y consultoría.
-- **Pendiente:**
-  - capas semánticas (*embeddings* ESCO y clasificación *zero-shot* con anclas publicadas);
-  - capas S y C;
-  - combinación al estilo del JRC-COIN, con Monte Carlo;
-  - reconstrucción de OAXI-EU.
+- **Capa 2 (semántica), hecha:** cada tarea se enlaza con sus 5 conceptos ESCO más próximos mediante *embeddings* (all-mpnet-base-v2, en local). El 68 % de la varianza de K2 está dentro de cada actividad (el 5 % en K1), y K2 está menos ligada a la cualificación (ρ = 0,49 con el Job Zone).
+- **Capa 3 (anclas NLI), resultado negativo:** no supera sus cuatro hipótesis y no se usa.
+- **OAXI-EU v4.1, construido:**
+  - componentes: K = K1 + K2 y E = E1 + E2;
+  - incertidumbre: Monte Carlo de 1.000 réplicas, con una banda del 5–95 % por grupo (mediana: 66 de 428 puestos);
+  - validación: la E final frente a Eloundou da ρ = 0,45, y la K final frente al trabajo analítico, dentro de cada Job Zone, da 0,26;
+  - respecto al índice v4.0: Spearman 0,80. La mayor incertidumbre procede de E, cuyas dos fuentes coinciden poco.
+- **Pendiente:** capas T, S y C.
 
 **Detalle completo:** `docs/grading/` (metodología, registro de decisiones, hipótesis y resultados).
 

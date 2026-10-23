@@ -30,8 +30,10 @@ Both measure a **potential** — which occupations' knowledge is most open to co
 v4.1 replaces the legacy AXI grades with a documented, fully automated grading of the 18,796 O\*NET 30.2 tasks, built only from official taxonomies (O\*NET linkage tables, ESCO) and validated against independent public references that are never used for construction. Hypotheses are registered before each run.
 
 - **Layer 1 (structural, done):** codifiability K and generative-AI exposure E from the O\*NET Abilities/Skills-to-Work-Activities tables. E converges with the Eloundou et al. (2024) human labels (ρ = 0.40); K converges with non-routine analytical work (ρ = 0.67, and 0.28 within Job Zone) and predicts the human labels net of skill level (partial ρ = 0.40). Two hypotheses failed and are reported.
+- **Layer 2 (semantic, done):** each task linked to its five nearest ESCO v1.2.1 concepts with sentence embeddings (all-mpnet-base-v2, run locally). K now discriminates within activities (68 % of its variance, vs 5 % for layer 1) and is less tied to skill level.
+- **Layer 3 (NLI anchors):** failed its registered tests; published as a negative result and not used.
+- **OAXI-EU v4.1 (built):** K = layers 1+2, E = layers 1+2, with a 1,000-draw Monte Carlo giving a 5–95 % band for every ISCO group. Final E vs human labels ρ = 0.45; Spearman 0.80 with the v4.0 index. Table: [`v4.0/outputs/grading/oaxi_eu_v41.csv`](v4.0/outputs/grading/oaxi_eu_v41.csv).
 - **Technology, utilisation and competence layers (T, U, S):** occupation × product inventory from O\*NET Technology Skills; enterprise adoption of ERP, CRM and AI by country and NACE sector from Eurostat.
-- **Next:** semantic layers (ESCO embeddings, anchored zero-shot), composite with Monte Carlo uncertainty, and the rebuild of OAXI-EU.
 
 Documentation: [methodology](docs/grading/METHODOLOGY_v0.2_EN.md) · [hypotheses and results](docs/grading/VALIDATION_RESULTS_EN.md) · [Spanish originals and decision log](docs/grading/README.md).
 

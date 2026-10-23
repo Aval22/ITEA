@@ -38,10 +38,10 @@ ITEA mide la **expropiabilidad algorítmica**: el potencial de que el conocimien
 | Capa | Método | Estado |
 |---|---|---|
 | **1. Estructural** | `K_GWA = proporción cognitiva × (1 − proporción social)` y `E_GWA = proporción de capacidades verbales, de razonamiento y cuantitativas`, ambas con las tablas oficiales de O\*NET. Se propagan a cada tarea como media sobre sus DWA (`itea.grading.structural`) | **Hecha y validada** (§5) |
-| **2. Semántica ESCO** | *Embeddings* de frases (Sentence-BERT). Para cada tarea, las k habilidades ESCO más próximas por encima de un umbral relativo (p80/p95), reordenadas con NLI. Rasgos: proporción de conocimiento, proporción de habilidades sociales y proporción de competencias digitales | Pendiente: requiere `sentence-transformers` |
-| **3. Anclas** | Clasificación *zero-shot* con anclas tomadas de definiciones publicadas: K, desde la distinción entre información codificada y no codificada de Fernández-Macías y Bisello (2022); E, desde la rúbrica de Eloundou et al. | Pendiente |
+| **2. Semántica ESCO** | *Embeddings* de frases (all-mpnet-base-v2). Cada tarea se enlaza con sus 5 conceptos ESCO más próximos (variante B; la A, con umbral global, dejaba sin enlazar el 46 %). K2 y E2 salen de los grupos oficiales ESCO (social, manual, informacional) | **Hecha y validada** (H9B–H13B) |
+| **3. Anclas** | Clasificación *zero-shot* con un modelo NLI y anclas de Fernández-Macías y Bisello (K) y de Eloundou et al. (E) | **Hecha; resultado negativo** (falla H14–H17, D20) |
 | **4. LLM (opcional)** | Modelo de pesos abiertos, en local, con temperatura 0, anclado por recuperación de casos parecidos como en la OIT (2025), y con todo registrado | Pendiente; opcional |
-| **5. Combinación** | Al estilo de los indicadores compuestos del JRC-COIN: normalización, coherencia y agregación, con Monte Carlo sobre las decisiones del método e incertidumbre por tarea | Pendiente |
+| **5. Combinación** | Rangos percentiles con pesos iguales de los componentes validados (K1+K2, E1+E2) y Monte Carlo de 1.000 réplicas sobre pesos, componentes, normalización y κ | **Hecha** (H18–H20; OAXI-EU v4.1) |
 
 ## 4. Capas T, U y S
 

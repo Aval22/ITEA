@@ -38,10 +38,10 @@ ITEA measures **algorithmic expropriability**: the potential for the knowledge a
 | Layer | Method | Status |
 |---|---|---|
 | **1. Structural** | `K_GWA = cognitive share × (1 − social share)` and `E_GWA = share of verbal, reasoning and quantitative abilities`, both from the official O\*NET linkage tables, propagated to each task as the mean over its DWAs (`itea.grading.structural`) | **Done and validated** (§5) |
-| **2. ESCO semantic layer** | Sentence embeddings (Sentence-BERT). For each task, the k nearest ESCO skills above a relative threshold (p80/p95), re-ranked with NLI. Features: knowledge share, social-skill share and digital-competence share | Pending: requires `sentence-transformers` |
-| **3. Anchors** | Zero-shot classification against anchors taken from published definitions: K from the codified/uncodified information distinction of Fernández-Macías and Bisello (2022); E from the Eloundou et al. rubric | Pending |
+| **2. ESCO semantic layer** | Sentence embeddings (all-mpnet-base-v2). Each task is linked to its 5 nearest ESCO concepts (variant B; variant A's global threshold left 46 % unlinked). K2 and E2 come from the official ESCO groups (social, manual, informational) | **Done and validated** (H9B–H13B) |
+| **3. Anchors** | Zero-shot NLI classification with anchors from Fernández-Macías and Bisello (K) and Eloundou et al. (E) | **Done; negative result** (fails H14–H17, D20) |
 | **4. LLM (optional)** | Open-weights model run locally at temperature 0, anchored by retrieval of similar cases as in ILO (2025), with full logging | Pending; optional |
-| **5. Combination** | JRC-COIN composite-indicator practice: normalisation, coherence checks and aggregation, with Monte Carlo over method choices and per-task uncertainty | Pending |
+| **5. Combination** | Equal-weight percentile ranks of the validated components (K1+K2, E1+E2) and a 1,000-draw Monte Carlo over weights, components, normalisation and κ | **Done** (H18–H20; OAXI-EU v4.1) |
 
 ## 4. Layers T, U and S
 
@@ -53,7 +53,7 @@ ITEA measures **algorithmic expropriability**: the potential for the knowledge a
 - **Task-by-task matching** within each occupation.
 
 **U (effective utilisation) = adoption × depth**
-- **Adoption:** Eurostat ICT survey (`itea.grading.eurostat`): by size class (`isoc_eb_iip`, `isoc_eb_ics`, `isoc_eb_ai`), and by NACE sector and country (`isoc_eb_iipn2`, `isoc_eb_ain2`, `isoc_eb_icsn2`). For enterprises with 10+ employees, Spain has ERP in 60.4 % of enterprises (EU-27: 46.4 %) and AI in 20.3 % (EU-27: 20.0 %). **Caveat:** these tables exclude the financial sector (NACE K).
+- **Adoption:** Eurostat ICT survey (`itea.grading.eurostat`): by size class (`isoc_eb_iip`, `isoc_eb_ics`, `isoc_eb_ai`), and by NACE sector and country (`isoc_eb_iipn2`, `isoc_eb_ain2`, `isoc_eb_icsn2`). For enterprises with 10+ employees, Spain has ERP in 60.4 % of enterprises (EU-27: 46.5 %) and AI in 20.3 % (EU-27: 20.0 %). **Caveat:** these tables exclude the financial sector (NACE K).
 - **Depth:** a declared assumption of 0.10–0.35 (central 0.27), supported by McGrenere and Moore (2000), Aberdeen Group (2006–2007) and Pendo (2019). The whole range is propagated in the Monte Carlo.
 - **Central hypothesis:** AI raises usage depth because it lowers the expertise barrier.
 

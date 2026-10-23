@@ -55,7 +55,54 @@ def hypotheses() -> pd.DataFrame:
     h5 = pd.DataFrame([{"hypothesis": "H5", "test": "Within-GWA share of K1 variance < 0.20 (diagnostic)",
                         "rho": round(s["H5_K1_within_gwa_variance_share"], 3), "n": s["n_tasks"],
                         "verdict": "As expected"}])
-    return pd.concat([out.iloc[:4], h5, out.iloc[4:]], ignore_index=True)
+    table = pd.concat([out.iloc[:4], h5, out.iloc[4:]], ignore_index=True)
+    return pd.concat([table, later_hypotheses()], ignore_index=True)
+
+
+def later_hypotheses() -> pd.DataFrame:
+    """H9B–H20 (layer 2B, layer 3 and the v4.1 composite), when their result files exist."""
+    def row(h, test, r, verdict):
+        if isinstance(r, dict):
+            return {"hypothesis": h, "test": test, "rho": round(r["r"], 3), "ci95_low": round(r["ci95"][0], 3),
+                    "ci95_high": round(r["ci95"][1], 3), "n": r["n"], "verdict": verdict}
+        return {"hypothesis": h, "test": test, "rho": round(r, 3), "verdict": verdict}
+
+    def ok(v, floor=0.0):
+        return "Supported" if v["r"] > floor and v["ci95"][0] > 0 else "Not supported"
+
+    rows = []
+    path = os.path.join(GR, "validation_semantic_B.json")
+    if os.path.exists(path):
+        b = json.load(open(path))
+        rows += [row("H9B", "E2 (ESCO, 5 nearest concepts) vs Eloundou (+)", b["H9_E2_vs_eloundou"], ok(b["H9_E2_vs_eloundou"])),
+                 row("H10B", "E1+E2 vs Eloundou (ρ > 0.43)", b["H10_E12_vs_eloundou"],
+                     "Supported" if b["H10_E12_vs_eloundou"]["r"] > 0.43 else "Not supported"),
+                 row("H11B", "Within-GWA share of K2 variance > 0.20", b["H11_K2_within_gwa_variance_share"],
+                     "Supported" if b["H11_K2_within_gwa_variance_share"] > 0.20 else "Not supported"),
+                 row("H12B", "K2 vs non-routine analytical, net of Job Zone (+)",
+                     b["H12_K2_vs_nonroutine_analytical_net_of_job_zone"], ok(b["H12_K2_vs_nonroutine_analytical_net_of_job_zone"])),
+                 row("H13B", "K2 vs Eloundou, net of Job Zone (partial ρ > 0.10)",
+                     b["H13_K2_vs_eloundou_net_of_job_zone"], ok(b["H13_K2_vs_eloundou_net_of_job_zone"], 0.10))]
+    path = os.path.join(GR, "validation_anchors.json")
+    if os.path.exists(path):
+        c = json.load(open(path))
+        rows += [row("H14", "E3 (NLI anchors) vs Eloundou (+)", c["H14_E3_vs_eloundou"], ok(c["H14_E3_vs_eloundou"])),
+                 row("H15", "E1+E2+E3 vs Eloundou (ρ > 0.476)", c["H15_E123_vs_eloundou"],
+                     "Supported" if c["H15_E123_vs_eloundou"]["r"] > 0.476 else "Not supported"),
+                 row("H16", "K3 vs non-routine analytical, net of Job Zone (+)",
+                     c["H16_K3_vs_nonroutine_analytical_net_of_job_zone"], ok(c["H16_K3_vs_nonroutine_analytical_net_of_job_zone"])),
+                 row("H17", "K3 vs Eloundou, net of Job Zone (partial ρ > 0.10)",
+                     c["H17_K3_vs_eloundou_net_of_job_zone"], ok(c["H17_K3_vs_eloundou_net_of_job_zone"], 0.10))]
+    path = os.path.join(GR, "oaxi_eu_v41.meta.json")
+    if os.path.exists(path):
+        m = json.load(open(path))
+        rows += [row("H18", "Final E vs Eloundou (ρ > 0.40)", m["H18_E_vs_eloundou"],
+                     "Supported" if m["H18_supported"] else "Not supported"),
+                 row("H19", "Final K vs non-routine analytical, net of Job Zone (+)",
+                     m["H19_K_vs_nonroutine_analytical_net_of_job_zone"], "Supported" if m["H19_supported"] else "Not supported"),
+                 row("H20", "Median 5–95 % band of the ISCO rank < 100 places (Monte Carlo)",
+                     m["H20_median_rank_band_5_95"], "Supported" if m["H20_supported"] else "Not supported")]
+    return pd.DataFrame(rows)
 
 
 def rebuilt_index(titles) -> tuple[str, pd.DataFrame, dict] | None:
@@ -87,9 +134,9 @@ def readme(conv: dict, meta: dict, rebuilt=None) -> pd.DataFrame:
         ("Validation_JRC", f"OAXI-EU vs JRC145832 at ISCO-3: n = {conv['n_isco3']}, Pearson {conv['pearson']:.3f}, Spearman {conv['spearman']:.3f} / Convergencia con el JRC"),
         ("Crosswalk", "Official BLS chain SOC 2018 → SOC 2010 → ISCO-08, equal weights / Crosswalk oficial"),
         ("Occupation_shares", "Share of legacy AXI grades per O*NET occupation / Cuotas de grados AXI por ocupación"),
-        ("Grading_tasks", "v4.1 structural layer: K1 and E1 for the 18,796 O*NET 30.2 tasks / Capa estructural por tarea"),
+        ("Grading_tasks", "v4.1 task grades for the 18,796 O*NET 30.2 tasks: final K and E and their components / Notas por tarea"),
         ("Grading_GWA", "K and E of the 41 generalised work activities, from O*NET linkage tables / K y E por actividad general"),
-        ("Hypotheses", "Pre-registered validation hypotheses H1–H8 and results / Hipótesis registradas y resultados"),
+        ("Hypotheses", "Pre-registered validation hypotheses H1–H20 and results, failures included / Hipótesis registradas y resultados"),
         ("Layer_U", "Enterprise adoption by country × NACE sector and utilisation U = adoption × depth / Adopción y utilización"),
         ("Layer_T_vendors", "Vendor presence across O*NET occupations / Presencia de fabricantes"),
         ("", ""),
@@ -141,7 +188,8 @@ def main() -> None:
         "Validation_JRC": v3,
         "Crosswalk": pd.read_csv(os.path.join(OUT, "crosswalk_soc2018_isco08.csv"), dtype={"isco": str}).round(4),
         "Occupation_shares": pd.read_csv(os.path.join(OUT, "occupation_shares.csv")),
-        "Grading_tasks": pd.read_csv(os.path.join(GR, "task_prior_structural.csv"), dtype={"TaskID": str}),
+        "Grading_tasks": pd.read_csv(os.path.join(GR, "task_grades_v41.csv") if os.path.exists(os.path.join(GR, "task_grades_v41.csv"))
+                                     else os.path.join(GR, "task_prior_structural.csv"), dtype={"TaskID": str}),
         "Grading_GWA": pd.read_csv(os.path.join(GR, "gwa_scores.csv")),
         "Hypotheses": hypotheses(),
         "Layer_U": pd.read_csv(os.path.join(GR, "utilisation_by_sector.csv"), dtype={"nace_r2": str}),

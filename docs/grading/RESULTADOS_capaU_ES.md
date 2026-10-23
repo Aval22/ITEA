@@ -23,13 +23,13 @@
 
 | Sector | ERP ES | ERP UE | CRM ES | CRM UE | IA ES | IA UE |
 |---|---|---|---|---|---|---|
-| Total (sin finanzas) | 60,4 | 46,4 | 33,3 | 28,5 | 20,3 | 20,0 |
-| C Industria manufacturera | 68,6 | 57,6 | 31,1 | 26,2 | 17,1 | 17,3 |
+| Total (sin finanzas) | 60,4 | 46,5 | 33,3 | 28,5 | 20,3 | 20,0 |
+| C Industria manufacturera | 68,7 | 57,6 | 31,1 | 26,2 | 17,1 | 17,3 |
 | G Comercio | 71,8 | 53,8 | 42,0 | 34,9 | 17,8 | 18,6 |
 | H Transporte | 55,6 | 37,3 | 26,9 | 18,6 | 14,7 | 11,2 |
 | J Información y comunicaciones | 75,7 | 61,3 | 63,3 | 63,1 | 60,6 | 62,5 |
-| L Inmobiliarias | 67,6 | 50,8 | 66,0 | 39,6 | 34,4 | 24,8 |
-| M Actividades profesionales | 63,9 | 47,9 | 38,0 | 36,2 | 38,4 | 40,4 |
+| L Inmobiliarias | 67,6 | 50,8 | 66,1 | 39,6 | 34,4 | 24,8 |
+| M Actividades profesionales | 63,9 | 47,9 | 38,0 | 36,3 | 38,4 | 40,4 |
 | N Servicios administrativos | 47,0 | 41,5 | 31,2 | 30,5 | 18,8 | 19,9 |
 
 **Lectura:** España adopta ERP por encima de la media de la UE en todos los sectores, pero no la supera en IA, salvo en inmobiliarias y transporte. Es el patrón que la capa U pretende recoger: tener el sistema no equivale a explotarlo. La hipótesis de que la IA aumenta la profundidad de uso (`METODOLOGIA_v0.2_ES.md`, capa U) se contrastará comparando estos sectores en el tiempo.

@@ -112,11 +112,14 @@ The AXI grades lack a reproducible task-by-task procedure, take few distinct val
   - Hypotheses that failed: routine cognitive content runs the other way, also in non-manual occupations, and is dropped as a reference; the correlation with Job Zone (0.70) was borderline.
 - **Layer U, done:** adoption of ERP, CRM, business intelligence and AI by country and NACE sector (Eurostat; 35 territories × 13 sectors). Usage depth is a declared assumption: 0.10, 0.27 or 0.35. These tables do not cover the financial sector.
 - **Layer T, inventory done:** 8,785 software products by occupation (O\*NET Technology Skills). The pilot will be in finance and consulting.
-- **Pending:**
-  - semantic layers (ESCO embeddings and anchored zero-shot classification);
-  - layers S and C;
-  - a JRC-COIN-style composite with Monte Carlo;
-  - the rebuild of OAXI-EU.
+- **Layer 2 (semantic), done:** each task is linked to its 5 nearest ESCO concepts with sentence embeddings (all-mpnet-base-v2, run locally). 68 % of the variance of K2 lies within activities (5 % for K1), and K2 is less tied to skill level (ρ = 0.49 with Job Zone).
+- **Layer 3 (NLI anchors), negative result:** it fails its four hypotheses and is not used.
+- **OAXI-EU v4.1, built:**
+  - components: K = K1 + K2 and E = E1 + E2;
+  - uncertainty: a 1,000-draw Monte Carlo with a 5–95 % band per group (median: 66 of 428 places);
+  - validation: final E vs Eloundou ρ = 0.45, and final K vs analytical work within Job Zone 0.26;
+  - against the v4.0 index: Spearman 0.80. The largest uncertainty comes from E, whose two sources agree weakly.
+- **Pending:** layers T, S and C.
 
 **Full detail:** `docs/grading/` (methodology, decision log, hypotheses and results).
 
