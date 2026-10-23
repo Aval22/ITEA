@@ -1,0 +1,20 @@
+{
+  "layer": 2,
+  "built": "2026-10-23",
+  "model": "sentence-transformers/all-mpnet-base-v2",
+  "model_revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+  "device": "mps",
+  "top_k": 5,
+  "percentile": 0,
+  "similarity_threshold": 0.2826,
+  "n_tasks": 18796,
+  "n_concepts": 13960,
+  "n_tasks_without_links": 0,
+  "n_links": 93980,
+  "concept_flags": {
+    "social": 4230,
+    "manual": 3422,
+    "informational": 6281
+  },
+  "seconds_embedding": 4.3
+}
