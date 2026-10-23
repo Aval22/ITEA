@@ -69,7 +69,7 @@ def itea_v3(eac, eig, eia):
         valid = ~np.isnan(x)
         if valid.sum() < 2:
             return out
-        sd = x[valid].std(ddof=0)
+        sd = x[valid].std(ddof=1)  # sample SD, as R sd() in the reference implementation
         if sd == 0:
             # Degenerate case: constant component → contribute zero
             out[valid] = 0.0
