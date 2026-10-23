@@ -1,0 +1,14 @@
+{
+  "index": "OAXI-EU",
+  "itea_version": "4.0.0",
+  "kappa": 0.4,
+  "n_onet_soc": 923,
+  "n_isco": 428,
+  "inputs_sha256": {
+    "axi": "6b761d8fdcf654a2d724de217e0f9f5b149cf89e67830247608c86655176a5ed",
+    "onet": "b5479271931796b838f7173dc0f673a9ec961b7833ac87168fd11e92e7453741",
+    "isco_soc": "0936c78c4ab2cb0b61d7cfe3dcf0f94d943a4e30b11dade1f11676307e2c0aae",
+    "soc_2010_2018": "f3a847561562d3e5a30eb848f2902a5f7b02e9c48b3d7f2cc8879899fbc242a7"
+  },
+  "output_sha256": "82de890e1df569de7a347ae35a10fe16dab2411c3bc000a8eb3ccebf675fc285"
+}
