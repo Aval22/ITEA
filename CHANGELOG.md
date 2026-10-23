@@ -84,6 +84,10 @@ October 2026. During that period:
 
 ### Changed
 
+- `scipy` is now a declared dependency (pandas needs it for Spearman
+  correlations in `itea.oaxi_eu` and `itea.grading.validation`); its absence
+  made the first CI run fail on a clean install.
+
 - **`itea.v3.itea_v3` now uses the sample standard deviation**, as `sd()` in the
   R reference implementation. The previous population SD gave results that
   differ by up to 7·10⁻⁵ when components have different missing values; with

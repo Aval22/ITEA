@@ -15,6 +15,7 @@ dependencies = [
     "pandas>=1.5",
     "openpyxl>=3.0",
     "xlrd>=2.0",
+    "scipy>=1.8",  # Spearman correlations in pandas
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
