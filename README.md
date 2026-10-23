@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/1210690701.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
-[![Version](https://img.shields.io/badge/Version-4.0.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-4.1.0-blue)]()
 [![tests](https://github.com/Aval22/ITEA/actions/workflows/tests.yml/badge.svg)](https://github.com/Aval22/ITEA/actions/workflows/tests.yml)
 
 > **A multidimensional framework for measuring occupational algorithmic expropriability under the Agentic AI regime.**
@@ -224,7 +224,8 @@ ITEA/
 | v2.0 | 2026-04 | Methodology paper: formative/reflective typology, conceptual foundations | High — first methodological document |
 | v2.1 | 2026-04 | Memorandum: data refresh to O\*NET 30.2 | Medium |
 | v3.0 | 2026-04 | z-score ITEA · triple-residualised IRA · dual-variant OAEI · trilogy case study | Critical |
-| **v4.0.0** | **2026-10** | **OAXI-EU on ISCO-08 · official BLS crosswalk · AXI grades released · Python package, CLI, tests, CI** | **High — European layer, reproducible from public inputs** |
+| v4.0 | 2026-10 | OAXI-EU on ISCO-08 · official BLS crosswalk · AXI grades released · Python package, CLI, tests, CI | High — European layer, reproducible from public inputs (not released separately) |
+| **v4.1.0** | **2026-10** | **Documented task grading (`itea.grading`) · ESCO semantic layer · OAXI-EU v4.1 with Monte Carlo uncertainty · full AXI provenance** | **High — first release; version DOI [10.5281/zenodo.23604653](https://doi.org/10.5281/zenodo.23604653)** |
 
 The full change-log is in [CHANGELOG.md](CHANGELOG.md).
 
@@ -263,7 +264,7 @@ Related: *The Structural Flaw* ([10.5281/zenodo.19693452](https://doi.org/10.528
                Exposure to Algorithmic Expropriation under the Agentic AI Regime},
   author    = {García-Lluis Valencia, Alberto},
   year      = {2026},
-  version   = {4.0.0},
+  version   = {4.1.0},
   doi       = {10.5281/zenodo.19578915},
   url       = {https://github.com/Aval22/ITEA},
   note      = {Concept DOI; cite the version DOI of the release you used}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "itea-framework"
-version = "4.0.0"
+version = "4.1.0"
 description = "Occupational exposure and algorithmic-expropriability indices on O*NET and ISCO-08/ESCO"
 readme = "README.md"
 license = { text = "MIT" }

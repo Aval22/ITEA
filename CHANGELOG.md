@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased] — 4.0.0 release candidate (JOSS submission)
+## [4.1.0] — 2026-10-23
+
+First release of the 4.x line. It includes the European layer (OAXI-EU,
+prepared as 4.0 and not released separately) and the v4.1 task grading.
+Version DOI: 10.5281/zenodo.23604653.
 
 First stable release of the European layer. OAXI-EU becomes reproducible
 end to end from public inputs, and its values change (see *Changed*).

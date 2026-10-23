@@ -13,7 +13,7 @@ Two layers share this package:
 Repository: https://github.com/Aval22/ITEA · concept DOI 10.5281/zenodo.19578915
 """
 
-__version__ = "4.0.0"
+__version__ = "4.1.0"
 
 from .axi import axi_to_occupations, load_axi  # noqa: E402
 from .crosswalk import build_crosswalk  # noqa: E402

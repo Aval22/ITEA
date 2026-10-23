@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "ITEA Framework: Occupational Exposure and Algorithmic-Expropriability Indices on O*NET and ISCO-08"
-version: "4.0.0"
+version: "4.1.0"
 date-released: "2026-10-23"
 authors:
   - family-names: "García-Lluis Valencia"
@@ -11,6 +11,9 @@ authors:
     affiliation: "Universidad Rey Juan Carlos"
     email: "aval@epistemica.eu"
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23604653
+    description: "Version DOI for ITEA Framework v4.1.0"
   - type: doi
     value: 10.5281/zenodo.19578915
     description: "Concept DOI (resolves to latest version of the ITEA Framework)"
