@@ -119,3 +119,12 @@ v4.0/docs/PLAN_SELLADO_v4.0.md
 v4.0/outputs/occ_oaxi_eu_calibrated.*
 docs/ITEA_Relato_y_Decisiones.pdf
 docs/ITEA_Guia_Datos_y_Glosario.pdf
+
+# Third-party inputs downloaded by `itea fetch` (not redistributed)
+/data/external/
+# Default output folder of `itea build-eu`
+/outputs/
+
+# Office lock files and generated paper documents
+~$*
+paper/*.docx

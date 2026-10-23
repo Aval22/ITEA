@@ -6,6 +6,102 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased] — 4.0.0 release candidate (JOSS submission)
+
+First stable release of the European layer. OAXI-EU becomes reproducible
+end to end from public inputs, and its values change (see *Changed*).
+
+**Development note.** The public history has no commits between 2 July and
+October 2026. During that period:
+- **June – early July:** v4.0 work continued locally: the reliability study
+  of the AXI grades (multi-provider coding and deterministic codebook,
+  24–25 June) and the ESCO/ISCO bridge. It also continued in the working
+  papers that use ITEA.
+- **August – September:** no development.
+- **October:** the package, tests and documentation in this release were
+  written and are published with their actual dates. No commit has been
+  backdated.
+
+### Added
+
+- Installable Python package `itea-framework` (`src/itea/`, `pyproject.toml`)
+  with a command-line tool: `itea fetch` downloads O\*NET 30.2 and the two
+  BLS crosswalks and verifies their SHA-256; `itea build-eu` builds OAXI-EU.
+- Modules `itea.axi` (task → activity → occupation roll-up), `itea.crosswalk`
+  (official BLS SOC 2018 → ISCO-08 chain) and `itea.oaxi_eu` (index,
+  benchmark convergence, κ calibration grid).
+- **AXI task grades released** under CC BY 4.0, shipped inside the package
+  (`src/itea/data/axi_task_grades.csv.gz`, 47,810 tasks, four ordinal scales)
+  with provenance and reliability notes.
+- **JRC145832 benchmark shipped** (`src/itea/data/`, CC BY 4.0): Table M.1 of
+  Casas et al. (2026), so that `itea validate` and the tests reproduce the
+  convergence figures.
+- Canonical outputs in `v4.0/outputs/`: `oaxi_eu.csv`, `occupation_shares.csv`,
+  `crosswalk_soc2018_isco08.csv`, `oaxi_eu.meta.json` (input and output hashes).
+- Generic roll-up `itea.rollup` (`to_activities`, `to_occupations`, `to_isco`):
+  any numeric task-level score can be carried to ISCO-08, not only AXI.
+- **`itea.grading` (in development for v4.1)**, the documented replacement for the
+  legacy AXI grades, which it never trains on:
+  - `structural`: K and E priors from the official O\*NET linkage tables
+    (Abilities/Skills to Work Activities) for all 18,796 O\*NET 30.2 tasks;
+  - `validation`: external references (Eloundou et al. human labels, pinned
+    commit; Acemoglu–Autor task indices; Job Zone), linear-weighted κ and
+    occupation-clustered bootstrap CIs;
+  - `technology`: occupation × product inventory from O\*NET Technology Skills
+    and Tools Used;
+  - `eurostat`: enterprise adoption of ERP, CRM and AI (Eurostat ICT survey).
+- First structural validation against pre-registered hypotheses
+  (`docs/grading/HIPOTESIS_PREREGISTRADAS_ES.md`): E1 vs the Eloundou human
+  labels ρ = 0.40; K1 vs the non-routine analytical index ρ = 0.67. One
+  hypothesis failed (K1 vs routine cognitive, ρ = −0.21) and one is borderline
+  (K1 vs Job Zone, ρ = 0.70); both are reported in
+  `docs/grading/RESULTADOS_capa1_ES.md`.
+- `docs/grading/`: methodology v0.2, decision log, pre-registered
+  hypotheses and validation results.
+- Discriminant validation (issue #3, hypotheses H6–H8 registered before the run):
+  K1 keeps its association with non-routine analytical work net of Job Zone
+  (partial ρ = 0.28) and predicts the Eloundou human labels net of Job Zone
+  (partial ρ = 0.40); K1 vs routine cognitive stays negative in non-manual
+  occupations (ρ = −0.21), so that index is dropped as a reference for K
+  (`docs/grading/RESULTADOS_discriminante_ES.md`).
+- Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
+  `reweight`); equal split remains the default.
+- `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).
+- Test suite in `tests/` (crosswalk, roll-up, weights, packaged data, index
+  properties, end-to-end reproduction of the published table, benchmark
+  convergence and κ calibration) and GitHub Actions CI on Python 3.10, 3.12
+  and 3.13, plus a job that installs the wheel outside the source tree.
+- `CONTRIBUTING.md`, `NOTICE.md`.
+
+### Changed
+
+- **SOC → ISCO-08 crosswalk.** The beta used a one-to-one mapping typed into a
+  wage spreadsheet, which misassigned some occupations (e.g. Management
+  Analysts 13-1111 → 2423 instead of 2421) and left 48 managerial and
+  professional ISCO groups without O\*NET data (2412, 2413, 2421, 2514…). It is replaced by the official BLS tables, chained many-to-many
+  with equal weights.
+- **Coverage.** The beta restricted the index to the 784 occupations with
+  realised-employment data, a filter of one validation analysis. OAXI-EU now
+  uses all 923 O\*NET-SOC occupations reached by the activity roll-up:
+  **428 ISCO-08 unit groups** (was 237).
+- **Convergence with JRC145832** (ISCO-3): Pearson 0.703 → **0.736**,
+  Spearman 0.782 → **0.819**, groups matched 103 → **127**, now reproducible
+  from the public JRC table. The κ = 0.40
+  weight is kept: the calibration optimum is flat between 0.3 and 0.4.
+- The v3.0 Python implementation moves to `itea.v3`;
+  `code/v3/itea_functions_v3.py` remains as a compatibility shim.
+- `LICENSE` is now the plain MIT text (data notices moved to `NOTICE.md`).
+- Contact address: aval@epistemica.eu.
+- Minimum Python version 3.10 (3.9 reached end of life in October 2025).
+
+### Fixed
+
+- README: AIOE overlap is 769 occupations (pairwise); paper titles and DOIs
+  of 8A/8B/8C aligned with Zenodo; the DOI 10.5281/zenodo.19592542 cited for
+  *The Structural Flaw* does not exist (correct: 10.5281/zenodo.19693452).
+
+---
+
 ## [v4.0] — 2026-06-18 (documentación pública teórica de la actualización v4.0)
 
 Documentación **teórica y conceptual** de la actualización v4.0, en

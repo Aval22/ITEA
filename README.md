@@ -5,8 +5,8 @@
 [![DOI](https://zenodo.org/badge/1210690701.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
-[![Version](https://img.shields.io/badge/Version-3.0-blue)]()
-[![JOSS](https://img.shields.io/badge/JOSS-submission%20mid--2026-orange)]()
+[![Version](https://img.shields.io/badge/Version-4.0.0-blue)]()
+[![tests](https://github.com/Aval22/ITEA/actions/workflows/tests.yml/badge.svg)](https://github.com/Aval22/ITEA/actions/workflows/tests.yml)
 
 > **A multidimensional framework for measuring occupational algorithmic expropriability under the Agentic AI regime.**
 
@@ -18,9 +18,48 @@ ITEA measures **algorithmic expropriability** — the surface of human knowledge
 
 > **Understand the reasoning:** [The research narrative and the *why* of each decision](docs/ITEA_Relato_y_Decisiones.html) · [Data guide and glossary](docs/ITEA_Guia_Datos_y_Glosario.html)
 
-The ITEA Framework (v3.0) implements this with ten complementary indicators covering 1,016 SOC 6-digit occupations from O\*NET 30.2, designed to measure occupational algorithmic expropriability in the Agentic AI regime — distinct from but complementary to task-level automation indices in the Frey-Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021).
+ITEA has two layers, both in this repository:
 
-External convergent validation against the AIOE benchmark over 769 common SOC 6-digit occupations: **r(OAEI v3.0+, AIOE) = 0.797**.
+- **v4.0 — OAXI-EU on the ISCO-08 / ESCO axis.** 47,810 O\*NET tasks graded for generative-AI exposure and codifiability are rolled up to O\*NET work activities, mapped back to all 923 O\*NET-SOC occupations, and carried to **428 ISCO-08 unit groups** through the official BLS crosswalks. Convergence with the JRC145832 exposure benchmark at ISCO-3: **Pearson 0.736, Spearman 0.819** (127 groups). Built end to end from public inputs with `itea build-eu`.
+- **v3.0 — ten indicators on O\*NET 30.2** (1,016 SOC occupations), distinct from but complementary to task-level automation indices in the Frey-Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021). Convergence with AIOE over 769 common occupations: **r(OAEI v3.0+, AIOE) = 0.798**.
+
+Both measure a **potential** — which occupations' knowledge is most open to codification — not realised automation or realised transfers of value.
+
+## Installation and testing
+
+```bash
+pip install git+https://github.com/Aval22/ITEA.git        # AXI grades and JRC benchmark are packaged
+itea fetch --dest data/external                            # O*NET 30.2 + BLS crosswalks, SHA-256 verified
+itea build-eu --external data/external --out outputs       # writes outputs/oaxi_eu.csv
+itea validate --index outputs/oaxi_eu.csv                  # convergence with JRC145832 at ISCO-3
+```
+
+From a clone, `pip install -e ".[test]"` and `pytest` run the unit tests, the end-to-end rebuild of [`v4.0/outputs/oaxi_eu.csv`](v4.0/outputs/oaxi_eu.csv) and the benchmark reproduction. Python 3.10+; dependencies: numpy, pandas, openpyxl, xlrd.
+
+Using the library directly, including with your own task-level scores:
+
+```python
+import itea
+from itea.axi import load_onet
+from itea.crosswalk import build_crosswalk
+
+tasks, links = load_onet("data/external/db_30_2_text")
+cw = build_crosswalk("data/external/ISCO_SOC_Crosswalk.xls",
+                     "data/external/soc_2010_to_2018_crosswalk.xlsx")
+
+# OAXI-EU from the packaged AXI grades
+occ = itea.axi_to_occupations(itea.load_axi(itea.axi_path()), "data/external/db_30_2_text")
+idx = itea.oaxi_eu(occ, cw)                          # isco, E, K, n_soc, core, OAXI_EU (1–100)
+itea.convergence(idx, itea.jrc_benchmark())          # {'n_isco3': 127, 'pearson': 0.736, ...}
+itea.kappa_grid(occ, cw, itea.jrc_benchmark())       # calibration table for κ
+
+# any numeric score keyed by O*NET Task ID, e.g. an LLM-exposure rating
+my_scores = tasks[["TaskID"]].assign(score=0.5)      # replace with your own column
+act = itea.to_activities(my_scores, links, ["score"])
+on_isco = itea.to_isco(itea.to_occupations(act, links, ["score"]), cw, ["score"])
+```
+
+The AXI task grades ship inside the package and are documented in [`src/itea/data/README_AXI.md`](src/itea/data/README_AXI.md), including how they were produced and their reliability.
 
 > **Coverage note.** OAEI is available for **878 of the 1,016** occupations (86.5%). The 138 without OAEI lack the GEE/wage inputs it composes; among them, the **19 military occupations (SOC 55)** are a structural O\*NET exclusion (no Job Zone/wage). Details in the [dataset review](docs/ITEA_Revision_Dataset.md).
 
@@ -41,15 +80,15 @@ External convergent validation against the AIOE benchmark over 769 common SOC 6-
 
 ## Why version 3.0? Evidence of a living research project
 
-This repository advances from **v1.45 (October 2025)** to **v3.0 (April 2026)**, archiving the previous release as the [`v1.45-legacy`](https://github.com/Aval22/ITEA/releases/tag/v1.45-legacy) tag. The transition is not cosmetic. It reflects a major methodological revision motivated by a documented case study — three research papers (the trilogy 8A/8B/8C) that put the framework into active empirical use and, in doing so, exposed three specific limitations of v2.1 (the methodological line that paralleled v1.45). Documenting this evolution explicitly is part of the framework's preparation for submission to the [Journal of Open Source Software](https://joss.theoj.org/) (target window: mid-2026), which values evidence of community use and principled software evolution.
+This repository advances from **v1.45 (October 2025)** to **v3.0 (April 2026)**, archiving the previous release as the [`v1.45`](https://github.com/Aval22/ITEA/releases/tag/v1.45) tag. The transition is not cosmetic. It reflects a major methodological revision motivated by a documented case study — three research papers (the trilogy 8A/8B/8C) that put the framework into active empirical use and, in doing so, exposed three specific limitations of v2.1 (the methodological line that paralleled v1.45). Documenting this evolution explicitly is part of the framework's preparation for submission to the [Journal of Open Source Software](https://joss.theoj.org/), which values evidence of community use and principled software evolution.
 
 ### The trilogy as case study
 
 Three research papers in active circulation as of April 2026 motivated each of the three central revisions in v3.0:
 
-- **Paper 8A — *"The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI"*** (García-Lluis Valencia, 2026a). Targeted journals: Journal of Institutional Economics, Industrial and Corporate Change. → motivated the **z-score ITEA aggregation**.
+- **Paper 8A — *"Mapping algorithmic expropriation: occupational exposure to Agentic AI under the multidimensional ITEA framework"*** (García-Lluis Valencia, 2026a). → motivated the **z-score ITEA aggregation**.
 - **Paper 8B — *"Beyond the Pigouvian Trap: Tokenised Intellectual Capital..."*** (García-Lluis Valencia, 2026b). Theoretical paper formalising the Lindbeck–Snower protective condition dissolution. → motivated the **dual-variant OAEI** (multiplicative for theoretical alignment + additive for criterion validity).
-- **Paper 8C — *"QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel"*** (García-Lluis Valencia, 2026c). Targeted journal: *Labour Economics*. Empirical paper on a novel monetary-policy transmission channel. → motivated the **triple-residualised IRA**.
+- **Paper 8C — *"The MBB Triad as Limit Case of Algorithmic Expropriation"*** (García-Lluis Valencia, 2026c). Limit-case analysis of consulting up-or-out contracts under proprietary Agentic AI. → motivated the **triple-residualised IRA**.
 
 | v3.0 change | Empirical motivation from trilogy | Validation gain |
 |-------------|-----------------------------------|-----------------|
@@ -74,11 +113,11 @@ The v1.x line (March 2024 – October 2025) was the operational release cycle: d
 | ITEA aggregation | Equal-weight arithmetic mean in [0,1] | **z-score normalisation → equal-weight average → min-max projection** |
 | Resilience indicator | IRO (with 4→2 item revision in v1.45) | **IRA = 0.6·CA + 0.4·IRO_residual_v3.0**, where IRO_residual is residualised against (GEE, ITEA, ICT) |
 | Composite metric | None — indicators reported separately | **OAEI multiplicative (canonical) and OAEI v3.0+ additive (alternative)** |
-| External convergent validation against AIOE | Not reported | r(OAEI v3.0+, AIOE) = 0.797 |
+| External convergent validation against AIOE | Not reported | r(OAEI v3.0+, AIOE) = 0.798 |
 | Effective N for full validation | — | 769 occupations |
 | Trilogy backward compatibility | n/a | OAEI multiplicative preserves trilogy citation |
 
-**Migration from v1.45 is documented step-by-step in [`docs/MIGRATION.md`](docs/MIGRATION.md).** Researchers who wish to reproduce results using the v1.x specification can check out the `v1.45-legacy` tag and follow the version-specific README preserved in that snapshot.
+**Migration from v1.45 is documented step-by-step in [`docs/MIGRATION.md`](docs/MIGRATION.md).** Researchers who wish to reproduce results using the v1.x specification can check out the `v1.45` tag and follow the version-specific README preserved in that snapshot.
 
 ---
 
@@ -113,7 +152,7 @@ df$OAEI_v30_plus_check <- oaei_v3_add(df$ITEA_v30_check, df$`GEE v2.1`,
 ### Python
 
 ```python
-from code.v3.itea_functions_v3 import itea_v3, ira_v3, oaei_v3_mult, oaei_v3_add
+from itea.v3 import itea_v3, ira_v3, oaei_v3_mult, oaei_v3_add
 import pandas as pd
 
 df = pd.read_excel("data/processed/ITEA_v3_0_Workbook.xlsx",
@@ -135,41 +174,27 @@ Both implementations are designed to reproduce the values stored in `OAEI v3.0` 
 ## Repository structure
 
 ```
-ITEA-Framework/
-├── README.md                          # This file
-├── README_ES.md · README_PT.md · README_ZH.md   # Multilingual versions
-├── LICENSE                            # MIT
-├── CITATION.cff                       # GitHub-native citation metadata
-├── CHANGELOG.md                       # Full v1.0 → v3.0 change history
-├── MANIFEST.json                      # SHA-256 checksums for Zenodo deposit
-├── .gitignore
-│
+ITEA/
+├── README.md · README_ES.md · README_PT.md · README_ZH.md
+├── LICENSE (MIT) · NOTICE.md (data licences) · CITATION.cff · CHANGELOG.md · CONTRIBUTING.md
+├── pyproject.toml                     # package `itea-framework`, CLI `itea`
+├── src/itea/                          # installable package
+│   ├── v3.py                          # v3.0 indicators (ITEA, IRA, OAEI)
+│   ├── axi.py                         # task → activity → occupation roll-up
+│   ├── crosswalk.py                   # official BLS SOC 2018 → ISCO-08 chain
+│   ├── oaxi_eu.py                     # OAXI-EU, benchmark convergence, κ grid
+│   ├── fetch.py · cli.py              # input download (SHA-256) and command line
+├── tests/                             # pytest suite for the v4.0 package
 ├── data/
-│   ├── processed/
-│   │   └── ITEA_v3_0_Workbook.xlsx          # Primary v3.0 dataset (12 sheets)
-│   └── legacy/
-│       └── Research_Data_Workbook_ITEA_v1.45.xlsx   # Preserved for v1.x replication
-│
-├── code/
-│   ├── v3/
-│   │   ├── itea_functions_v3.R              # R reference implementation
-│   │   ├── itea_functions_v3.py             # Python reference implementation
-│   │   └── tests/                           # Unit tests reproducing the workbook values
-│   └── legacy/
-│       ├── itea_functions_v1.45.R           # Preserved v1.x implementation
-│       └── itea_functions_v1_45.py
-│
-├── docs/
-│   ├── ITEA_v3_0_Consolidated_Methodology.pdf   # Single authoritative methodology document
-│   ├── MIGRATION.md                              # v1.45 → v3.0 step-by-step migration
-│   └── papers/
-│       ├── README.md                             # Pointers to trilogy papers (Zenodo DOIs)
-│       └── trilogy_case_study.md                 # Standalone case study
-│
-└── paper/                                        # JOSS submission
-    ├── paper.md                                  # 1,000-word JOSS paper
-    ├── paper.bib                                 # Bibliography
-    └── figures/                                  # JOSS figures
+│   ├── axi/axi_task_grades.csv.gz     # 47,810 graded O*NET tasks (CC BY 4.0)
+│   └── processed/ITEA_v3_0_Workbook.xlsx   # v3.0 indicators (12 sheets)
+├── code/v3/                           # R implementation, Python shim, v3.0 tests
+├── v4.0/
+│   ├── outputs/                       # oaxi_eu.csv, occupation_shares.csv, crosswalk, meta
+│   ├── code/                          # research scripts for the ESCO profiles (need local ESCO dump)
+│   └── docs/                          # v4.0 design and decisions
+├── docs/                              # v3.0 methodology, migration guide
+└── paper/                             # JOSS paper (paper.md, paper.bib)
 ```
 
 ---
@@ -182,10 +207,11 @@ ITEA-Framework/
 | v1.1 | 2024-09 | IRO institutional security; ITEA additive form | Medium |
 | v1.2 | 2025-03 | GEE OLS calibration (ρ 0.259 → 0.927); IMO Hurdle+cap | High |
 | v1.3 | 2025-04 | IPI new indicator; IFS CI extraction | Medium |
-| v1.45 | 2025-10 | IRO 4→2 items; GEE dual OLS+ordinal | Medium — last v1.x release; archived as `v1.45-legacy` tag |
+| v1.45 | 2025-10 | IRO 4→2 items; GEE dual OLS+ordinal | Medium — last v1.x release; archived as the `v1.45` tag |
 | v2.0 | 2026-04 | Methodology paper: formative/reflective typology, conceptual foundations | High — first methodological document |
 | v2.1 | 2026-04 | Memorandum: data refresh to O\*NET 30.2 | Medium |
-| **v3.0** | **2026-04** | **z-score ITEA · triple-residualised IRA · dual-variant OAEI · trilogy case study · JOSS preparation** | **Critical — single authoritative version** |
+| v3.0 | 2026-04 | z-score ITEA · triple-residualised IRA · dual-variant OAEI · trilogy case study | Critical |
+| **v4.0.0** | **2026-10** | **OAXI-EU on ISCO-08 · official BLS crosswalk · AXI grades released · Python package, CLI, tests, CI** | **High — European layer, reproducible from public inputs** |
 
 The full change-log is in [CHANGELOG.md](CHANGELOG.md).
 
@@ -193,17 +219,22 @@ The full change-log is in [CHANGELOG.md](CHANGELOG.md).
 
 ## Related research papers
 
-The trilogy that motivated v3.0 (citable by name in any work using ITEA):
+The trilogy that motivated v3.0 (working papers, Zenodo):
 
-1. García-Lluis Valencia, A. (2026a). **The Structural Flaw: Industrial Labour Contract Inadequacy under Agentic AI**. Universidad Rey Juan Carlos. Zenodo: [10.5281/zenodo.19592542](https://doi.org/10.5281/zenodo.19592542).
-2. García-Lluis Valencia, A. (2026b). **Beyond the Pigouvian Trap: Tokenised Intellectual Capital as a Pareto-Dominant Mechanism for the Agentic AI Layoff Externality**. Universidad Rey Juan Carlos.
-3. García-Lluis Valencia, A. (2026c). **QE and Senior Workforce Restructuring: A Labour Liability Transmission Channel**. Universidad Rey Juan Carlos. Zenodo: [10.5281/zenodo.19592184](https://doi.org/10.5281/zenodo.19592184).
+1. García-Lluis Valencia, A. (2026a). **Mapping algorithmic expropriation: occupational exposure to Agentic AI under the multidimensional ITEA framework** [Paper 8A]. [10.5281/zenodo.20081628](https://doi.org/10.5281/zenodo.20081628).
+2. García-Lluis Valencia, A. (2026b). **Beyond the Pigouvian Trap** [Paper 8B]. Concept DOI [10.5281/zenodo.20081794](https://doi.org/10.5281/zenodo.20081794).
+3. García-Lluis Valencia, A. (2026c). **The MBB Triad as Limit Case of Algorithmic Expropriation** [Paper 8C]. [10.5281/zenodo.20082588](https://doi.org/10.5281/zenodo.20082588).
+
+Related: *The Structural Flaw* ([10.5281/zenodo.19693452](https://doi.org/10.5281/zenodo.19693452)); *QE and Senior Workforce Restructuring* ([10.5281/zenodo.19592184](https://doi.org/10.5281/zenodo.19592184)).
 
 ---
 
 ## Data sources
 
-- **O\*NET 30.2** (February 2026): 1,016 occupations, 47,810 task statements. U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license; O\*NET® is a trademark of USDOL/ETA. See full attribution below.
+- **O\*NET 30.2** (February 2026): 1,016 occupations; task statements and Tasks-to-DWAs links. U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license; O\*NET® is a trademark of USDOL/ETA. See full attribution below.
+- **AXI task grades** (this repository, CC BY 4.0): 47,810 O\*NET 29.1 task statements graded for automation, codifiability, generative-AI and agentic-AI impact. See [`src/itea/data/README_AXI.md`](src/itea/data/README_AXI.md).
+- **BLS crosswalks** (public domain): ISCO-08 ↔ SOC 2010 and SOC 2010 ↔ SOC 2018, downloaded by `itea fetch`.
+- **ESCO v1.2.1** (CC BY 4.0, © European Union): ISCO-08 skill profiles in the v4.0 research scripts.
 - **BLS OEWS** (May 2024): Occupational wage data by percentile, used for the criterion validity test r(OAEI, Wage).
 - **AIOE** (Felten, Raj & Seamans, 2021): External convergent benchmark over 769 common SOC 6-digit occupations.
 - **Eurostat ESJS2** (referenced for future European replication, §11 of methodology).
@@ -219,10 +250,10 @@ The trilogy that motivated v3.0 (citable by name in any work using ITEA):
                Exposure to Algorithmic Expropriation under the Agentic AI Regime},
   author    = {García-Lluis Valencia, Alberto},
   year      = {2026},
-  version   = {3.0},
-  doi       = {10.5281/zenodo.20083102},
+  version   = {4.0.0},
+  doi       = {10.5281/zenodo.19578915},
   url       = {https://github.com/Aval22/ITEA},
-  note      = {Consolidated Methodological Edition. Supersedes v2.0 and v2.1.}
+  note      = {Concept DOI; cite the version DOI of the release you used}
 }
 ```
 
@@ -232,11 +263,9 @@ GitHub-native citation metadata is available in [CITATION.cff](CITATION.cff).
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Code released under the [MIT License](LICENSE). Data licences and attributions are listed in [NOTICE.md](NOTICE.md): O\*NET data under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (attribution below, **not** public domain); AXI grades CC BY 4.0; BLS data public domain; AIOE used under Felten et al. 2021 terms. Please cite ITEA when you use it (see [Citation](#citation)).
 
-- **Academic use**: Free with citation.
-- **Commercial use**: Contact the author.
-- **Data**: O\*NET data is used under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license (attribution below, **not** public domain); BLS OEWS public domain; AIOE used under Felten et al. 2021 terms.
+Questions, bug reports and contributions: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### O\*NET attribution
 
@@ -250,9 +279,8 @@ This product includes information from the [O\*NET 30.2 Database](https://www.on
 Universidad Rey Juan Carlos, Madrid
 Doctoral Programme in Economics and Business
 ORCID: [0009-0003-1438-1633](https://orcid.org/0009-0003-1438-1633)
-Email: alb.valencia@gmail.com
-Institutional: a.garciaval.2025@alumnos.urjc.es
+Email: aval@epistemica.eu
 
 ---
 
-*ITEA Framework v3.0 — Making algorithmic expropriability measurable, multidimensional, and actionable.*
+*ITEA Framework v4.0 — Making algorithmic expropriability measurable, multidimensional, and actionable.*
