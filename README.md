@@ -20,10 +20,20 @@ ITEA measures **algorithmic expropriability** — the surface of human knowledge
 
 ITEA has two layers, both in this repository:
 
-- **v4.0 — OAXI-EU on the ISCO-08 / ESCO axis.** 47,810 O\*NET tasks graded for generative-AI exposure and codifiability are rolled up to O\*NET work activities, mapped back to all 923 O\*NET-SOC occupations, and carried to **428 ISCO-08 unit groups** through the official BLS crosswalks. Convergence with the JRC145832 exposure benchmark at ISCO-3: **Pearson 0.736, Spearman 0.819** (127 groups). Built end to end from public inputs with `itea build-eu`.
+- **v4.0 — OAXI-EU on the ISCO-08 / ESCO axis.** 47,810 O\*NET tasks graded for generative-AI exposure and codifiability (the legacy AXI grades, to be replaced in v4.1) are rolled up to O\*NET work activities, mapped back to all 923 O\*NET-SOC occupations, and carried to **428 ISCO-08 unit groups** through the official BLS crosswalks. Convergence with the JRC145832 exposure benchmark at ISCO-3: **Pearson 0.736, Spearman 0.819** (127 groups). Built end to end from public inputs with `itea build-eu`.
 - **v3.0 — ten indicators on O\*NET 30.2** (1,016 SOC occupations), distinct from but complementary to task-level automation indices in the Frey-Osborne (2017) tradition or ability-based exposure measures such as the AIOE benchmark of Felten, Raj and Seamans (2021). Convergence with AIOE over 769 common occupations: **r(OAEI v3.0+, AIOE) = 0.798**.
 
 Both measure a **potential** — which occupations' knowledge is most open to codification — not realised automation or realised transfers of value.
+
+### In development: v4.1 task grading (`itea.grading`)
+
+v4.1 replaces the legacy AXI grades with a documented, fully automated grading of the 18,796 O\*NET 30.2 tasks, built only from official taxonomies (O\*NET linkage tables, ESCO) and validated against independent public references that are never used for construction. Hypotheses are registered before each run.
+
+- **Layer 1 (structural, done):** codifiability K and generative-AI exposure E from the O\*NET Abilities/Skills-to-Work-Activities tables. E converges with the Eloundou et al. (2024) human labels (ρ = 0.40); K converges with non-routine analytical work (ρ = 0.67, and 0.28 within Job Zone) and predicts the human labels net of skill level (partial ρ = 0.40). Two hypotheses failed and are reported.
+- **Technology, utilisation and competence layers (T, U, S):** occupation × product inventory from O\*NET Technology Skills; enterprise adoption of ERP, CRM and AI by country and NACE sector from Eurostat.
+- **Next:** semantic layers (ESCO embeddings, anchored zero-shot), composite with Monte Carlo uncertainty, and the rebuild of OAXI-EU.
+
+Documentation: [methodology](docs/grading/METHODOLOGY_v0.2_EN.md) · [hypotheses and results](docs/grading/VALIDATION_RESULTS_EN.md) · [Spanish originals and decision log](docs/grading/README.md).
 
 ## Installation and testing
 
@@ -34,7 +44,7 @@ itea build-eu --external data/external --out outputs       # writes outputs/oaxi
 itea validate --index outputs/oaxi_eu.csv                  # convergence with JRC145832 at ISCO-3
 ```
 
-From a clone, `pip install -e ".[test]"` and `pytest` run the unit tests, the end-to-end rebuild of [`v4.0/outputs/oaxi_eu.csv`](v4.0/outputs/oaxi_eu.csv) and the benchmark reproduction. Python 3.10+; dependencies: numpy, pandas, openpyxl, xlrd.
+From a clone, `pip install -e ".[test]"` and `pytest` run the unit tests, the end-to-end rebuild of [`v4.0/outputs/oaxi_eu.csv`](v4.0/outputs/oaxi_eu.csv) and the benchmark reproduction. Python 3.10+; dependencies: numpy, pandas, scipy, openpyxl, xlrd. R ≥ 4.0 is optional (the CI checks the Python port against the R reference implementation).
 
 Using the library directly, including with your own task-level scores:
 
@@ -184,16 +194,17 @@ ITEA/
 │   ├── crosswalk.py                   # official BLS SOC 2018 → ISCO-08 chain
 │   ├── oaxi_eu.py                     # OAXI-EU, benchmark convergence, κ grid
 │   ├── fetch.py · cli.py              # input download (SHA-256) and command line
-├── tests/                             # pytest suite for the v4.0 package
-├── data/
-│   ├── axi/axi_task_grades.csv.gz     # 47,810 graded O*NET tasks (CC BY 4.0)
-│   └── processed/ITEA_v3_0_Workbook.xlsx   # v3.0 indicators (12 sheets)
+│   ├── data/                          # AXI grades (CC BY 4.0) and JRC145832 benchmark
+│   └── grading/                       # v4.1 task grading (structural, validation, technology, eurostat)
+├── tests/                             # pytest suite (incl. R ↔ Python parity)
+├── scripts/grading/                   # validation and layer-building scripts
+├── data/processed/                    # ITEA_v3_0_Workbook.xlsx (v3.0) · ITEA_v4_0_Workbook.xlsx (v4.0)
 ├── code/v3/                           # R implementation, Python shim, v3.0 tests
 ├── v4.0/
-│   ├── outputs/                       # oaxi_eu.csv, occupation_shares.csv, crosswalk, meta
+│   ├── outputs/                       # oaxi_eu.csv, occupation_shares.csv, crosswalk, meta; grading/
 │   ├── code/                          # research scripts for the ESCO profiles (need local ESCO dump)
 │   └── docs/                          # v4.0 design and decisions
-├── docs/                              # v3.0 methodology, migration guide
+├── docs/                              # methodology (v3.0, v4.0), grading/, migration guide
 └── paper/                             # JOSS paper (paper.md, paper.bib)
 ```
 

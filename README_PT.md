@@ -4,9 +4,12 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578915.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-3.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-4.0.0-blue)]()
 
 > **Um framework multidimensional para medir a expropriabilidade algorítmica ocupacional sob o regime de IA Agentic.**
+
+
+> **v4.0 (OAXI-EU, ISCO-08) e v4.1 (`itea.grading`, em desenvolvimento):** ver o [README em inglês](README.md).
 
 ---
 

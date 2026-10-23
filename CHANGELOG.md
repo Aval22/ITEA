@@ -73,6 +73,15 @@ October 2026. During that period:
 - R reference implementation checked in CI (issue #11): `tests/test_v3_r_parity.py`
   runs `code/v3/itea_functions_v3.R` and compares it with `itea.v3`.
 - Optional dependency group `semantic` for grading layers 2–3.
+- **Methodology v4.0** (`docs/methodology/ITEA_v4_0_Metodologia_ES.docx` and
+  `ITEA_v4_0_Methodology_EN.docx`, with Markdown sources): OAXI-EU, software
+  and the v4.1 grading programme; extends the v3.0 Consolidated Methodology.
+- **Data workbook v4.0** (`data/processed/ITEA_v4_0_Workbook.xlsx`), generated
+  from the canonical CSV outputs by `scripts/build_workbook_v4.py`: OAXI-EU
+  with ISCO-08 titles, JRC validation, crosswalk, task grades, hypotheses H1–H8,
+  layer U and vendor presence.
+- README (EN, ES, PT, ZH) and project web page updated for v4.0 and the v4.1
+  work in progress.
 - Optional employment weights for the crosswalk (`build_crosswalk(..., isco_weights=)`,
   `reweight`); equal split remains the default.
 - `itea validate` and `itea.datasets` (`axi_path`, `jrc_benchmark`).

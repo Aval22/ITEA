@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578915.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
-[![Version](https://img.shields.io/badge/Version-3.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-4.0.0-blue)]()
 
 > **Un framework multidimensional para medir la expropiabilidad algorítmica ocupacional bajo el régimen de IA Agentic.**
 
@@ -20,6 +20,13 @@ ITEA mide la **expropiabilidad algorítmica**: la superficie del conocimiento hu
 El Framework ITEA (v3.0) lo implementa con diez indicadores complementarios que cubren 1.016 ocupaciones SOC 6-dígitos de O\*NET 30.2, diseñados para medir la expropiabilidad algorítmica ocupacional en el régimen de IA Agentic — distinto pero complementario a los índices de automatización a nivel de tarea de la tradición Frey-Osborne (2017) o medidas de exposición basadas en habilidades como el benchmark AIOE de Felten, Raj y Seamans (2021).
 
 Validación convergente externa frente al benchmark AIOE sobre 769 ocupaciones SOC 6-dígitos comunes: **r(OAEI v3.0+, AIOE) = 0,797**.
+
+### v4.0 y v4.1
+
+- **v4.0: OAXI-EU sobre el eje ISCO-08 / ESCO.** Los 47.810 enunciados de tareas de O\*NET con grados de exposición a la IA generativa y de codificabilidad (los grados AXI heredados, que se sustituirán en la v4.1) se agregan a actividades de trabajo y a las 923 ocupaciones de O\*NET, y se llevan a **428 grupos ISCO-08** con los crosswalks oficiales del BLS. Convergencia con el índice de exposición del JRC (JRC145832) a tres dígitos ISCO: **Pearson 0,736, Spearman 0,819** (127 grupos). Se reconstruye entero desde fuentes públicas con `itea build-eu`.
+- **v4.1, en desarrollo: graduación de tareas documentada (`itea.grading`).** Gradúa de forma automática las 18.796 tareas de O\*NET 30.2 a partir solo de taxonomías oficiales, y se valida frente a referencias públicas independientes con hipótesis registradas antes de cada ejecución. La capa estructural ya está hecha: E converge con las etiquetas humanas de Eloundou et al. (ρ = 0,40), y K converge con el trabajo analítico no rutinario (ρ = 0,67; 0,28 dentro de cada Job Zone). Documentación: [`docs/grading/`](docs/grading/README.md).
+
+Instalación: `pip install git+https://github.com/Aval22/ITEA.git`; detalles en el [README en inglés](README.md#installation-and-testing).
 
 > **Nota de cobertura.** El OAEI está disponible para **878 de las 1.016** ocupaciones (86,5%). Las 138 sin OAEI carecen de los inputs GEE/salario que lo componen; entre ellas, las **19 ocupaciones militares (SOC 55)** son una exclusión estructural de O\*NET (sin Job Zone/salario). Detalle en la [revisión del data set](docs/ITEA_Revision_Dataset.md).
 

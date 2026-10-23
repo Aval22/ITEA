@@ -4,9 +4,12 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19578915.svg)](https://doi.org/10.5281/zenodo.19578915)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-3.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-4.0.0-blue)]()
 
 > **一个多维框架，用于衡量在 Agentic AI 体制下的职业算法可剥夺性。**
+
+
+> **v4.0（OAXI-EU，ISCO-08）与 v4.1（`itea.grading`，开发中）：** 请参阅[英文 README](README.md)。
 
 ---
 
