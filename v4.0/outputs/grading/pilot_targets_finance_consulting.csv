@@ -1,0 +1,968 @@
+product,unspsc_title,vendor,pilot_occupations,hot
+Microsoft Excel,Spreadsheet software,Microsoft,27,True
+Microsoft Office software,Office suite software,Microsoft,27,True
+Microsoft Outlook,Electronic mail software,Microsoft,26,True
+Microsoft PowerPoint,Presentation software,Microsoft,26,True
+Microsoft Word,Word processing software,Microsoft,26,True
+Microsoft Access,Data base user interface and query software,Microsoft,23,True
+SAP software,Enterprise resource planning ERP software,SAP,18,True
+Web browser software,Internet browser software,,17,False
+Microsoft Dynamics,Enterprise resource planning ERP software,Microsoft,14,False
+Structured query language SQL,Data base user interface and query software,,13,True
+Intuit QuickBooks,Accounting software,,12,True
+LexisNexis,Information retrieval or search software,,12,False
+Oracle JD Edwards EnterpriseOne,Enterprise resource planning ERP software,Oracle,12,False
+Sage 50 Accounting,Accounting software,,12,False
+Word processing software,Word processing software,,12,False
+Microsoft Project,Project management software,Microsoft,11,True
+Microsoft Windows,Operating system software,Microsoft,11,True
+Oracle PeopleSoft,Enterprise resource planning ERP software,Oracle,11,True
+Fund accounting software,Accounting software,,11,False
+Microsoft Dynamics GP,Enterprise resource planning ERP software,Microsoft,11,False
+Oracle E-Business Suite Financials,Financial analysis software,Oracle,11,False
+Tax software,Accounting software,,11,False
+Microsoft SharePoint,Document management software,Microsoft,10,True
+Accounting software,Accounting software,,10,False
+NetSuite ERP,Enterprise resource planning ERP software,,10,False
+Oracle Hyperion,Enterprise resource planning ERP software,Oracle,10,False
+Oracle PeopleSoft Financials,Enterprise resource planning ERP software,Oracle,10,False
+Microsoft SQL Server,Data base user interface and query software,Microsoft,9,True
+Microsoft Visio,Process mapping and design software,Microsoft,9,True
+Microsoft Visual Basic,Development environment software,Microsoft,9,True
+SAS,Analytical or scientific software,,9,True
+FileMaker Pro,Data base user interface and query software,,9,False
+IBM Cognos Impromptu,Business intelligence and data analysis software,IBM,9,False
+IBM Notes,Electronic mail software,IBM,9,False
+SAP Business Objects,Enterprise resource planning ERP software,SAP,9,False
+Spreadsheet software,Spreadsheet software,,9,False
+R,Object or component oriented development software,,8,True
+Tableau,Business intelligence and data analysis software,,8,True
+Yardi software,Data base user interface and query software,,8,True
+ADP Workforce Now,Human resources software,,8,False
+Oracle Fusion Applications,Enterprise resource planning ERP software,Oracle,8,False
+SAP Crystal Reports,Data base reporting software,SAP,8,False
+Microsoft Visual Basic for Applications VBA,Development environment software,Microsoft,7,True
+Oracle Database,Data base user interface and query software,Oracle,7,True
+Database software,Data base user interface and query software,,7,False
+Delphi Technology,Financial analysis software,,7,False
+Email software,Electronic mail software,,7,False
+Human resource management software HRMS,Human resources software,,7,False
+Microsoft Exchange,Electronic mail software,Microsoft,7,False
+Oracle Business Intelligence Enterprise Edition,Business intelligence and data analysis software,Oracle,7,False
+IBM SPSS Statistics,Analytical or scientific software,IBM,6,True
+Microsoft Power BI,Business intelligence and data analysis software,Microsoft,6,True
+Oracle Primavera Enterprise Project Portfolio Management,Project management software,Oracle,6,True
+Salesforce software,Customer relationship management CRM software,Salesforce,6,True
+Healthcare common procedure coding system HCPCS,Medical software,,6,False
+Alteryx software,Business intelligence and data analysis software,,5,True
+Google Docs,Word processing software,Google,5,True
+MEDITECH software,Medical software,,5,True
+Python,Object or component oriented development software,,5,True
+Teradata Database,Data base management system software,,5,True
+Blackbaud The Raiser's Edge,Customer relationship management CRM software,,5,False
+IBM Power Systems software,Enterprise system management software,IBM,5,False
+Medical condition coding software,Medical software,,5,False
+Medical procedure coding software,Medical software,,5,False
+MicroStrategy,Business intelligence and data analysis software,,5,False
+Qlik Tech QlikView,Business intelligence and data analysis software,,5,False
+Adobe Acrobat,Document management software,Adobe,4,True
+Apache Hive,Data base management system software,,4,True
+C++,Object or component oriented development software,,4,True
+Epic Systems,Medical software,,4,True
+Marketo Marketing Automation,Sales and marketing software,,4,True
+The MathWorks MATLAB,Analytical or scientific software,,4,True
+UNIX,Operating system software,,4,True
+Workday software,Enterprise resource planning ERP software,,4,True
+Corel QuattroPro,Spreadsheet software,,4,False
+Document management system software,Document management software,,4,False
+Experian Credinomics,Financial analysis software,,4,False
+Google Slides,Presentation software,Google,4,False
+IBM Lotus 1-2-3,Spreadsheet software,IBM,4,False
+Microsoft OneNote,Word processing software,Microsoft,4,False
+StataCorp Stata,Analytical or scientific software,,4,False
+Tax compliance property tax management software,Compliance software,,4,False
+Amazon Web Services AWS software,Data base user interface and query software,Amazon/AWS,3,True
+Linux,Operating system software,,3,True
+Microsoft Azure software,Development environment software,Microsoft,3,True
+Microsoft SQL Server Reporting Services SSRS,Data base reporting software,Microsoft,3,True
+Perl,Object or component oriented development software,,3,True
+Swift,Object or component oriented development software,,3,True
+ATX Total Accounting Office,Accounting software,,3,False
+Accounts receivable software,Accounting software,,3,False
+Apache Pig,Data base management system software,,3,False
+BizBench,Financial analysis software,,3,False
+Customer information control system CICS,Transaction server software,,3,False
+Data entry software,Data base user interface and query software,,3,False
+Harland Financial Solutions DecisionPro,Financial analysis software,,3,False
+Internet browser software,Internet browser software,,3,False
+Intuit TurboTax,Tax preparation software,,3,False
+Microsoft FRx,Financial analysis software,Microsoft,3,False
+Microsoft Internet Explorer,Internet browser software,Microsoft,3,False
+Microsoft Publisher,Desktop publishing software,Microsoft,3,False
+Microsoft SharePoint Server,Document management software,Microsoft,3,False
+Moody's KMV CreditEdge,Financial analysis software,,3,False
+NortonLifeLock cybersecurity software,Transaction security and virus protection software,,3,False
+Optical character recognition OCR software,Optical character reader OCR or scanning software,,3,False
+Payroll software,Time accounting software,,3,False
+Perforce Helix software,Configuration management software,,3,False
+Portfolio management software,Financial analysis software,,3,False
+Quicken,Accounting software,,3,False
+Atlassian JIRA,Content workflow software,,2,True
+C#,Object or component oriented development software,,2,True
+Hypertext markup language HTML,Web platform development software,,2,True
+JavaScript,Web platform development software,,2,True
+Microsoft Visual Studio,Development environment software,Microsoft,2,True
+Oracle Java,Object or component oriented development software,Oracle,2,True
+Ruby,Development environment software,,2,True
+SAP Concur,Accounting software,SAP,2,True
+Splunk Enterprise,Cloud-based management software,,2,True
+ATX Total Engagement Office,Accounting software,,2,False
+ATX Total Tax Office,Tax preparation software,,2,False
+Accounts payable software,Accounting software,,2,False
+Accurate NXG,Accounting software,,2,False
+AcornSystems Corporate Performance Management,Enterprise resource planning ERP software,,2,False
+AdaptaSoft CyberPay,Accounting software,,2,False
+Advanced Portfolio Technologies Report Builder,Financial analysis software,,2,False
+Advanced Portfolio Technologies Simulator,Financial analysis software,,2,False
+Analyse-it,Analytical or scientific software,,2,False
+AnalyzerXL,Financial analysis software,,2,False
+Annuities analysis software,Financial analysis software,,2,False
+Apache Solr,Data base management system software,,2,False
+Apple AppleWorks,Spreadsheet software,,2,False
+Apple Keynote,Presentation software,,2,False
+Ascend Property Assessment,Data base user interface and query software,,2,False
+Aspen Graphics Technical Analysis Software,Financial analysis software,,2,False
+AuditWare financial reporting and auditing software,Financial analysis software,,2,False
+Auditing software,Financial analysis software,,2,False
+Automation Counselors municiPAL,Accounting software,,2,False
+Best MIP Fund Accounting,Accounting software,,2,False
+BizPricer,Financial analysis software,,2,False
+Bloomberg Professional,Financial analysis software,,2,False
+Bruno Realty eNeighboorhoods,Data base user interface and query software,,2,False
+Business Forecast Systems Forecast Pro,Financial analysis software,,2,False
+Business intelligence software,Business intelligence and data analysis software,,2,False
+Business performance management BPM software,Enterprise resource planning ERP software,,2,False
+CCH ProSystem fx TAX,Tax preparation software,,2,False
+CCIS AccountAbility,Accounting software,,2,False
+CGI-AMS BureauLink Enterprise,Information retrieval or search software,,2,False
+CGI-AMS CACS Enterprise,Financial analysis software,,2,False
+CGI-AMS Strata,Financial analysis software,,2,False
+CPR Visual Estimator,Financial analysis software,,2,False
+CYMA IV Accounting for Windows,Accounting software,,2,False
+Cartesis ES Magnitude,Enterprise resource planning ERP software,,2,False
+Common business oriented language COBOL,Development environment software,,2,False
+Computer assisted mass appraisal CAMA software,Analytical or scientific software,,2,False
+Corel WordPerfect Office Suite,Office suite software,,2,False
+Cost accounting software,Accounting software,,2,False
+Cost estimating software,Financial analysis software,,2,False
+Credit and risk analysis software,Financial analysis software,,2,False
+Credit fraud detection software,Financial analysis software,,2,False
+Data visualization software,Analytical or scientific software,,2,False
+DealMaven Comparable Company Valuation Analysis,Financial analysis software,,2,False
+DealMaven M&A Accretion/Dilution One-Pager,Financial analysis software,,2,False
+DealMaven Modeling ToolPack for Excel,Financial analysis software,,2,False
+DealMaven PresLink for PowerPoint and Word,Presentation software,,2,False
+Decisioneering Crystal Ball,Analytical or scientific software,,2,False
+Derivatives Imagine Trading System,Financial analysis software,,2,False
+Derivicom FinOptions XL,Financial analysis software,,2,False
+Dropbox,Cloud-based data access and sharing software,,2,False
+Dun and Bradstreet Global DecisionMaker,Financial analysis software,,2,False
+Economic forecasting software,Financial analysis software,,2,False
+Eko,Desktop communications software,,2,False
+Enterprise resource planning ERP software,Enterprise resource planning ERP software,,2,False
+Equifax Advanced Decisioning,Financial analysis software,,2,False
+Equifax Application Engine,Content workflow software,,2,False
+Equifax InterConnect,Financial analysis software,,2,False
+Estate planning software,Financial analysis software,,2,False
+Exact Software Macola ES,Enterprise resource planning ERP software,,2,False
+Experian Detect,Financial analysis software,,2,False
+Experian FraudShield,Financial analysis software,,2,False
+Experian Quest,Financial analysis software,,2,False
+Experian Retention Triggers,Financial analysis software,,2,False
+Experian Strategy Management,Office suite software,,2,False
+Experian Transact SM,Content workflow software,,2,False
+Express Business Valuations,Financial analysis software,,2,False
+Fair Isaac Application Risk Model Software,Financial analysis software,,2,False
+Fair Isaac Capstone Decision Manager,Financial analysis software,,2,False
+Fair Isaac Falcon ID,Financial analysis software,,2,False
+Fannie Mae Desktop Underwriter,Financial analysis software,,2,False
+FinEng Solutions PerfoRM,Financial analysis software,,2,False
+FinEng Solutions Quantis,Financial analysis software,,2,False
+Financial compliance software,Compliance software,,2,False
+Financial modeling software,Financial analysis software,,2,False
+Financial reporting software,Accounting software,,2,False
+Financial statement software,Accounting software,,2,False
+Fractal pattern analysis software,Financial analysis software,,2,False
+Freddie Mac Loan Prospector,Financial analysis software,,2,False
+General ledger software,Accounting software,,2,False
+Genetic algorithm optimization software,Financial analysis software,,2,False
+Genetic algorithm software,Analytical or scientific software,,2,False
+Google Drive,Cloud-based data access and sharing software,Google,2,False
+Google Meet,Video conferencing software,Google,2,False
+HMS,Time accounting software,,2,False
+HP 49G+ Appraiser Fee Calculator,Financial analysis software,,2,False
+Heron CrossTie General Ledger,Accounting software,,2,False
+Hyperion Enterprise,Accounting software,,2,False
+I-flex Solutions Reveleus Investment Performance Measurement,Financial analysis software,,2,False
+IBM Domino,Communications server software,IBM,2,False
+IBM Lotus Approach,Data base user interface and query software,IBM,2,False
+Innova Financial Solutions Derivatives Expert,Financial analysis software,,2,False
+Insightful S-PLUS,Analytical or scientific software,,2,False
+Intellitax financial solutions software,Tax preparation software,,2,False
+Intrax ProcedureNet,Compliance software,,2,False
+Intuit ProSeries,Tax preparation software,,2,False
+Iron Mountain Accutrac records management software,Document management software,,2,False
+Ivorix Neurostrategy Finance,Expert system software,,2,False
+Keypoint DataDesk,Analytical or scientific software,,2,False
+Leading Market Technologies EXPO,Financial analysis software,,2,False
+Longview Consolidation,Financial analysis software,,2,False
+Longview Performance Management Platform,Financial analysis software,,2,False
+Longview Solutions Khalix,Financial analysis software,,2,False
+Market forecast software,Financial analysis software,,2,False
+Mass appraisal records system MARS,Analytical or scientific software,,2,False
+Mathematical software,Analytical or scientific software,,2,False
+Matheny Pattern Forecaster Plus,Expert system software,,2,False
+McAfee,Transaction security and virus protection software,,2,False
+MergerStat Control Premiums,Financial analysis software,,2,False
+MergerStat Price to Earnings Ratios,Financial analysis software,,2,False
+MethodWare ProAudit Advisor,Financial analysis software,,2,False
+MicroFocus GroupWise,Electronic mail software,,2,False
+Microsoft Dynamics,Customer relationship management CRM software,Microsoft,2,False
+Microsoft Dynamics SL,Enterprise resource planning ERP software,Microsoft,2,False
+MoneySoft Corporate Valuation,Financial analysis software,,2,False
+Monte Carlo simulation software,Financial analysis software,,2,False
+Montgomery Investment Technology Bonds XL,Financial analysis software,,2,False
+Montgomery Investment Technology Exotics XL,Financial analysis software,,2,False
+Montgomery Investment Technology FinTools,Financial analysis software,,2,False
+Montgomery Investment Technology Options XL,Financial analysis software,,2,False
+Montgomery Investment Technology QuoteTools,Financial analysis software,,2,False
+Montgomery Investment Technology Risk XL,Financial analysis software,,2,False
+Montgomery Investment Technology SigTools,Financial analysis software,,2,False
+Montgomery Investment Technology Utility XL,Charting software,,2,False
+Moody's KMV Decisions,Financial analysis software,,2,False
+Moody's KMV Financial Analyst,Financial analysis software,,2,False
+Moody's KMV Risk Advisor,Financial analysis software,,2,False
+Moody's KMV Risk Analyst,Financial analysis software,,2,False
+Moss Adams Profit Mentor,Financial analysis software,,2,False
+Mutual fund analysis software,Financial analysis software,,2,False
+Neural network modeling software,Analytical or scientific software,,2,False
+NeuroSolutions Trading Solutions,Financial analysis software,,2,False
+NeuroSolutions for MatLab,Expert system software,,2,False
+New Millennium Communications Genesis Accounting,Accounting software,,2,False
+OmniRIM Records Management Suite,Document management software,,2,False
+OptionVue Options Analysis,Financial analysis software,,2,False
+Oracle Hyperion Planning,Financial analysis software,Oracle,2,False
+PROPHIX Enterprise,Accounting software,,2,False
+Paisley AutoAudit,Financial analysis software,,2,False
+Paisley Cardmap,Compliance software,,2,False
+Paisley Focus Control Assurance,Compliance software,,2,False
+Paisley IssueTrack,Financial analysis software,,2,False
+Paisley RiskNavigator,Compliance software,,2,False
+Palisade Bond @nalyst,Financial analysis software,,2,False
+Palisade Evolver,Analytical or scientific software,,2,False
+Palisade StatTools,Analytical or scientific software,,2,False
+Pattern recognition software,Analytical or scientific software,,2,False
+Peer-to-Peer Financial Analysis,Financial analysis software,,2,False
+Pentana audit work system PAWS,Financial analysis software,,2,False
+Pi Blue OptWorks Excel,Financial analysis software,,2,False
+Practice management software PMS,Data base user interface and query software,,2,False
+Presentation software,Presentation software,,2,False
+PricewaterhouseCoopers TeamMate,Financial analysis software,,2,False
+Pricing software,Financial analysis software,,2,False
+Quantifying marketability discount QMD modeling software,Financial analysis software,,2,False
+RSM McGladrey Advanced Practice Solutions Paperless Audit,Financial analysis software,,2,False
+RSM McGladrey Auditor Assistant,Financial analysis software,,2,False
+Relational database software,Data base user interface and query software,,2,False
+Report generation software,Word processing software,,2,False
+Reporting software,Data base reporting software,,2,False
+RiskMetrics Group WealthBench,Financial analysis software,,2,False
+Roundtable Software Advantage Accounting System,Accounting software,,2,False
+SAP BusinessObjects Data Integrator,Enterprise application integration software,SAP,2,False
+SAP BusinessObjects Data Integrator,Enterprise resource planning ERP software,SAP,2,False
+SAS JMP,Analytical or scientific software,,2,False
+SSA Global Infinium Financial Management,Enterprise resource planning ERP software,,2,False
+Sage EDP Payroll Tax,Compliance software,,2,False
+Sage ERP Accpac,Enterprise resource planning ERP software,,2,False
+Sage HRMS,Human resources software,,2,False
+Sage MAS 200 ERP,Enterprise resource planning ERP software,,2,False
+Securities analysis software,Financial analysis software,,2,False
+Skype,Desktop communications software,,2,False
+Softrax Revenue Management,Accounting software,,2,False
+Spreadware Business Financial Analysis,Financial analysis software,,2,False
+Spreadware Business Valuator,Financial analysis software,,2,False
+Spreadware Pro Forma,Financial analysis software,,2,False
+Steele Mutual Fund and Variable Annuity Expert,Financial analysis software,,2,False
+SunGard BancWare,Financial analysis software,,2,False
+SunGard Kiodex Risk Workbench,Financial analysis software,,2,False
+Sync Essentials Trade Accountant,Financial analysis software,,2,False
+TechHackers Convertible Bond @nalyst,Financial analysis software,,2,False
+TechHackers Credit @nalyst,Financial analysis software,,2,False
+TechHackers Exotic @nalyst,Financial analysis software,,2,False
+TechHackers Financial @nalyst,Financial analysis software,,2,False
+TechHackers IRO @nalyst,Financial analysis software,,2,False
+TechHackers MBS @nalyst,Financial analysis software,,2,False
+TechHackers Swap @nalyst,Financial analysis software,,2,False
+Tetrahex Fractal Finance,Financial analysis software,,2,False
+TickQuest NeoTicker,Charting software,,2,False
+Tips Standard Securities Calculation Bond Analytics Module,Financial analysis software,,2,False
+Tips Standard Securities Calculation Mortgage-Backed Analytics Module,Financial analysis software,,2,False
+TradeTools Financial Market Databases,Information retrieval or search software,,2,False
+TradeTools Monthly U.S. Economic Database,Information retrieval or search software,,2,False
+Trendsetter Software ProAnalyst,Financial analysis software,,2,False
+Tumbleweed SecureTransport,Transaction server software,,2,False
+UA Business Software Professional Edition,Accounting software,,2,False
+Ultimate Software UltiPro Workplace,Human resources software,,2,False
+Universal Tax Systems TaxWise,Tax preparation software,,2,False
+Unlimited Learning Resources Valusource Pro,Financial analysis software,,2,False
+ValuSource BIZCOMPS,Financial analysis software,,2,False
+Ward Systems Group GeneHunter,Analytical or scientific software,,2,False
+Ward Systems Group NeuralShell Predictor,Analytical or scientific software,,2,False
+Ward Systems Group NeuroShell Trader,Information retrieval or search software,,2,False
+Whitebirch Software Projected Financials,Financial analysis software,,2,False
+Wilson's Computer Applications RealEasy Appraisals,Analytical or scientific software,,2,False
+WinEstimator WinEst,Analytical or scientific software,,2,False
+WinGap,Analytical or scientific software,,2,False
+Wolfram Research Derivatives,Financial analysis software,,2,False
+Wolfram Research Mathematica,Analytical or scientific software,,2,False
+Wolfram Research Mathematica Finance Essentials,Financial analysis software,,2,False
+Wolfram Research Mathematica UnRisk Pricing Engine,Financial analysis software,,2,False
+WorkForce Software EmpCenter Time and Attendance,Time accounting software,,2,False
+dailyVest Investment Personalization Platform,Information retrieval or search software,,2,False
+eCredit Enterprise,Financial analysis software,,2,False
+AJAX,Web platform development software,,1,True
+Adobe InDesign,Desktop publishing software,Adobe,1,True
+Amazon Elastic Compute Cloud EC2,Data base user interface and query software,Amazon/AWS,1,True
+Amazon Redshift,Data base user interface and query software,Amazon/AWS,1,True
+Ansible software,Expert system software,,1,True
+Apache Cassandra,Data base management system software,,1,True
+Apache Hadoop,Data base management system software,,1,True
+Apache Kafka,Development environment software,,1,True
+Apache Maven,Development environment software,,1,True
+Apache Spark,Business intelligence and data analysis software,,1,True
+Apache Subversion SVN,File versioning software,,1,True
+Apache Tomcat,Web platform development software,,1,True
+Apple iOS,Operating system software,,1,True
+Apple macOS,Operating system software,,1,True
+Atlassian Confluence,Project management software,,1,True
+Bash,Operating system software,,1,True
+C,Development environment software,,1,True
+Cascading style sheets CSS,Web platform development software,,1,True
+Chef,Configuration management software,,1,True
+Cisco Webex,Video conferencing software,Cisco,1,True
+ESRI ArcGIS software,Geographic information system,,1,True
+Eclipse IDE,Development environment software,,1,True
+Elasticsearch,Data base management system software,,1,True
+Extensible markup language XML,Enterprise application integration software,,1,True
+Git,File versioning software,,1,True
+GitHub,Application server software,,1,True
+Go,Development environment software,,1,True
+Google Analytics,Data mining software,Google,1,True
+Google Angular,Web platform development software,Google,1,True
+Google Sheets,Spreadsheet software,Google,1,True
+Google Workspace software,Office suite software,Google,1,True
+Hibernate ORM,Object oriented data base management software,,1,True
+JUnit,Program testing software,,1,True
+JavaScript Object Notation JSON,Web platform development software,,1,True
+Kronos Workforce Timekeeper,Time accounting software,,1,True
+Microsoft .NET Framework,Development environment software,Microsoft,1,True
+Microsoft ASP.NET,Web platform development software,Microsoft,1,True
+Microsoft Active Server Pages ASP,Web platform development software,Microsoft,1,True
+Microsoft PowerShell,Development environment software,Microsoft,1,True
+Microsoft SQL Server Integration Services SSIS,Enterprise application integration software,Microsoft,1,True
+Microsoft Team Foundation Server,Project management software,Microsoft,1,True
+Microsoft Teams,Project management software,Microsoft,1,True
+MongoDB,Data base management system software,,1,True
+MySQL,Data base user interface and query software,,1,True
+NoSQL,Data base management system software,,1,True
+Node.js,Web platform development software,,1,True
+Oracle PL/SQL,Data base management system software,Oracle,1,True
+PHP,Web platform development software,,1,True
+PostgreSQL,Object oriented data base management software,,1,True
+Puppet,Configuration management software,,1,True
+PyTorch,Data base user interface and query software,,1,True
+Red Hat Enterprise Linux,Operating system software,,1,True
+Scala,Object or component oriented development software,,1,True
+Selenium,Program testing software,,1,True
+ServiceNow,Data base user interface and query software,,1,True
+Shell script,Operating system software,,1,True
+Spring Framework,Web platform development software,,1,True
+TensorFlow,Analytical or scientific software,,1,True
+Transact-SQL,Data base user interface and query software,,1,True
+Trimble SketchUp Pro,Graphics or photo imaging software,,1,True
+Zoom,Video conferencing software,,1,True
+jQuery,Object or component oriented development software,,1,True
+1003 Uniform Residential Loan Application,Financial analysis software,,1,False
+1099 ProsSoftware,Tax preparation software,,1,False
+3M Post-it App,Word processing software,,1,False
+ACCUCert,Compliance software,,1,False
+ACI Appraiser's Choice,Desktop publishing software,,1,False
+ACI TaskTracker,Project management software,,1,False
+ACL Analytics,Financial analysis software,,1,False
+ACL Audit Exchange,Analytical or scientific software,,1,False
+ACL Business Assurance Analytics,Financial analysis software,,1,False
+ACS Technologies ACS Financial Suite,Accounting software,,1,False
+ACT! ACT4Advisors,Customer relationship management CRM software,,1,False
+"ADERANT Expert Back Office, Powered by Keystone",Enterprise resource planning ERP software,,1,False
+ADP Drive DMS for Accounting,Accounting software,,1,False
+ADP Enterprise HR,Human resources software,,1,False
+ADP PC/Payroll,Time accounting software,,1,False
+ADP Pay eXpert,Time accounting software,,1,False
+ADP Super Report Writer,Data base reporting software,,1,False
+ADP Workforce Now,Data base user interface and query software,,1,False
+ADP eTIME,Time accounting software,,1,False
+ADP software,Enterprise resource planning ERP software,,1,False
+ADS Advantage,Customer relationship management CRM software,,1,False
+AMS Services AMS Sagitta,Enterprise resource planning ERP software,,1,False
+API Navigator,Human resources software,,1,False
+ARES Corporation PRISM Project Estimator,Financial analysis software,,1,False
+ASI Client Acquisition Solution,Financial analysis software,,1,False
+Abacus Tax,Tax preparation software,,1,False
+Accountants Templates JAZZ-It!,Enterprise resource planning ERP software,,1,False
+Accounting compliance software,Compliance software,,1,False
+Accounting fraud detection software,Financial analysis software,,1,False
+Accuity EPICWare,Financial analysis software,,1,False
+AcorynSystems Activity Based Costing/Management ABC/M,Accounting software,,1,False
+Act!,Customer relationship management CRM software,,1,False
+Activant Solutions Activant Prophet 21,Accounting software,,1,False
+Adaptive Planning,Enterprise resource planning ERP software,,1,False
+Aderant legal software,Expert system software,,1,False
+Adobe ActionScript,Development environment software,Adobe,1,False
+Adobe Dreamweaver,Web page creation and editing software,Adobe,1,False
+Adtec Agency Manager,Customer relationship management CRM software,,1,False
+Advanced Management Systems Software for Wineries,Enterprise resource planning ERP software,,1,False
+Advanced Micro Systems 1099-Etc,Tax preparation software,,1,False
+Advanced business application programming ABAP,Object or component oriented development software,,1,False
+Advent Axys,Financial analysis software,,1,False
+AdviceAmerica AdvisorVision,Financial analysis software,,1,False
+Advisory World ICE,Financial analysis software,,1,False
+Airtable,Data base user interface and query software,,1,False
+Allscripts Professional PM,Accounting software,,1,False
+American HealthTech Financial,Accounting software,,1,False
+American Riviera Magtax,Tax preparation software,,1,False
+Amortization loan software,Financial analysis software,,1,False
+Anodas Software Limited Phoenix,Enterprise resource planning ERP software,,1,False
+Apache Ant,Development environment software,,1,False
+Apache Groovy,Object or component oriented development software,,1,False
+Apache HTTP Server,Portal server software,,1,False
+Apache Struts,Web platform development software,,1,False
+Apex IV Assessor,Map creation software,,1,False
+Apex IV Fee Appraiser,Map creation software,,1,False
+Apex MobileSketch,Map creation software,,1,False
+Aptech Systems GAUSS,Analytical or scientific software,,1,False
+Arbutus Analyzer,Analytical or scientific software,,1,False
+ArcSight Enterprise Threat and Risk Management,Risk management data and analysis software,,1,False
+Asset allocation software,Financial analysis software,,1,False
+Asset management software,Accounting software,,1,False
+Asset management software,Inventory management software,,1,False
+Asure Software HCM,Time accounting software,,1,False
+Atlassian Bamboo,Enterprise application integration software,,1,False
+Audit management software,Financial analysis software,,1,False
+Audit planning and control environment software,Financial analysis software,,1,False
+AuditWare CaseWare Examiner,Financial analysis software,,1,False
+Austin Logistics CallSelect,Customer relationship management CRM software,,1,False
+Autodesk AutoCAD Blue Sky,Computer aided design CAD software,Autodesk,1,False
+Automated auditors fraud detector software,Financial analysis software,,1,False
+Automated billing software,Billing and invoicing software,,1,False
+Automated payroll software,Time accounting software,,1,False
+Automated tax system software,Accounting software,,1,False
+Automated timekeeping software,Time accounting software,,1,False
+Automatic Data Processing PC payroll for windows PCPW,Human resources software,,1,False
+Automatic Data Processing ProxyEdge,Word processing software,,1,False
+Autotask,Enterprise resource planning ERP software,,1,False
+Avalara AvaTax ST,Tax preparation software,,1,False
+BLS Software Invoice!,Billing and invoicing software,,1,False
+BMH Open4 Payroll,Time accounting software,,1,False
+BNA Corporate Tax Audit Analyzer,Financial analysis software,,1,False
+BNA Estate and Gift Tax Suite,Tax preparation software,,1,False
+BNA Income Tax Planning Solutions,Tax preparation software,,1,False
+BNA Sales and Use Tax Rates and Forms,Tax preparation software,,1,False
+BSI ComplianceFactory,Compliance software,,1,False
+Backbone.js,Web platform development software,,1,False
+Bankers Systems Rembrandt Lending System,Financial analysis software,,1,False
+Best Software CPAPayroll,Data base user interface and query software,,1,False
+Bi3 Audit Intelligence,Compliance software,,1,False
+Bi3 Financial Statement Fraud Analysis,Financial analysis software,,1,False
+Billing software,Billing and invoicing software,,1,False
+Blackbaud The Financial Edge,Accounting software,,1,False
+Blackboard software,Data base user interface and query software,,1,False
+Bookkeeping software,Accounting software,,1,False
+Bottom Line LoanMaster Loan Servicing,Accounting software,,1,False
+Bradford ClickFORMS,Graphics or photo imaging software,,1,False
+Brentmark Estate Planning Quickview,Financial analysis software,,1,False
+Brentmark Stock Option Risk Analyzer,Financial analysis software,,1,False
+Budget monitoring systems,Financial analysis software,,1,False
+"Budgeting, forecasting, and planning software",Enterprise resource planning ERP software,,1,False
+Business Management Systems Municipal Geographic Management System MGMS,Data base user interface and query software,,1,False
+Business Objects Data Integrator,Development environment software,,1,False
+CAI Software Seasoft,Accounting software,,1,False
+CPR International GeneralCOST Estimator,Accounting software,,1,False
+CPSI EHR System,Human resources software,,1,False
+CSC nbAccelerator,Enterprise resource planning ERP software,,1,False
+CU Connect processing software,Access software,,1,False
+Cabinet NG CNG-SAFE,Document management software,,1,False
+California Infinite LPS,Financial analysis software,,1,False
+Calyx Point,Financial analysis software,,1,False
+Cammack Computations Inter-Est,Financial analysis software,,1,False
+Cartesis Magnitude iAnalysis,Financial analysis software,,1,False
+CaseWare International IDEA,Financial analysis software,,1,False
+CaseWare International IDEA SmartAnalyzer,Financial analysis software,,1,False
+CaseWare Working Papers,Financial analysis software,,1,False
+CashFlow Guardian,Financial analysis software,,1,False
+Cebos MQ1 Audit System,Financial analysis software,,1,False
+Ceridian Dayforce enterprise HCM,Human resources software,,1,False
+Chat software,Network conferencing software,,1,False
+Check imaging software,Graphics or photo imaging software,,1,False
+Check processing software,Document management software,,1,False
+Check sorting control software,Industrial control software,,1,False
+Cheshire Financial Planning Suite,Financial analysis software,,1,False
+Choice Technologies PowerBill +,Billing and invoicing software,,1,False
+Citrix cloud computing software,Access software,,1,False
+Click1003 Online Mortgage Application,Financial analysis software,,1,False
+Client billing software,Billing and invoicing software,,1,False
+Collection Data Systems CollectOne-Tiger,Customer relationship management CRM software,,1,False
+Columbia Ultimate Archive,Customer relationship management CRM software,,1,False
+Columbia Ultimate RPCS,Customer relationship management CRM software,,1,False
+Columbia Ultimate Remit,Point of sale POS software,,1,False
+Compass Municipal Services CAMAlot,Analytical or scientific software,,1,False
+ComplianceMAX,Compliance software,,1,False
+ComputerEase construction accounting software,Accounting software,,1,False
+Concierge Systems Report Concierge,Word processing software,,1,False
+Consilience Software Maven Insurance Automation Suite,Enterprise resource planning ERP software,,1,False
+Construction Management Software ProEst,Analytical or scientific software,,1,False
+Cooperative Processing Resources DMS Professional Suite,Financial analysis software,,1,False
+CoreLogic DebtorTrace,Data base user interface and query software,,1,False
+Corporate Responsibility System Technologies Limited CRSTL Compliance Positioning System,Compliance software,,1,False
+Corporate Responsibility System Technologies Limited Compliance Positioning System,Compliance software,,1,False
+Creative Solutions CPA Depreciation,Tax preparation software,,1,False
+Creative Solutions UltraTax 1040,Tax preparation software,,1,False
+Creative Solutions UltraTax CS,Tax preparation software,,1,False
+Credit adjudication and lending management system CALMS,Document management software,,1,False
+Credit management software,Financial analysis software,,1,False
+Credit underwriting software,Financial analysis software,,1,False
+Customer relationship management CRM software,Customer relationship management CRM software,,1,False
+CyberShift Workforce Management 3G Time and Attendance,Time accounting software,,1,False
+Cygnus IncomeMax,Financial analysis software,,1,False
+D'Arcangelo Galileo,Financial analysis software,,1,False
+Data extraction software,Data mining software,,1,False
+Data-Tel Ceasar,Customer relationship management CRM software,,1,False
+DataViz Beyond Contacts,Customer relationship management CRM software,,1,False
+Datagroup ElectroFile 1040,Tax preparation software,,1,False
+Datagroup ElectroFile ELF,Tax preparation software,,1,False
+Datagroup ElectroFile ST,Tax preparation software,,1,False
+Datair Employee Benefits Systems,Financial analysis software,,1,False
+Datatel Colleague,Enterprise resource planning ERP software,,1,False
+Datavantage,Financial analysis software,,1,False
+Debt account management and collection software,Customer relationship management CRM software,,1,False
+Delphi Discovery,Financial analysis software,,1,False
+Deltek Costpoint,Accounting software,,1,False
+Deltek professional services software,Enterprise resource planning ERP software,,1,False
+Desktop publishing software,Desktop publishing software,,1,False
+Diagnostic and procedural coding software,Categorization or classification software,,1,False
+Digital analysis tests and statistics DATAS for Excel,Financial analysis software,,1,False
+Digital analysis tests and statistics DATAS for SAS,Financial analysis software,,1,False
+Drupal,Web platform development software,,1,False
+Dynamic Loanledger,Financial analysis software,,1,False
+Dynamic hypertext markup language DHTML,Web platform development software,,1,False
+EBS On Line InstaPay,Time accounting software,,1,False
+EDExpress,Data base user interface and query software,,1,False
+EISI NaviPlan,Financial analysis software,,1,False
+ELM Resources ELM,Data base user interface and query software,,1,False
+EMT Applications CounselorMax,Data base user interface and query software,,1,False
+EZ-Data Client Data System,Customer relationship management CRM software,,1,False
+Education planning software,Financial analysis software,,1,False
+Electronic ToolKit for Tax Preparers,Tax preparation software,,1,False
+Electronic data interchange EDI software,Enterprise application integration software,,1,False
+Electronic health record EHR software,Medical software,,1,False
+Ellie Mae Contour,Financial analysis software,,1,False
+Ellie Mae Genesis,Financial analysis software,,1,False
+Emerald Data Deed-Chek,Map creation software,,1,False
+Enterprise JavaBeans,Web platform development software,,1,False
+Estate Capitol Needs Analysis,Financial analysis software,,1,False
+Everest Software Advanced,Enterprise resource planning ERP software,,1,False
+Evron Computer Systems SAGE PFW (Platinum For Windows),Accounting software,,1,False
+ExacTax PackageEX,Tax preparation software,,1,False
+ExpenseWatch,Financial analysis software,,1,False
+Ext JS,Web platform development software,,1,False
+Extensible hypertext markup language XHTML,Web platform development software,,1,False
+Extensity MPC,Enterprise resource planning ERP software,,1,False
+FAS Loan Service Plus,Financial analysis software,,1,False
+FBS Data Systems Flexmls,Data base user interface and query software,,1,False
+FRx Software Microsoft FRx,Accounting software,Microsoft,1,False
+FRx Software Microsoft Forecaster,Enterprise resource planning ERP software,Microsoft,1,False
+FaceTime,Video conferencing software,,1,False
+Factiva,Information retrieval or search software,,1,False
+Fair Isaac Enterprise Decision Management for Insurance,Enterprise resource planning ERP software,,1,False
+Fifth Walk BillingTracker,Billing and invoicing software,,1,False
+File management systems,Document management software,,1,False
+Finance Logix Education Planner,Financial analysis software,,1,False
+Finance Logix Insurance Planner,Financial analysis software,,1,False
+Finance Logix Retirement Planner,Financial analysis software,,1,False
+Financeware AASim,Financial analysis software,,1,False
+Financeware Finance File Manager,Document management software,,1,False
+Financeware WealthSimulator,Financial analysis software,,1,False
+Financial Competence,Financial analysis software,,1,False
+Financial Industry Computer Systems Loan Accountant,Accounting software,,1,False
+Financial Industry Computer Systems Loan Originator,Financial analysis software,,1,False
+Financial Industry Computer Systems Loan Producer,Financial analysis software,,1,False
+Financial Planning Consultants Practice Builder,Customer relationship management CRM software,,1,False
+Financial Profiles Profiles+ Professional,Financial analysis software,,1,False
+Financial accounting software,Accounting software,,1,False
+Financial aid management system FAM,Data base user interface and query software,,1,False
+Financial planning presentation software,Presentation software,,1,False
+Financial planning software,Financial analysis software,,1,False
+Financial report generation software,Word processing software,,1,False
+Financial reporting software,Financial analysis software,,1,False
+Financial transaction analysis software,Financial analysis software,,1,False
+Fiserv Advanced Underwriting,Financial analysis software,,1,False
+Fiserv PEP+ reACH,Graphics or photo imaging software,,1,False
+Fixed-assets depreciation software,Financial analysis software,,1,False
+FlexiFinancials FlexiLedger,Accounting software,,1,False
+GCS Property Assessment and Tax Billing,Data base user interface and query software,,1,False
+GE Healthcare Centricity EMR,Accounting software,,1,False
+Galaxy Technologies TimeStar Enterprise,Time accounting software,,1,False
+General Examination System GENESYS,Financial analysis software,,1,False
+Geographic information system GIS software,Geographic information system,,1,False
+Geographic information system GIS systems,Geographic information system,,1,False
+Geomechanical design analysis GDA software,Map creation software,,1,False
+Getting Things Done GTD software,Customer relationship management CRM software,,1,False
+Govern Software GovMap,Geographic information system,,1,False
+Govern Software Land and Permits Management System,Calendar and scheduling software,,1,False
+Graphics software,Graphics or photo imaging software,,1,False
+GreatTax,Tax preparation software,,1,False
+Greatland Corporation Winfiler,Human resources software,,1,False
+Greenbrier Graphics Deed Plotter,Map creation software,,1,False
+Guardian Analytics FraudMAP,Business intelligence and data analysis software,,1,False
+Guidance Software EnCase Enterprise,Analytical or scientific software,,1,False
+H&R Block Tax,Tax preparation software,,1,False
+HCSS HeavyBid,Project management software,,1,False
+HCSS HeavyJob,Project management software,,1,False
+Hansen CAMA,Analytical or scientific software,,1,False
+Harland Interlinq MortgageWare,Financial analysis software,,1,False
+HelpIT Systems addressIT,Customer relationship management CRM software,,1,False
+Hewlett Packard HP-UX,Operating system software,,1,False
+Hewlett Packard LoadRunner,Program testing software,,1,False
+Host Analytics Host Budget,Financial analysis software,,1,False
+Howard and Friends Computer CMA Plus,Financial analysis software,,1,False
+Human Resource MicroSystems HR Entre,Human resources software,,1,False
+Human resource information system (HRIS),Human resources software,,1,False
+Human resources management system HRMS,Human resources software,,1,False
+Hyland Software OnBase,Document management software,,1,False
+Hyperion Solutions System 9 Planning,Enterprise resource planning ERP software,,1,False
+IA Systems StreamLend,Financial analysis software,,1,False
+IAD Audit Leverage,Financial analysis software,,1,False
+IBM Cognos,Business intelligence and data analysis software,IBM,1,False
+IBM Cognos Business Intelligence,Business intelligence and data analysis software,IBM,1,False
+IBM Cognos Business Intelligence,Data mining software,IBM,1,False
+IBM Cognos Planning,Enterprise resource planning ERP software,IBM,1,False
+IBM Cognos ReportNet,Enterprise resource planning ERP software,IBM,1,False
+IBM FileNet Content Manager,Document management software,IBM,1,False
+IBM InfoSphere DataStage,Enterprise application integration software,IBM,1,False
+IBM Maximo Asset Management,Enterprise resource planning ERP software,IBM,1,False
+IBM Rational RequisitePro,Requirements analysis and system architecture software,IBM,1,False
+IBM WebSphere,Cloud-based management software,IBM,1,False
+ICCO CreditSoft,Financial analysis software,,1,False
+IDMS Account Ability,Tax preparation software,,1,False
+IMPACT Wealth Distribution Analysis,Financial analysis software,,1,False
+IPS of Boston DoubleCheck,Financial analysis software,,1,False
+Ibbotson Analyst,Financial analysis software,,1,False
+Ibbotson Portfolio Strategist,Financial analysis software,,1,False
+Image Deposit Exchange Check Station,Access software,,1,False
+Image exchange networks,Graphics or photo imaging software,,1,False
+Image processing systems,Graphics or photo imaging software,,1,False
+Image replacement document IRD printing software,Graphics or photo imaging software,,1,False
+Impact PlanLabX3,Financial analysis software,,1,False
+Income tax return preparation software,Tax preparation software,,1,False
+Indus Lending Solutions,Financial analysis software,,1,False
+Infor ERP SyteLine,Enterprise resource planning ERP software,,1,False
+Infor Global Solutions Starbuilder,Accounting software,,1,False
+Informatik MapDraw Deed Mapper,Map creation software,,1,False
+Information Builders WebFOCUS,Data base reporting software,,1,False
+Information Technology Incorporated Premier Teller,Accounting software,,1,False
+InformationActive ActiveData for Excel,Financial analysis software,,1,False
+Integra Destiny Loan Origination,Financial analysis software,,1,False
+Integrant DebtLogic,Financial analysis software,,1,False
+Integrated development environment IDE software,Development environment software,,1,False
+Internal audit software,Financial analysis software,,1,False
+Intuit Lacerte,Tax preparation software,,1,False
+Inventory tracking software,Inventory management software,,1,False
+Investigation management software,Project management software,,1,False
+Investigo,Customer relationship management CRM software,,1,False
+Investment and business valuation template software,Financial analysis software,,1,False
+Investment tracking software,Financial analysis software,,1,False
+Invoice software,Billing and invoicing software,,1,False
+J&L Financial Planner,Financial analysis software,,1,False
+Jack Henry & Associates Vertex,Enterprise resource planning ERP software,,1,False
+Jantek Jupiter Time Attendance,Time accounting software,,1,False
+Job control language JCL,Operating system software,,1,False
+Job costing software,Accounting software,,1,False
+Junxure CRM Software,Customer relationship management CRM software,,1,False
+Jupyter Notebook,Object or component oriented development software,,1,False
+KPB Associates TaxStream,Tax preparation software,,1,False
+Kirix ProffiPoint,Financial analysis software,,1,False
+Kleinrock Publishing,Financial analysis software,,1,False
+KornShell,Operating system software,,1,False
+Kronos Workforce Payroll,Time accounting software,,1,False
+LA PRO Loan Administrator Pro,Financial analysis software,,1,False
+LaCerte 1040 Tax Analyzer,Tax preparation software,,1,False
+LabOne NET,Financial analysis software,,1,False
+Laserfiche Avante,Document management software,,1,False
+Lawson ERP,Enterprise resource planning ERP software,,1,False
+Lead Activity Analyzer,Accounting software,,1,False
+Lead Business Analyzer,Accounting software,,1,False
+LexisNexis Accurint,Data base user interface and query software,,1,False
+LexisNexis Banko,Information retrieval or search software,,1,False
+Lilly Software Associates VISUAL Enterprise,Enterprise resource planning ERP software,,1,False
+LinkedIn,Web page creation and editing software,,1,False
+Loan application processing software,Financial analysis software,,1,False
+Loan origination software,Financial analysis software,,1,False
+LogMeIn GoToMeeting,Video conferencing software,,1,False
+Lumigent Entegra,Compliance software,,1,False
+M8 Client Billing,Billing and invoicing software,,1,False
+MRO Audit Tracker,Financial analysis software,,1,False
+MYOB Premier Accounting Small Business Suite,Accounting software,,1,False
+Management information systems MIS,Enterprise resource planning ERP software,,1,False
+Manatron CustomCAMA,Analytical or scientific software,,1,False
+Manatron MVP Tax,Tax preparation software,,1,False
+Manatron ProVal Plus,Analytical or scientific software,,1,False
+Manufacturing Technology Costimater,Financial analysis software,,1,False
+MasterPlan,Financial analysis software,,1,False
+Medical billing software,Billing and invoicing software,,1,False
+Mentimeter,Presentation software,,1,False
+Merlin Information Services databases,Data base user interface and query software,,1,False
+MicroSolve CAMA,Analytical or scientific software,,1,False
+MicroStrategy Desktop,Enterprise resource planning ERP software,,1,False
+Micronetics Xpert Write-up,Accounting software,,1,False
+Microsoft ASP.NET Core MVC,Web platform development software,Microsoft,1,False
+Microsoft ActiveX,Object or component oriented development software,Microsoft,1,False
+Microsoft Business Contact Manager,Customer relationship management CRM software,Microsoft,1,False
+Microsoft Business Intelligence BI,Enterprise resource planning ERP software,Microsoft,1,False
+Microsoft Dynamics NAV,Enterprise resource planning ERP software,Microsoft,1,False
+Microsoft Great Plains Personal Data Keeper,Time accounting software,Microsoft,1,False
+Microsoft MapPoint,Map creation software,Microsoft,1,False
+Microsoft Money,Financial analysis software,Microsoft,1,False
+Microsoft Visual Basic Scripting Edition VBScript,Development environment software,Microsoft,1,False
+Microsoft Visual Basic.NET,Object or component oriented development software,Microsoft,1,False
+Microsoft Works,Office suite software,Microsoft,1,False
+Minitab,Analytical or scientific software,,1,False
+Mitek Systems ImageNet Payments,Graphics or photo imaging software,,1,False
+Modellium PariTOP,Data base user interface and query software,,1,False
+MoneyTree Silver Financial Planner (financial analysis feature),Financial analysis software,,1,False
+MoneyTree Silver Financial Planner (presentation feature),Presentation software,,1,False
+Monte Carlo simulation software,Analytical or scientific software,,1,False
+Moody's KMV FAMAS,Spreadsheet software,,1,False
+Moody's RiskCalc,Financial analysis software,,1,False
+Morningstar Principia,Financial analysis software,,1,False
+Multiple listing service software,Data base user interface and query software,,1,False
+Multiview Accounts Receivable,Accounting software,,1,False
+NIIT Technologies WinRisk,Financial analysis software,,1,False
+NILS INSource,Compliance software,,1,False
+Nagios,Network monitoring software,,1,False
+Needs analysis software,Financial analysis software,,1,False
+Net Worth Strategies Stock Opter Pro,Financial analysis software,,1,False
+NetSuite NetERP,Enterprise resource planning ERP software,,1,False
+Netscape Navigator,Internet browser software,,1,False
+NewPortWave Year End Solutions,Tax preparation software,,1,False
+NuView EBS,Time accounting software,,1,False
+ODEN Insurance Services State Rules & Regulations,Compliance software,,1,False
+OSI TrustWise,Financial analysis software,,1,False
+Online analytical processing OLAP software,Data base user interface and query software,,1,False
+Online databases,Data base user interface and query software,,1,False
+Online title search and property report software,Information retrieval or search software,,1,False
+Ontario Systems FACS,Customer relationship management CRM software,,1,False
+Open Systems TRAVERSE,Enterprise resource planning ERP software,,1,False
+Operating system software,Operating system software,,1,False
+Opportunity management system OMS,Financial analysis software,,1,False
+Optima IAS,Financial analysis software,,1,False
+Oracle Agile Product Lifecycle Management PLM,Enterprise resource planning ERP software,Oracle,1,False
+Oracle Business Intelligence Publisher,Enterprise resource planning ERP software,Oracle,1,False
+Oracle Eloqua,Customer relationship management CRM software,Oracle,1,False
+Oracle Essbase,Data base user interface and query software,Oracle,1,False
+Oracle HRIS,Human resources software,Oracle,1,False
+Oracle Hyperion Financial Management,Financial analysis software,Oracle,1,False
+Oracle JD Edwards EnterpriseOne,Accounting software,Oracle,1,False
+Oracle JDBC,Data base user interface and query software,Oracle,1,False
+Oracle JavaServer Pages JSP,Web platform development software,Oracle,1,False
+Oracle PeopleSoft Enterprise,Enterprise resource planning ERP software,Oracle,1,False
+Oracle PeopleSoft Payroll for North America,Time accounting software,Oracle,1,False
+Oracle Performance Management Suites,Financial analysis software,Oracle,1,False
+Oracle Solaris,Operating system software,Oracle,1,False
+Oracle Taleo,Human resources software,Oracle,1,False
+Oracle WebLogic Server,Application server software,Oracle,1,False
+OutlookSoft,Enterprise resource planning ERP software,,1,False
+Oversight Insights On Demand,Compliance software,,1,False
+PCG Software Virtual Examiner,Audit software,,1,False
+PDS Vista,Time accounting software,,1,False
+PIE Technologies MoneyGuidePro,Financial analysis software,,1,False
+Palisade @Risk,Financial analysis software,,1,False
+Paragon Financial Services Paragon Financial System,Financial analysis software,,1,False
+PayData Advanced HR,Time accounting software,,1,False
+Paychex payroll software,Time accounting software,,1,False
+Payroll software,Human resources software,,1,False
+Penta software,Accounting software,,1,False
+Petz Enterprises V-Tax,Tax preparation software,,1,False
+Pimlico Software DateBk,Calendar and scheduling software,,1,False
+PlanPlus Pro,Financial analysis software,,1,False
+PlanScan Portfolio Pathfinder,Financial analysis software,,1,False
+Pleier Audit Management System,Financial analysis software,,1,False
+Plimus Loan Artist,Financial analysis software,,1,False
+Portfolio analysis software,Financial analysis software,,1,False
+Positive pay software,Financial analysis software,,1,False
+Practice management software PMS,Medical software,,1,False
+Prime Clinical,Accounting software,,1,False
+Prime Debt Soft Debt Settlement,Financial analysis software,,1,False
+Prime Debt Software Credit Repair,Financial analysis software,,1,False
+Pro Systems Client Write-Up System for Windows,Accounting software,,1,False
+ProTracker Advantage,Customer relationship management CRM software,,1,False
+Profit Developers Electronic File Interchange,Accounting software,,1,False
+QualCorp FormsPlus,Enterprise resource planning ERP software,,1,False
+Quantrax Intelec,Customer relationship management CRM software,,1,False
+Quest Erwin Data Modeler,Metadata management software,,1,False
+Quicken,Financial analysis software,,1,False
+QuikDraw Loan Management System,Financial analysis software,,1,False
+QuoteWerks,Financial analysis software,,1,False
+REI Wise Commercial,Financial analysis software,,1,False
+RGA AURA,Financial analysis software,,1,False
+RGA Facultative Application Console,Financial analysis software,,1,False
+RPIS Silent CMA,Financial analysis software,,1,False
+RSM McGladrey Clear Pay,Time accounting software,,1,False
+Radiant Systems CounterPoint,Enterprise resource planning ERP software,,1,False
+ReadSoft,Document management software,,1,False
+Real Edge,Financial analysis software,,1,False
+Real Estate Center Caparate Calculator,Financial analysis software,,1,False
+RealBenefits Amortization Loan,Financial analysis software,,1,False
+RealData Comparative Lease Analysis,Financial analysis software,,1,False
+Realty Tools Toolkit for Market Share,Financial analysis software,,1,False
+Records management software,Document management software,,1,False
+Recovery audit software,Financial analysis software,,1,False
+Red Hat WildFly,Application server software,,1,False
+Redtail Technology Our Business Online,Customer relationship management CRM software,,1,False
+Relational database management software,Data base management system software,,1,False
+Remote deposit capture software,Access software,,1,False
+Retirement planning software,Financial analysis software,,1,False
+Revelwood,Enterprise resource planning ERP software,,1,False
+Risk analysis software,Analytical or scientific software,,1,False
+Ruby on Rails,Web platform development software,,1,False
+S&P Capital IQ,Information retrieval or search software,,1,False
+SAP Americas mySAP ERP Human Capital Management HCM,Time accounting software,SAP,1,False
+SAP Business One,Enterprise resource planning ERP software,SAP,1,False
+SAP BusinessObjects Crystal Reports,Data base reporting software,SAP,1,False
+SAP Crystal Xcelsius,Presentation software,SAP,1,False
+SIS SEMCI PARTNER,Enterprise resource planning ERP software,,1,False
+Sage 100 Contractor,Data base user interface and query software,,1,False
+Sage 100 ERP,Enterprise resource planning ERP software,,1,False
+Sage 300 Construction and Real Estate,Data base user interface and query software,,1,False
+Sage 50 Accounting,Data base user interface and query software,,1,False
+Sage Active Planner,Enterprise resource planning ERP software,,1,False
+Sage BusinessWorks,Accounting software,,1,False
+Sage CPAAccounts Payable,Accounting software,,1,False
+Sage CPAAccounts Receivable,Accounting software,,1,False
+Sage CPAClient Checkbook,Accounting software,,1,False
+Sage CPADocument Manager,Document management software,,1,False
+Sage Fixed Asset Solution FAS,Accounting software,,1,False
+Sage HandiSoft HandiLedger,Compliance software,,1,False
+Sage MAS 500,Financial analysis software,,1,False
+Sage MAS 90 ERP,Enterprise resource planning ERP software,,1,False
+Sage MIP Fund Accounting,Accounting software,,1,False
+Sage Medical Manager,Accounting software,,1,False
+Sage Platinum for Windows PFW,Enterprise resource planning ERP software,,1,False
+Sageworks ProfitCents,Accounting software,,1,False
+Sales Tax Tools Sales Tax Researcher,Financial analysis software,,1,False
+Salesforce Visualforce,Graphical user interface development software,Salesforce,1,False
+Sampson Data Pattern Index software,Financial analysis software,,1,False
+Satori Group proCube,Financial analysis software,,1,False
+Sawhney ExecPlan,Financial analysis software,,1,False
+ScanSoft PaperPort Pro,Document management software,,1,False
+ScenarioNow RetireNow,Financial analysis software,,1,False
+ScheduleVIEW,Calendar and scheduling software,,1,False
+Screencastify,Video creation and editing software,,1,False
+Skywire Software InsBridge,Enterprise resource planning ERP software,,1,False
+Slido interaction software,Network conferencing software,,1,False
+SmugMug Flickr,Graphics or photo imaging software,,1,False
+Softree Technical Systems Terrain Tools,Data base user interface and query software,,1,False
+Solutions Technology & Software HR Premier,Financial analysis software,,1,False
+Southern Data Systems TellerPro,Accounting software,,1,False
+Standard & Poor's Capital IQ Compustat,Information retrieval or search software,,1,False
+Star Software Fixed Asset Depreciation,Financial analysis software,,1,False
+Star Software Materiality Calculator,Financial analysis software,,1,False
+Statistical analysis software,Analytical or scientific software,,1,False
+Statistical software,Analytical or scientific software,,1,False
+Student information systems SIS software,Data base user interface and query software,,1,False
+Summit Software Summit Biofuels Accounting,Accounting software,,1,False
+SunGard Financial Systems AddVantage,Financial analysis software,,1,False
+SunGard Frontier,Financial analysis software,,1,False
+SunGard Higher Education Banner Financial Aid,Data base user interface and query software,,1,False
+SunGard LockBox,Document management software,,1,False
+SunGard PlanningStation,Financial analysis software,,1,False
+SunGard WebPlaid,Financial analysis software,,1,False
+Sungard Higher Education PowerFAIDS,Data base user interface and query software,,1,False
+Sungard Relius,Financial analysis software,,1,False
+Supervisory control and data acquisition SCADA software,Industrial control software,,1,False
+System Innovators,Point of sale POS software,,1,False
+System for Electronic Rate and Form Filing SERFF,Compliance software,,1,False
+TCI XML Credit Interface,Information retrieval or search software,,1,False
+TIBCO Spotfire,Business intelligence and data analysis software,,1,False
+Tax planning software,Financial analysis software,,1,False
+TechSmith Camtasia,Video creation and editing software,,1,False
+Technicost LOS,Financial analysis software,,1,False
+The Mortgage Office Loan Origination,Financial analysis software,,1,False
+The Mortgage Office Loan Servicing,Financial analysis software,,1,False
+The Omni Group OmniPlan,Financial analysis software,,1,False
+Thomson Creative Solutions Engagement CS,Financial analysis software,,1,False
+Thomson Creative Solutions Financial Analysis CS,Financial analysis software,,1,False
+Thomson GoSystem MyTaxInfo,Spreadsheet software,,1,False
+Thomson GoSystem Tax,Tax preparation software,,1,False
+Thomson ONE Advisor,Financial analysis software,,1,False
+Thomson PPC e-Tools Suite,Financial analysis software,,1,False
+Thomson Reuters Elite Enterprise,Accounting software,,1,False
+Thomson Reuters Risk Management,Risk management data and analysis software,,1,False
+Thomson Reuters UltraTax CS,Tax preparation software,,1,False
+Thomson Reuters Westlaw Edge,Information retrieval or search software,,1,False
+TietoEnator ProMatch,Financial analysis software,,1,False
+Time and attendance software,Time accounting software,,1,False
+TimePlus Payroll,Time accounting software,,1,False
+TimeValue software,Financial analysis software,,1,False
+TopCAATs,Financial analysis software,,1,False
+Torrid Retirement Planner,Financial analysis software,,1,False
+Total Turnkey Solutions E-Vision,Data base user interface and query software,,1,False
+TrendTracker Compliance Solution,Compliance software,,1,False
+TriZetto QNXT,Data base user interface and query software,,1,False
+Tropics workers' compensation software,Financial analysis software,,1,False
+UNITIME,Time accounting software,,1,False
+Ubuntu,Operating system software,,1,False
+Unger Software Methusaleh,Financial analysis software,,1,False
+Unified modeling language UML,Requirements analysis and system architecture software,,1,False
+VECTORsgi Check Management Solution,Document management software,,1,False
+VECTORsgi Image Exchange Solution,Graphics or photo imaging software,,1,False
+VMware,Clustering software,,1,False
+Valen Technologies Risk Manager,Financial analysis software,,1,False
+Valiant Vantage,Time accounting software,,1,False
+ValueTech Report Builder,Word processing software,,1,False
+Veritas NetBackup,Backup or archival software,,1,False
+Vertafore ImageRight,Data base user interface and query software,,1,False
+Virtual Software Virtual Timecard,Time accounting software,,1,False
+Virtual private networking VPN software,Network security and virtual private network VPN equipment software,,1,False
+Visual PAMSPro,Data base user interface and query software,,1,False
+VueCentric MortgageDashboard,Financial analysis software,,1,False
+W3 Data BatchAppend411,Information retrieval or search software,,1,False
+WealthTec AllocationPro,Financial analysis software,,1,False
+WealthTec Foundations,Financial analysis software,,1,False
+WealthTec WealthMaster,Financial analysis software,,1,False
+Web Information Solutions Pocket Informant,Customer relationship management CRM software,,1,False
+Web page creation and editing software,Web page creation and editing software,,1,False
+White Clarke North America Credit Adjudication and Lending Management,Financial analysis software,,1,False
+Wilson's Computer Applications RealEasy Photos Plus,Graphics or photo imaging software,,1,False
+Wireshark,Network monitoring software,,1,False
+WizSoft WizRule,Analytical or scientific software,,1,False
+WizSoft WizWhy,Data mining software,,1,False
+Wolters Kluwer Financial Services ComplianceOne,Compliance software,,1,False
+Work scheduling software,Calendar and scheduling software,,1,False
+World Software Corporation Worldox,Document management software,,1,False
+Yardi Systems Yardi Enterprise,Data base user interface and query software,,1,False
+a la mode Pocket TOTAL,Analytical or scientific software,,1,False
+a la mode WinTOTAL,Analytical or scientific software,,1,False
+eMDs Medisoft,Medical software,,1,False
+eMoneyAdvisor AdvisorPlatform,Customer relationship management CRM software,,1,False
+eOriginal eCore Business Suite,Document management software,,1,False
+eTrac,Data base user interface and query software,,1,False
+eXtensible Business Reporting Language XBRL,Development environment software,,1,False
+isolved Time,Time accounting software,,1,False

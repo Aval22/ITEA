@@ -1,0 +1,42 @@
+gwa,gwa_name,n_abilities,cognitive_share,symbolic_share,n_skills,social_share,K_GWA,E_GWA
+4.A.4.c.3,Monitoring and Controlling Resources,6,1.0,1.0,7,0.0,1.0,1.0
+4.A.2.a.4,Analyzing Data or Information,6,1.0,0.8333,2,0.0,1.0,0.8333
+4.A.2.b.6,"Organizing, Planning, and Prioritizing Work",5,1.0,1.0,5,0.0,1.0,1.0
+4.A.2.b.4,Developing Objectives and Strategies,8,1.0,1.0,7,0.0,1.0,1.0
+4.A.2.b.3,Updating and Using Relevant Knowledge,4,1.0,1.0,5,0.0,1.0,1.0
+4.A.2.b.2,Thinking Creatively,6,1.0,0.6667,2,0.0,1.0,0.6667
+4.A.2.b.1,Making Decisions and Solving Problems,10,1.0,0.8,7,0.0,1.0,0.8
+4.A.2.a.2,Processing Information,11,0.9091,0.7273,2,0.0,0.9091,0.7273
+4.A.2.a.3,Evaluating Information to Determine Compliance with Standards,7,0.8571,0.8571,2,0.0,0.8571,0.8571
+4.A.2.a.1,"Judging the Qualities of Objects, Services, or People",6,0.8333,0.8333,2,0.0,0.8333,0.8333
+4.A.4.c.1,Performing Administrative Activities,6,0.8333,0.8333,3,0.0,0.8333,0.8333
+4.A.3.b.1,Working with Computers,5,0.8,0.6,5,0.0,0.8,0.6
+4.A.2.b.5,Scheduling Work and Activities,4,1.0,1.0,4,0.25,0.75,1.0
+4.A.1.b.1,"Identifying Objects, Actions, and Events",15,0.7333,0.4667,3,0.0,0.7333,0.4667
+4.A.4.a.2,"Communicating with Supervisors, Peers, or Subordinates",7,0.7143,0.7143,3,0.0,0.7143,0.7143
+4.A.3.b.6,Documenting/Recording Information,7,0.7143,0.5714,1,0.0,0.7143,0.5714
+4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information",10,0.7,0.5,5,0.0,0.7,0.5
+4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings",16,0.6875,0.4375,5,0.0,0.6875,0.4375
+4.A.1.a.1,Getting Information,9,0.6667,0.4444,3,0.0,0.6667,0.4444
+4.A.4.b.3,Training and Teaching Others,15,0.8667,0.7333,14,0.2857,0.619,0.7333
+4.A.4.a.1,Interpreting the Meaning of Information for Others,10,0.8,0.8,7,0.2857,0.5714,0.8
+4.A.4.b.6,Providing Consultation and Advice to Others,13,0.8462,0.8462,15,0.3333,0.5641,0.8462
+4.A.3.b.2,"Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",6,0.8333,0.6667,3,0.3333,0.5556,0.6667
+4.A.4.c.2,Staffing Organizational Units,11,0.8182,0.8182,9,0.3333,0.5455,0.8182
+4.A.3.b.4,Repairing and Maintaining Mechanical Equipment,13,0.5385,0.3077,8,0.0,0.5385,0.3077
+4.A.1.b.2,"Inspecting Equipment, Structures, or Materials",13,0.5385,0.3077,4,0.0,0.5385,0.3077
+4.A.3.b.5,Repairing and Maintaining Electronic Equipment,14,0.5,0.2857,8,0.0,0.5,0.2857
+4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates",11,0.8182,0.8182,15,0.4,0.4909,0.8182
+4.A.4.b.1,Coordinating the Work and Activities of Others,12,0.8333,0.8333,11,0.4545,0.4545,0.8333
+4.A.4.a.7,Resolving Conflicts and Negotiating with Others,14,0.8571,0.7857,10,0.5,0.4286,0.7857
+4.A.4.b.5,Coaching and Developing Others,9,0.7778,0.7778,11,0.4545,0.4242,0.7778
+4.A.4.b.2,Developing and Building Teams,10,0.8,0.8,10,0.5,0.4,0.8
+4.A.4.a.5,Assisting and Caring for Others,7,0.7143,0.7143,6,0.5,0.3571,0.7143
+4.A.4.a.3,Communicating with People Outside the Organization,7,0.7143,0.7143,6,0.5,0.3571,0.7143
+4.A.4.a.6,Selling or Influencing Others,11,0.8182,0.7273,7,0.5714,0.3506,0.7273
+4.A.4.a.8,Performing for or Working Directly with the Public,10,0.7,0.4,5,0.6,0.28,0.4
+4.A.3.a.4,"Operating Vehicles, Mechanized Devices, or Equipment",21,0.2381,0.0476,2,0.0,0.2381,0.0476
+4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships,5,0.6,0.6,6,0.6667,0.2,0.6
+4.A.3.a.3,Controlling Machines and Processes,5,0.0,0.0,2,0.0,0.0,0.0
+4.A.3.a.1,Performing General Physical Activities,9,0.0,0.0,0,0.0,0.0,0.0
+4.A.3.a.2,Handling and Moving Objects,7,0.0,0.0,0,0.0,0.0,0.0
