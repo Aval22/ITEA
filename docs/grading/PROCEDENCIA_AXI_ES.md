@@ -27,13 +27,15 @@
 
 ## 3. Fiabilidad y validez medidas
 
-**Codificadores automáticos independientes (junio de 2026).** Sobre 500 tareas estratificadas, con modelos de cuatro proveedores (DeepSeek, OpenAI, Perplexity y Google):
+**Codificadores automáticos independientes (junio de 2026).** Sobre 500 tareas estratificadas, acuerdo entre modelos de tres proveedores (DeepSeek, OpenAI y Perplexity):
 
 | Escala | α de Krippendorff | Lectura |
 |---|---|---|
 | Codificabilidad (`CI_Grade`) | 0,50 | Moderada |
 | Automatización (`Auto_Grade`) | 0,35 | Insuficiente |
 
+- **Acuerdo con los grados AXI:** es menor, con κ ponderada de 0,35 a 0,57 en codificabilidad y de 0,24 como máximo en automatización.
+- **No se informa:** una segunda condición que añadía la ocupación al enunciado, ni las ejecuciones posteriores con un modelo de Google. Reutilizan sin cambios las respuestas de DeepSeek y Perplexity de la primera condición (ficheros idénticos), así que no son mediciones independientes.
 - **Codebook determinista:** un *codebook* basado en el verbo inicial reproduce los grados con κ ponderada de 0,74 (CI) y 0,70 (Auto), fuera de muestra. Los grados siguen patrones regulares, pero distinguen poco entre tareas parecidas.
 
 **Panel humano y agentes documentados (julio de 2026).**

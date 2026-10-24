@@ -27,13 +27,15 @@
 
 ## 3. Measured reliability and validity
 
-**Independent automated coders (June 2026).** On 500 stratified tasks, with models from four providers (DeepSeek, OpenAI, Perplexity and Google):
+**Independent automated coders (June 2026).** On 500 stratified tasks, agreement among models from three providers (DeepSeek, OpenAI and Perplexity):
 
 | Scale | Krippendorff's α | Reading |
 |---|---|---|
 | Codifiability (`CI_Grade`) | 0.50 | Moderate |
 | Automation (`Auto_Grade`) | 0.35 | Insufficient |
 
+- **Agreement with the AXI grades** is lower: weighted κ from 0.35 to 0.57 for codifiability and at most 0.24 for automation.
+- **Not reported:** a second condition that added the occupation to the prompt, and later runs with a Google model, reuse the DeepSeek and Perplexity outputs of the first condition unchanged (identical files), so they are not independent measurements.
 - **Deterministic codebook:** a codebook based on the leading verb reproduces the grades with weighted κ = 0.74 (CI) and 0.70 (Auto), out of sample. The grades follow regular patterns but distinguish little between similar tasks.
 
 **Human panel and documented agents (July 2026).**

@@ -52,10 +52,16 @@ fully automated grading pipeline (`itea.grading`; see `docs/grading/`).
 - the task's leading verb predicts the modal grade for about 95 % of tasks on
   `Auto_Grade` and `CI_Grade`.
 
-**Reliability.** On a stratified 500-task sample, language models from four
-providers, used as independent coders, agree with these grades as follows:
+**Reliability.** On a stratified 500-task sample, language models from three
+providers (DeepSeek, OpenAI and Perplexity), used as independent coders, agree
+with each other as follows:
 - `CI_Grade`: Krippendorff's α = 0.50 (moderate);
 - `Auto_Grade`: α = 0.35 (insufficient).
+
+Their agreement with these grades is lower: weighted κ between 0.35 and 0.57
+for `CI_Grade`, and at most 0.24 for `Auto_Grade`. A second condition that
+added the occupation to the prompt is not reported, because two of the three
+providers' outputs in it are identical to those of the first condition.
 
 A deterministic codebook based on the leading verb reproduces them with
 weighted κ = 0.74 (CI) and 0.70 (Auto), out of sample in 5-fold
