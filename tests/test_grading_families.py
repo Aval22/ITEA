@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from itea.grading.families import (FAM, GWA_FAMILY, TYPES, adoption_by_family, attach, gwa_matrix,
+from itea.grading.families import (FAM, FMB, task_types_fmb, GWA_FAMILY, TYPES, adoption_by_family, attach, gwa_matrix,
                                    perturb_rules, surface_by_family, task_gwa_links, task_type_of,
                                    task_vectors)
 
@@ -75,3 +75,19 @@ def test_rules_cover_all_onet_gwas():
     links = task_gwa_links(ONET)
     v = task_vectors(links)                       # raises if a GWA has no rule
     assert np.allclose(v[FAM].sum(axis=1), 1.0)
+
+
+def test_fmb_types_cover_every_gwa_once():
+    from itea.grading.families import TASK_TYPES_FMB
+    codes = [g for _, gs in TASK_TYPES_FMB.values() for g in gs]
+    assert sorted(codes) == sorted(GWA_FAMILY) and len(codes) == len(set(codes)) == 41
+
+
+def test_fmb_primary_and_ties():
+    links = pd.DataFrame({"O*NET-SOC Code": ["X", "X", "Y"], "Task ID": ["1", "1", "2"],
+                          "GWA": ["4.A.4.a.6", "4.A.4.b.5", "4.A.4.a.2"]})   # selling + coaching (tie); internal comms
+    v = task_types_fmb(links).set_index("Task ID")
+    assert v.loc["1", "TEA"] == pytest.approx(0.5) and v.loc["1", "SEL"] == pytest.approx(0.5)
+    assert v.loc["1", "fmb_primary"] == "TEA"          # tie broken by FMB order (TEA before SEL)
+    assert v.loc["2", "fmb_primary"] == "MAN"
+    assert np.allclose(v[FMB].sum(axis=1), 1.0)

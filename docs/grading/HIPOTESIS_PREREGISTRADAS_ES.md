@@ -201,3 +201,14 @@ La medida exacta está en el anexo del libro de criterios.
 | H28 | El uso observado por actividad general coincide entre proveedores: la parte del uso de Microsoft Copilot (`share_user`) y la de claude.ai (mayo de 2026) por GWA | Confirmatoria, nivel GWA | ρ > 0,50 con IC del 95 % que excluye el 0 |
 
 **H21 se mantiene** como contraste por tarea cuando haya acceso al AIPD. H21b no la sustituye: la complementa a otro nivel.
+
+## Tiempo de trabajo por tarea: H29 y H30 (añadidas el 26-10-2026, antes de calcularlas)
+
+| # | Hipótesis | Tipo | Umbral de apoyo |
+|---|---|---|---|
+| H29 | **La cuota de tiempo estimada por Anthropic (`time_share`) es coherente con O\*NET:** dentro de cada ocupación, se correlaciona positivamente con la frecuencia esperada de la tarea (FT, pasada a veces al año) | Confirmatoria (validez convergente de un dato estimado por un modelo) | Spearman dentro de la ocupación (rangos centrados por ocupación) > 0,30, con IC del 95 % por *bootstrap* de ocupaciones que excluye el 0 |
+| H30 | **Ponderar por tiempo en lugar de por importancia no cambia el orden de las ocupaciones:** la parte en juego (umbral central) con W_tiempo y con W_IM | Robustez | Spearman entre ocupaciones ≥ 0,85 |
+
+**Interpretación prevista:**
+- **Si H29 falla:** W_tiempo no se usa como ponderación; se informa como resultado negativo.
+- **Si H30 falla:** el orden depende de la ponderación, y el atlas y el paper deben mostrar las dos.

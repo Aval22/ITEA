@@ -82,7 +82,36 @@ TASK_TYPES = {
     "D": ("Analyse and process information", ["4.A.1.a.1", "4.A.1.b.3", "4.A.2.a.", "4.A.2.b.3", "4.A.3.b.1", "4.A.3.b.6", "4.A.4.c.1"]),
     "E": ("Physical and technical work", ["4.A.1.a.2", "4.A.1.b.1", "4.A.1.b.2", "4.A.3.a.", "4.A.3.b.2", "4.A.3.b.4", "4.A.3.b.5"]),
 }
-TYPES = [f"T_{k}" for k in TASK_TYPES]   # prefixed: "E" would clash with exposure
+TYPES = [f"T_{k}" for k in TASK_TYPES]
+
+# Task content following Fernández-Macías & Bisello (2022), with the social content split in four (decision D32,
+# criteria book annex of 26-10-2026). Exact GWA codes; order = tie-break order.
+TASK_TYPES_FMB = {
+    "PHY": ("Physical", ["4.A.1.a.2", "4.A.1.b.1", "4.A.1.b.2", "4.A.3.a.1", "4.A.3.a.2", "4.A.3.a.3", "4.A.3.a.4",
+                         "4.A.3.b.2", "4.A.3.b.4", "4.A.3.b.5"]),
+    "INF": ("Intellectual: information processing", ["4.A.1.a.1", "4.A.1.b.3", "4.A.2.a.1", "4.A.2.a.2", "4.A.2.a.3",
+                                                     "4.A.2.a.4", "4.A.2.b.3", "4.A.3.b.1", "4.A.3.b.6", "4.A.4.c.1"]),
+    "PRO": ("Intellectual: problem solving", ["4.A.2.b.1", "4.A.2.b.2", "4.A.2.b.4", "4.A.2.b.5", "4.A.2.b.6"]),
+    "MAN": ("Social: managing and coordinating", ["4.A.4.a.2", "4.A.4.b.1", "4.A.4.b.2", "4.A.4.b.4", "4.A.4.c.2", "4.A.4.c.3"]),
+    "SER": ("Social: serving and attending", ["4.A.4.a.3", "4.A.4.a.4", "4.A.4.a.5", "4.A.4.a.8"]),
+    "TEA": ("Social: teaching, training and advising", ["4.A.4.a.1", "4.A.4.b.3", "4.A.4.b.5", "4.A.4.b.6"]),
+    "SEL": ("Social: selling, influencing and negotiating", ["4.A.4.a.6", "4.A.4.a.7"]),
+}
+FMB = list(TASK_TYPES_FMB)
+_GWA_FMB = {g: k for k, (_, gs) in TASK_TYPES_FMB.items() for g in gs}
+
+
+def task_types_fmb(links: pd.DataFrame) -> pd.DataFrame:
+    """Per task: shares of the seven Fernández-Macías & Bisello types (mean over its DWAs) and the primary type
+    (largest share; ties broken by FMB order). Unknown GWAs raise."""
+    unknown = set(links.GWA.dropna()) - set(_GWA_FMB)
+    if unknown:
+        raise ValueError(f"GWA without an FMB type: {sorted(unknown)}")
+    d = pd.get_dummies(links.GWA.map(_GWA_FMB)).reindex(columns=FMB, fill_value=0).astype(float)
+    df = pd.concat([links[["O*NET-SOC Code", "Task ID"]], d], axis=1)
+    out = df.groupby(["O*NET-SOC Code", "Task ID"])[FMB].mean().reset_index()
+    out["fmb_primary"] = out[FMB].idxmax(axis=1)          # idxmax keeps the first column on ties = FMB order
+    return out   # prefixed: "E" would clash with exposure
 
 
 def gwa_matrix(rules: dict = GWA_FAMILY) -> pd.DataFrame:

@@ -146,3 +146,68 @@ Este anexo concreta la medida que H24 deja abierta, sin cambiar la hipótesis ni
 - **Uso de Anthropic por GWA:** Σ pct de claude.ai en mayo de 2026, repartido de tarea a GWA a partes iguales entre las DWA de la tarea.
 - **Contraste:** Spearman entre las GWA con uso en las dos fuentes. Se cumple si ρ > 0,50 con IC que excluye el 0.
 - **Se informa, sin hipótesis:** el mismo cálculo con `share_ai` de Microsoft.
+
+## Anexo (26-10-2026): tipos de tarea según Fernández-Macías y Bisello (2022), versión de siete tipos
+
+**Decisión del autor (D32):** anclar los tipos de tarea en la taxonomía de contenido de las tareas de Fernández-Macías y Bisello (2022, *Social Indicators Research*, JRC), y desdoblar lo social en sus cuatro subtipos. Sustituye a los cinco tipos A–E en el atlas y en las figuras; los resultados ya calculados con A–E se conservan y siguen citándose como tales.
+
+**Se fija antes de calcular cualquier resultado con estos siete tipos.** Solo se reasignan GWA oficiales de O\*NET; no se toca ninguna tarea a mano.
+
+| Código | Tipo (Fernández-Macías y Bisello) | GWA de O\*NET 30.2 |
+|---|---|---|
+| PHY | Físico | 4.A.1.a.2, 4.A.1.b.1, 4.A.1.b.2, 4.A.3.a.\*, 4.A.3.b.2, 4.A.3.b.4, 4.A.3.b.5 |
+| INF | Intelectual: procesamiento de información | 4.A.1.a.1, 4.A.1.b.3, 4.A.2.a.\*, 4.A.2.b.3, 4.A.3.b.1, 4.A.3.b.6, 4.A.4.c.1 |
+| PRO | Intelectual: resolución de problemas | 4.A.2.b.1, 4.A.2.b.2, 4.A.2.b.4, 4.A.2.b.5, 4.A.2.b.6 |
+| MAN | Social: dirigir y coordinar | 4.A.4.a.2, 4.A.4.b.1, 4.A.4.b.2, 4.A.4.b.4, 4.A.4.c.2, 4.A.4.c.3 |
+| SER | Social: atender y servir | 4.A.4.a.3, 4.A.4.a.4, 4.A.4.a.5, 4.A.4.a.8 |
+| TEA | Social: enseñar, formar y asesorar | 4.A.4.a.1, 4.A.4.b.3, 4.A.4.b.5, 4.A.4.b.6 |
+| SEL | Social: vender, influir y negociar | 4.A.4.a.6, 4.A.4.a.7 |
+
+**Cambios respecto a A–E:**
+- **4.A.4.a.2** (comunicarse con superiores, colegas o subordinados) pasa de «relacionarse» a **dirigir y coordinar**. En la taxonomía no hay un tipo de «comunicación», y la comunicación interna es parte de la coordinación.
+- **4.A.4.b.5** (*coaching* y desarrollo de personas) pasa de «dirigir» a **enseñar y formar**, que es donde la sitúa la taxonomía.
+- **Lo demás no cambia:** los grupos físico e intelectual quedan igual que E, D y B.
+
+**Asignación:** igual que en la versión A–E. Una tarea reparte su peso entre los tipos de sus DWA, y su tipo principal es el de mayor peso. En caso de empate, se aplica el orden de la tabla.
+
+**Pendiente de verificar:** la ficha bibliográfica completa y la terminología exacta de los subtipos en el artículo publicado.
+
+## Anexo (26-10-2026, antes de calcular): tiempo, recurrencia, exposición normativa y de mercado, y heterogeneidad
+
+Responde a cuatro variables que planteó el autor:
+- **(a)** las tareas comparten una jornada de 8 horas, así que pocas tareas implican más recurrencia y más impacto de cada una;
+- **(b)** no todas las tareas tienen la misma carga ni ocurren con la misma regularidad (por ejemplo, los presupuestos anuales);
+- **(c)** unas tareas están más expuestas que otras a cambios normativos o de mercado;
+- **(d)** no todos los perfiles hacen las mismas tareas con la misma intensidad.
+
+**Todo se fija antes de calcular.** Solo se ha comprobado la cobertura de las fuentes, sin mirar ningún resultado.
+
+**Fuentes:**
+- **O\*NET 30.2, `Task Ratings`:**
+  - **FT**, la frecuencia de la tarea, con siete categorías: 1 = una vez al año o menos; 2 = más de una vez al año; 3 = más de una vez al mes; 4 = más de una vez a la semana; 5 = a diario; 6 = varias veces al día; 7 = cada hora o más. Hay 17.951 tareas con dato;
+  - **RT**, la relevancia: el % de trabajadores de la ocupación que realizan la tarea;
+  - **IM**, la importancia.
+- **Anthropic Economic Index, `robot_exposure/robot_exposure_tasks.csv`** (Hugging Face; SHA-256 `28b17551…`, que coincide con el registro LFS). Da `time_share`: la estimación de Claude de la parte del tiempo de trabajo de la ocupación dedicada a cada tarea, que suma 1 en cada ocupación. Se enlazan 18.775 de las 18.796 tareas. **Es una estimación de un modelo, no una medida observada.** Se usa como dato, con esa cautela, y se contrasta con O\*NET (H29).
+- **O\*NET `DWA Reference`** (títulos oficiales de las DWA) y **`Emerging Tasks`** (329 tareas nuevas identificadas por O\*NET).
+
+**(a) Pesos por tiempo:**
+- **W_tiempo** = `time_share` de Anthropic. Si falta, se toma la importancia normalizada de la ocupación y se marca.
+- **Horas en juego al día** = parte del tiempo en juego × 8. Es un **potencial**: indica cuántas horas de la jornada tipo están en tareas codificables y expuestas, no horas que se vayan a automatizar.
+- **La ponderación por importancia (W_IM) se mantiene como principal hasta contrastar H29.** W_tiempo se presenta como alternativa.
+
+**(b) Recurrencia:** a cada tarea se le asigna la categoría FT con mayor % de respuestas (en caso de empate, la más frecuente).
+- **Periódica:** categorías 1–3 (como mucho, algo más de una vez al mes). Por ejemplo, los presupuestos o los cierres.
+- **Semanal:** categoría 4.
+- **Diaria o continua:** categorías 5–7.
+- **Se informa:** la parte del trabajo en juego en cada clase. **Lectura prevista:** las tareas diarias dejan más huellas y repeticiones, y por tanto más material para la codificación; las periódicas concentran carga en momentos concretos del año.
+
+**(c) Exposición normativa y de mercado.** Una tarea es normativa o de mercado si alguna de sus DWA tiene un título oficial que cumple la regla correspondiente, sin distinguir mayúsculas:
+- **normativa:** `regulat|complian|legislat|\blaws?\b|legal`;
+- **mercado:** `\bmarket|\bprice|pricing|econom|competit`.
+
+Se informa la parte del trabajo en juego de cada grupo frente al resto. Las tareas nuevas de `Emerging Tasks` se informan aparte, como indicador de cambio, sin grados de K ni E.
+
+**(d) Heterogeneidad entre perfiles:**
+- **RT** (el % de trabajadores que realiza la tarea) mide qué tareas son comunes a toda la ocupación y cuáles son de algunos perfiles.
+- **Se informa:** la parte en juego de las tareas con RT < 50 % (de especialistas) frente a las de RT ≥ 50 % (comunes).
+- **Las preferencias de los trabajadores por tarea** no están en O\*NET. Los datos que existen (por ejemplo, encuestas de deseo de automatización por tarea) no han pasado un referee (P39). Quedan como pista.
