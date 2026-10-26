@@ -103,3 +103,14 @@ Solo con uso observado (Anthropic Economic Index) y para F1–F2:
 1. **Fuente semántica independiente:** similitud de cada tarea con las patentes de IA de cada componente del USPTO AIPD. Es otra fuente, no otra versión de la regla.
 2. **Validación humana:** unas 300 tareas estratificadas por GWA, codificadas por dos personas con la pregunta «¿qué familia de IA ejecutaría la parte automatizable?», y el α de Krippendorff por familia.
 3. **Sensibilidad:** perturbación aleatoria de los pesos de la §3 (±0,2, renormalizados; 1.000 réplicas), con la banda de la superficie por familia.
+
+## Anexo (26-10-2026, antes de calcular H24): cómo se mide la superficie por sector
+
+Este anexo concreta la medida que H24 deja abierta, sin cambiar la hipótesis ni su umbral. Se fija antes de calcular. Solo se ha comprobado que todos los códigos NAICS de la correspondencia existen en la OEWS, sin mirar ningún resultado.
+
+1. **Empleo por sector:** OEWS de mayo de 2025, EE. UU. (`ITEA-EU_Datos/13_actividad/oes_national.parquet`), ocupaciones detalladas y propiedad privada y pública juntas (`I_GROUP` sin «ownership»). El nivel NAICS de cada fila de la correspondencia es el que indica `docs/grading/concordancia_NAICS_NACE_H24.csv` (26 agregados NACE disjuntos). En N77-N82 se resta el 5615, que va a N79.
+2. **Ocupación → superficie por familia:** s_{o,f} = Σ_t w_t · in_play_t · F_{t,f}. Aquí w son los pesos de importancia dentro de la ocupación de `task_families_v42.csv` (umbral central); los varios O\*NET-SOC de un mismo SOC de 6 dígitos se promedian.
+3. **Sector → superficie por familia:** S_{n,f} = Σ_o emp_{n,o} · s_{o,f} / Σ_o emp_{n,o}, sobre las ocupaciones con tareas en O\*NET. Es la parte del trabajo del sector que es superficie alienable de la familia f.
+4. **Adopción:** Eurostat `isoc_eb_ain2`, **UE-27, 2025**, % de empresas de 10 o más empleados. Si falta 2025 en un agregado, se usa 2024 y se indica.
+5. **Contraste:** Spearman entre sectores de S_{n,f} y la adopción_{n,f}, para F1, F2 y F5, con IC del 95 % por *bootstrap* de sectores (2.000 réplicas). Umbral registrado: ρ > 0,30 con al menos 12 sectores. Se informan también F3, F4, F6 y F7, sin hipótesis.
+6. **Se informa además, como robustez sin hipótesis:** España en lugar de la UE-27.

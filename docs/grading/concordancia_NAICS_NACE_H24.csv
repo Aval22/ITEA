@@ -1,0 +1,27 @@
+nace_eurostat,naics,nivel_naics,nota
+C10-C12,311;312,3-digit,
+C13-C15,313;314;315;316,3-digit,
+C16-C18,321;322;323,3-digit,
+C19-C23,324;325;326;327,3-digit,incluye farmacia (C21) y química (C20)
+C24_C25,331;332,3-digit,
+C26,334,3-digit,
+C27_C28,333;335,3-digit,
+C29_C30,336,3-digit,
+C31-C33,337;339,3-digit,
+D_E,22;562,sector;3-digit,suministros y gestión de residuos
+F,23,sector,
+G45,441,3-digit,
+G46,423;424;425,3-digit,
+G47,444;445;449;455;456;457;458;459,3-digit,
+H,48-49,sector,
+I,72,sector,
+J58-J60,512;513;516,3-digit,
+J61,517,3-digit,
+J62_J63,518;519;5415,3-digit;4-digit,5415 (diseño de sistemas informáticos) está en la NAICS 54 pero es NACE J62
+L68,531,3-digit,
+M69-M71,5411;5412;5413;5416;55,4-digit;sector,55 (dirección de empresas) = NACE M70
+M72,5417,4-digit,
+M73-M75,5418;5419,4-digit,
+N77-N82_X_N79,532;533;561,3-digit,561 sin 5615 (la resta se hace en el cálculo)
+N79,5615,4-digit,
+S951,8112,4-digit,reparación de ordenadores y equipos de comunicación
