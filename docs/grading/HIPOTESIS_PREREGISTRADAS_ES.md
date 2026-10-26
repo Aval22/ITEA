@@ -159,3 +159,28 @@ En cada réplica se sortean cuatro decisiones del método:
 | H20 | El orden de OAXI-EU v4.1 es robusto a las decisiones del método | La mediana de la amplitud de la banda 5–95 % del rango ISCO es menor de 100 puestos (de 428) |
 
 **Se informa además, sin hipótesis:** la convergencia con el JRC (no es independiente, D17) y la comparación con OAXI-EU v4.0.
+
+---
+
+## Capa F (familias de IA, ITEA 4.2): hipótesis H21–H25
+
+**Escritas el 26-10-2026, antes de calcular la capa F con las reglas de `LIBRO_CRITERIOS_capa_F_v0.1_ES.md`.** Pendientes de registro en OSF por el autor.
+
+**Qué ya se ha visto (se declara para delimitar lo confirmatorio):**
+- un prototipo exploratorio con el AEI de la semana del 5 al 12 de febrero de 2026, en `Paper_Binomio_IA_Trabajador/estimacion/prototipo_familias_IA.py`;
+- la parte en juego por tipo de tarea A–E;
+- la adopción por familia de Eurostat en España y la UE-27 en 2025, sin desglose por sector.
+
+**Ninguna hipótesis se contrasta con esos datos.**
+
+| # | Hipótesis | Tipo | Nivel y datos | Umbral de apoyo |
+|---|---|---|---|---|
+| H21 | **Validez convergente de la regla estructural:** la parte de cada familia según la regla se correlaciona con la similitud semántica de la tarea con las patentes de IA del componente correspondiente (USPTO AIPD) | Confirmatoria | Tarea; fuente semántica no calculada aún | Spearman > 0,20 con IC del 95 % que excluye el 0 en al menos 5 de las 7 familias |
+| H22 | En las tareas en juego (umbral central de la v4.1), **las familias de lenguaje (F1 + F2) son más de la mitad de la superficie alienable**, ponderada por importancia de la tarea y empleo (OEWS 2025) | Descriptiva: depende de la regla; se registra la expectativa, no valida nada | Tarea → EE. UU. | F1 + F2 > 50 % |
+| H23 | **El uso integrado se concentra en lo alienable más que el asistido:** la parte de las conversaciones por API que cae en tareas en juego es mayor que la de claude.ai | Confirmatoria (datos no vistos) | Enunciado; AEI, publicación del 26-06-2026 (mayo de 2026), ficheros `claude_ai` y `1p_api` | Diferencia > 10 puntos porcentuales |
+| H24 | **Superficie y adopción van juntas por sector:** entre sectores, la superficie alienable de cada familia se asocia positivamente con la adopción de esa familia en Eurostat | Confirmatoria | Sector (NACE); superficie con el empleo por industria de la OEWS, llevado a NACE; adopción `isoc_eb_ain2` (UE-27, 2025) | Spearman > 0,30 entre al menos 12 sectores, para F1, F2 y F5 |
+| H25 | **La regla coincide con el juicio humano:** en una muestra de unas 300 tareas, dos codificadores independientes asignan la familia principal | Confirmatoria | Tarea | α de Krippendorff ≥ 0,40 entre codificadores, y coincidencia con la familia principal de la regla ≥ 50 % |
+
+**Interpretación prevista:**
+- **Si H21 o H25 fallan:** la regla no se publica como medida. Se revisan los pesos con una v0.2 registrada, y el fallo se publica como resultado negativo.
+- **H26 y H27** (atributos de grado de captura y escasez) se aplazan a la v4.3: exigen el panel de expertos y se registrarán antes de convocarlo.
