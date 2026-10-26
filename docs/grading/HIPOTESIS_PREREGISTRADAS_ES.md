@@ -184,3 +184,20 @@ En cada réplica se sortean cuatro decisiones del método:
 **Interpretación prevista:**
 - **Si H21 o H25 fallan:** la regla no se publica como medida. Se revisan los pesos con una v0.2 registrada, y el fallo se publica como resultado negativo.
 - **H26 y H27** (atributos de grado de captura y escasez) se aplazan a la v4.3: exigen el panel de expertos y se registrarán antes de convocarlo.
+
+## Capa F: hipótesis H21b y H28 (añadidas el 26-10-2026, antes de calcularlas)
+
+**Por qué se añaden.** H21 (patentes del USPTO AIPD) está bloqueada por el acceso al portal. Las puntuaciones de patentes de Webb (2020) permiten una validación por patentes a nivel de ocupación. Además, se dispone del uso por IWA de Microsoft (D25).
+
+**Qué se conoce ya, y no condiciona estas hipótesis:**
+- los resultados de H22 y H24;
+- solo las cabeceras y las tres primeras filas de las fuentes de Webb y Microsoft.
+
+La medida exacta está en el anexo del libro de criterios.
+
+| # | Hipótesis | Tipo | Umbral de apoyo |
+|---|---|---|---|
+| H21b | La composición por familias de cada ocupación según la regla se asocia con la exposición por patentes de Webb (2020): IA (F1–F5) con `ai_score`, software (F6) con `software_score`, robots (F7) con `robot_score` | Confirmatoria, nivel ocupación | Los tres ρ > 0,20 con IC del 95 % que excluye el 0 |
+| H28 | El uso observado por actividad general coincide entre proveedores: la parte del uso de Microsoft Copilot (`share_user`) y la de claude.ai (mayo de 2026) por GWA | Confirmatoria, nivel GWA | ρ > 0,50 con IC del 95 % que excluye el 0 |
+
+**H21 se mantiene** como contraste por tarea cuando haya acceso al AIPD. H21b no la sustituye: la complementa a otro nivel.

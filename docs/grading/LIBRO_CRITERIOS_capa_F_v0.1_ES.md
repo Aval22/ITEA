@@ -114,3 +114,35 @@ Este anexo concreta la medida que H24 deja abierta, sin cambiar la hipótesis ni
 4. **Adopción:** Eurostat `isoc_eb_ain2`, **UE-27, 2025**, % de empresas de 10 o más empleados. Si falta 2025 en un agregado, se usa 2024 y se indica.
 5. **Contraste:** Spearman entre sectores de S_{n,f} y la adopción_{n,f}, para F1, F2 y F5, con IC del 95 % por *bootstrap* de sectores (2.000 réplicas). Umbral registrado: ρ > 0,30 con al menos 12 sectores. Se informan también F3, F4, F6 y F7, sin hipótesis.
 6. **Se informa además, como robustez sin hipótesis:** España en lugar de la UE-27.
+
+## Anexo (26-10-2026, antes de calcular H23, H21b y H28): fuentes y medidas
+
+**Fuentes nuevas**, con copia permanente en `Datos_externos_ITEA/` y huellas comprobadas:
+- **AEI, publicación del 26-06-2026:**
+  - `aei_raw/release_2026_06_26/aei_1p_api_2026-06-26.csv` (oficial de Hugging Face; SHA-256 `62197f00…`);
+  - `aei_claude_ai_2026-06-26.csv` (oficial).
+
+  El derivado de terceros `living_job_polarization_2026-10-14/anthropic_aei/*_onet_task_wide.csv` coincide al 100 % con el oficial en `pct` para claude.ai. Solo se usa como comprobación.
+- **Webb (2020):** puntuaciones de exposición a IA, software y robots, construidas con patentes, por ocupación O\*NET-SOC (`living_job_polarization_2026-10-14/webb/webb_final_df_out.dta`, 964 ocupaciones). Fuente original: la página de datos del autor. Solo se han visto las 3 primeras filas.
+- **Microsoft, *Working with AI* v1.1:** métricas por IWA (`Datos_externos_ITEA/microsoft_working_with_ai/`), del repositorio oficial `microsoft/working-with-ai` (commit `550c00c9`, 23-10-2026), con licencia CC BY 4.0. Solo se ha visto la cabecera.
+
+**H23 (medida):**
+- **Filas:** `geo_level = global`, `category_name = onet`, `hierarchy_level = 0` (tarea), `metric_id = pct`, mes que empieza el 2026-05-01. Abril de 2026 se informa como robustez.
+- **Unión:** `node_external_id` = Task ID con `task_families_v42.csv`; la tarea está en juego según `in_play`.
+- **Parte en juego de cada plataforma:** Σ pct de las tareas en juego / Σ pct de las tareas enlazadas.
+- **Contraste:** se cumple si la parte de la API supera a la de claude.ai en más de 10 puntos.
+
+**H21b (nueva; complementa H21 mientras no hay acceso al USPTO AIPD):**
+- **Composición por familia de cada ocupación O\*NET-SOC:** C_{o,g} = Σ_t w_t · Σ_{f∈g} F_{t,f}, con pesos de importancia y **sobre todas las tareas**, sin condicionar a E. Webb mide exposición a una tecnología, no alienabilidad.
+- **Grupos:**
+  - IA = F1 + F2 + F3 + F4 + F5;
+  - software = F6;
+  - robots = F7.
+- **Contraste:** Spearman entre ocupaciones de C_{o,IA} con `ai_score`, de C_{o,software} con `software_score` y de C_{o,robots} con `robot_score`. Se cumple si los tres ρ son > 0,20 con IC del 95 % (*bootstrap* de ocupaciones) que excluye el 0.
+- **Se informa, sin hipótesis:** la matriz cruzada (si cada puntuación de Webb se asocia más con su grupo que con los otros).
+
+**H28 (nueva, triangulación del uso observado, D25):**
+- **Uso de Microsoft por GWA:** `share_user` de `iwa_metrics.csv`, sumado de IWA a GWA (los siete primeros caracteres del código IWA).
+- **Uso de Anthropic por GWA:** Σ pct de claude.ai en mayo de 2026, repartido de tarea a GWA a partes iguales entre las DWA de la tarea.
+- **Contraste:** Spearman entre las GWA con uso en las dos fuentes. Se cumple si ρ > 0,50 con IC que excluye el 0.
+- **Se informa, sin hipótesis:** el mismo cálculo con `share_ai` de Microsoft.
