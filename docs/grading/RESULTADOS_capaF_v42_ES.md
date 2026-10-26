@@ -105,3 +105,71 @@ Una correlación tan alta puede deberse sobre todo a que los sectores intensivos
 - **En F1 (análisis de texto) la señal específica es débil.**
 - **En F6 (automatización de flujos) va en sentido contrario.** Los sectores con más superficie alienable de flujos (comercio minorista, inmobiliarias) no son los que más automatización de flujos con IA adoptan. Encaja con la observación de la §2: el potencial de alienación por registros está menos explotado.
 - **Para el paper:** se puede decir que la superficie alienable medida por ITEA y la adopción empresarial de IA van juntas entre sectores (H24, registrada). Que la correspondencia **por familia** es clara para la generación de lenguaje y el aprendizaje automático solo puede decirse como indicio exploratorio, con estas cautelas. No se puede decir que cada familia se adopte donde está su superficie.
+
+---
+
+## 5. H23, H21b y H28 (26-10-2026)
+
+Calculadas con `scripts/grading/validate_f_external.py` **después** del commit `b8f5c37`, que fija las medidas (D31). Resultados en `validation_f_external.json` y `usage_by_gwa_microsoft_anthropic.csv`.
+
+### H23: el uso integrado (API) se concentra en lo alienable más que el asistido. **Se cumple**
+
+AEI, publicación oficial del 26-06-2026; todas las tareas con uso publicado se enlazan.
+
+| Mes | claude.ai: parte en juego | API: parte en juego | Diferencia |
+|---|---|---|---|
+| **Mayo de 2026 (registrado)** | 41,7 % (2.713 tareas) | 63,7 % (2.295 tareas) | **+22,0 puntos** |
+| Abril de 2026 (robustez) | 42,9 % | 65,0 % | +22,1 puntos |
+
+Umbral registrado: más de 10 puntos. El resultado coincide con el prototipo exploratorio de febrero de 2026 (44 % frente a 64 %), ahora con datos que no se habían visto.
+
+**Lo que no demuestra:** es un solo proveedor. La API excluye Claude Code. «Integrado» es una aproximación por el canal, no una observación directa del uso agéntico.
+
+### H21b: la composición por familias frente a la exposición por patentes de Webb (2020). **No se cumple**
+
+720 ocupaciones O\*NET-SOC con datos en las dos fuentes.
+
+| Contraste registrado | ρ | IC del 95 % | Umbral (> 0,20 e IC sin el 0) |
+|---|---|---|---|
+| IA (F1–F5) frente a `ai_score` | 0,09 | 0,02–0,16 | **No** |
+| Software (F6) frente a `software_score` | −0,04 | −0,11–0,03 | **No** |
+| Robots (F7) frente a `robot_score` | **0,74** | 0,70–0,77 | Sí |
+
+**Resultado negativo, publicado como tal.** Según la interpretación registrada, la regla no puede presentarse como validada por patentes para las familias de IA y de software. Solo se valida para la robótica.
+
+**Exploración posterior, sin hipótesis.** Son 21 correlaciones; se leen como indicios. La puntuación de IA de Webb se asocia con **visión (F4, 0,30)** y **aprendizaje automático (F5, 0,25)**, no con las familias de lenguaje (F1 y F2, ≈ 0). Su puntuación de software se asocia con robótica (0,31) y visión (0,30), no con la automatización de flujos (F6, −0,04).
+
+**Lectura prudente:**
+- Las patentes de Webb son de antes de la IA generativa: la IA de los años 2010 es predicción, detección y visión. Su «software» es sobre todo control de procesos y máquinas.
+- La regla de la capa F se diseñó para la técnica de 2025–2026, en la que dominan el lenguaje y la automatización de flujos.
+- **La discrepancia es compatible con un cambio de técnica, pero también con que la regla sobrevalore el lenguaje.** Webb no permite distinguir entre las dos explicaciones. Hace falta H21 con patentes recientes (AIPD 2023) y H25, el juicio humano.
+
+### H28: el uso observado por actividad coincide entre Microsoft y Anthropic. **Se cumple**
+
+34 GWA con uso en las dos fuentes.
+
+| Contraste | ρ | IC del 95 % |
+|---|---|---|
+| Microsoft Copilot, objetivo del usuario (`share_user`), frente a claude.ai, mayo de 2026 | **0,63** | 0,38–0,82 |
+| Microsoft, acción de la IA (`share_ai`), frente a claude.ai (se informa) | 0,65 | — |
+
+Umbral registrado: ρ > 0,50 con IC que excluye el 0. Dos proveedores, dos productos y dos periodos distintos (2024 y 2026) coinciden en qué actividades se usa la IA de lenguaje. El uso por actividad no es un artefacto de un solo producto.
+
+**Corrección de una errata en el anexo.** El anexo decía que la GWA son «los siete primeros caracteres» del código IWA. Los códigos GWA tienen nueve (por ejemplo, 4.A.1.a.1). Se aplicó lo que el anexo pretendía, la GWA a la que pertenece cada IWA: el código sin su sufijo `.Ixx`. No cambia la medida.
+
+## 6. Estado de la capa F a 26-10-2026
+
+| H | Resultado |
+|---|---|
+| H21 (patentes del AIPD, por tarea) | Pendiente: falta el acceso al USPTO |
+| **H21b (Webb, por ocupación)** | **No se cumple** (solo la robótica) |
+| H22 (lenguaje > 50 %, descriptiva) | Se cumple (53,5 %) |
+| **H23 (API frente a claude.ai)** | **Se cumple** (+22 puntos) |
+| **H24 (superficie y adopción por sector)** | **Se cumple**, sobre todo por un factor común; señal específica en F2 y F5 |
+| H25 (juicio humano) | Pendiente: hacen falta dos codificadores |
+| **H28 (Microsoft frente a Anthropic)** | **Se cumple** (ρ = 0,63) |
+
+**Conclusión provisional:**
+- **El uso observado, que es la parte de la capa F que no depende de la regla, resiste** (H23, H28).
+- **La regla tarea → familia no está validada** fuera de la robótica (H21b falla). Hasta H21 y H25 sigue siendo una medida en desarrollo.
+- **Las cifras de superficie por familia** (sección 1) solo pueden presentarse como resultado de la regla, con esta cautela explícita.

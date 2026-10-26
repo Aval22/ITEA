@@ -1,0 +1,92 @@
+{
+ "H23": {
+  "2026-05-01": {
+   "claude_ai": {
+    "n_tasks_with_pct": 2713,
+    "n_linked": 2713,
+    "pct_linked_of_total": 100.0,
+    "share_in_play_pct": 41.72
+   },
+   "1p_api": {
+    "n_tasks_with_pct": 2295,
+    "n_linked": 2295,
+    "pct_linked_of_total": 100.0,
+    "share_in_play_pct": 63.68
+   },
+   "diff_api_minus_claude_pp": 21.96,
+   "supported": true
+  },
+  "2026-04-01": {
+   "claude_ai": {
+    "n_tasks_with_pct": 2410,
+    "n_linked": 2410,
+    "pct_linked_of_total": 100.0,
+    "share_in_play_pct": 42.86
+   },
+   "1p_api": {
+    "n_tasks_with_pct": 1992,
+    "n_linked": 1992,
+    "pct_linked_of_total": 100.0,
+    "share_in_play_pct": 64.96
+   },
+   "diff_api_minus_claude_pp": 22.1,
+   "supported": null
+  }
+ },
+ "H21b": {
+  "n_occupations": 720,
+  "AI_vs_ai_score": {
+   "rho": 0.089,
+   "ci95": [
+    0.015,
+    0.163
+   ],
+   "pass": false
+  },
+  "SW_vs_software_score": {
+   "rho": -0.041,
+   "ci95": [
+    -0.111,
+    0.034
+   ],
+   "pass": false
+  },
+  "ROB_vs_robot_score": {
+   "rho": 0.738,
+   "ci95": [
+    0.702,
+    0.768
+   ],
+   "pass": true
+  },
+  "supported": false,
+  "cross_matrix": {
+   "AI": {
+    "ai_score": 0.089,
+    "software_score": -0.275,
+    "robot_score": -0.698
+   },
+   "SW": {
+    "ai_score": -0.022,
+    "software_score": -0.041,
+    "robot_score": -0.254
+   },
+   "ROB": {
+    "ai_score": -0.035,
+    "software_score": 0.308,
+    "robot_score": 0.738
+   }
+  }
+ },
+ "H28": {
+  "n_gwa": 34,
+  "rho_user": 0.634,
+  "ci95": [
+   0.376,
+   0.823
+  ],
+  "supported": true,
+  "rho_ai_side_reported": 0.646,
+  "note": "IWA->GWA by removing the .Ixx suffix (the annex's 'seven characters' was a typo)"
+ }
+}
