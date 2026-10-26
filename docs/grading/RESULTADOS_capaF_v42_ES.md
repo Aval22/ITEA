@@ -61,3 +61,47 @@ España, % de empresas de 10 o más empleados (2024–2025):
 | H25: regla frente a juicio humano | **Pendiente.** Muestra de unas 300 tareas y dos codificadores |
 
 **Hasta que H21 y H25 se cumplan, la capa F se publica como medida en desarrollo**, no como medida validada (interpretación prevista en el registro).
+
+---
+
+## 4. H24: superficie alienable y adopción por sector (26-10-2026)
+
+Calculada con `scripts/grading/validate_h24.py` **después** del commit `8ef6928`, que fija la medida (D30). Hay 26 sectores NACE. La adopción es la de la UE-27 en 2025. Resultados en `validation_h24.json` y `surface_by_sector_family_v42.csv`.
+
+| Familia | ρ de Spearman (UE-27) | IC del 95 % | España (22 sectores) | Contrastada |
+|---|---|---|---|---|
+| F1. Análisis de texto | **0,85** | 0,66–0,93 | 0,75 | Sí: **se cumple** |
+| F2. Generación de lenguaje o código | **0,94** | 0,80–0,98 | 0,77 | Sí: **se cumple** |
+| F5. Aprendizaje automático | **0,88** | 0,73–0,95 | 0,77 | Sí: **se cumple** |
+| F3. Voz | 0,57 | 0,20–0,82 | 0,43 | No (se informa) |
+| F6. Automatización de flujos | 0,60 | 0,24–0,82 | 0,40 | No |
+| F4. Visión | 0,41 | 0,01–0,72 | 0,18 | No |
+| F7. Robótica | −0,03 | −0,46–0,37 | 0,05 | No |
+
+**H24 se cumple tal como se registró:** ρ > 0,30 con 26 sectores en F1, F2 y F5. España da el mismo resultado.
+
+### Comprobación de especificidad (exploratoria, hecha después de ver H24)
+
+Una correlación tan alta puede deberse sobre todo a que los sectores intensivos en conocimiento (programación, I+D, servicios profesionales) adoptan más IA **de todo tipo** y además tienen más superficie alienable **de todo tipo**. Para comprobarlo se hicieron tres pruebas. **Ninguna estaba registrada:** son 21 contrastes con 26 sectores, y se leen como indicios.
+
+1. **Correlaciones cruzadas.** La superficie de F2 se correlaciona casi igual con la adopción de F2 (0,94) que con la de F5 (0,94) o la de F3 (0,92). Lo mismo para F1 y F5. **La mayor parte de la asociación no es específica de cada familia.** La superficie alienable total se correlaciona entre 0,78 y 0,87 con la adopción de cualquier familia.
+2. **Correlación parcial, controlando la superficie alienable total del sector.**
+
+   | | F1 | F2 | F3 | F4 | F5 | F6 | F7 |
+   |---|---|---|---|---|---|---|---|
+   | ρ parcial | 0,26 | **0,78** | −0,15 | 0,08 | **0,45** | **−0,43** | 0,32 |
+
+3. **Composición** (parte de la familia en la superficie del sector frente a su parte en la adopción).
+
+   | | F1 | F2 | F3 | F4 | F5 | F6 | F7 |
+   |---|---|---|---|---|---|---|---|
+   | ρ | 0,37 | **0,51** | 0,05 | −0,18 | **0,45** | 0,28 | 0,57 |
+
+   El valor de F7 se apoya en superficies casi nulas; no es interpretable.
+
+**Lectura:**
+- **H24 se cumple, pero sobre todo por un factor común:** la intensidad de conocimiento del sector.
+- **Hay señal específica en F2 (generación de lenguaje) y en F5 (aprendizaje automático),** que se mantiene al controlar la superficie total y al comparar composiciones.
+- **En F1 (análisis de texto) la señal específica es débil.**
+- **En F6 (automatización de flujos) va en sentido contrario.** Los sectores con más superficie alienable de flujos (comercio minorista, inmobiliarias) no son los que más automatización de flujos con IA adoptan. Encaja con la observación de la §2: el potencial de alienación por registros está menos explotado.
+- **Para el paper:** se puede decir que la superficie alienable medida por ITEA y la adopción empresarial de IA van juntas entre sectores (H24, registrada). Que la correspondencia **por familia** es clara para la generación de lenguaje y el aprendizaje automático solo puede decirse como indicio exploratorio, con estas cautelas. No se puede decir que cada familia se adopte donde está su superficie.
