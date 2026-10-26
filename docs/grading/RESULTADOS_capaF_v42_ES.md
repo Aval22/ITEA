@@ -173,3 +173,88 @@ Umbral registrado: ρ > 0,50 con IC que excluye el 0. Dos proveedores, dos produ
 - **El uso observado, que es la parte de la capa F que no depende de la regla, resiste** (H23, H28).
 - **La regla tarea → familia no está validada** fuera de la robótica (H21b falla). Hasta H21 y H25 sigue siendo una medida en desarrollo.
 - **Las cifras de superficie por familia** (sección 1) solo pueden presentarse como resultado de la regla, con esta cautela explícita.
+
+---
+
+## 7. Tiempo, recurrencia, exposición normativa y perfiles (26-10-2026)
+
+Calculado con `scripts/grading/validate_time.py` **después** del commit `0e5d384`, que fija las medidas (D33). Resultados en `validation_time.json` y `time_weighted_occupations_v42.csv`.
+
+**Pesos:** cuota de tiempo de Anthropic (W_tiempo; 18.775 de 18.796 tareas) × empleo de la OEWS de 2025. **Umbral:** central.
+
+### H29: la cuota de tiempo de Anthropic es coherente con la frecuencia de O\*NET. **Se cumple**
+
+| | ρ dentro de la ocupación | IC del 95 % |
+|---|---|---|
+| Cuota de tiempo frente a frecuencia esperada (FT) | **0,57** | 0,55–0,60 |
+| Cuota de tiempo frente a importancia (se informa) | 0,62 | — |
+
+17.930 tareas, 894 ocupaciones. Umbral: > 0,30. La cuota estimada por el modelo sigue a la frecuencia oficial, pero no la reproduce. **Frecuencia no es duración:** la coincidencia es parcial por construcción.
+
+El *bootstrap* remuestrea 300 ocupaciones por réplica para abreviar el cálculo; se declara.
+
+### H30: ponderar por tiempo no cambia el orden de las ocupaciones. **Se cumple**
+
+- Spearman entre ocupaciones de la parte en juego con W_tiempo y con W_IM: **0,96** (umbral ≥ 0,85).
+- Mediana de la diferencia: −1,5 puntos (p10–p90: −9,3 a +7,3).
+- **La diferencia no depende del número de tareas** de la ocupación (ρ = −0,05). Tener menos tareas no cambia por sí solo la parte en juego: cada tarea pesa más, pero la proporción es la misma.
+
+### (a) Horas de la jornada en juego
+
+- **En el conjunto del empleo de EE. UU., unas 2,1 de las 8 horas** (26,6 % del tiempo) están en tareas codificables y expuestas. Es un potencial, no horas que se vayan a automatizar.
+
+| Familia | Horas en juego (de 8) | Parte con W_tiempo | Parte con W_IM |
+|---|---|---|---|
+| Informática y matemáticas | **5,3** | 65,9 % | 60,7 % |
+| Negocios y finanzas | **4,6** | 57,9 % | 55,0 % |
+| Ciencias | 3,6 | 45,2 % | 44,5 % |
+| Ingeniería | 3,4 | 42,6 % | 42,2 % |
+| Apoyo administrativo | 3,3 | 41,5 % | 44,6 % |
+| Dirección | 3,3 | 40,9 % | 38,5 % |
+| Ventas | 2,8 | 34,5 % | 35,5 % |
+| Sanidad (profesionales) | 2,4 | 30,0 % | 28,0 % |
+| Jurídico | 1,6 | 19,9 % | 23,2 % |
+| Educación | 1,1 | 13,2 % | 15,8 % |
+| Transporte | 0,7 | **9,1 %** | **17,2 %** |
+| Construcción | 0,5 | 6,6 % | 8,7 % |
+| Limpieza | 0,3 | 3,4 % | 6,2 % |
+
+**Lo que más cambia al ponderar por tiempo es el transporte** (de 17,2 % a 9,1 %). Sus tareas codificables, como registrar y planificar, son importantes pero ocupan poco tiempo frente a conducir.
+
+### (b) Recurrencia: la superficie alienable se concentra en las tareas periódicas
+
+| Clase (frecuencia modal en O\*NET) | Parte del trabajo | Parte en juego |
+|---|---|---|
+| **Periódica** (como mucho, algo más de una vez al mes; por ejemplo, presupuestos, cierres, planes) | 17,3 % | **36,4 %** |
+| Semanal | 7,4 % | 33,5 % |
+| **Diaria o continua** | 71,7 % | **22,4 %** |
+| Sin dato de frecuencia | 3,5 % | 47,4 % |
+
+**No es lo que se esperaba en el anexo**, donde se suponía que lo diario dejaría más huella para codificar. Lo alienable se concentra en el trabajo periódico, que es cognitivo (informes, presupuestos, planificación). El trabajo diario es con más frecuencia físico o de trato.
+
+Las tareas sin dato de frecuencia (3,5 %, sobre todo códigos SOC nuevos) tienen una parte en juego alta y no son comparables.
+
+### (c) Tareas normativas y de mercado (según los títulos oficiales de las DWA)
+
+| Grupo | Parte del trabajo | Parte en juego | Resto |
+|---|---|---|---|
+| Cumplimiento normativo | 3,9 % | 23,2 % | 26,7 % |
+| Mercado (precios, mercados, economía, competencia) | 1,8 % | **49,8 %** | 26,1 % |
+
+Son grupos pequeños. **Las tareas de mercado están casi el doble en juego que el resto. Las de cumplimiento normativo, algo menos.** La regla de palabras clave se fijó antes de calcular, pero es una aproximación: se informa como descripción.
+
+**Tareas nuevas de O\*NET (`Emerging Tasks`):** 328 (275 nuevas y 53 revisadas), sobre todo en ciencias, ingeniería, sanidad, educación y producción. Todavía no tienen grados de K ni E.
+
+### (d) Tareas comunes frente a tareas de especialistas (relevancia, RT)
+
+| Grupo | Parte del trabajo | Parte en juego |
+|---|---|---|
+| Comunes (las hace al menos la mitad de la ocupación) | 92,4 % | 26,1 % |
+| De especialistas (las hace menos de la mitad) | 4,1 % | **18,3 %** |
+
+Las tareas que solo hacen algunos perfiles están menos en juego.
+
+**Lo que no demuestra nada de esta sección:**
+- la cuota de tiempo es una estimación de un modelo, coherente pero no idéntica a O\*NET;
+- son descripciones sin contraste causal;
+- los grupos de (c) y (d) son pequeños.

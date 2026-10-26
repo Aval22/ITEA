@@ -1,0 +1,259 @@
+{
+ "n_tasks": 18796,
+ "time_share_linked": 18775,
+ "ft_linked": 17951,
+ "rt_linked": 17951,
+ "H29": {
+  "n_tasks": 17930,
+  "n_occ": 894,
+  "rho_within": 0.573,
+  "ci95": [
+   0.546,
+   0.6
+  ],
+  "supported": true,
+  "reported_rho_within_time_vs_importance": 0.622,
+  "note": "bootstrap resamples 300 occupations with replacement per draw (computational shortcut)"
+ },
+ "H30": {
+  "n_occ": 923,
+  "rho": 0.956,
+  "supported": true,
+  "diff_pp_p10_p50_p90": [
+   -9.3,
+   -1.5,
+   7.3
+  ],
+  "corr_ntasks_absdiff": -0.046
+ },
+ "a_hours_by_soc2": [
+  {
+   "soc2": "11",
+   "emp_M": 11.06,
+   "hours_in_play": 3.27,
+   "share_time_pct": 40.9,
+   "share_im_pct": 38.5
+  },
+  {
+   "soc2": "13",
+   "emp_M": 9.99,
+   "hours_in_play": 4.63,
+   "share_time_pct": 57.9,
+   "share_im_pct": 55.0
+  },
+  {
+   "soc2": "15",
+   "emp_M": 5.26,
+   "hours_in_play": 5.28,
+   "share_time_pct": 65.9,
+   "share_im_pct": 60.7
+  },
+  {
+   "soc2": "17",
+   "emp_M": 2.6,
+   "hours_in_play": 3.41,
+   "share_time_pct": 42.6,
+   "share_im_pct": 42.2
+  },
+  {
+   "soc2": "19",
+   "emp_M": 1.47,
+   "hours_in_play": 3.62,
+   "share_time_pct": 45.2,
+   "share_im_pct": 44.5
+  },
+  {
+   "soc2": "21",
+   "emp_M": 1.96,
+   "hours_in_play": 1.23,
+   "share_time_pct": 15.3,
+   "share_im_pct": 11.6
+  },
+  {
+   "soc2": "23",
+   "emp_M": 1.26,
+   "hours_in_play": 1.59,
+   "share_time_pct": 19.9,
+   "share_im_pct": 23.2
+  },
+  {
+   "soc2": "25",
+   "emp_M": 7.02,
+   "hours_in_play": 1.05,
+   "share_time_pct": 13.2,
+   "share_im_pct": 15.8
+  },
+  {
+   "soc2": "27",
+   "emp_M": 1.98,
+   "hours_in_play": 1.47,
+   "share_time_pct": 18.4,
+   "share_im_pct": 20.0
+  },
+  {
+   "soc2": "29",
+   "emp_M": 9.46,
+   "hours_in_play": 2.4,
+   "share_time_pct": 30.0,
+   "share_im_pct": 28.0
+  },
+  {
+   "soc2": "31",
+   "emp_M": 3.6,
+   "hours_in_play": 1.63,
+   "share_time_pct": 20.3,
+   "share_im_pct": 21.0
+  },
+  {
+   "soc2": "33",
+   "emp_M": 3.76,
+   "hours_in_play": 0.83,
+   "share_time_pct": 10.4,
+   "share_im_pct": 11.5
+  },
+  {
+   "soc2": "35",
+   "emp_M": 13.58,
+   "hours_in_play": 0.82,
+   "share_time_pct": 10.3,
+   "share_im_pct": 11.1
+  },
+  {
+   "soc2": "37",
+   "emp_M": 4.52,
+   "hours_in_play": 0.27,
+   "share_time_pct": 3.4,
+   "share_im_pct": 6.2
+  },
+  {
+   "soc2": "39",
+   "emp_M": 3.12,
+   "hours_in_play": 0.93,
+   "share_time_pct": 11.7,
+   "share_im_pct": 13.2
+  },
+  {
+   "soc2": "41",
+   "emp_M": 13.33,
+   "hours_in_play": 2.76,
+   "share_time_pct": 34.5,
+   "share_im_pct": 35.5
+  },
+  {
+   "soc2": "43",
+   "emp_M": 17.39,
+   "hours_in_play": 3.32,
+   "share_time_pct": 41.5,
+   "share_im_pct": 44.6
+  },
+  {
+   "soc2": "45",
+   "emp_M": 0.43,
+   "hours_in_play": 1.29,
+   "share_time_pct": 16.1,
+   "share_im_pct": 16.0
+  },
+  {
+   "soc2": "47",
+   "emp_M": 6.36,
+   "hours_in_play": 0.53,
+   "share_time_pct": 6.6,
+   "share_im_pct": 8.7
+  },
+  {
+   "soc2": "49",
+   "emp_M": 6.08,
+   "hours_in_play": 1.0,
+   "share_time_pct": 12.5,
+   "share_im_pct": 14.8
+  },
+  {
+   "soc2": "51",
+   "emp_M": 6.56,
+   "hours_in_play": 0.83,
+   "share_time_pct": 10.4,
+   "share_im_pct": 14.4
+  },
+  {
+   "soc2": "53",
+   "emp_M": 12.97,
+   "hours_in_play": 0.73,
+   "share_time_pct": 9.1,
+   "share_im_pct": 17.2
+  }
+ ],
+ "a_overall": {
+  "hours_in_play_emp_weighted": 2.12,
+  "share_time_pct": 26.6,
+  "share_im_pct": 27.8
+ },
+ "b_recurrence": {
+  "periodic": {
+   "share_of_all_work_pct": 17.3,
+   "in_play_pct": 36.4
+  },
+  "weekly": {
+   "share_of_all_work_pct": 7.4,
+   "in_play_pct": 33.5
+  },
+  "daily": {
+   "share_of_all_work_pct": 71.7,
+   "in_play_pct": 22.4
+  },
+  "no_ft": {
+   "share_of_all_work_pct": 3.5,
+   "in_play_pct": 47.4
+  }
+ },
+ "c_regulatory": {
+  "regulatory": {
+   "share_of_all_work_pct": 3.9,
+   "in_play_pct": 23.2
+  },
+  "not_regulatory": {
+   "share_of_all_work_pct": 96.1,
+   "in_play_pct": 26.7
+  }
+ },
+ "c_market": {
+  "market": {
+   "share_of_all_work_pct": 1.8,
+   "in_play_pct": 49.8
+  },
+  "not_market": {
+   "share_of_all_work_pct": 98.2,
+   "in_play_pct": 26.1
+  }
+ },
+ "d_relevance": {
+  "specialist_RT_lt_50": {
+   "share_of_all_work_pct": 4.1,
+   "in_play_pct": 18.3
+  },
+  "common_RT_ge_50": {
+   "share_of_all_work_pct": 92.4,
+   "in_play_pct": 26.1
+  },
+  "no_RT": {
+   "share_of_all_work_pct": 3.5,
+   "in_play_pct": 47.4
+  }
+ },
+ "c_emerging_tasks": {
+  "n": 328,
+  "by_category": {
+   "New": 275,
+   "Revision": 53
+  },
+  "by_soc2_top": {
+   "19": 40,
+   "17": 35,
+   "29": 30,
+   "25": 22,
+   "51": 21,
+   "13": 19,
+   "39": 19,
+   "49": 19
+  }
+ }
+}
