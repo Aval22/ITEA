@@ -15,8 +15,11 @@ identifiers:
     value: 10.5281/zenodo.23604653
     description: "Version DOI for ITEA Framework v4.1.0"
   - type: doi
+    value: 10.5281/zenodo.23604652
+    description: "Concept DOI of the v4.x line (v4.1.0 onwards; deposited manually on Zenodo)"
+  - type: doi
     value: 10.5281/zenodo.19578915
-    description: "Concept DOI (resolves to latest version of the ITEA Framework)"
+    description: "Concept DOI of the v1.45-v3.0 line (GitHub-Zenodo releases); does not resolve to v4.x"
   - type: doi
     value: 10.5281/zenodo.20083102
     description: "Version DOI for ITEA Framework v3.0"

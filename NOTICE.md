@@ -13,10 +13,11 @@ The **data** it ships or downloads carry their own terms:
 | BLS OEWS wages | `data/processed/` (v3.0 workbook) | U.S. public domain | |
 | AIOE (Felten, Raj & Seamans, 2021) | `data/processed/` (v3.0 workbook) | Authors' academic terms | Used for convergent validation only |
 | ESCO v1.2.1 | research scripts in `v4.0/code/` | CC BY 4.0 | © European Union; not redistributed |
+| Atlas of the alienable frontier (explorer and data) | `docs/atlas/` | CC BY-NC 4.0, © 2026 A. García-Lluis Valencia, Epistémica | Exception to MIT; see `docs/atlas/README.md` |
 
 **Recommended citation** of work using ITEA data: the Zenodo deposit
-(concept DOI 10.5281/zenodo.19578915) and the specific release used; see
-`CITATION.cff`.
+(v4.1.0: version DOI 10.5281/zenodo.23604653, concept DOI of the v4.x line 10.5281/zenodo.23604652;
+releases v1.45-v3.0: concept DOI 10.5281/zenodo.19578915) and the specific release used; see `CITATION.cff`.
 
 ## O\*NET attribution
 

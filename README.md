@@ -2,7 +2,7 @@
 
 🌐 **English** · [Español](README_ES.md) · [Português](README_PT.md) · [中文](README_ZH.md)
 
-[![DOI](https://zenodo.org/badge/1210690701.svg)](https://doi.org/10.5281/zenodo.19578915)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23604652.svg)](https://doi.org/10.5281/zenodo.23604652)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![O*NET](https://img.shields.io/badge/O*NET-30.2-green)]()
 [![Version](https://img.shields.io/badge/Version-4.1.0-blue)]()
@@ -265,9 +265,10 @@ Related: *The Structural Flaw* ([10.5281/zenodo.19693452](https://doi.org/10.528
   author    = {García-Lluis Valencia, Alberto},
   year      = {2026},
   version   = {4.1.0},
-  doi       = {10.5281/zenodo.19578915},
+  doi       = {10.5281/zenodo.23604653},
   url       = {https://github.com/Aval22/ITEA},
-  note      = {Concept DOI; cite the version DOI of the release you used}
+  note      = {Version DOI of v4.1.0. Concept DOI of the v4.x line: 10.5281/zenodo.23604652;
+               releases v1.45-v3.0: 10.5281/zenodo.19578915}
 }
 ```
 

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITEA atlas explorer</title>
+<meta name="description" content="Atlas of the alienable frontier: task-by-task explorer of 923 O*NET occupations, part of the ITEA research programme (Epistémica).">
+<meta name="author" content="Alberto García-Lluis Valencia">
+<style>
+.flag{width:16px;height:11px;vertical-align:-1px;margin-right:4px;border-radius:1px;box-shadow:0 0 0 .5px rgba(0,0,0,.25)}
+:root{--bg:#fbfbfa;--card:#ffffff;--ink:#1f1f1d;--muted:#5f5e5a;--line:#e3e2dd;--soft:#f1f0ec;
+--b1:#cde2fb;--b2:#86b6ef;--b3:#2a78d6;--b4:#1c5cab;--b5:#104281;--core:#e9e8e4;--accent:#2a78d6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#1f1f1d;--ink:#ecebe6;--muted:#a9a8a2;--line:#34332f;--soft:#2a2926;--core:#3a3935}}
+:root[data-theme="dark"]{--bg:#161615;--card:#1f1f1d;--ink:#ecebe6;--muted:#a9a8a2;--line:#34332f;--soft:#2a2926;--core:#3a3935}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:20px 16px 8px;max-width:1280px;margin:0 auto}h1{margin:0;font-size:24px}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}.prog{font-weight:600;font-size:13px;margin-top:6px}
+.controls{max-width:1280px;margin:0 auto;padding:8px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.seg button{border:0;background:var(--card);color:var(--ink);padding:8px 12px;cursor:pointer;font:inherit}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.pick{display:flex;flex-direction:column;gap:2px;min-width:260px;flex:1}.pick label{font-size:12px;color:var(--muted)}
+.pick input,.pick select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);width:100%}
+main{max-width:1280px;margin:0 auto;padding:8px 16px 24px;display:flex;flex-wrap:wrap;gap:16px}
+.panel{flex:1 1 520px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.panel h2{margin:0;font-size:18px}.meta{color:var(--muted);font-size:12px;margin:2px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.chip{font-size:11px;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.tile{border-radius:10px;padding:10px;background:var(--soft)}.tile .k{font-size:11px;color:var(--muted)}.tile .v{font-size:22px;font-weight:700}
+.tile .s{font-size:11px;color:var(--muted)}.score .k,.score .s{color:inherit;opacity:.85}
+.hours{display:flex;gap:2px;margin-top:6px}.hours i{flex:1;height:8px;border-radius:2px;background:var(--core)}.hours i.on{background:var(--b3)}
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:6px;margin:4px 0 6px}
+.fam div{border:1px solid var(--line);border-radius:8px;padding:6px 8px}.fam b{display:block;font-size:16px}.fam span{font-size:10.5px;color:var(--muted)}
+.note{font-size:11px;color:var(--muted);margin:4px 0 12px}
+h3{font-size:13px;margin:14px 0 6px}
+.rows{display:grid;grid-template-columns:150px 1fr;gap:4px 8px;align-items:center}.rows .lab{font-size:11.5px;color:var(--muted);text-align:right}
+.sq{display:flex;flex-wrap:wrap;gap:3px}.sq i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.s3{background:var(--b5)}.s2{background:var(--b3)}.s1{background:var(--b2)}.s0{background:var(--core);outline:1px solid var(--line);outline-offset:-1px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:11.5px;color:var(--muted);margin:6px 0}.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;vertical-align:-2px;margin-right:4px}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--core)}.bar span{display:block}
+table{width:100%;border-collapse:collapse;font-size:12px}td{padding:4px 6px;border-top:1px solid var(--line);vertical-align:top}
+td.st{width:14px}td.tag{color:var(--muted);white-space:nowrap;font-size:11px}
+.tabs button{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:3px 8px;cursor:pointer;margin-right:4px}
+.tabs button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.sim a{color:var(--accent);cursor:pointer;text-decoration:none}.sim li{margin:2px 0}
+.wrap{overflow-x:auto}footer{max-width:1280px;margin:0 auto;padding:16px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--line)}
+footer p{margin:6px 0}svg text{fill:var(--muted);font-size:10px}
+</style>
+</head>
+<body>
+<header>
+  <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start">
+    <h1 data-t="title"></h1>
+    <label class="pick" style="min-width:150px;flex:0"><span data-t="lang" style="font-size:12px;color:var(--muted)"></span><select id="lang"></select></label>
+  </div>
+  <div class="sub" data-t="sub"></div>
+  <div class="prog"><span data-t="prog"></span> · <a href="https://doi.org/10.5281/zenodo.23604652">DOI 10.5281/zenodo.23604652</a> · Atlas: <a href="https://doi.org/10.5281/zenodo.23673121">DOI 10.5281/zenodo.23673121</a> · Epistémica</div>
+</header>
+
+<div class="controls">
+  <div class="seg" role="group" aria-label="What to compare">
+    <button id="mOcc" aria-pressed="true" data-t="occ" data-clic="modo-ocupaciones"></button><button id="mFam" aria-pressed="false" data-t="fam" data-clic="modo-familias"></button>
+  </div>
+  <div class="pick" style="flex-basis:100%"><label for="q"><span data-t="filter"></span> <span id="nOpts" class="note"></span></label><input id="q" type="search" autocomplete="off"></div>
+  <div class="pick"><label for="pA">A</label><select id="pA"></select></div>
+  <div class="pick"><label for="pB">B</label><select id="pB"></select></div>
+</div>
+
+<main><section class="panel" id="panelA" aria-live="polite"></section><section class="panel" id="panelB" aria-live="polite"></section></main>
+
+<footer>
+  <div class="legend" id="legend"></div>
+  <h2 style="font-size:16px;margin:14px 0 6px" data-t="mTitle" data-seccion="metodologia"></h2><div id="method"></div>
+  <h3 data-t="dTitle" data-seccion="origen-datos"></h3><div id="dsrc"></div>
+  <h3 data-t="sTitle" data-seccion="fuentes"></h3><ol id="sources" style="padding-left:18px;margin:4px 0"></ol>
+  <h3 data-t="lTitle"></h3><p id="lic"></p>
+  <h3 data-t="privTitle" data-seccion="privacidad"></h3><p data-t="priv"></p>
+  <h3 data-t="onetTitle"></h3><p id="onet"></p>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+const ONET_ATTR='This page includes information from the <a href="https://www.onetcenter.org/database.html" target="_blank" rel="noopener">O*NET 30.2 Database</a> by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> license. O*NET® is a trademark of USDOL/ETA. Alberto García-Lluis Valencia has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications. '
+ +'Changes: occupation titles, O*NET-SOC codes and task statements are reproduced unchanged; every other measure on this page (ITEA K and E grades, in-play status, scores, task types, AI family, hours, similarity, wage-profile labels) is derived by ITEA, as listed under “Where the data come from”; the derivation code is public at <a href="https://github.com/Aval22/ITEA" target="_blank" rel="noopener">github.com/Aval22/ITEA</a> (scripts/atlas). Each occupation code links to its page in <a href="https://www.onetonline.org/" target="_blank" rel="noopener">O*NET OnLine</a>. Contact: <a href="mailto:aval@epistemica.eu">aval@epistemica.eu</a>.';
+const BANDS=[[20,0,'var(--b1)','#1f1f1d'],[40,1,'var(--b2)','#1f1f1d'],[60,2,'var(--b3)','#ffffff'],[80,3,'var(--b4)','#ffffff'],[101,4,'var(--b5)','#ffffff']];
+const US='<svg class="flag" viewBox="0 0 19 10" aria-label="USA" role="img"><rect width="19" height="10" fill="#b22234"/><g fill="#fff">'+[1,3,5,7,9].map(y=>'<rect y="'+(y*10/13)+'" width="19" height="'+(10/13)+'"/>').join('')+'</g><rect width="7.6" height="5.4" fill="#3c3b6e"/></svg>';
+const EU='<svg class="flag" viewBox="0 0 15 10" aria-label="EU" role="img"><rect width="15" height="10" fill="#003399"/><g fill="#ffcc00">'+Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return '<circle cx="'+(7.5+3*Math.sin(a)).toFixed(2)+'" cy="'+(5-3*Math.cos(a)).toFixed(2)+'" r=".45"/>'}).join('')+'</g></svg>';
+let LANG=(()=>{try{return localStorage.getItem('itea_lang')}catch(e){return null}})()||((navigator.language||'en').slice(0,2));if(!window.I18N[LANG])LANG='en';
+const T=()=>window.I18N[LANG];
+const ROWK=['INF','PRO','MAN','TEA','SER','SEL','PHY'];
+const FAMK=['F1','F2','F3','F4','F5','F6','F7'];
+let DATA,BY={},mode='occ',sel={A:'13-2011.00',B:'47-2111.00'};
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct=v=>v==null?'—':Math.round(v)+'%';
+function band(v){return BANDS.find(b=>v<b[0])||BANDS[4]}
+
+// employment-weighted mean; g scales the weight (AI families: work in play; recurrence: time in play)
+function wavg(items,f,g){let s=0,w=0;for(const o of items){const v=f(o),e=(o.emp||0)/(o.emp_shared||1)*(g?g(o):1);if(v!=null&&e){s+=v*e;w+=e}}return w?s/w:null}
+function family(code){
+  const items=DATA.occupations.filter(o=>o.soc2===code);const ai={},rec={},isco={};
+  for(const k of FAMK)ai[k]=wavg(items,o=>o.ai&&o.ai[k],o=>o.share.central/100);
+  for(const k of['periodic','weekly','daily'])rec[k]=wavg(items,o=>o.rec[k],o=>(o.share_time||0)/100);
+  let we=0;for(const o of items){const e=(o.emp||0)/(o.emp_shared||1);for(const [g,v] of Object.entries(o.isco))isco[g]=(isco[g]||0)+v*e;we+=e}
+  for(const g in isco)isco[g]=isco[g]/we;
+  return{fam:true,code,title:DATA.meta.families[code]||code,items,emp:items.reduce((a,o)=>a+(o.emp||0)/(o.emp_shared||1),0),
+    share:{central:wavg(items,o=>o.share.central),strict:wavg(items,o=>o.share.strict),broad:wavg(items,o=>o.share.broad)},
+    hours:wavg(items,o=>o.hours),ai,rec,isco,wage:{p50:wavg(items,o=>o.wage&&o.wage.p50)},
+    bls:{chg:wavg(items,o=>o.bls&&o.bls.chg)}};
+}
+
+function tiles(o){
+  const v=o.share.central,b=band(v??0);const h=o.hours??0;
+  const hb=Array.from({length:8},(_,i)=>`<i class="${i<Math.round(h)?'on':''}"></i>`).join('');
+  const bls=o.bls&&o.bls.chg!=null?`${o.bls.chg>0?'+':''}${o.bls.chg.toFixed(1)}%`:'—';
+  const t=T(),aiF=o.bls&&o.bls.ai?(o.bls.ai==='decreases'?t.aiLower:t.aiRaise):(o.fam?t.empW:t.allOcc);
+  return `<div class="tiles" data-seccion="puntuaciones">
+   <div class="tile score" style="background:${b[2]};color:${b[3]}"><div class="k">${t.score}</div><div class="v">${pct(v)}</div><div class="s">${t.bands[b[1]]} · ${t.range} ${pct(o.share.strict)}–${pct(o.share.broad)}</div></div>
+   <div class="tile"><div class="k">${t.hours}</div><div class="v">${o.hours==null?'—':o.hours.toFixed(1)+' h'}</div><div class="hours">${hb}</div></div>
+   <div class="tile"><div class="k">${US}${t.outlook}</div><div class="v">${bls}</div><div class="s">${o.bls&&o.bls.open_k!=null?o.bls.open_k.toFixed(1)+t.openings+' · ':''}${aiF}</div></div>
+   <div class="tile"><div class="k">${US}${t.wage}</div><div class="v">${o.wage&&o.wage.p50?'$'+Math.round(o.wage.p50/1000)+'k':'—'}</div><div class="s">${o.fam?t.empW:t.oews}</div></div></div>`;
+}
+function famTiles(o){const t=T();return `<h3 data-seccion="familia-ia">${t.aiTitle} <span class="note">${t.prov}</span></h3><div class="fam">${FAMK.map(k=>`<div><b>${pct(o.ai?o.ai[k]:null)}</b><span>${t.fams[k]}</span></div>`).join('')}</div>`}
+function recBar(o){const c={periodic:'var(--b5)',weekly:'var(--b3)',daily:'var(--b2)'};const r=o.rec||{};
+  const t=T();return `<h3 data-seccion="recurrencia">${t.rec}</h3><div class="bar" role="img" aria-label="periodic ${pct(r.periodic)}, weekly ${pct(r.weekly)}, daily ${pct(r.daily)}">${['periodic','weekly','daily'].map(k=>`<span style="width:${r[k]||0}%;background:${c[k]}"></span>`).join('')}</div>
+   <div class="legend">${['periodic','weekly','daily'].map(k=>`<span><i style="background:${c[k]}"></i>${t.recL[k]} ${pct(r[k])}</span>`).join('')}</div>`}
+function unit(o){const by={};for(const t of o.tasks)(by[t[1]]=by[t[1]]||[]).push(t);
+  const t=T();return `<h3 data-seccion="tipos-tarea">${t.tasksBy}</h3><div class="rows">${ROWK.map(k=>`<div class="lab">${t.rows[k]}</div><div class="sq">${(by[k]||[]).map(t=>`<i class="s${t[2]}" title="${esc(t[0])}"></i>`).join('')||'<span class="note">—</span>'}</div>`).join('')}</div>`}
+function wageSvg(w){if(!w||!w.p10)return '';const W=520,H=130,LG=170,ln=Math.log,mu=ln(w.p50),sg=(ln(w.p90)-ln(w.p10))/(2*1.2816);
+  const x0=w.p10*.55,x1=w.p90*1.35,pdf=x=>Math.exp(-((ln(x)-mu)**2)/(2*sg*sg))/(x*sg*Math.sqrt(2*Math.PI));
+  const xs=Array.from({length:160},(_,i)=>x0+(x1-x0)*i/159),ym=Math.max(...xs.map(pdf));
+  const X=x=>LG+(W-LG-15)*(x-x0)/(x1-x0),Y=y=>H-34-(H-48)*y/ym;
+  const path=xs.map((x,i)=>(i?'L':'M')+X(x).toFixed(1)+','+Y(pdf(x)).toFixed(1)).join('');
+  const t=T(),C=['OJ','OS','Md','IJ','IS'],L=['p10','p25','p50','p75','p90'].map((k,i)=>[k,C[i],t.wl[i]]),
+    fmt=v=>'$'+Math.round(v).toLocaleString('en');
+  return `<h3 data-seccion="salario">${US}${t.wageDist}</h3><div class="wrap"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${t.wageDist}">
+   <path d="${path}L${X(x1)},${H-34}L${X(x0)},${H-34}Z" fill="var(--b1)" opacity=".7"/><path d="${path}" fill="none" stroke="var(--b3)" stroke-width="2"/>
+   ${L.map(([k,c],i)=>`<line x1="${X(w[k])}" x2="${X(w[k])}" y1="${H-34}" y2="${Y(pdf(w[k]))}" stroke="${k=='p50'?'var(--ink)':'var(--muted)'}" stroke-width="${k=='p50'?1.6:1}"><title>${c} ${fmt(w[k])}</title></line><text x="${X(w[k])}" y="${H-20+(i%2)*12}" text-anchor="middle" style="fill:var(--ink);font-weight:${k=='p50'?700:400}">${c}</text>`).join('')}
+   ${L.map(([k,c,n],i)=>`<text x="4" y="${14+i*16}" style="fill:${k=='p50'?'var(--ink)':'var(--muted)'};font-weight:${k=='p50'?700:400}"><tspan style="font-weight:700;fill:var(--ink)">${c}</tspan> ${n} ${fmt(w[k])}</text>`).join('')}</svg></div>`}
+function taskTable(o,id){const t=T(),k=t.tabs;
+  return `<h3 data-seccion="tareas">${t.tasks}</h3><div class="tabs" data-p="${id}">${k.map((x,i)=>`<button aria-pressed="${i==0}" data-f="${i}" data-clic="pestana-${["todas","en-juego","nucleo"][i]}">${x}</button>`).join('')}</div>
+  <table><tbody>${o.tasks.map(x=>`<tr data-ip="${x[4]?1:0}"><td class="st"><i class="s${x[2]}" style="width:12px;height:12px;border-radius:3px;display:inline-block"></i></td><td>${esc(x[0])}</td><td class="tag">${x[4]?t.fams[x[4]]+'*':''}</td></tr>`).join('')}</tbody></table>
+  <div class="note">${t.aiNote}</div>`}
+function memberStrip(o){const it=[...o.items].sort((a,b)=>b.share.central-a.share.central);
+  return `<h3 data-seccion="miembros">${T().members} (${it.length})</h3><table><tbody>${it.map(x=>`<tr><td style="width:110px"><div class="bar"><span style="width:${x.share.central}%;background:${band(x.share.central)[2]}"></span></div></td><td>${pct(x.share.central)}</td><td>${esc(x.title)} <span class="note">${x.code}</span></td></tr>`).join('')}</tbody></table>`}
+
+function render(slot){
+  const key=sel[slot],el=$('#panel'+slot);let o=mode==='occ'?BY[key]:family(key);
+  if(!o||(o.fam&&!o.items.length)){el.innerHTML='<p class="note">'+T().choose+'</p>';return}
+  const t=T(),isco=Object.entries(o.isco||{}).sort((a,b)=>b[1]-a[1]).map(([g,v])=>`<span class="chip">${EU}ISCO-08 ${g} · ${DATA.meta.isco1[g]} ${Math.round(v)}%</span>`).join('');
+  let h=`<h2>${esc(o.title)}</h2><div class="meta">${US}${o.fam?t.socMajor+' '+o.code:`<a href="https://www.onetonline.org/link/summary/${o.code}" target="_blank" rel="noopener" title="O*NET OnLine">O*NET-SOC ${o.code} ↗</a> · `+(DATA.meta.families[o.soc2]||'')+' · '+o.n+' '+t.tasksWord}${o.emp?' · '+t.usEmp+' '+(o.emp>=1000?Math.round(o.emp/1000).toLocaleString('en')+'k':o.emp.toLocaleString('en'))+(o.emp_shared>1?' ('+t.shared.replace('{n}',o.emp_shared)+')':'')+(o.emp_soc?' · SOC '+o.emp_soc:''):''}</div><div class="chips">${isco}</div>`;
+  h+=tiles(o)+famTiles(o)+recBar(o);
+  if(o.fam){h+=memberStrip(o)}else{
+    h+=unit(o)+wageSvg(o.wage);
+    h+=`<h3 data-seccion="tecnologia">${t.tech}</h3><div class="note">${o.tech.n} ${t.products} · ${o.tech.classes.map(esc).join(', ')}${o.tech.hot.length?' · '+t.hot+': '+o.tech.hot.map(esc).join(', '):''}</div>`;
+    h+=taskTable(o,slot);
+    h+=`<h3 data-seccion="similares">${t.similar}</h3><ul class="sim">${o.similar.map(([c,j])=>`<li><a data-slot="${slot}" data-code="${c}" data-clic="similar">${esc(BY[c]?BY[c].title:c)}</a> <span class="note">${pct(BY[c]?BY[c].share.central:null)} ${t.inPlay} · ${t.simil} ${j}</span></li>`).join('')}</ul>`}
+  el.innerHTML=h;
+}
+// both dropdowns list every occupation (grouped by SOC major group, alphabetical) or every family; the search box filters them
+const norm=x=>String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function opts(){const q=norm($('#q').value.trim());let n=0;
+  const ok=(code,txt)=>!q||norm(code+' '+txt).includes(q);
+  for(const s of['A','B']){const keep=sel[s];let h='';
+    if(mode==='occ'){
+      for(const [f,name] of Object.entries(DATA.meta.families)){
+        const it=DATA.occupations.filter(o=>o.soc2===f&&(ok(o.code,o.title)||o.code===keep)).sort((a,b)=>a.title.localeCompare(b.title));
+        if(it.length)h+=`<optgroup label="${f} · ${esc(name)}">${it.map(o=>`<option value="${o.code}">${esc(o.title)} (${o.code})</option>`).join('')}</optgroup>`;
+        if(s==='A')n+=it.filter(o=>ok(o.code,o.title)).length}}
+    else{const it=Object.entries(DATA.meta.families).filter(([c,nm])=>ok(c,nm)||c===keep);
+      h=it.map(([c,nm])=>`<option value="${c}">${c} · ${esc(nm)}</option>`).join('');if(s==='A')n=it.filter(([c,nm])=>ok(c,nm)).length}
+    $('#p'+s).innerHTML=h;$('#p'+s).value=keep}
+  $('#nOpts').textContent=`(${n.toLocaleString('en')})`;return n}
+function setMode(m){mode=m;$('#mOcc').setAttribute('aria-pressed',m==='occ');$('#mFam').setAttribute('aria-pressed',m==='fam');
+  sel=m==='occ'?{A:'13-2011.00',B:'47-2111.00'}:{A:'13',B:'47'};$('#q').value='';opts();for(const s of['A','B'])render(s)}
+function pick(slot,val){const code=val.split(' · ')[0].trim();if((mode==='occ'&&BY[code])||(mode==='fam'&&DATA.meta.families[code])){sel[slot]=code;render(slot);countPair()}
+}
+// aggregated, cookie-free usage count on epistemica.eu only (see the privacy note); one count per pair and page load
+const SEEN=new Set();function countPair(){const ab=[sel.A,sel.B].sort(),k=mode+ab.join('|');if(!window.epiStats||SEEN.has(k))return;SEEN.add(k);
+  window.epiStats('compare',{modo:mode,[mode==='fam'?'familia':'ocupacion']:ab,par:ab.join('|')})}
+
+document.addEventListener('click',e=>{const a=e.target.closest('.sim a');if(a){sel[a.dataset.slot]=a.dataset.code;$('#p'+a.dataset.slot).value=a.dataset.code;render(a.dataset.slot);countPair()}
+  const b=e.target.closest('.tabs button');if(b){const p=b.parentElement;p.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+   p.nextElementSibling.querySelectorAll('tr').forEach(tr=>{const ip=tr.dataset.ip==='1';tr.style.display=b.dataset.f==='0'||(b.dataset.f==='1'&&ip)||(b.dataset.f==='2'&&!ip)?'':'none'})}});
+for(const s of['A','B'])$('#p'+s).addEventListener('change',e=>pick(s,e.target.value));
+let qT;$('#q').addEventListener('input',()=>{const n=opts();clearTimeout(qT);if(!n&&window.epiStats)qT=setTimeout(()=>window.epiStats('click',{elemento:'busqueda-sin-resultado'}),1500)});
+$('#mOcc').onclick=()=>setMode('occ');$('#mFam').onclick=()=>setMode('fam');
+function staticTexts(){const t=T();document.documentElement.lang=LANG;document.title=t.title;
+  document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t[e.dataset.t]);
+  $('#q').placeholder=t.ph;
+  $('#legend').innerHTML=t.legend.map((x,i)=>`<span><i class="s${3-i}"></i>${x}</span>`).join('');
+  $('#method').innerHTML=t.method.map(([h,p])=>`<p><b>${h}.</b> ${p}</p>`).join('');
+  $('#dsrc').innerHTML=t.dsrc.map(([h,p])=>`<p><b>${h}.</b> ${p}</p>`).join('');
+  $('#sources').innerHTML=window.SOURCES.map(x=>`<li>${linkify(esc(x))}</li>`).join('')}
+function linkify(x){return x.replace(/https?:\/\/[^\s)]+[^\s).,]/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`)}
+const ls=$('#lang');ls.innerHTML=Object.entries(window.I18N).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('');ls.value=LANG;
+ls.onchange=()=>{LANG=ls.value;window.epiStats&&window.epiStats('click',{elemento:'idioma-'+LANG});try{localStorage.setItem('itea_lang',LANG)}catch(e){};staticTexts();if(DATA){render('A');render('B')}};
+staticTexts();
+if(/(^|\.)epistemica\.eu$/.test(location.hostname)||/[?&]stats=test\b/.test(location.search)){const c=document.createElement('script');
+  c.src='/stats/contador.js';c.dataset.pagina='atlas';c.defer=true;document.head.appendChild(c)}
+fetch('atlas_data_v1.0.json').then(r=>r.json()).then(d=>{DATA=d;for(const o of d.occupations)BY[o.code]=o;
+  $('#lic').textContent=d.meta.licence;$('#onet').innerHTML=ONET_ATTR;setMode('occ')})
+ .catch(()=>{$('#panelA').innerHTML='<p>'+T().loadErr+'</p>'});
+</script>
+</body>
+</html>
